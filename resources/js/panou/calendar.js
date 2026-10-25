@@ -4,6 +4,11 @@
 const pad = (n) => String(n).padStart(2, '0');
 const toHHMM = (min) => `${pad(Math.floor(min / 60))}:${pad(min % 60)}`;
 
+// Pe ecrane mici, filtrele secundare pornesc închise (pagina funcționează și fără JavaScript).
+if (window.matchMedia('(max-width: 860px)').matches) {
+    document.querySelectorAll('[data-collapse-mobile]').forEach((d) => d.removeAttribute('open'));
+}
+
 export default function calendar(root) {
     const startMin = Number(root.dataset.startMin);
     const px = Number(root.dataset.px);

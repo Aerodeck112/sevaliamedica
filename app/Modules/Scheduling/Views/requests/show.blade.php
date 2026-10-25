@@ -32,7 +32,7 @@
                             <button class="btn" type="submit">Caută</button>
                         </form>
                         @can('patients.create')
-                            <a class="btn btn--primary" href="{{ route('panou.patients.create', ['return_to' => route('panou.requests.show', $req, false)]) }}">Creează fișă nouă</a>
+                            <a class="btn btn--primary" href="{{ route('panou.patients.create', array_filter(['return_to' => route('panou.requests.show', $req, false), 'last_name' => $prefillName[0], 'first_name' => $prefillName[1], 'phone' => $contact['phone'] ?? null, 'email' => $contact['email'] ?? null])) }}">Creează fișă nouă (precompletată)</a>
                         @endcan
                     </div>
                     @if (request('patient_id'))

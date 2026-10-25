@@ -53,12 +53,17 @@
             @endif
             <input type="hidden" name="view" value="{{ $view }}"><input type="hidden" name="group" value="{{ $group }}">
             <x-panou.field name="location_id" type="select" label="Locație" :value="$location?->id" :options="$locations->pluck('name', 'id')->all()" :placeholder="false" />
-            <x-panou.field name="specialty_id" type="select" label="Specialitate" :value="$filters['specialty_id'] ?? null" :options="$specialties->pluck('name', 'id')->all()" placeholder="Toate" />
-            <x-panou.field name="staff[]" id="f_staff" type="select" label="Persoană" :value="$selectedStaff[0] ?? null" :options="$allStaff->pluck('display_name', 'id')->all()" placeholder="Toți" />
-            <x-panou.field name="room_id" type="select" label="Sală" :value="$filters['room_id'] ?? null" :options="$rooms->pluck('name', 'id')->all()" placeholder="Toate" />
-            <x-panou.field name="equipment_id" type="select" label="Aparat" :value="$filters['equipment_id'] ?? null" :options="$equipment->pluck('name', 'id')->all()" placeholder="Toate" />
-            <x-panou.field name="cancelled" type="checkbox" label="Arată anulările" :value="$filters['cancelled'] ?? false" />
-            <noscript><button class="btn" type="submit">Aplică</button></noscript>
+            <details class="cal-more" open data-collapse-mobile>
+                <summary class="btn btn--small">Filtre</summary>
+                <div class="cal-more__body">
+                    <x-panou.field name="specialty_id" type="select" label="Specialitate" :value="$filters['specialty_id'] ?? null" :options="$specialties->pluck('name', 'id')->all()" placeholder="Toate" />
+                    <x-panou.field name="staff[]" id="f_staff" type="select" label="Persoană" :value="$selectedStaff[0] ?? null" :options="$allStaff->pluck('display_name', 'id')->all()" placeholder="Toți" />
+                    <x-panou.field name="room_id" type="select" label="Sală" :value="$filters['room_id'] ?? null" :options="$rooms->pluck('name', 'id')->all()" placeholder="Toate" />
+                    <x-panou.field name="equipment_id" type="select" label="Aparat" :value="$filters['equipment_id'] ?? null" :options="$equipment->pluck('name', 'id')->all()" placeholder="Toate" />
+                    <x-panou.field name="cancelled" type="checkbox" label="Arată anulările" :value="$filters['cancelled'] ?? false" />
+                    <noscript><button class="btn" type="submit">Aplică</button></noscript>
+                </div>
+            </details>
         </form>
 
         <div class="cal-legend small">
@@ -67,6 +72,7 @@
                     <span class="cal-legend__item"><span class="cal-dot cal-dot--{{ $s }}" aria-hidden="true"></span>{{ $label }} <span class="muted">{{ $counts[$s] ?? 0 }}</span></span>
                 @endif
             @endforeach
+            @if ($hiddenStaff)<span class="muted">· {{ $hiddenStaff }} persoane fără program în această zi nu sunt afișate (alegeți-le din „Persoană”).</span>@endif
             <span class="muted">· Trageți o programare pentru a o muta sau marginea de jos pentru a schimba durata. Pe tastatură: deschideți programarea și folosiți „Mută programarea”.</span>
         </div>
 
@@ -98,7 +104,7 @@
                         </div>
 
                         @foreach ($columns as $col)
-                            <div class="cal__col" style="height: {{ $height }}px; --lanes: {{ $col['lanes'] }}"
+                            <div class="cal__col" style="height: {{ $height }}px; --lanes: {{ $col['lanes'] }}; --hour: {{ 60 * $px }}px"
                                  data-col-type="{{ $col['type'] }}" data-col-id="{{ $col['id'] }}" data-date="{{ $col['date']->toDateString() }}"
                                  aria-label="{{ $col['label'] }}">
                                 @foreach ($col['windows'] as $w)
@@ -109,7 +115,7 @@
                                 @endif
                                 @foreach ($col['cards'] as $card)
                                     @php $a = $card['a']; $movable = in_array($a->status, ['confirmata', 'sosit'], true); @endphp
-                                    <a class="appt appt--{{ $a->status }} {{ $movable ? 'is-movable' : '' }}"
+                                    <a class="appt appt--{{ $a->status }} {{ $movable ? 'is-movable' : '' }} {{ $card['height'] < 70 ? 'appt--compact' : '' }}"
                                        href="{{ route('panou.appointments.show', $a) }}"
                                        style="top: {{ $card['top'] }}px; height: {{ $card['height'] }}px; --lane: {{ $card['lane'] }}; --accent: {{ $a->staffMember?->calendar_color ?? '#00C4C4' }}"
                                        data-id="{{ $a->id }}" data-version="{{ $a->version }}"

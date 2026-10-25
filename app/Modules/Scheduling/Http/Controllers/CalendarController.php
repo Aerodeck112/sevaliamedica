@@ -19,7 +19,8 @@ use Illuminate\View\View;
 
 class CalendarController extends Controller
 {
-    private const PX_PER_MIN = 1.4;
+    /** Înălțimea unui minut în grilă (2 px → o oră = 120 px; o programare de 15 min rămâne lizibilă). */
+    private const PX_PER_MIN = 2;
 
     public function index(Request $request, AvailabilityService $availability, SchedulingSettings $settings): View
     {
@@ -74,12 +75,20 @@ class CalendarController extends Controller
 
         $columns = [];
         if ($view === 'zi' && $group === 'personal') {
+            $hidden = 0;
             foreach ($staffShown as $s) {
-                $windows = $location ? ($availability->hasAnySchedule($s->id)
-                    ? $availability->workingIntervals($s->id, $location->id, $date)
-                    : $availability->openingIntervals($location, $date)) : [];
-                $columns[] = $this->column('staff', $s->id, $s->display_name, $s->calendar_color, $date, $windows,
-                    $appointments->where('staff_member_id', $s->id), $startMin, ! $availability->hasAnySchedule($s->id));
+                $hasSchedule = $availability->hasAnySchedule($s->id);
+                $working = $location && $hasSchedule ? $availability->workingIntervals($s->id, $location->id, $date) : [];
+                $own = $appointments->where('staff_member_id', $s->id);
+                // Fără filtru pe persoană, afișăm doar cine lucrează în ziua respectivă sau are programări;
+                // ceilalți se pot alege din filtrul „Persoană”.
+                if (! $selectedStaff && ! $working && $own->isEmpty()) {
+                    $hidden++;
+
+                    continue;
+                }
+                $windows = $hasSchedule ? $working : ($location ? $availability->openingIntervals($location, $date) : []);
+                $columns[] = $this->column('staff', $s->id, $s->display_name, $s->calendar_color, $date, $windows, $own, $startMin, ! $hasSchedule);
             }
         } elseif ($view === 'zi') {
             foreach ($rooms->when($filters['room_id'] ?? null, fn ($c, $r) => $c->where('id', $r)) as $room) {
@@ -109,6 +118,7 @@ class CalendarController extends Controller
             'counts' => $appointments->countBy('status'),
             'noResources' => $location && $rooms->isEmpty() && $equipment->isEmpty(),
             'noStaff' => $allStaff->isEmpty(),
+            'hiddenStaff' => $hidden ?? 0,
         ]);
     }
 

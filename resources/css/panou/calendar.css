@@ -4,6 +4,18 @@
     max-width: 200px;
 }
 
+.cal-more {
+    display: contents;
+}
+
+.cal-more > summary {
+    display: none;
+}
+
+.cal-more__body {
+    display: contents;
+}
+
 .seg {
     display: inline-flex;
     border: 1px solid var(--line-strong);
@@ -100,6 +112,7 @@
 
 .cal__head {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 0.45rem;
     padding: 0.6rem 0.75rem;
@@ -115,7 +128,8 @@
 }
 
 .cal__hint {
-    margin-left: auto;
+    flex-basis: 100%;
+    padding-left: 1.1rem;
     font-size: var(--fs-xs);
     font-weight: 600;
     color: var(--warn);
@@ -255,6 +269,25 @@
     cursor: ns-resize;
 }
 
+/* Programări scurte: ora și numele pe un rând, restul în pagina programării. */
+.appt--compact {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    column-gap: 0.4rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+}
+
+.appt--compact .appt__what {
+    display: none;
+}
+
+.appt--compact .appt__status {
+    flex-basis: 100%;
+    font-size: 0.6875rem;
+}
+
 .appt--confirmata { background: #f5f9fe; }
 .appt--sosit { background: var(--lagoon-soft); }
 .appt--in_desfasurare { background: #c6f1f1; }
@@ -382,5 +415,27 @@
 
     .cal-filters .field {
         max-width: none;
+    }
+
+    /* Pe telefon, filtrele secundare se ascund după butonul „Filtre”. */
+    .cal-more {
+        display: block;
+        width: 100%;
+    }
+
+    .cal-more > summary {
+        display: inline-flex;
+        list-style: none;
+    }
+
+    .cal-more__body {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-top: 0.75rem;
+    }
+
+    .cal-filters {
+        gap: 0.6rem;
     }
 }

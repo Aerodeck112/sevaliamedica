@@ -50,8 +50,11 @@ class PatientController extends Controller
 
     public function create(Request $request): View
     {
+        // Precompletare (ex. din solicitarea de pe site): doar câmpuri administrative simple.
+        $prefill = array_filter($request->only(['last_name', 'first_name', 'phone', 'email']), fn ($v) => is_string($v) && mb_strlen($v) <= 190);
+
         return view('patients::form', [
-            'patient' => new Patient(['citizenship' => 'română', 'allow_phone' => true]),
+            'patient' => new Patient(['citizenship' => 'română', 'allow_phone' => true] + $prefill),
             'returnTo' => $this->safeReturn($request->query('return_to')),
         ]);
     }
