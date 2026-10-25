@@ -63,7 +63,8 @@
             </fieldset>
             <hr class="sep">
             <x-panou.field name="marketing_consent" type="checkbox" label="Acord pentru comunicări de marketing (noutăți, campanii)" :value="$patient->marketing_consent" />
-            <p class="field__hint">Separat de comunicările operaționale. Se înregistrează data și cine a consemnat acordul@if ($patient->marketing_consent_at) — ultima modificare {{ $patient->marketing_consent_at->format('d.m.Y H:i') }} ({{ $patient->marketing_consent_source }})@endif.</p>
+            <p class="field__hint">Separat de comunicările operaționale. Se înregistrează data și cine a consemnat acordul.
+                @if ($patient->marketing_consent_at) Ultima modificare: {{ $patient->marketing_consent_at->format('d.m.Y H:i') }} ({{ $patient->marketing_consent_source }}).@endif</p>
         </x-panou.panel>
 
         <x-panou.panel title="Observații administrative">
