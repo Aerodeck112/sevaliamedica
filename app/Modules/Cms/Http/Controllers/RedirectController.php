@@ -56,7 +56,7 @@ class RedirectController extends Controller
     private function validated(Request $request, ?Redirect $redirect = null): array
     {
         $data = $request->validate([
-            'source_path' => ['required', 'string', 'max:255', 'regex:#^/[^\s?#]*$#', Rule::unique('cms_redirects', 'source_path')->ignore($redirect?->id)],
+            'source_path' => ['required', 'string', 'max:255', 'regex:~^/[^\s?#]*$~', Rule::unique('cms_redirects', 'source_path')->ignore($redirect?->id)],
             'target' => ['required', 'string', 'max:500'],
             'status_code' => ['required', Rule::in([301, 302])],
             'note' => ['nullable', 'string', 'max:255'],

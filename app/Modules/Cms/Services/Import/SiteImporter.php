@@ -480,7 +480,7 @@ class SiteImporter
         }
         // Decizia clinicii (2026-10-25): „Politica de cookie” deschide setările de cookie.
         foreach ($blocks as &$block) {
-            $block['html'] = str_replace('<p>Politica de cookie</p>', '<p><a href="#setari-cookie" data-cookie-settings="1">Politica de cookie</a></p>', $block['html']);
+            $block['html'] = preg_replace('~<p([^>]*)>Politica de cookie</p>~u', '<p$1><a href="#setari-cookie" data-cookie-settings="1">Politica de cookie</a></p>', $block['html']);
         }
         unset($block);
         $this->store(Page::FOOTER_PATH, Page::KIND_GLOBAL, 'Subsol (toate paginile)', $blocks, [], []);
