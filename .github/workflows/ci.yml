@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    name: PHP 8.3 · MariaDB 10.11
+
+    services:
+      mariadb:
+        image: mariadb:10.11
+        env:
+          MARIADB_ROOT_PASSWORD: root
+          MARIADB_DATABASE: sevalia_test
+          MARIADB_USER: sevalia
+          MARIADB_PASSWORD: sevalia_dev
+        ports: ['3306:3306']
+        options: >-
+          --health-cmd="healthcheck.sh --connect --innodb_initialized"
+          --health-interval=10s --health-timeout=5s --health-retries=10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: PHP
+        uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # v2
+        with:
+          php-version: '8.3'
+          extensions: dom, curl, libxml, mbstring, zip, pdo, pdo_mysql, intl, sodium, gd, fileinfo, xml
+          coverage: none
+
+      - name: Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Dependențe Composer
+        run: composer install --prefer-dist --no-interaction --no-progress
+
+      - name: Dependențe npm și asseturi
+        run: npm ci && npm run build
+
+      - name: Mediu
+        run: |
+          cp .env.example .env
+          php artisan key:generate
+          sed -i "s#^SEVALIA_BLIND_INDEX_KEY=.*#SEVALIA_BLIND_INDEX_KEY=base64:$(openssl rand -base64 32)#" .env
+          sed -i "s#^DB_PASSWORD=.*#DB_PASSWORD=sevalia_dev#" .env
+
+      - name: Teste
+        env:
+          DB_HOST: 127.0.0.1
+          DB_DATABASE: sevalia_test
+        run: php artisan test
+
+      - name: Audit dependențe
+        run: composer audit --no-interaction
