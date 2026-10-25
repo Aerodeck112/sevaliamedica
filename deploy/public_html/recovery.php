@@ -223,7 +223,14 @@ final class SevaliaRecovery
                 } elseif (! $authed) {
                     $message = 'Autentificați-vă din nou.';
                 } elseif ($action === 'switch') {
-                    $this->switchRelease((string) ($_POST['release'] ?? ''), $ip);
+                    $target = (string) ($_POST['release'] ?? '');
+                    $last = $this->status()['journal']['run'] ?? [];
+                    // O versiune a cărei instalare nu s-a încheiat cere confirmare explicită.
+                    if (($last['to_version'] ?? null) === $target && ($last['status'] ?? null) !== 'completed'
+                        && trim((string) ($_POST['confirm'] ?? '')) !== 'CONFIRM') {
+                        throw new RuntimeException('Instalarea acestei versiuni nu s-a încheiat. Tastați CONFIRM pentru a o activa totuși.');
+                    }
+                    $this->switchRelease($target, $ip);
                     $message = 'Versiunea activă a fost schimbată.';
                 } elseif ($action === 'maintenance_off') {
                     $this->setMaintenance(false, $ip);
@@ -261,8 +268,11 @@ final class SevaliaRecovery
         foreach ($s['releases'] as $r) {
             $isCurrent = $r['version'] === $s['current'];
             $failedTarget = ($lastRun['to_version'] ?? null) === $r['version'] && ($lastRun['status'] ?? null) !== 'completed';
+            $confirm = $failedTarget
+                ? '<label>Tastați CONFIRM<input name="confirm" required autocomplete="off"></label>'
+                : '';
             $btn = (! $isCurrent && $r['complete'])
-                ? '<form method="post"><input type="hidden" name="csrf" value="'.$csrf.'"><input type="hidden" name="action" value="switch"><input type="hidden" name="release" value="'.$h($r['version']).'"><button type="submit">Activează</button></form>'
+                ? '<form method="post"><input type="hidden" name="csrf" value="'.$csrf.'"><input type="hidden" name="action" value="switch"><input type="hidden" name="release" value="'.$h($r['version']).'">'.$confirm.'<button type="submit"'.($failedTarget ? ' class="danger"' : '').'>Activează</button></form>'
                 : ($isCurrent ? '<strong>activă</strong>' : 'incompletă');
             $note = $r['version'] === $s['previous'] ? ' (anterioară)' : ($failedTarget && ! $isCurrent ? ' <span class="err">(instalare neîncheiată — nu o activați fără analiză)</span>' : '');
             $rows .= '<tr><td>'.$h($r['version']).$note.'</td><td>'.$btn.'</td></tr>';
@@ -311,7 +321,7 @@ final class SevaliaRecovery
         echo '<!doctype html><html lang="ro"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>'.$t.'</title>'
             .'<style>body{font-family:system-ui,sans-serif;color:#0e3b3d;background:#eef6f6;margin:0;padding:2rem 1rem}main{max-width:46rem;margin:0 auto;background:#fff;border:1px solid #d6e4e4;border-radius:10px;padding:1.5rem 1.75rem}'
             .'h1{margin-top:0;font-size:1.5rem}h2{font-size:1.1rem;margin-top:1.75rem}table{border-collapse:collapse;width:100%}td{border-bottom:1px solid #d6e4e4;padding:.5rem}'
-            .'input{display:block;width:100%;padding:.55rem;margin:.3rem 0 1rem;border:1px solid #b9cfcf;border-radius:6px;font:inherit}button{background:#006f75;color:#fff;border:0;border-radius:6px;padding:.55rem 1rem;font:inherit;cursor:pointer}'
+            .'input{display:block;width:100%;padding:.55rem;margin:.3rem 0 1rem;border:1px solid #b9cfcf;border-radius:6px;font:inherit}button{background:#006f75;color:#fff;border:0;border-radius:6px;padding:.55rem 1rem;font:inherit;cursor:pointer}button.danger{background:#fff;color:#b42318;border:1px solid #b42318}'
             .'form{margin:.4rem 0}.msg{background:#fdf1dc;padding:.6rem .8rem;border-radius:6px}.err{color:#b42318}.note{font-size:.9rem;color:#3c5f61}code{font-size:.85rem}</style></head>'
             .'<body><main><h1>'.$t.'</h1>'.$body.'</main></body></html>';
     }
