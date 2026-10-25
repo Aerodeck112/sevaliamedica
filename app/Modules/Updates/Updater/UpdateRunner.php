@@ -378,6 +378,17 @@ class UpdateRunner
 
     private function stepPublishAssets(UpdateRun $run, array &$data, float $deadline): bool
     {
+        // Lansatorul stabil <deploy>/artisan (folosit de cron) se actualizează împreună cu versiunea.
+        $launcher = $this->layout->releasesPath($run->to_version).'/deploy/artisan';
+        if (is_file($launcher)) {
+            $target = $this->layout->deployPath().'/artisan';
+            if (! is_file($target) || hash_file('sha256', $target) !== hash_file('sha256', $launcher)) {
+                $tmp = $target.'.tmp-'.bin2hex(random_bytes(3));
+                copy($launcher, $tmp);
+                @chmod($tmp, 0755);
+                rename($tmp, $target);
+            }
+        }
         $public = $this->layout->publicPath();
         if ($public === null) {
             $data['skipped'] = 'SEVALIA_PUBLIC_PATH nu este configurat';

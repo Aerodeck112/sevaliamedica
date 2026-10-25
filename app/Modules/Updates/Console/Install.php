@@ -55,9 +55,9 @@ class Install extends Command
             $this->warn('Copiați-o OFFLINE (ex. stick criptat în seif). Fără ea backupurile nu pot fi restaurate.');
         }
 
-        $recoveryKey = null;
         if (! RecoveryKey::exists($layout->keysPath()) || $this->option('rotate-recovery-key')) {
-            $recoveryKey = RecoveryKey::generate($layout->keysPath());
+            // Afișată imediat: dacă un pas ulterior eșuează, cheia nu se pierde.
+            $this->showRecoveryKey(RecoveryKey::generate($layout->keysPath()));
         }
 
         $this->info('Rulez migrările...');
@@ -78,21 +78,29 @@ class Install extends Command
             }
         }
 
+        if ($layout->isDeployed() && is_file(base_path('deploy/artisan'))) {
+            copy(base_path('deploy/artisan'), $layout->deployPath().'/artisan');
+            @chmod($layout->deployPath().'/artisan', 0755);
+        }
         if ($public = $layout->publicPath()) {
             $count = $this->publishPublic(base_path(), $public);
             $this->info("Fișiere publicate în {$public}: {$count}.");
         }
 
         Audit::log('install.completed', context: ['versiune' => config('sevalia.version')]);
-        if ($recoveryKey) {
-            $this->newLine();
-            $this->warn('CHEIA DE RECUPERARE (afișată o singură dată — notați-o și păstrați-o offline):');
-            $this->line('    '.$recoveryKey);
-            $this->warn('Se folosește în public_html/recovery.php dacă aplicația nu mai pornește după o actualizare.');
-        }
-        $this->info('Instalare încheiată. Configurați cronul unic: * * * * * php '.base_path('artisan').' schedule:run');
+        $cron = $layout->isDeployed() ? $layout->deployPath().'/artisan' : base_path('artisan');
+        $this->info("Instalare încheiată. Configurați cronul unic: * * * * * php {$cron} schedule:run >> /dev/null 2>&1");
 
         return self::SUCCESS;
+    }
+
+    private function showRecoveryKey(string $key): void
+    {
+        $this->newLine();
+        $this->warn('CHEIA DE RECUPERARE (afișată o singură dată — notați-o și păstrați-o offline):');
+        $this->line('    '.$key);
+        $this->warn('Se folosește în public_html/recovery.php dacă aplicația nu mai pornește după o actualizare.');
+        $this->newLine();
     }
 
     private function ensureEnvKeys(): void
@@ -105,12 +113,17 @@ class Install extends Command
         }
         $env = (string) file_get_contents($file);
         $changed = false;
-        if (preg_match('/^APP_KEY=\s*$/m', $env)) {
-            $env = preg_replace('/^APP_KEY=\s*$/m', 'APP_KEY=base64:'.base64_encode(random_bytes(32)), $env);
+        if (preg_match('/^APP_KEY=[ \t]*$/m', $env)) {
+            $key = 'base64:'.base64_encode(random_bytes(32));
+            $env = preg_replace('/^APP_KEY=[ \t]*$/m', 'APP_KEY='.$key, $env);
+            config(['app.key' => $key]);
+            app()->forgetInstance('encrypter');
             $changed = true;
         }
-        if (preg_match('/^SEVALIA_BLIND_INDEX_KEY=\s*$/m', $env)) {
-            $env = preg_replace('/^SEVALIA_BLIND_INDEX_KEY=\s*$/m', 'SEVALIA_BLIND_INDEX_KEY=base64:'.base64_encode(random_bytes(32)), $env);
+        if (preg_match('/^SEVALIA_BLIND_INDEX_KEY=[ \t]*$/m', $env)) {
+            $key = 'base64:'.base64_encode(random_bytes(32));
+            $env = preg_replace('/^SEVALIA_BLIND_INDEX_KEY=[ \t]*$/m', 'SEVALIA_BLIND_INDEX_KEY='.$key, $env);
+            config(['sevalia.security.blind_index_key' => $key]);
             $changed = true;
         }
         if ($changed) {

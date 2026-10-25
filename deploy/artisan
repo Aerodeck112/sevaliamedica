@@ -1,0 +1,23 @@
+#!/usr/bin/env php
+<?php
+
+/*
+ * SEVALIA — lansator „artisan” stabil pentru cron și Terminal, independent de versiune.
+ *
+ * Se instalează ca <deploy>/artisan (ex. /home/<cont>/sevalia/artisan) și rulează artisan-ul versiunii active
+ * din current.json. Cronul unic rămâne același după fiecare actualizare:
+ *     * * * * * php /home/<cont>/sevalia/artisan schedule:run >> /dev/null 2>&1
+ */
+
+$base = getenv('SEVALIA_DEPLOY_PATH') ?: __DIR__;
+$pointer = json_decode((string) @file_get_contents($base.'/current.json'), true);
+$release = is_array($pointer) ? (string) ($pointer['release'] ?? '') : '';
+
+if (! preg_match('/^\d+\.\d+\.\d+(?:-[0-9A-Za-z.]+)?$/', $release) || ! is_file($base.'/releases/'.$release.'/artisan')) {
+    fwrite(STDERR, "SEVALIA: versiunea activă nu poate fi determinată din {$base}/current.json.\n");
+    exit(1);
+}
+
+chdir($base.'/releases/'.$release);
+$_SERVER['argv'][0] = $base.'/releases/'.$release.'/artisan';
+require $base.'/releases/'.$release.'/artisan';

@@ -17,7 +17,7 @@ class ReleaseBuild extends Command
         {--from= : Pentru update: intervalul de versiuni acceptat, „min-max” (ex. 0.1.0-0.1.99)}
         {--key= : Calea cheii private Ed25519}
         {--out=dist : Directorul de ieșire}
-        {--vendor=composer : composer (composer install --no-dev într-un director temporar) | copy (copiază vendor/ existent; doar pentru teste)}';
+        {--vendor=local : local (copiază vendor/ și elimină offline pachetele dev cu composer install --no-dev) | composer (instalare curată, necesită rețea) | copy (doar pentru teste)}';
 
     protected $description = 'Construiește un pachet ZIP semnat (install sau update)';
 
@@ -53,6 +53,7 @@ class ReleaseBuild extends Command
             return self::FAILURE;
         }
 
+        $tmp = null;
         try {
             $secret = PackageBuilder::loadSecretKey((string) $this->option('key'));
             if (str_starts_with((string) realpath((string) $this->option('key')), realpath(base_path()).'/')) {
@@ -74,11 +75,15 @@ class ReleaseBuild extends Command
                 'builder' => ['git_commit' => trim((string) @shell_exec('git -C '.escapeshellarg(base_path()).' rev-parse HEAD 2>/dev/null')), 'host' => gethostname()],
             ]);
             sodium_memzero($secret);
-            $this->removeDirectory($tmp);
         } catch (RuntimeException $e) {
             $this->error($e->getMessage());
 
             return self::FAILURE;
+        } finally {
+            // Directorul temporar se șterge întotdeauna, inclusiv la eșec (spațiu pe disc).
+            if ($tmp !== null) {
+                $this->removeDirectory($tmp);
+            }
         }
 
         $this->info("Pachet: {$result['file']}");
@@ -134,7 +139,12 @@ class ReleaseBuild extends Command
 
             return;
         }
-        $process = new Process(['composer', 'install', '--no-dev', '--optimize-autoloader', '--no-interaction', '--no-scripts', '--prefer-dist'], $tmp, ['COMPOSER_ALLOW_SUPERUSER' => '1'], null, 900);
+        if ($this->option('vendor') === 'local') {
+            // Pornim de la vendor/ existent: composer doar elimină pachetele dev (fără descărcări) și
+            // regenerează autoloaderul optimizat pentru producție.
+            (new Process(['cp', '-a', base_path('vendor'), $tmp.'/vendor']))->mustRun();
+        }
+        $process = new Process(['composer', 'install', '--no-dev', '--optimize-autoloader', '--no-interaction', '--no-scripts', '--prefer-dist', '--no-progress'], $tmp, ['COMPOSER_ALLOW_SUPERUSER' => '1'], null, 900);
         $process->run(fn ($t, $line) => $this->output->write($line));
         if (! $process->isSuccessful()) {
             throw new RuntimeException('composer install --no-dev a eșuat.');
