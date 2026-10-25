@@ -14,6 +14,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
+use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
 
 class PatientController extends Controller
@@ -197,7 +198,7 @@ class PatientController extends Controller
             $data['birth_date'] = ($data['birth_date'] ?? null) ?: $derived['birth_date'];
             $data['sex'] = ($data['sex'] ?? null) ?: $derived['sex'];
             if ($data['birth_date'] !== $derived['birth_date']) {
-                throw \Illuminate\Validation\ValidationException::withMessages(['birth_date' => 'Data nașterii nu corespunde CNP-ului.']);
+                throw ValidationException::withMessages(['birth_date' => 'Data nașterii nu corespunde CNP-ului.']);
             }
         }
 

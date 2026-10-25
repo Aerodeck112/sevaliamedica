@@ -3,6 +3,8 @@
 namespace Tests\Feature\Scheduling;
 
 use App\Core\Settings\Settings;
+use App\Models\User;
+use App\Modules\Clinic\Models\Location;
 use App\Modules\Identity\Roles;
 use App\Modules\Patients\Models\Patient;
 use App\Modules\Scheduling\Models\Appointment;
@@ -18,7 +20,7 @@ class ScreensTest extends TestCase
     {
         $this->seed(DemoSeeder::class);
         $this->actingAsRole(Roles::RECEPTIE);
-        $location = \App\Modules\Clinic\Models\Location::where('slug', 'cartier-unirii')->first();
+        $location = Location::where('slug', 'cartier-unirii')->first();
         $appointment = Appointment::where('status', 'confirmata')->whereNotNull('patient_id')->first();
         $request = Appointment::where('status', 'solicitare')->first();
         $patient = Patient::first();
@@ -52,7 +54,7 @@ class ScreensTest extends TestCase
     public function test_clinical_dashboard_shows_my_day(): void
     {
         $this->seed(DemoSeeder::class);
-        $medic = \App\Models\User::where('email', 'medic@demo.sevalia.invalid')->first();
+        $medic = User::where('email', 'medic@demo.sevalia.invalid')->first();
         $this->actingAs($medic)->withSession(['auth.started_at' => time(), 'mfa.passed' => true]);
         $this->get(route('panou.dashboard'))->assertOk()->assertSee('Pacienții mei de azi');
     }
@@ -78,7 +80,7 @@ class ScreensTest extends TestCase
 
     public function test_calendar_explains_missing_configuration(): void
     {
-        \App\Modules\Clinic\Models\Location::create(['name' => 'Locație nouă', 'slug' => 'noua']);
+        Location::create(['name' => 'Locație nouă', 'slug' => 'noua']);
         $this->actingAsRole(Roles::RECEPTIE);
         $this->get(route('panou.calendar'))->assertOk()->assertSee('nu are personal asociat')->assertSee('nu are încă săli sau aparate');
     }

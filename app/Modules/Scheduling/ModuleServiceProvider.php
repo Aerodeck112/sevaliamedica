@@ -15,6 +15,7 @@ use App\Modules\Patients\Support\PatientTabRegistry;
 use App\Modules\Scheduling\Dashboard\MyPatientsTodayWidget;
 use App\Modules\Scheduling\Dashboard\ReceptionTodayWidget;
 use App\Modules\Scheduling\Models\Appointment;
+use App\Modules\Scheduling\Models\AppointmentSeries;
 use App\Modules\Scheduling\Models\ServiceRecord;
 use App\Modules\Scheduling\Models\WaitlistEntry;
 use App\Modules\Scheduling\Policies\AppointmentPolicy;
@@ -109,7 +110,7 @@ class ModuleServiceProvider extends BaseProvider
             fn (Patient $p, User $u) => view('scheduling::patient-tabs.appointments', [
                 'patient' => $p,
                 'appointments' => Appointment::where('patient_id', $p->id)->with(['service', 'staffMember', 'location'])->orderByDesc('starts_at')->limit(100)->get(),
-                'series' => \App\Modules\Scheduling\Models\AppointmentSeries::where('patient_id', $p->id)->with('service')->latest()->get(),
+                'series' => AppointmentSeries::where('patient_id', $p->id)->with('service')->latest()->get(),
                 'waitlist' => WaitlistEntry::where('patient_id', $p->id)->open()->with('service')->get(),
             ]),
             badge: fn (Patient $p) => Appointment::where('patient_id', $p->id)->where('starts_at', '>=', now())->whereIn('status', [AppointmentStatus::CONFIRMATA])->count() ?: null));

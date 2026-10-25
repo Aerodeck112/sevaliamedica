@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Modules\Patients\Models\Patient;
+use App\Modules\Patients\Support\PatientNormalizer;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -32,7 +33,7 @@ class PatientFactory extends Factory
     {
         return $this->state(function () use ($cnp) {
             $cnp ??= self::fakeCnp();
-            $derived = \App\Modules\Patients\Support\PatientNormalizer::fromCnp($cnp);
+            $derived = PatientNormalizer::fromCnp($cnp);
 
             return ['cnp' => $cnp, 'birth_date' => $derived['birth_date'] ?? null, 'sex' => $derived['sex'] ?? null];
         });

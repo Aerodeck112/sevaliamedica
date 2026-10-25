@@ -3,6 +3,7 @@
 namespace Tests\Feature\Scheduling;
 
 use App\Core\Contracts\AppointmentIntake;
+use App\Core\Contracts\IntakeResult;
 use App\Core\Contracts\PublicAppointmentRequest;
 use App\Core\Settings\Settings;
 use App\Models\User;
@@ -27,7 +28,7 @@ class PublicRequestFlowTest extends TestCase
         $this->setUpClinic();
     }
 
-    private function submit(?CarbonImmutable $preferred = null, ?int $staffId = null): \App\Core\Contracts\IntakeResult
+    private function submit(?CarbonImmutable $preferred = null, ?int $staffId = null): IntakeResult
     {
         return app(AppointmentIntake::class)->submit(new PublicAppointmentRequest(
             'Exemplu Fictiv Ion', '0700 123 456', 'ion@demo.sevalia.invalid', 'telefon', null, $staffId,

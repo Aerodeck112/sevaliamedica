@@ -2,7 +2,9 @@
 
 namespace Tests\Feature\Scheduling;
 
+use App\Models\User;
 use App\Modules\Clinic\Models\Room;
+use App\Modules\Clinic\Models\StaffMember;
 use App\Modules\Identity\Roles;
 use App\Modules\Scheduling\Models\Appointment;
 use App\Modules\Scheduling\Models\AppointmentEvent;
@@ -106,7 +108,7 @@ class BookingTest extends TestCase
 
     public function test_staff_without_any_schedule_gets_warning_not_conflict(): void
     {
-        $free = \App\Modules\Clinic\Models\StaffMember::create(['display_name' => 'dr. Fără Program', 'first_name' => 'F', 'last_name' => 'P', 'kind' => 'medic']);
+        $free = StaffMember::create(['display_name' => 'dr. Fără Program', 'first_name' => 'F', 'last_name' => 'P', 'kind' => 'medic']);
         $a = $this->booking->book($this->req($this->consult->id, $free->id, '21:00'), null);
         $this->assertStringContainsString('nu are încă program', $a->getRelation('bookingWarnings')->join(' '));
     }
@@ -163,7 +165,7 @@ class BookingTest extends TestCase
     {
         $a = $this->booking->book($this->req($this->consult->id, $this->medic->id, '09:00'), null);
         $this->booking->book($this->req($this->consult->id, $this->medic->id, '10:00'), null);
-        $user = \App\Models\User::factory()->create();
+        $user = User::factory()->create();
 
         try {
             $this->booking->move($a, $this->at('10:15'), null, null, $a->version, $user, 'test');

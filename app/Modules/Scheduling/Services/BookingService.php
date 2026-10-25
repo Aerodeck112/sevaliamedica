@@ -14,6 +14,7 @@ use App\Modules\Scheduling\Events\AppointmentStatusChanged;
 use App\Modules\Scheduling\Models\Appointment;
 use App\Modules\Scheduling\Models\AppointmentEvent;
 use App\Modules\Scheduling\Models\AppointmentResource;
+use App\Modules\Scheduling\Models\ScheduleException;
 use App\Modules\Scheduling\Support\AppointmentStatus;
 use App\Modules\Scheduling\Support\BookingConflictException;
 use App\Modules\Scheduling\Support\BookingRequest;
@@ -94,7 +95,7 @@ class BookingService
                 ->filter(fn ($e) => $e->staff_member_id === $staff->id && $e->isUnavailability());
             if ($off->isNotEmpty()) {
                 $e = $off->first();
-                $conflicts[] = new Conflict('schedule', $staff->display_name.' este indisponibil(ă) ('.mb_strtolower(\App\Modules\Scheduling\Models\ScheduleException::KINDS[$e->kind] ?? $e->kind).') în acest interval.');
+                $conflicts[] = new Conflict('schedule', $staff->display_name.' este indisponibil(ă) ('.mb_strtolower(ScheduleException::KINDS[$e->kind] ?? $e->kind).') în acest interval.');
             } elseif ($this->settings->get('scheduling.enforce_working_hours')) {
                 if (! $this->availability->hasAnySchedule($staff->id)) {
                     $warnings[] = $staff->display_name.' nu are încă program de lucru configurat (Programări → Program de lucru); intervalul nu a putut fi verificat față de program.';

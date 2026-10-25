@@ -12,11 +12,12 @@ use App\Modules\Scheduling\Services\BookingService;
 use App\Modules\Scheduling\Support\BookingConflictException;
 use App\Modules\Scheduling\Support\BookingRequest;
 use Carbon\CarbonImmutable;
+use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Support\Facades\DB;
 
 require __DIR__.'/../../vendor/autoload.php';
 $app = require __DIR__.'/../../bootstrap/app.php';
-$app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+$app->make(Kernel::class)->bootstrap();
 
 $args = json_decode($argv[1], true, flags: JSON_THROW_ON_ERROR);
 $request = new BookingRequest((int) $args['patient_id'], (int) $args['service_id'], (int) $args['staff_id'], (int) $args['location_id'], CarbonImmutable::parse($args['starts_at']));

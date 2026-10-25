@@ -6,8 +6,10 @@ use App\Core\Contracts\PublicAppointmentRequest;
 use App\Models\User;
 use App\Modules\Clinic\Models\Location;
 use App\Modules\Clinic\Models\Service;
+use App\Modules\Clinic\Models\Specialty;
 use App\Modules\Clinic\Models\StaffMember;
 use App\Modules\Patients\Models\Patient;
+use App\Modules\Patients\Support\PatientNormalizer;
 use App\Modules\Scheduling\Models\Appointment;
 use App\Modules\Scheduling\Models\StaffSchedule;
 use App\Modules\Scheduling\Models\WaitlistEntry;
@@ -65,8 +67,8 @@ class SchedulingDemoSeeder extends Seeder
             $cnp = PatientFactory::fakeCnp();
             $patients[] = Patient::create([
                 'last_name' => $last, 'first_name' => $first, 'cnp' => $cnp,
-                'birth_date' => \App\Modules\Patients\Support\PatientNormalizer::fromCnp($cnp)['birth_date'] ?? null,
-                'sex' => \App\Modules\Patients\Support\PatientNormalizer::fromCnp($cnp)['sex'] ?? null,
+                'birth_date' => PatientNormalizer::fromCnp($cnp)['birth_date'] ?? null,
+                'sex' => PatientNormalizer::fromCnp($cnp)['sex'] ?? null,
                 'phone' => '0700 000 '.sprintf('%03d', 100 + $i), 'email' => 'pacient'.($i + 1).'@demo.sevalia.invalid',
                 'city' => 'Târgu Mureș', 'allow_phone' => true, 'allow_sms' => $i % 2 === 0, 'allow_email' => $i % 3 === 0,
                 'admin_notes' => 'Pacient fictiv (date demonstrative).', 'created_by' => $reception->id,
@@ -148,7 +150,7 @@ class SchedulingDemoSeeder extends Seeder
             ['Fictiv Ana', '0700 000 100', 'Reabilitare medicală', null, null],
         ] as [$name, $phone, $spec, $staffId, $msg]) {
             $intake->submit(new PublicAppointmentRequest(
-                $name, $phone, null, 'telefon', \App\Modules\Clinic\Models\Specialty::where('name', $spec)->value('id'), $staffId, null, $unirii->id,
+                $name, $phone, null, 'telefon', Specialty::where('name', $spec)->value('id'), $staffId, null, $unirii->id,
                 null, $msg, null, CarbonImmutable::now()->subMinutes(rand(5, 300)), url('/contactus'), hash('sha256', 'demo'),
             ));
         }

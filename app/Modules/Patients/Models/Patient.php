@@ -4,6 +4,7 @@ namespace App\Modules\Patients\Models;
 
 use App\Core\Security\BlindIndex;
 use App\Modules\Patients\Support\PatientNormalizer;
+use Database\Factories\PatientFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -58,7 +59,7 @@ class Patient extends Model
 
     protected static function newFactory()
     {
-        return \Database\Factories\PatientFactory::new();
+        return PatientFactory::new();
     }
 
     public function representatives(): HasMany
