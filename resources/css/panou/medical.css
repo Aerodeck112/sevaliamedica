@@ -1,0 +1,244 @@
+/* Dosar medical și recuperare: formularul fișei, istoricul rectificărilor, evidența ședințelor. */
+
+.appt__note {
+    display: block;
+    margin-top: 2px;
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--warn);
+}
+
+.appt__note--danger {
+    color: var(--danger);
+}
+
+.appt__note--info {
+    color: var(--info);
+}
+
+/* Fișa: secțiuni ca blocuri de lectură, cu valorile lizibile. */
+.med-section + .med-section {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--line);
+}
+
+.med-section h3 {
+    margin-bottom: 0.75rem;
+}
+
+.med-values {
+    display: grid;
+    grid-template-columns: minmax(160px, 260px) 1fr;
+    gap: 0.5rem 1.25rem;
+    margin: 0;
+}
+
+.med-values dt {
+    color: var(--ink-3);
+    font-size: var(--fs-s);
+}
+
+.med-values dd {
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+.med-values dd.is-empty {
+    color: var(--ink-3);
+    font-style: italic;
+}
+
+.med-table {
+    border-collapse: collapse;
+    font-size: var(--fs-s);
+}
+
+.med-table th,
+.med-table td {
+    border: 1px solid var(--line);
+    padding: 0.35rem 0.6rem;
+    text-align: left;
+}
+
+.med-table input {
+    min-height: 34px;
+    padding: 0.3rem 0.5rem;
+}
+
+.med-scale {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
+.med-scale label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    min-height: 36px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-s);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.med-scale input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+.med-scale input:checked + span {
+    color: #fff;
+}
+
+.med-scale label:has(input:checked) {
+    background: var(--petrol);
+    border-color: var(--petrol);
+    color: #fff;
+}
+
+.med-scale label:has(input:focus-visible) {
+    box-shadow: var(--focus);
+}
+
+/* Banda care explică ce înseamnă finalizarea. */
+.med-legal {
+    font-size: var(--fs-s);
+    color: var(--ink-2);
+    background: var(--mist);
+    border-radius: var(--radius-s);
+    padding: 0.75rem 1rem;
+}
+
+/* Lanțul de completări / rectificări: o linie verticală care leagă versiunile. */
+.med-chain {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 1.25rem;
+    border-left: 2px solid var(--line-strong);
+}
+
+.med-chain li {
+    position: relative;
+    padding: 0 0 1rem 0.5rem;
+}
+
+.med-chain li::before {
+    content: '';
+    position: absolute;
+    left: -1.6rem;
+    top: 0.35rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 2px solid var(--teal);
+}
+
+.med-chain li.is-current::before {
+    background: var(--lagoon);
+    border-color: var(--lagoon);
+}
+
+/* Editorul de șabloane: un rând compact pentru fiecare câmp. */
+.tpl-field {
+    display: grid;
+    grid-template-columns: 64px minmax(180px, 2fr) minmax(150px, 1fr) minmax(120px, 1fr) 110px;
+    gap: 0.5rem 0.75rem;
+    align-items: end;
+    padding: 0.75rem 0;
+    border-bottom: 1px dashed var(--line);
+}
+
+.tpl-field__extra {
+    grid-column: 2 / -1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.5rem 0.75rem;
+}
+
+.tpl-field__extra textarea {
+    min-height: 64px;
+}
+
+.tpl-section {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    background: #fbfefe;
+}
+
+.tpl-section + .tpl-section {
+    margin-top: 1rem;
+}
+
+/* Evidența ședințelor: o bandă orizontală care arată efectuate / programate / de clarificat / rămase. */
+.sessions-bar {
+    display: flex;
+    height: 12px;
+    border-radius: 999px;
+    overflow: hidden;
+    background: var(--muted-soft);
+    margin: 0.5rem 0;
+}
+
+.sessions-bar span {
+    display: block;
+    height: 100%;
+}
+
+.sessions-bar .is-done {
+    background: var(--ok);
+}
+
+.sessions-bar .is-scheduled {
+    background: var(--lagoon);
+}
+
+.sessions-bar .is-pending {
+    background: #e0a43a;
+}
+
+.sessions-bar .is-cancelled {
+    background: var(--line-strong);
+}
+
+.sessions-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+    font-size: var(--fs-s);
+    color: var(--ink-2);
+}
+
+.sessions-legend i {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    margin-right: 0.35rem;
+    vertical-align: -1px;
+}
+
+@media (max-width: 860px) {
+    .med-values {
+        grid-template-columns: 1fr;
+        gap: 0.15rem;
+    }
+
+    .med-values dd {
+        margin-bottom: 0.6rem;
+    }
+
+    .tpl-field {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tpl-field__extra {
+        grid-column: 1 / -1;
+    }
+}

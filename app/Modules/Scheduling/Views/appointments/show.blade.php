@@ -20,6 +20,9 @@
     @if ($a->reschedule_requested_at && $a->status === AppointmentStatus::CONFIRMATA)
         <div class="alert alert--warn"><x-panou.icon name="warn" /><div>Pacientul a cerut reprogramarea pe {{ $a->reschedule_requested_at->format('d.m.Y H:i') }}. Vedeți mesajul în istoric și mutați programarea.</div></div>
     @endif
+    @foreach ($annotations ?? [] as $note)
+        <div class="alert alert--{{ ($note['tone'] ?? 'warn') === 'danger' ? 'danger' : 'warn' }}" role="note"><x-panou.icon name="warn" /><div><strong>{{ $note['label'] }}</strong>@if ($note['detail']) — {{ $note['detail'] }}@endif</div></div>
+    @endforeach
 
     <div class="grid grid--aside">
         <div class="stack">

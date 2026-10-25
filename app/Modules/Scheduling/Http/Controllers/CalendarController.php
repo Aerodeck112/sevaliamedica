@@ -119,6 +119,7 @@ class CalendarController extends Controller
             'noResources' => $location && $rooms->isEmpty() && $equipment->isEmpty(),
             'noStaff' => $allStaff->isEmpty(),
             'hiddenStaff' => $hidden ?? 0,
+            'annotations' => app(\App\Modules\Scheduling\Support\AppointmentAnnotations::class)->for($appointments, $request->user()),
         ]);
     }
 

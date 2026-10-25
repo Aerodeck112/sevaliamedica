@@ -125,6 +125,9 @@
                                         <span class="appt__who">{{ $a->patient?->fullName() ?? 'Pacient neidentificat' }}</span>
                                         <span class="appt__what">{{ $a->service?->name }}@if ($view === 'saptamana' || $group === 'sali') · {{ $a->staffMember?->display_name }}@endif</span>
                                         <span class="appt__status">{{ $a->statusLabel() }}</span>
+                                        @foreach ($annotations[$a->id] ?? [] as $note)
+                                            <span class="appt__note appt__note--{{ $note['tone'] ?? 'warn' }}" @if ($note['detail']) title="{{ $note['detail'] }}" @endif>⚠ {{ $note['label'] }}</span>
+                                        @endforeach
                                         @if ($movable)<span class="appt__resize" aria-hidden="true"></span>@endif
                                     </a>
                                 @endforeach

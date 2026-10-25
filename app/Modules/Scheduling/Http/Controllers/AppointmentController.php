@@ -143,6 +143,7 @@ class AppointmentController extends Controller
             'staffOptions' => StaffMember::active()->whereIn('kind', ['medic', 'terapeut', 'asistent'])->pluck('display_name', 'id')->all(),
             'services' => Service::active()->pluck('name', 'id')->all(),
             'newLink' => session('patient_link'),
+            'annotations' => app(\App\Modules\Scheduling\Support\AppointmentAnnotations::class)->for(collect([$appointment]), $user)[$appointment->id] ?? [],
         ]);
     }
 
