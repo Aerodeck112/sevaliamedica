@@ -1,0 +1,27 @@
+{
+  "baseUrl": "http://127.0.0.1:8001",
+  "outDir": "docs/capturi/etapa-3",
+  "shots": [
+    { "name": "01-site-acasa", "path": "/", "fullPage": false },
+    { "name": "01-site-acasa", "path": "/", "viewport": "mobil", "fullPage": false },
+    { "name": "02-site-kinetoterapie", "path": "/kinetoterapie" },
+    { "name": "02-site-kinetoterapie", "path": "/kinetoterapie", "viewport": "mobil" },
+    { "name": "03-site-echipa", "path": "/echipa-noastra" },
+    { "name": "03-site-echipa", "path": "/echipa-noastra", "viewport": "mobil" },
+    { "name": "04-site-contact-formular", "path": "/contactus" },
+    { "name": "04-site-contact-formular", "path": "/contactus", "viewport": "mobil" },
+    { "name": "05-site-banner-cookie", "path": "/termeni-si-conditii", "fullPage": false, "keepConsent": false },
+    { "name": "06-cms-pagini-linkuri-rupte", "path": "/panou/site/pagini", "role": "editor_site" },
+    { "name": "07-cms-editor-blocuri", "path": "/panou/site/pagini/19", "role": "editor_site", "fullPage": false },
+    { "name": "08-cms-editor-previzualizare-mobil", "path": "/panou/site/pagini/19", "role": "editor_site", "fullPage": false, "actions": [{ "click": "[data-preview-width=\"390\"]" }, { "wait": 1500 }] },
+    { "name": "09-cms-istoric-versiuni", "path": "/panou/site/pagini/19/istoric", "role": "editor_site" },
+    { "name": "10-cms-biblioteca-media", "path": "/panou/site/media", "role": "editor_site", "fullPage": false },
+    { "name": "11-cms-meniuri", "path": "/panou/site/meniuri", "role": "editor_site" },
+    { "name": "12-cms-meniu-extins", "path": "/panou/site/meniuri/1", "role": "editor_site", "fullPage": false },
+    { "name": "13-cms-redirecturi", "path": "/panou/site/redirecturi", "role": "editor_site" },
+    { "name": "14-cms-seo-articol", "path": "/panou/site/pagini/55", "role": "editor_site", "fullPage": false, "actions": [{ "click": "details.cms-details > summary" }, { "wait": 400 }] },
+    { "name": "15-cms-setari-site", "path": "/panou/site/setari", "role": "editor_site" },
+    { "name": "16-cms-etichete-consimtamant", "path": "/panou/site/etichete", "role": "manager" },
+    { "name": "17-cms-articole", "path": "/panou/site/articole", "role": "editor_site" }
+  ]
+}

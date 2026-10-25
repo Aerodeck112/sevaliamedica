@@ -36,7 +36,11 @@ class MediaLibrary
         }
 
         $mime = $this->sniff($sourcePath);
-        $ext = self::UPLOAD_MIMES[$mime] ?? ($mime === 'image/svg+xml' ? 'svg' : 'bin');
+        $ext = self::UPLOAD_MIMES[$mime] ?? match ($mime) {
+            'image/svg+xml' => 'svg',
+            'application/pdf' => 'pdf',
+            default => 'bin',
+        };
         $relative = 'import/'.substr($sha, 0, 16).'.'.$ext;
         $this->write($relative, $bytes);
 

@@ -52,6 +52,7 @@ class SiteImporter
         } else {
             $this->loadMediaMap();
         }
+        $this->importFiles();
 
         $pages = json_decode(file_get_contents($this->snapshotPath('pages.json')), true);
         $homeHtml = null;
@@ -111,6 +112,26 @@ class SiteImporter
         }
     }
 
+    /** Documentele descărcabile (ex. PDF) legate din pagini prin /web/content/<id>. */
+    private function importFiles(): void
+    {
+        $indexFile = $this->snapshotPath('files/index.json');
+        if (! is_file($indexFile)) {
+            return;
+        }
+        foreach (json_decode(file_get_contents($indexFile), true) as $path => $info) {
+            $file = $this->snapshotPath('files/'.$info['file']);
+            if (is_file($file)) {
+                $media = $this->media->importFile($file, $path);
+                if ($media->original_name !== $info['file']) {
+                    $media->update(['original_name' => $info['file']]);
+                }
+                $this->mediaByPath[$this->normalizeUrl($path)] = $media;
+                Redirect::firstOrCreate(['source_path' => $path], ['target' => $media->url(), 'status_code' => 301, 'note' => 'Document mutat din Odoo în biblioteca media']);
+            }
+        }
+    }
+
     private function loadMediaMap(): void
     {
         // Mai multe adrese Odoo pot indica același fișier (același SHA-256): le mapăm pe toate.
@@ -165,6 +186,13 @@ class SiteImporter
                 }
             } elseif (! str_starts_with($img->getAttribute('src'), 'data:')) {
                 $this->report['imagini_lipsa'][] = $img->getAttribute('src');
+            }
+        }
+        foreach ($xp->query('.//a[starts-with(@href, "/web/content/")]', $root) as $a) {
+            /** @var DOMElement $a */
+            $media = $this->mediaFor(strtok($a->getAttribute('href'), '?'));
+            if ($media) {
+                $a->setAttribute('href', $media->url());
             }
         }
         foreach ($xp->query('.//*[contains(@style, "url(")]', $root) as $el) {
@@ -303,7 +331,11 @@ class SiteImporter
         }
         $seo = $this->seo($xp);
         $h1 = $xp->query('//main//h1')->item(0);
-        $title = $h1 ? Str::limit(Dom::text($h1), 180, '') : ($seo['title'] ?? $path);
+        $title = $h1 ? trim(str_replace(["\u{200B}", "\u{FEFF}"], '', Dom::text($h1))) : '';
+        if ($title === '') {
+            $title = trim(preg_replace('/\s*\|\s*sevalia\.ro$/i', '', $seo['title'] ?? $path));
+        }
+        $title = Str::limit($title, 180, '');
         $wrapClass = $wrap->getAttribute('id') === 'wrap' ? trim($wrap->getAttribute('class')) : '';
         $this->store($path, Page::KIND_PAGE, $title ?: $path, $blocks, $seo, ['body_class' => $this->bodyClass($xp), 'wrap_class' => $wrapClass]);
     }

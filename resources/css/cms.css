@@ -287,3 +287,9 @@ dialog.cms-picker {
         position: static;
     }
 }
+
+/* Atributul hidden are prioritate și peste componentele cu display propriu (ex. .alert). */
+.alert[hidden],
+.cms-editor [hidden] {
+    display: none !important;
+}
