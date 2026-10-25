@@ -85,6 +85,9 @@ class SiteImporter
         }
         $this->linkStaffPhotos();
         $this->seedRedirects();
+        if (($logo = $this->mediaFor('/web/image/website/1/logo/sevalia.ro?unique=b2c6804')) && ! app(\App\Core\Settings\Settings::class)->get('site.logo_media_id')) {
+            app(\App\Core\Settings\Settings::class)->set('site.logo_media_id', $logo->id);
+        }
 
         return $this->report;
     }
@@ -256,7 +259,8 @@ class SiteImporter
         $label = $first?->getAttribute('data-name') ?: ($snippet ?: $first?->tagName);
 
         $type = match (true) {
-            str_contains(' '.$class.' ', ' s_website_form ') => 'form',
+            // Formularul poate fi și în interiorul unei alte secțiuni (ex. coloana din /contactus).
+            str_contains(' '.$class.' ', ' s_website_form ') || str_contains($clean, 's_website_form_field') => 'form',
             str_contains(' '.$class.' ', ' s_company_team ') => 'team',
             str_contains(' '.$class.' ', ' s_blog_posts ') || $snippet === 's_blog_posts' => 'blog_latest',
             default => 'html',

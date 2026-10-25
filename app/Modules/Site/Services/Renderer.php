@@ -22,6 +22,7 @@ class Renderer
     public function render(Page $page, PageVersion $version, ?Request $request = null, bool $preview = false): array
     {
         $compiler = new HtmlCompiler;
+        TeamBlock::flushCache();
         $out = '';
         $coverClass = null;
         if ($page->kind === Page::KIND_ARTICLE) {

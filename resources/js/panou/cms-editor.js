@@ -172,7 +172,7 @@ export default function init(root) {
     root.querySelectorAll('textarea[data-rich]').forEach(enhanceRich);
     setupPreview(root);
     setupPicker(root);
-    setupLease(root, form);
+    if (root.dataset.heartbeat) setupLease(root, form);
 
     // Valorile inițiale, pentru a trimite doar ce s-a modificat.
     const fields = () => Array.from(form.querySelectorAll('[name^="slots["]'));
