@@ -41,7 +41,10 @@ semnate prin ZIP — rulabilă pe hosting cPanel fără Docker, root sau procese
 | 8 | Actualizări ZIP, backup, recuperare | 2 (proiectat din start) | Pachet semnat Ed25519 verificat; extragere în staging; backup verificat înainte; blocare concurență; pași reluabili; recuperare fără aplicația pornită; teste pentru pachet invalid/semnătură greșită/spațiu insuficient/migrare eșuată/întrerupere. |
 | 9 | Teste complete, staging, lansare | toate | Cele 12 scenarii din cerințe rulate și documentate; raport SEO/performanță; manuale; pachete ZIP de instalare și actualizare. |
 
-Etapele 3, 4 și 8 pot avansa în paralel după fundație; 5, 6 și 7 se bazează pe modelul de programări din etapa 4.
+Etapele 3, 4 și 8 pot avansa în paralel după fundație; 5 și 7 se bazează pe modelul de programări din etapa 4.
+
+**Decizie clinică 2026-10-25:** raportarea CAS (etapa 6) se implementează la final, după etapele 7 și 8;
+analiza specificațiilor oficiale este deja făcută (`docs/integrari/CAS-ANALIZA-SPECIFICATII.md`).
 
 ## Organizarea lucrului
 
@@ -54,3 +57,6 @@ Etapele 3, 4 și 8 pot avansa în paralel după fundație; 5, 6 și 7 se bazeaz�
 - **2026-10-25 — Etapa 1:** audit inițial al siteului public (146 URL-uri accesate, 62 pagini capturate desktop și
   mobil), extragerea paletei și fonturilor din CSS-ul publicat, descărcarea specificațiilor PIAS oficiale.
   Detalii în `docs/audit/`.
+- **2026-10-25 — Etapa 2:** fundația (autentificare cu MFA, roluri, audit, modul Clinică, panou). Răspunsuri
+  clinică: hosting compatibil; resursele se configurează din panou; CAS la final; toate paginile rămân,
+  consimțământ cookie propriu, Google Ads configurabil din panou.

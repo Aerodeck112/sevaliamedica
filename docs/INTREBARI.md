@@ -4,6 +4,9 @@ Grupate după ce blochează. Până la răspuns, lucrul continuă pe variantele 
 
 ## A. Hosting cPanel (blochează instalarea, nu dezvoltarea)
 
+**Răspuns clinică 2026-10-25:** hostingul suportă tot ce e necesar (PHP 8.3+, extensii, SSH, Composer, cron).
+Detaliile exacte (versiuni, limite) se verifică automat la instalare cu comanda de verificare a mediului.
+
 1. Versiunile PHP disponibile în MultiPHP (necesar ≥ 8.3) și extensiile: `pdo_mysql`, `mbstring`, `intl`, `sodium`,
    `zip`, `gd` (cu WebP), `fileinfo`, `openssl`, `dom`/`xml`, `curl`.
 2. Versiunea MariaDB/MySQL, limita de conexiuni, dacă userul DB poate crea tabele/indici.
@@ -30,6 +33,9 @@ marcajele de tracking nu se încarcă până la confirmare.
 
 ## C. Operațional (programări, recuperare)
 
+**Răspuns clinică 2026-10-25:** sălile, aparatele, duratele și regulile se introduc de clinică din panou.
+Aplicația nu conține valori operaționale fixe; punctele 1–3 de mai jos devin configurare, nu întrebări blocante.
+
 1. Lista sălilor și aparatelor care trebuie rezervate împreună cu terapeutul (ex. AlterG, Hydro Physio, EMSELLA).
 2. Duratele standard pe tip de consultație/procedură, pauzele și regulile pentru confirmare automată.
 3. Pachetele de ședințe vândute (dacă există) și regulile lor.
@@ -39,6 +45,9 @@ marcajele de tracking nu se încarcă până la confirmare.
 e dezactivată.
 
 ## D. CAS (blochează raportarea reală)
+
+**Răspuns clinică 2026-10-25:** raportarea CAS se tratează la final. Modulul CAS devine ultima etapă de
+implementare; întrebările de mai jos rămân deschise până atunci.
 
 1. Casa de asigurări (CAS Mureș?) și tipurile de contracte: ambulatoriu de specialitate clinic (Anexa 007)?
    recuperare ambulatorie (Anexa 011)? medicină de familie?
