@@ -345,8 +345,10 @@ class UpdateRunner
         }
         /** @var \Illuminate\Database\Migrations\Migrator $migrator */
         $migrator = app('migrator');
+        // Migrator::setConnection() schimbă și conexiunea implicită a aplicației: o refacem la final.
+        $previousDefault = DB::getDefaultConnection();
         $previous = $migrator->getConnection();
-        $migrator->setConnection(config('updates.connection'));
+        $migrator->setConnection(config('updates.connection') ?? $previousDefault);
         try {
             if (! $migrator->repositoryExists()) {
                 $migrator->getRepository()->createRepository();
@@ -369,7 +371,8 @@ class UpdateRunner
                 unset($data['current']);
             }
         } finally {
-            $migrator->setConnection($previous);
+            $migrator->setConnection($previous ?? $previousDefault);
+            DB::setDefaultConnection($previousDefault);
         }
     }
 
