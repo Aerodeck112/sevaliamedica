@@ -102,5 +102,7 @@ class DemoSeeder extends Seeder
                 $service->requirements()->firstOrCreate(['resource_type' => $type, 'resource_kind' => $rk], ['quantity' => 1]);
             }
         }
+
+        $this->call(SchedulingDemoSeeder::class);
     }
 }

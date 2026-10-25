@@ -1,0 +1,26 @@
+{
+  "baseUrl": "http://127.0.0.1:8002",
+  "outDir": "docs/capturi/etapa-4",
+  "shots": [
+    { "name": "01-acasa-receptie", "path": "/panou", "role": "receptie" },
+    { "name": "02-calendar-zi-personal", "path": "/panou/calendar?date=2026-10-25", "role": "receptie", "fullPage": false },
+    { "name": "03-calendar-zi-sali", "path": "/panou/calendar?date=2026-10-25&group=sali", "role": "receptie", "fullPage": false },
+    { "name": "04-calendar-saptamana", "path": "/panou/calendar?date=2026-10-25&view=saptamana", "role": "receptie", "fullPage": false },
+    { "name": "05-programare-noua", "path": "/panou/programari/noua?patient_id=2&date=2026-10-26", "role": "receptie" },
+    { "name": "06-conflict-afisat", "path": "/panou/programari/noua?patient_id=2&service_id=2&staff_member_id=2&location_id=1&date=2026-10-26&time=09:00", "role": "receptie", "actions": [ { "click": "form[data-module=appointment-form] button[type=submit]" }, { "wait": 1200 } ] },
+    { "name": "07-dialog-pacient-nou", "path": "/panou/programari/noua?date=2026-10-26", "role": "receptie", "fullPage": false, "actions": [ { "click": "[data-dialog-open=new-patient]" }, { "wait": 300 } ] },
+    { "name": "08-detalii-programare", "path": "/panou/programari/10", "role": "receptie" },
+    { "name": "09-fisa-pacient", "path": "/panou/pacienti/1", "role": "receptie" },
+    { "name": "10-fisa-pacient-programari", "path": "/panou/pacienti/1?tab=programari", "role": "receptie" },
+    { "name": "11-solicitari-noi", "path": "/panou/solicitari", "role": "receptie" },
+    { "name": "12-preluare-solicitare", "path": "/panou/solicitari/36", "role": "receptie" },
+    { "name": "13-lista-asteptare", "path": "/panou/lista-asteptare", "role": "receptie" },
+    { "name": "14-serie-sedinte", "path": "/panou/serii/1", "role": "receptie" },
+    { "name": "15-program-lucru", "path": "/panou/program-lucru/2", "role": "receptie" },
+    { "name": "16-reguli-programari", "path": "/panou/reguli-programari", "role": "manager" },
+    { "name": "17-medic-ziua-mea", "path": "/panou", "role": "medic" },
+    { "name": "18-pagina-publica-link", "path": "/p/h1qfpkIy4tWXaapg_2ZBlSQ5SZ1xlYW6aA4Tgi_GsNk" },
+    { "name": "02-calendar-zi-personal", "path": "/panou/calendar?date=2026-10-25", "role": "receptie", "viewport": "mobil", "fullPage": false },
+    { "name": "18-pagina-publica-link", "path": "/p/h1qfpkIy4tWXaapg_2ZBlSQ5SZ1xlYW6aA4Tgi_GsNk", "viewport": "mobil" }
+  ]
+}
