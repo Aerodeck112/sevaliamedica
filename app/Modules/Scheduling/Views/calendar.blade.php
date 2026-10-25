@@ -87,7 +87,7 @@
                  data-can-manage="{{ auth()->user()->can('scheduling.manage') ? '1' : '0' }}"
                  data-csrf="{{ csrf_token() }}">
                 <div class="cal__scroll">
-                    <div class="cal__grid" style="--cols: {{ count($columns) }}">
+                    <div class="cal__grid cal__grid--{{ $view }}" style="--cols: {{ count($columns) }}">
                         <div class="cal__corner"></div>
                         @foreach ($columns as $col)
                             <div class="cal__head {{ $col['isToday'] && $view === 'saptamana' ? 'is-today' : '' }}">

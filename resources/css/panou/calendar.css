@@ -1,11 +1,18 @@
 /* Calendarul recepției: grilă de timp cu coloane pe personal / săli / zile. */
 
-.cal-filters .field {
-    max-width: 200px;
+.cal-filters {
+    align-items: flex-end;
+    justify-content: flex-start;
 }
 
+.cal-filters .field {
+    flex: 0 1 220px;
+    max-width: 220px;
+}
+
+/* <details> nu se comportă fiabil cu display: contents; pe desktop e un rând flexibil, mereu deschis. */
 .cal-more {
-    display: contents;
+    flex: 1 1 100%;
 }
 
 .cal-more > summary {
@@ -13,7 +20,15 @@
 }
 
 .cal-more__body {
-    display: contents;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: flex-end;
+}
+
+.cal-more__body .check {
+    min-height: 40px;
+    align-items: center;
 }
 
 .seg {
@@ -93,6 +108,11 @@
 .cal__grid {
     display: grid;
     grid-template-columns: 56px repeat(var(--cols), minmax(170px, 1fr));
+}
+
+/* În vizualizarea pe săptămână cele 7 zile încap pe un ecran de 1440 px fără derulare orizontală. */
+.cal__grid.cal__grid--saptamana {
+    grid-template-columns: 56px repeat(var(--cols), minmax(118px, 1fr));
     min-width: min-content;
 }
 
