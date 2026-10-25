@@ -1,0 +1,17 @@
+{
+  "baseUrl": "http://127.0.0.1:8000",
+  "outDir": "docs/capturi/etapa-2",
+  "shots": [
+    { "name": "01-autentificare", "path": "/panou/autentificare" },
+    { "name": "01-autentificare", "path": "/panou/autentificare", "viewport": "mobil" },
+    { "name": "02-acasa-administrator", "path": "/panou", "role": "administrator_tehnic" },
+    { "name": "03-utilizatori", "path": "/panou/utilizatori", "role": "administrator_tehnic" },
+    { "name": "04-jurnal-audit", "path": "/panou/audit", "role": "administrator_tehnic" },
+    { "name": "05-profil-sesiuni", "path": "/panou/profil", "role": "administrator_tehnic" },
+    { "name": "06-personal", "path": "/panou/clinica/personal", "role": "manager" },
+    { "name": "07-locatie-program", "path": "/panou/clinica/locatii/1", "role": "manager" },
+    { "name": "08-serviciu-resurse", "path": "/panou/clinica/servicii/4", "role": "manager" },
+    { "name": "09-acasa-receptie", "path": "/panou", "role": "receptie" },
+    { "name": "09-acasa-receptie", "path": "/panou", "role": "receptie", "viewport": "mobil" }
+  ]
+}
