@@ -44,7 +44,7 @@ return [
     // Directoarele și fișierele permise în payload/. Orice altă cale este respinsă.
     'payload_roots' => [
         'app', 'bootstrap', 'config', 'database', 'lang', 'public', 'resources', 'routes', 'vendor', 'deploy',
-        'artisan', 'composer.json', 'composer.lock', 'VERSION', 'CHANGELOG.md',
+        'artisan', 'composer.json', 'composer.lock', 'VERSION', 'CHANGELOG.md', '.env.example',
     ],
 
     // Extensii PHP cerute de aplicație (un pachet poate cere și altele în manifest).

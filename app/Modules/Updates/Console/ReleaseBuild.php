@@ -23,7 +23,7 @@ class ReleaseBuild extends Command
 
     /** Directoare și fișiere incluse în payload. */
     private const INCLUDE = ['app', 'bootstrap', 'config', 'database', 'lang', 'public', 'resources', 'routes', 'deploy',
-        'artisan', 'composer.json', 'composer.lock', 'VERSION', 'CHANGELOG.md'];
+        'artisan', 'composer.json', 'composer.lock', 'VERSION', 'CHANGELOG.md', '.env.example'];
 
     /** Excluderi (prefixe relative). Datele demo și fișierele locale nu ajung în pachete. */
     private const EXCLUDE = ['bootstrap/cache/', 'public/hot', 'public/storage', 'database/seeders/Demo/', 'database/database.sqlite',
