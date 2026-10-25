@@ -53,7 +53,8 @@ $app = Application::configure(basePath: dirname(__DIR__))
 // O versiune instalată din releases/ își citește .env și storage din directorul „shared” (vezi
 // docs/ARHITECTURA.md §4). Fișierul .shared-path este scris de pasul „link_shared” al actualizării.
 $sharedPathFile = dirname(__DIR__).'/.shared-path';
-if (is_file($sharedPathFile) && is_dir($shared = trim((string) file_get_contents($sharedPathFile)))) {
+$shared = is_file($sharedPathFile) ? trim((string) file_get_contents($sharedPathFile)) : (string) getenv('SEVALIA_SHARED_PATH');
+if ($shared !== '' && is_dir($shared) && is_file($shared.'/.env')) {
     $app->useEnvironmentPath($shared);
     $app->useStoragePath($shared.'/storage');
 }

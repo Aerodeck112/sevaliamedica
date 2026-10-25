@@ -65,7 +65,9 @@ class ReleaseBuild extends Command
             $this->info('Pregătesc dependențele de producție...');
             $this->vendor($tmp);
 
-            $out = rtrim(base_path($this->option('out')), '/')."/sevalia-{$version}-{$type}.zip";
+            $outDir = (string) $this->option('out');
+            $outDir = str_starts_with($outDir, '/') ? $outDir : base_path($outDir);
+            $out = rtrim($outDir, '/')."/sevalia-{$version}-{$type}.zip";
             $result = $builder->build($tmp, $out, $secret, [
                 'type' => $type, 'version' => $version, 'upgrade_from' => $from,
                 'changelog' => $this->changelogFor($version),
@@ -136,6 +138,28 @@ class ReleaseBuild extends Command
         $process->run(fn ($t, $line) => $this->output->write($line));
         if (! $process->isSuccessful()) {
             throw new RuntimeException('composer install --no-dev a eșuat.');
+        }
+        $this->pruneVendor($tmp.'/vendor');
+    }
+
+    /**
+     * Elimină din vendor/ ce nu e necesar la rulare și ce pachetul nu are voie să conțină: depozite .git
+     * (la instalările din sursă), teste/documentație de la rădăcina pachetelor și legături simbolice.
+     */
+    private function pruneVendor(string $vendor): void
+    {
+        foreach (glob($vendor.'/*/*', GLOB_ONLYDIR) ?: [] as $package) {
+            foreach (['.git', '.github', 'tests', 'Tests', 'test', 'docs', 'doc'] as $dir) {
+                if (is_dir($package.'/'.$dir) && ! is_link($package.'/'.$dir)) {
+                    $this->removeDirectory($package.'/'.$dir);
+                }
+            }
+        }
+        $it = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($vendor, \FilesystemIterator::SKIP_DOTS), \RecursiveIteratorIterator::CHILD_FIRST);
+        foreach ($it as $f) {
+            if ($f->isLink()) {
+                @unlink($f->getPathname());
+            }
         }
     }
 

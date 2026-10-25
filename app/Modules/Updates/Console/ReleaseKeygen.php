@@ -19,11 +19,20 @@ class ReleaseKeygen extends Command
 
             return self::FAILURE;
         }
+        $absolute = str_starts_with($out, '/') ? $out : getcwd().'/'.$out;
+        $absolute = preg_replace('#/\./#', '/', $absolute);
+        if (str_starts_with($absolute.'/', realpath(base_path()).'/') && ! $this->option('force')) {
+            $this->error('Directorul este în interiorul repository-ului. Cheia privată nu trebuie să ajungă în cod sau pe hosting.');
+
+            return self::FAILURE;
+        }
         if (! is_dir($out)) {
             mkdir($out, 0700, true);
         }
         $real = realpath($out);
+        // A doua verificare, pe calea reală (prinde „..” și legăturile simbolice).
         if (str_starts_with($real.'/', realpath(base_path()).'/') && ! $this->option('force')) {
+            @rmdir($real);
             $this->error('Directorul este în interiorul repository-ului. Cheia privată nu trebuie să ajungă în cod sau pe hosting.');
 
             return self::FAILURE;
