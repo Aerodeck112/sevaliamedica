@@ -1,0 +1,50 @@
+# SEVALIA-MANAGED — fișier administrat de actualizări (ștergeți acest rând dacă îl personalizați manual,
+# iar actualizările nu îl vor mai suprascrie).
+
+Options -Indexes -MultiViews
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # HTTPS obligatoriu (certificatul AutoSSL/Let's Encrypt din cPanel).
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+    RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1)
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Antetul Authorization ajunge la PHP.
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Fișiere ascunse, copii de rezervă și fișiere de configurare: niciodată servite.
+    RewriteRule (^|/)\.(?!well-known/) - [F,L]
+    RewriteRule \.(env|log|sql|sbk|bak|key|hash|ini|sh|zip|lock)$ - [F,NC,L]
+
+    # Restul cererilor către front controller (fișierele existente sunt servite direct).
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" "expr=%{HTTPS} == 'on'"
+
+    # Asseturile compilate au nume cu hash: se pot păstra un an.
+    <FilesMatch "\.(css|js|woff2?)$">
+        Header set Cache-Control "public, max-age=31536000, immutable" "expr=%{REQUEST_URI} =~ m#^/build/#"
+    </FilesMatch>
+    <FilesMatch "\.(avif|webp|jpe?g|png|gif|svg|ico)$">
+        Header set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
+    <Files "recovery.php">
+        Header always set Cache-Control "no-store"
+        Header always set X-Robots-Tag "noindex, nofollow"
+    </Files>
+</IfModule>
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml text/xml application/xml
+</IfModule>
