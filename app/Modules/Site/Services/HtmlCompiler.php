@@ -85,6 +85,48 @@ class HtmlCompiler
         return Dom::inner($root);
     }
 
+    /** Pagina are deja titlul principal în șablon (ex. articolele): toate <h1> din conținut devin <h2 class="h1">. */
+    public function markH1Seen(): void
+    {
+        $this->h1Seen = true;
+    }
+
+    /**
+     * Fundal responsive pentru un element din șablon (ex. coperta articolului).
+     *
+     * @return string clasa CSS de adăugat elementului
+     */
+    public function backgroundFor(Media $media, bool $preload): string
+    {
+        $class = 'cmsbg-'.(++$this->bgCounter).'-'.substr(md5($media->path), 0, 6);
+        $variants = $media->webpVariants();
+        if (! $variants) {
+            $this->bgCss[] = ".$class{background-image:url(\"{$media->url()}\")}";
+
+            return $class;
+        }
+        $pick = function (int $min) use ($variants) {
+            foreach ($variants as $w => $u) {
+                if ($w >= $min) {
+                    return $u;
+                }
+            }
+
+            return end($variants);
+        };
+        [$m, $t, $d] = [$pick(768), $pick(1440), $pick(1920)];
+        $this->bgCss[] = ".$class{background-image:url(\"$m\")}@media (min-width:768px){.$class{background-image:url(\"$t\")}}@media (min-width:1440px){.$class{background-image:url(\"$d\")}}";
+        if ($preload && ! $this->preloads) {
+            $this->preloads = [
+                ['href' => $m, 'media' => '(max-width: 767.98px)'],
+                ['href' => $t, 'media' => '(min-width: 768px) and (max-width: 1439.98px)'],
+                ['href' => $d, 'media' => '(min-width: 1440px)'],
+            ];
+        }
+
+        return $class;
+    }
+
     public function css(): string
     {
         return implode("\n", $this->bgCss);

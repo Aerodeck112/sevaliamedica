@@ -18,7 +18,7 @@ class SiteView
 {
     public function __construct(private readonly Renderer $renderer, private readonly Settings $settings) {}
 
-    public function page(Page $page, PageVersion $version, ?Request $request = null, bool $preview = false): View
+    public function page(Page $page, PageVersion $version, ?Request $request = null, bool $preview = false, ?string $notice = null): View
     {
         $rendered = $this->renderer->render($page, $version, $request, $preview);
         $settings = (array) ($version->settings ?? []);
@@ -32,8 +32,9 @@ class SiteView
             'bodyClass' => $settings['body_class'] ?? '',
             'wrapClass' => $settings['wrap_class'] ?? 'oe_structure oe_empty',
             'seo' => $this->seo($page, $version, $request),
-            'cover' => $page->kind === Page::KIND_ARTICLE ? $page->cover : null,
+            'coverBgClass' => $rendered['cover_class'] ?? '',
             'articleSettings' => $settings,
+            'notice' => $notice,
             'jsonLd' => $this->jsonLd($page),
         ]);
     }

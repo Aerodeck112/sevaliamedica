@@ -7,9 +7,11 @@ use App\Http\Controllers\Controller;
 use App\Modules\Cms\Models\Page;
 use App\Modules\Cms\Models\PageVersion;
 use App\Modules\Cms\Models\Redirect;
+use App\Modules\Site\Services\ConsentConfig;
 use App\Modules\Site\Services\PageCache;
 use App\Modules\Site\Services\SiteView;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Http\Response;
 use Symfony\Component\HttpFoundation\Response as BaseResponse;
 
@@ -21,6 +23,8 @@ class PageController extends Controller
         'instagram' => 'https://www.instagram.com/sevalia.medica/',
         'tiktok' => 'https://www.tiktok.com/@sevaliamedica',
     ];
+
+    public const NONCE_PLACEHOLDER = '__CSP_NONCE__';
 
     public function __construct(private readonly SiteView $view, private readonly Settings $settings) {}
 
@@ -66,11 +70,22 @@ class PageController extends Controller
 
     private function respond(Request $request, Page $page, PageVersion $version): BaseResponse
     {
-        $cacheable = $request->query() === [] || array_keys($request->query()) === ['page'];
+        $cacheable = $request->query() === [];
         $cacheKey = $request->getPathInfo();
+        // Consimțământul și CSP-ul se calculează la fiecare cerere, chiar și când HTML-ul vine din cache.
+        ConsentConfig::registerCsp('/'.trim($request->getPathInfo(), '/'));
         $entry = $cacheable ? PageCache::get($cacheKey) : null;
         if (! $entry) {
-            $html = $this->view->page($page, $version, $request)->render();
+            $notice = null;
+            if ($request->filled('confirmare')) {
+                try {
+                    $notice = Crypt::decryptString((string) $request->query('confirmare'));
+                } catch (\Throwable) {
+                    $notice = null;
+                }
+            }
+            $html = $this->view->page($page, $version, $request, false, $notice)->render();
+            $html = str_replace((string) app('csp-nonce'), self::NONCE_PLACEHOLDER, $html);
             $entry = ['html' => $html, 'etag' => '"'.substr(sha1($html), 0, 20).'"', 'modified' => ($page->updated_at ?? now())->toRfc7231String()];
             if ($cacheable) {
                 PageCache::put($cacheKey, $entry);
@@ -82,7 +97,9 @@ class PageController extends Controller
 
     private function html(Request $request, array $entry, int $status, bool $cacheable): BaseResponse
     {
-        $response = new Response($entry['html'], $status, ['Content-Type' => 'text/html; charset=UTF-8']);
+        // HTML-ul din cache conține un marcaj în locul nonce-ului CSP; îl înlocuim cu nonce-ul cererii curente.
+        $html = str_replace(self::NONCE_PLACEHOLDER, (string) app('csp-nonce'), $entry['html']);
+        $response = new Response($html, $status, ['Content-Type' => 'text/html; charset=UTF-8']);
         if ($cacheable && $status === 200) {
             $response->setEtag(trim($entry['etag'], '"'));
             $response->headers->set('Last-Modified', $entry['modified']);

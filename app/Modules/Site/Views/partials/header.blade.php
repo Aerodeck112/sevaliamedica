@@ -15,16 +15,16 @@
                             <li class="o_header_language_selector position-relative">
                                 <div class="js_language_selector dropdown d-print-none">
                                     <button type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="border-0 dropdown-toggle nav-link d-flex align-items-center fw-bold text-uppercase o_nav-link_secondary">
-                                        <img class="o_lang_flag" src="/images/flag-ro.png" alt="" width="25" height="25" loading="lazy">
+                                        <img class="o_lang_flag" src="/images/flag-ro.png" alt="" width="37" height="25" loading="lazy">
                                         <span class="ms-1"> română</span>
                                     </button>
                                     <div role="menu" class="dropdown-menu dropdown-menu-end">
                                         <a class="dropdown-item js_change_lang" role="menuitem" href="/en" title="English (US)">
-                                            <img class="o_lang_flag" src="/images/flag-us.png" alt="" width="25" height="25" loading="lazy">
+                                            <img class="o_lang_flag" src="/images/flag-us.png" alt="" width="47" height="25" loading="lazy">
                                             <span class="ms-1">English (US)</span>
                                         </a>
                                         <a class="dropdown-item js_change_lang active" role="menuitem" href="{{ $currentPath }}" title=" română">
-                                            <img class="o_lang_flag" src="/images/flag-ro.png" alt="" width="25" height="25" loading="lazy">
+                                            <img class="o_lang_flag" src="/images/flag-ro.png" alt="" width="37" height="25" loading="lazy">
                                             <span class="ms-1"> română</span>
                                         </a>
                                     </div>
@@ -113,16 +113,16 @@
                             <li class="o_header_language_selector">
                                 <div class="js_language_selector dropup dropdown d-print-none">
                                     <button type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="border-0 dropdown-toggle nav-link d-flex align-items-center w-100">
-                                        <img class="o_lang_flag me-2" src="/images/flag-ro.png" alt="" width="25" height="25" loading="lazy">
+                                        <img class="o_lang_flag me-2" src="/images/flag-ro.png" alt="" width="37" height="25" loading="lazy">
                                         <span class="me-auto small"> română</span>
                                     </button>
                                     <div role="menu" class="dropdown-menu w-100">
                                         <a class="dropdown-item js_change_lang" role="menuitem" href="/en" title="English (US)">
-                                            <img class="o_lang_flag me-2" src="/images/flag-us.png" alt="" width="25" height="25" loading="lazy">
+                                            <img class="o_lang_flag me-2" src="/images/flag-us.png" alt="" width="47" height="25" loading="lazy">
                                             <span class="me-auto small">English (US)</span>
                                         </a>
                                         <a class="dropdown-item js_change_lang active" role="menuitem" href="{{ $currentPath }}" title=" română">
-                                            <img class="o_lang_flag me-2" src="/images/flag-ro.png" alt="" width="25" height="25" loading="lazy">
+                                            <img class="o_lang_flag me-2" src="/images/flag-ro.png" alt="" width="37" height="25" loading="lazy">
                                             <span class="me-auto small"> română</span>
                                         </a>
                                     </div>

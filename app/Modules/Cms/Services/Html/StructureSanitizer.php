@@ -104,13 +104,7 @@ final class StructureSanitizer
                 $el->setAttribute('rel', trim(($el->getAttribute('rel') ?: '').' noopener'));
             }
         }
-        if ($el->hasAttribute('class')) {
-            Dom::removeClass($el, 'o_editable_media');
-            Dom::removeClass($el, 'o_we_snippet_autofocus');
-            if (trim($el->getAttribute('class')) === '') {
-                $el->removeAttribute('class');
-            }
-        }
+        // Clasele se păstrează toate: și cele care par „de editor” (ex. o_editable_media) sunt folosite de CSS.
     }
 
     public static function safeUrl(string $url): bool

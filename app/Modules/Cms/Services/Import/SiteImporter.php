@@ -300,7 +300,8 @@ class SiteImporter
         $seo = $this->seo($xp);
         $h1 = $xp->query('//main//h1')->item(0);
         $title = $h1 ? Str::limit(Dom::text($h1), 180, '') : ($seo['title'] ?? $path);
-        $this->store($path, Page::KIND_PAGE, $title ?: $path, $blocks, $seo, ['body_class' => $this->bodyClass($xp)]);
+        $wrapClass = $wrap->getAttribute('id') === 'wrap' ? trim($wrap->getAttribute('class')) : '';
+        $this->store($path, Page::KIND_PAGE, $title ?: $path, $blocks, $seo, ['body_class' => $this->bodyClass($xp), 'wrap_class' => $wrapClass]);
     }
 
     private function importBlogIndex(string $path, string $html): void

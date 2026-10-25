@@ -23,13 +23,21 @@ class Renderer
     {
         $compiler = new HtmlCompiler;
         $out = '';
+        $coverClass = null;
+        if ($page->kind === Page::KIND_ARTICLE) {
+            $page->loadMissing('cover');
+            $compiler->markH1Seen();
+            if ($page->cover) {
+                $coverClass = $compiler->backgroundFor($page->cover, true);
+            }
+        }
         $visible = array_values(array_filter($version->blocks, fn ($b) => empty($b['hidden'])));
         foreach ($visible as $i => $block) {
             $html = $this->blockHtml($page, $block, $request, $preview);
-            $out .= $compiler->compile($html, $i === 0)."\n";
+            $out .= $compiler->compile($html, $i === 0 && $coverClass === null)."\n";
         }
 
-        return ['main' => $out, 'css' => $compiler->css(), 'preloads' => $compiler->preloads(), 'blocks' => count($visible)];
+        return ['main' => $out, 'css' => $compiler->css(), 'preloads' => $compiler->preloads(), 'blocks' => count($visible), 'cover_class' => $coverClass];
     }
 
     /** Randează un singur bloc (folosit și pentru zonele globale, ex. subsolul). */
@@ -66,6 +74,10 @@ class Renderer
         $target = $xp->query('.//*[contains(concat(" ", normalize-space(@class), " "), " dynamic_snippet_template ")]', $root)->item(0);
         if ($target instanceof \DOMElement) {
             Dom::setInner($target, view('site::blog.latest-cards', ['articles' => $articles])->render());
+        }
+        if ($articles->isNotEmpty() && $root->firstElementChild) {
+            // În Odoo, scriptul elimină această clasă după încărcarea articolelor; aici le randăm direct pe server.
+            Dom::removeClass($root->firstElementChild, 'o_dynamic_snippet_empty');
         }
 
         return Dom::inner($root);
