@@ -9,7 +9,7 @@ use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Http\Request;
 
-return Application::configure(basePath: dirname(__DIR__))
+$app = Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
         web: __DIR__.'/../routes/web.php',
         commands: __DIR__.'/../routes/console.php',
@@ -37,6 +37,11 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->redirectGuestsTo(fn () => route('login'));
         $middleware->redirectUsersTo(fn () => route('panou.dashboard'));
         $middleware->encryptCookies(except: []);
+        // În mentenanță (ex. în timpul unei actualizări) rămân accesibile doar autentificarea și tabul Actualizări.
+        $middleware->preventRequestsDuringMaintenance(except: [
+            'panou/actualizari', 'panou/actualizari/*', 'panou/autentificare', 'panou/autentificare/*',
+            'panou/reconfirmare', 'panou/deconectare',
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(
@@ -44,3 +49,14 @@ return Application::configure(basePath: dirname(__DIR__))
         );
         $exceptions->dontFlash(['password', 'password_confirmation', 'current_password', 'code', 'cnp']);
     })->create();
+
+// O versiune instalată din releases/ își citește .env și storage din directorul „shared” (vezi
+// docs/ARHITECTURA.md §4). Fișierul .shared-path este scris de pasul „link_shared” al actualizării.
+$sharedPathFile = dirname(__DIR__).'/.shared-path';
+$shared = is_file($sharedPathFile) ? trim((string) file_get_contents($sharedPathFile)) : (string) getenv('SEVALIA_SHARED_PATH');
+if ($shared !== '' && is_dir($shared) && is_file($shared.'/.env')) {
+    $app->useEnvironmentPath($shared);
+    $app->useStoragePath($shared.'/storage');
+}
+
+return $app;

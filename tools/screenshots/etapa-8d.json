@@ -1,0 +1,10 @@
+{
+  "baseUrl": "http://127.0.0.1:8031",
+  "outDir": "docs/capturi/etapa-8",
+  "shots": [
+    { "name": "08-dupa-restaurarea-bazei", "path": "/panou/actualizari/{UUID}", "role": "administrator_tehnic" },
+    { "name": "09-istoric-actualizari", "path": "/panou/actualizari", "role": "administrator_tehnic" },
+    { "name": "11-backupuri", "path": "/panou/backupuri", "role": "administrator_tehnic" },
+    { "name": "11-backupuri", "path": "/panou/backupuri", "role": "administrator_tehnic", "viewport": "mobil" }
+  ]
+}

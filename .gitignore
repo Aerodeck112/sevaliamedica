@@ -28,3 +28,5 @@ Thumbs.db
 
 # Worktree-uri locale ale agenților
 /.claude/worktrees/
+/.shared-path
+/dist

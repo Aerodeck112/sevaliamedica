@@ -8,6 +8,7 @@ permisiune, o relație de îngrijire (vezi `SECURITATE.md`). Administratorul teh
 
 | Modul | Permisiune | Descriere | Administrator tehnic | Manager clinică | Recepție | Medic | Terapeut / fizioterapeut | Asistent medical | Responsabil CAS | Financiar / casierie | Editor site |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| Backup | `backups.manage` | Creează, verifică și descarcă backupurile criptate | ✔ |  |  |  |  |  |  |  |  |
 | Clinică | `clinic.manage` | Administrează locații, specialități, personal, săli, aparatură și catalogul de servicii | ✔ | ✔ |  |  |  |  |  |  |  |
 | Conturi și securitate | `users.manage` | Administrează conturile de utilizator și rolurile | ✔ |  |  |  |  |  |  |  |  |
 | Conturi și securitate | `audit.view` | Consultă jurnalul de audit | ✔ | ✔ |  |  |  |  |  |  |  |
@@ -30,3 +31,4 @@ permisiune, o relație de îngrijire (vezi `SECURITATE.md`). Administratorul teh
 | Programări | `services.view` | Vede serviciile efectuate ale pacienților |  | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |  |
 | Programări | `services.record` | Înregistrează serviciile efectuate |  | ✔ | ✔ | ✔ | ✔ | ✔ |  |  |  |
 | Programări | `services.correct` | Anulează / corectează servicii efectuate (cu motiv) |  | ✔ | ✔ | ✔ |  |  |  |  |  |
+| Actualizări | `updates.manage` | Încarcă și instalează pachete de actualizare semnate; decide recuperarea la eșec | ✔ |  |  |  |  |  |  |  |  |

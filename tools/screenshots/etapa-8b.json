@@ -1,0 +1,8 @@
+{
+  "baseUrl": "http://127.0.0.1:8031",
+  "outDir": "docs/capturi/etapa-8",
+  "shots": [
+    { "name": "03-instalare-in-curs-mentenanta", "path": "/panou/actualizari/{UUID}", "role": "administrator_tehnic" },
+    { "name": "04-site-in-mentenanta", "path": "/" }
+  ]
+}
