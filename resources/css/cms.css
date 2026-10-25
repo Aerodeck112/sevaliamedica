@@ -1,0 +1,289 @@
+/* Editorul de pagini al CMS-ului (se încarcă doar pe paginile CMS din panou). Folosește tokenii din panou.css. */
+
+.cms-editor {
+    display: grid;
+    grid-template-columns: minmax(380px, 560px) minmax(0, 1fr);
+    gap: 1.25rem;
+    align-items: start;
+}
+
+.cms-toolbar {
+    position: sticky;
+    top: calc(var(--topbar) + 0.5rem);
+    z-index: 5;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.cms-details > summary,
+.cms-block > details > summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+.cms-details > summary::-webkit-details-marker,
+.cms-block > details > summary::-webkit-details-marker {
+    display: none;
+}
+
+.cms-blocks {
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.cms-block + .cms-block {
+    margin-top: 0;
+}
+
+.cms-block--hidden {
+    opacity: 0.65;
+    border-style: dashed;
+}
+
+.cms-block__num {
+    display: inline-grid;
+    place-items: center;
+    min-width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 999px;
+    background: var(--lagoon-soft);
+    color: var(--petrol-strong);
+    font-weight: 700;
+    font-size: var(--fs-xs);
+}
+
+.cms-block__title {
+    font-weight: 700;
+    flex: 1;
+}
+
+.cms-block__ops {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+}
+
+.cms-slots {
+    display: grid;
+    gap: 0.9rem;
+}
+
+.cms-slot__group {
+    display: grid;
+    gap: 0.35rem;
+    padding: 0.75rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-s);
+}
+
+.cms-inline,
+.cms-rich {
+    min-height: 40px;
+    padding: 0.5rem 0.7rem;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-s);
+    background: var(--paper);
+    font-family: 'Montserrat', var(--font);
+    font-size: 0.95rem;
+}
+
+.cms-rich[contenteditable] {
+    min-height: 220px;
+    max-height: 520px;
+    overflow: auto;
+}
+
+.cms-rich[contenteditable]:focus,
+.cms-inline[contenteditable]:focus {
+    outline: none;
+    border-color: var(--teal);
+    box-shadow: var(--focus);
+}
+
+.cms-rte-bar {
+    display: flex;
+    gap: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.cms-rte-bar button {
+    min-width: 32px;
+    height: 30px;
+    border: 1px solid var(--line);
+    background: var(--mist);
+    border-radius: var(--radius-s);
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.cms-media-field__row {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+}
+
+.cms-media-field__thumb {
+    width: 96px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: var(--radius-s);
+    background: var(--mist);
+    border: 1px solid var(--line);
+}
+
+.cms-repeats ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.35rem;
+}
+
+.cms-repeats li {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.cms-add {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.6rem 1.25rem 0.9rem;
+    border-top: 1px dashed var(--line);
+}
+
+.cms-add select {
+    flex: 1 1 220px;
+    min-height: 32px;
+    padding: 0.2rem 0.5rem;
+}
+
+.cms-preview {
+    position: sticky;
+    top: calc(var(--topbar) + 0.5rem);
+}
+
+.cms-preview__bar {
+    display: flex;
+    gap: 0.35rem;
+    margin-bottom: 0.5rem;
+}
+
+.cms-preview__bar [aria-pressed='true'] {
+    background: var(--petrol);
+    color: #fff;
+    border-color: var(--petrol);
+}
+
+/* Cadrul are lățimea reală (1440 sau 390 px), scalat vizual ca să încapă în coloană. */
+.cms-preview__frame {
+    position: relative;
+    height: calc(100vh - var(--topbar) - 7rem);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: #fff;
+}
+
+.cms-preview__frame iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 0;
+    transform-origin: 0 0;
+}
+
+.cms-picker__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 0.5rem;
+    max-height: 60vh;
+    overflow: auto;
+    margin-top: 0.75rem;
+}
+
+.cms-picker__grid button {
+    padding: 0;
+    border: 2px solid transparent;
+    border-radius: var(--radius-s);
+    background: var(--mist);
+    cursor: pointer;
+    display: grid;
+    gap: 0.2rem;
+    text-align: left;
+    font-size: var(--fs-xs);
+}
+
+.cms-picker__grid button:focus-visible,
+.cms-picker__grid button:hover {
+    border-color: var(--lagoon);
+}
+
+.cms-picker__grid img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: var(--radius-s) var(--radius-s) 0 0;
+}
+
+dialog.cms-picker {
+    width: min(860px, calc(100vw - 2rem));
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.media-card {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--paper);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.media-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    background: var(--mist);
+}
+
+.media-card__body {
+    padding: 0.6rem 0.75rem;
+    display: grid;
+    gap: 0.4rem;
+    font-size: var(--fs-s);
+}
+
+.media-card__body input {
+    min-height: 32px;
+    font-size: var(--fs-s);
+}
+
+@media (max-width: 1100px) {
+    .cms-editor {
+        grid-template-columns: 1fr;
+    }
+
+    .cms-preview {
+        position: static;
+    }
+}
