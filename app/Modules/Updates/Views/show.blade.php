@@ -52,7 +52,7 @@
                                     @if ($key === 'copy_release' && isset($s['data']['cursor'])) {{ $s['data']['cursor'] }} / {{ $summary['files'] }} fișiere @endif
                                     @if ($key === 'migrate' && ! empty($s['data']['applied'])) rulate: {{ implode(', ', $s['data']['applied']) }} @endif
                                     @if ($key === 'migrate' && ! empty($s['data']['current'])) <br>în lucru: {{ $s['data']['current'] }} @endif
-                                    @if ($key === 'backup_db' && $run->backup) backup {{ \App\Modules\Backup\Models\Backup::STATUSES[$run->backup->status] ?? '' }} @endif
+                                    @if ($key === 'backup_db' && $run->backup) backup: {{ mb_strtolower(\App\Modules\Backup\Models\Backup::STATUSES[$run->backup->status] ?? '') }} @endif
                                     @if ($key === 'health' && ! empty($s['data']['results']))
                                         @foreach ($s['data']['results'] as $r){{ $r['ok'] ? '✔' : '✘' }} {{ $r['check'] }}@if (! $loop->last); @endif @endforeach
                                     @endif
@@ -142,7 +142,7 @@
             <x-panou.panel title="Jurnal" :flush="true">
                 <ul class="nav-list small" style="padding:.5rem 1rem;max-height:340px;overflow:auto">
                     @foreach ($events as $e)
-                        <li style="padding:.3rem 0"><span class="num muted">{{ \Carbon\Carbon::parse($e['at'])->timezone(config('app.timezone'))->format('H:i:s') }}</span> {{ str_replace('_', ' ', $e['event']) }}@if (! empty($e['eroare'])) — {{ \Illuminate\Support\Str::limit($e['eroare'], 140) }}@endif @if (! empty($e['versiune'])) {{ $e['versiune'] }}@endif</li>
+                        <li style="padding:.3rem 0"><span class="num muted">{{ \Carbon\Carbon::parse($e['at'])->timezone(config('app.timezone'))->format('H:i:s') }}</span> {{ UpdateRun::eventLabel($e['event']) }}@if (! empty($e['eroare'])) — {{ \Illuminate\Support\Str::limit($e['eroare'], 140) }}@endif @if (! empty($e['versiune'])) {{ $e['versiune'] }}@endif</li>
                     @endforeach
                 </ul>
             </x-panou.panel>

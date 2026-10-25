@@ -640,6 +640,10 @@ class UpdateRunner
                 if (app()->isDownForMaintenance()) {
                     app()->maintenanceMode()->deactivate();
                 }
+                // Versiunea care nu s-a instalat complet nu rămâne disponibilă pentru activare accidentală.
+                if ($run->to_version !== ($this->layout->current()['release'] ?? null)) {
+                    $this->removeDirectory($this->layout->releasesPath($run->to_version));
+                }
                 $run->forceFill(['status' => 'rolled_back', 'active_slot' => null, 'finished_at' => now(),
                     'error' => trim($run->error."\nBaza de date a fost restaurată din backupul {$backup->uuid}; aplicația rulează versiunea {$run->from_version}.")]);
             }

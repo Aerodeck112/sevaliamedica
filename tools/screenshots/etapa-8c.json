@@ -1,0 +1,10 @@
+{
+  "baseUrl": "http://127.0.0.1:8031",
+  "outDir": "docs/capturi/etapa-8",
+  "shots": [
+    { "name": "05-migrare-esuata-optiuni-recuperare", "path": "/panou/actualizari/{UUID}", "role": "administrator_tehnic" },
+    { "name": "06-recovery-autentificare", "path": "/recovery.php" },
+    { "name": "07-recovery-stare-jurnal", "path": "/recovery.php", "actions": [ { "fill": "#key", "value": "{RKEY}" }, { "click": "button[type=submit]" }, { "wait": 800 } ] },
+    { "name": "07-recovery-stare-jurnal", "path": "/recovery.php", "viewport": "mobil", "actions": [ { "fill": "#key", "value": "{RKEY}" }, { "click": "button[type=submit]" }, { "wait": 800 } ] }
+  ]
+}

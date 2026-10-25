@@ -256,21 +256,25 @@ final class SevaliaRecovery
 
         $s = $this->status();
         $h = fn ($v) => htmlspecialchars((string) $v, ENT_QUOTES);
+        $lastRun = $s['journal']['run'] ?? [];
         $rows = '';
         foreach ($s['releases'] as $r) {
             $isCurrent = $r['version'] === $s['current'];
+            $failedTarget = ($lastRun['to_version'] ?? null) === $r['version'] && ($lastRun['status'] ?? null) !== 'completed';
             $btn = (! $isCurrent && $r['complete'])
                 ? '<form method="post"><input type="hidden" name="csrf" value="'.$csrf.'"><input type="hidden" name="action" value="switch"><input type="hidden" name="release" value="'.$h($r['version']).'"><button type="submit">Activează</button></form>'
                 : ($isCurrent ? '<strong>activă</strong>' : 'incompletă');
-            $rows .= '<tr><td>'.$h($r['version']).($r['version'] === $s['previous'] ? ' (anterioară)' : '').'</td><td>'.$btn.'</td></tr>';
+            $note = $r['version'] === $s['previous'] ? ' (anterioară)' : ($failedTarget && ! $isCurrent ? ' <span class="err">(instalare neîncheiată — nu o activați fără analiză)</span>' : '');
+            $rows .= '<tr><td>'.$h($r['version']).$note.'</td><td>'.$btn.'</td></tr>';
         }
         $journal = '';
         if ($s['journal']) {
             $run = $s['journal']['run'] ?? [];
-            $journal .= '<p>Ultima actualizare: '.$h($run['from_version'] ?? '?').' → '.$h($run['to_version'] ?? '?').', stare <strong>'.$h($run['status'] ?? '?').'</strong>'
+            $statuses = ['prepared' => 'pregătită', 'running' => 'în curs', 'failed' => 'eșuată — necesită decizie', 'completed' => 'încheiată', 'rolled_back' => 'revenită la versiunea anterioară', 'cancelled' => 'anulată'];
+            $journal .= '<p>Ultima actualizare: '.$h($run['from_version'] ?? '?').' → '.$h($run['to_version'] ?? '?').', stare <strong>'.$h($statuses[$run['status'] ?? ''] ?? ($run['status'] ?? '?')).'</strong>'
                 .(! empty($run['error']) ? '<br><span class="err">'.nl2br($h($run['error'])).'</span>' : '').'</p><ul>';
             foreach (array_slice(array_reverse($s['journal']['events'] ?? []), 0, 20) as $e) {
-                $journal .= '<li><code>'.$h($e['at'] ?? '').'</code> '.$h(str_replace('_', ' ', (string) ($e['event'] ?? ''))).(! empty($e['eroare']) ? ' — '.$h($e['eroare']) : '').'</li>';
+                $journal .= '<li><code>'.$h($e['at'] ?? '').'</code> '.$h(self::eventLabel((string) ($e['event'] ?? ''))).(! empty($e['eroare']) ? ' — '.$h($e['eroare']) : '').'</li>';
             }
             $journal .= '</ul>';
         }
@@ -285,6 +289,20 @@ final class SevaliaRecovery
             .'<h2>Mentenanță</h2>'.$maint
             .'<h2>Jurnal</h2>'.($journal ?: '<p>Nicio actualizare înregistrată.</p>')
             .'<form method="post"><input type="hidden" name="csrf" value="'.$csrf.'"><input type="hidden" name="action" value="logout"><button type="submit">Ieșire</button></form>');
+    }
+
+    public static function eventLabel(string $event): string
+    {
+        $labels = [
+            'pachet_incarcat' => 'pachet încărcat și verificat', 'pornit' => 'instalare pornită',
+            'mentenanta_pornita' => 'mentenanță pornită', 'mentenanta_oprita' => 'mentenanță oprită',
+            'versiune_activata' => 'versiune activată', 'cod_revenit' => 'cod revenit la versiunea anterioară',
+            'esec' => 'eșec', 'reluare' => 'pas reluat', 'restaurare_bd_pornita' => 'restaurarea bazei pornită',
+            'restaurare_bd_finalizata' => 'restaurarea bazei încheiată', 'inchis_manual' => 'incident închis manual',
+            'anulat' => 'anulat', 'finalizat' => 'instalare încheiată',
+        ];
+
+        return $labels[$event] ?? (str_starts_with($event, 'pas_') ? 'pas încheiat: '.str_replace('_', ' ', substr($event, 4)) : str_replace('_', ' ', $event));
     }
 
     private function page(string $title, string $body): void

@@ -38,6 +38,32 @@ class UpdateRun extends Model
         'cancelled' => 'Anulat',
     ];
 
+    /** Denumirile evenimentelor din jurnal (cheile rămân fără diacritice, pentru recovery.php). */
+    public const EVENTS = [
+        'pachet_incarcat' => 'pachet încărcat și verificat',
+        'pornit' => 'instalare pornită',
+        'mentenanta_pornita' => 'mod mentenanță pornit',
+        'mentenanta_oprita' => 'mod mentenanță oprit',
+        'versiune_activata' => 'versiune activată',
+        'cod_revenit' => 'cod revenit la versiunea',
+        'esec' => 'eșec',
+        'reluare' => 'pas reluat',
+        'restaurare_bd_pornita' => 'restaurarea bazei de date pornită',
+        'restaurare_bd_finalizata' => 'restaurarea bazei de date încheiată',
+        'inchis_manual' => 'incident închis manual',
+        'anulat' => 'anulat',
+        'finalizat' => 'instalare încheiată',
+    ];
+
+    public static function eventLabel(string $event): string
+    {
+        if (str_starts_with($event, 'pas_')) {
+            return 'încheiat: '.mb_strtolower(self::STEPS[substr($event, 4)] ?? substr($event, 4));
+        }
+
+        return self::EVENTS[$event] ?? str_replace('_', ' ', $event);
+    }
+
     protected $guarded = ['id'];
 
     protected function casts(): array

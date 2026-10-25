@@ -1,0 +1,9 @@
+{
+  "baseUrl": "http://127.0.0.1:8031",
+  "outDir": "docs/capturi/etapa-8",
+  "shots": [
+    { "name": "01-actualizari-pachet-incarcat", "path": "/panou/actualizari", "role": "administrator_tehnic" },
+    { "name": "02-pachet-verificat-preflight", "path": "/panou/actualizari/{UUID}", "role": "administrator_tehnic" },
+    { "name": "10-verificarea-mediului", "path": "/panou/actualizari/mediu", "role": "administrator_tehnic" }
+  ]
+}
