@@ -188,6 +188,7 @@ class BookingService
             if ($eval['conflicts']) {
                 throw new BookingConflictException($eval['conflicts']);
             }
+            self::testDelay();
 
             $appointment = Appointment::create([
                 'patient_id' => $r->patientId ?: null,
@@ -452,6 +453,17 @@ class BookingService
 
             return (AppointmentResource::TYPES[$type] ?? $type).': '.($name ?? '#'.$id);
         }, $allocation);
+    }
+
+    /**
+     * Doar în teste: lărgește fereastra dintre verificare și inserare, ca testul de concurență să poată
+     * demonstra că blocările serializează cererile simultane. Fără efect în afara mediului „testing”.
+     */
+    public static function testDelay(): void
+    {
+        if (app()->environment('testing') && ($ms = (int) env('SEVALIA_TEST_BOOKING_DELAY_MS', 0)) > 0) {
+            usleep($ms * 1000);
+        }
     }
 
     private function result(array $conflicts): array
