@@ -613,7 +613,7 @@ class UpdateRunner
                 $this->journal->write($run, 'restaurare_bd_pornita', ['backup' => $backup->uuid]);
                 Audit::log('updates.db_restore_started', $run, ['backup' => $backup->uuid]);
             }
-            $state = $this->backups->restoreStep($backup, $this->backups->connection(), $state, $deadline);
+            $state = $this->backups->restoreStep($backup, $this->backups->connection(), $state, $deadline, exact: true);
 
             // Baza poate conține acum rândurile vechi ale acestor tabele: le rescriem din memorie/jurnal.
             $steps['restore_db'] = ['status' => $state['done'] ? 'done' : 'running', 'data' => $state['done'] ? ['executed' => $state['executed']] : $state];

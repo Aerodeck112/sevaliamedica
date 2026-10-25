@@ -58,15 +58,18 @@ class BackupReader
         return ['header' => $header, 'footer' => $footer, 'statements' => $statements];
     }
 
-    /** Pornește restaurarea în conexiunea țintă; întoarce starea. */
-    public function startRestore(string $file, BackupKey $key): array
+    /**
+     * Pornește restaurarea; întoarce starea. Cu $exact = true, tabelele din baza țintă care nu existau în backup
+     * (ex. create de o migrare eșuată) sunt eliminate la primul pas, ca schema să revină exact la momentul backupului.
+     */
+    public function startRestore(string $file, BackupKey $key, bool $exact = false): array
     {
         $stream = EncryptedStream::openReader($file, $key);
         $msg = $stream->read();
         if (($msg[0] ?? '') !== 'H') {
             throw new RuntimeException('Backupul nu începe cu un antet valid.');
         }
-        $state = ['stream' => $stream->toState(), 'executed' => 0, 'done' => false, 'header' => json_decode(substr($msg, 1), true)];
+        $state = ['stream' => $stream->toState(), 'executed' => 0, 'done' => false, 'exact' => $exact, 'prepared' => false, 'header' => json_decode(substr($msg, 1), true)];
         $stream->close();
 
         return $state;
@@ -80,6 +83,17 @@ class BackupReader
         $pdo->exec('SET FOREIGN_KEY_CHECKS=0');
         $pdo->exec("SET time_zone='+00:00'");
         try {
+            if (! empty($state['exact']) && empty($state['prepared'])) {
+                $keep = (array) ($state['header']['tables'] ?? []);
+                foreach ($target->select("SHOW FULL TABLES WHERE Table_type = 'BASE TABLE'") as $row) {
+                    $table = array_values((array) $row)[0];
+                    if (! in_array($table, $keep, true)) {
+                        $pdo->exec('DROP TABLE `'.str_replace('`', '``', $table).'`');
+                        $state['dropped'][] = $table;
+                    }
+                }
+                $state['prepared'] = true;
+            }
             $progressed = false;
             while (! $progressed || microtime(true) < $deadline) {
                 $progressed = true;

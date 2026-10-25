@@ -65,7 +65,8 @@ class BackupRestore extends Command
         try {
             $state = null;
             do {
-                $state = $manager->restoreStep($backup, $connection, $state, microtime(true) + 30);
+                // Peste baza curentă: restaurare exactă (se elimină și tabelele apărute după backup).
+                $state = $manager->restoreStep($backup, $connection, $state, microtime(true) + 30, exact: (bool) $this->option('over-current'));
                 $this->output->write('.');
             } while (! $state['done']);
             $this->newLine();

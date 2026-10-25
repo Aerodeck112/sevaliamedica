@@ -130,7 +130,7 @@ class BackupManager
      * Restaurează un backup de bază de date în conexiunea țintă, până la $deadline. Întoarce starea.
      * Apelantul răspunde de confirmarea explicită și de alegerea bazei țintă.
      */
-    public function restoreStep(Backup $backup, Connection $target, ?array $state, float $deadline): array
+    public function restoreStep(Backup $backup, Connection $target, ?array $state, float $deadline, bool $exact = false): array
     {
         if ($backup->type !== 'database' || ! $backup->isUsable()) {
             throw new RuntimeException('Backupul nu poate fi restaurat.');
@@ -141,7 +141,7 @@ class BackupManager
             if ($backup->sha256 && ! hash_equals($backup->sha256, hash_file('sha256', $file))) {
                 throw new RuntimeException('Suma de control a fișierului de backup nu corespunde; restaurarea este oprită.');
             }
-            $state = $reader->startRestore($file, $this->key());
+            $state = $reader->startRestore($file, $this->key(), $exact);
         }
 
         return $reader->stepRestore($file, $state, $target, $deadline);
