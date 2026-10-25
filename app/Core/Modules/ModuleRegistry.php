@@ -78,6 +78,10 @@ class ModuleRegistry
         $groups = [];
         foreach ($this->modules as $module) {
             foreach ($module->navigation() as $item) {
+                // O intrare a cărei rută nu există (modul incomplet) nu trebuie să blocheze întregul panou.
+                if (! \Illuminate\Support\Facades\Route::has($item->route)) {
+                    continue;
+                }
                 if ($item->permission !== null && (! $user || ! $user->can($item->permission))) {
                     continue;
                 }

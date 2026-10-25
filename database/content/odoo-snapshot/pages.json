@@ -474,5 +474,13 @@
   "file": "9f8b63981d",
   "title": "Sevalia | Reumatologie și Recuperare medicală",
   "description": "Clinică de Reumatologie și Recuperare Medicală Târgu Mureș - Consult medical de specialitate ▷ Kinetoterapie | Electroterapie | Hidroterapie | Salinoterapie | Emsella - Incontinența urinară | Decompresie vertebrală | Terapia mersului |"
+ },
+ "https://www.sevalia.ro/contactus-thank-you": {
+  "code": 200,
+  "final": "https://www.sevalia.ro/contactus-thank-you",
+  "file": "contactus-thank-you",
+  "title": "Thanks (Contact us) | sevalia.ro",
+  "description": null,
+  "note": "Pagina de confirmare a formularului de contact (data-success-page); nu apare în sitemap. Preluată 2026-10-25."
  }
 }
