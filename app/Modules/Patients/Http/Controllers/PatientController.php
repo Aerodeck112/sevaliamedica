@@ -191,8 +191,8 @@ class PatientController extends Controller
         ]);
         $data['cnp'] = PatientNormalizer::cnp($data['cnp'] ?? null);
         if ($data['cnp'] && ($derived = PatientNormalizer::fromCnp($data['cnp']))) {
-            $data['birth_date'] = $data['birth_date'] ?: $derived['birth_date'];
-            $data['sex'] = $data['sex'] ?: $derived['sex'];
+            $data['birth_date'] = ($data['birth_date'] ?? null) ?: $derived['birth_date'];
+            $data['sex'] = ($data['sex'] ?? null) ?: $derived['sex'];
             if ($data['birth_date'] !== $derived['birth_date']) {
                 throw \Illuminate\Validation\ValidationException::withMessages(['birth_date' => 'Data nașterii nu corespunde CNP-ului.']);
             }

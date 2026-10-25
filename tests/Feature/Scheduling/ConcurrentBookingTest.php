@@ -23,6 +23,20 @@ class ConcurrentBookingTest extends BaseTestCase
         $this->setUpClinic();
     }
 
+    protected function tearDown(): void
+    {
+        // Datele au fost confirmate de procesele copil: golim tabelele, ca testele următoare (în tranzacție) să pornească curat.
+        $db = $this->app['db']->connection();
+        $db->statement('SET FOREIGN_KEY_CHECKS=0');
+        foreach ($db->getSchemaBuilder()->getTableListing($db->getDatabaseName(), false) as $table) {
+            if ($table !== 'migrations') {
+                $db->table($table)->truncate();
+            }
+        }
+        $db->statement('SET FOREIGN_KEY_CHECKS=1');
+        parent::tearDown();
+    }
+
     /** @return list<array> */
     private function race(string $mode, int $processes = 2): array
     {

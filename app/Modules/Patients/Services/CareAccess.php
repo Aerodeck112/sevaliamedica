@@ -27,20 +27,15 @@ class CareAccess
     /** @var list<CareEvidence> */
     private array $evidence = [];
 
-    /** @var array<string, bool> */
-    private array $memo = [];
-
     public function addEvidence(CareEvidence $evidence): void
     {
         $this->evidence[] = $evidence;
-        $this->memo = [];
     }
 
+    /** Evaluat la fiecare apel (fără cache): o relație încheiată sau expirată se aplică imediat. */
     public function canAccessMedical(User $user, Patient $patient): bool
     {
-        $key = $user->id.':'.$patient->id;
-
-        return $this->memo[$key] ??= $this->resolve($user, $patient) !== null;
+        return $this->resolve($user, $patient) !== null;
     }
 
     /** Motivul pentru care accesul e permis (relatie | programare | urgenta) sau null. */
@@ -92,7 +87,6 @@ class CareAccess
         ]);
         // Motivul e un text liber care poate conține date medicale: îl păstrăm în tabelă, nu în contextul de audit.
         Audit::log('patients.break_glass', $access, ['expira' => $access->expires_at->toIso8601String()], $patient->id);
-        $this->memo = [];
 
         return $access;
     }
