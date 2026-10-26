@@ -46,10 +46,14 @@ fs.mkdirSync(plan.outDir, { recursive: true });
 const browser = await playwright.chromium.launch();
 const contexts = {};
 
-async function contextFor(role, vp) {
-    const key = `${role || 'anon'}:${vp}`;
+async function contextFor(role, vp, keepConsent = true) {
+    const key = `${role || 'anon'}:${vp}:${keepConsent}`;
     if (contexts[key]) return contexts[key];
     const ctx = await browser.newContext({ ...viewports[vp], locale: 'ro-RO' });
+    if (keepConsent) {
+        // Alegerea de cookie e deja făcută (refuz), ca bannerul să nu acopere captura; „keepConsent: false” îl arată.
+        await ctx.addCookies([{ name: 'sevalia_consent', value: encodeURIComponent('{"v":1,"s":0,"m":0,"t":1}'), url: plan.baseUrl }]);
+    }
     if (role) {
         const page = await ctx.newPage();
         await page.goto(plan.baseUrl + '/panou/autentificare');
@@ -72,9 +76,17 @@ async function contextFor(role, vp) {
 
 for (const shot of plan.shots) {
     const vp = shot.viewport || 'desktop';
-    const ctx = await contextFor(shot.role, vp);
+    const ctx = await contextFor(shot.role, vp, shot.keepConsent !== false);
     const page = await ctx.newPage();
     await page.goto(plan.baseUrl + shot.path, { waitUntil: 'networkidle' });
+    if (!shot.role && shot.fullPage !== false) {
+        // Derulăm pagina publică pentru a declanșa animațiile la apariție.
+        await page.evaluate(async () => {
+            for (let y = 0; y < document.body.scrollHeight; y += 600) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 100)); }
+            window.scrollTo(0, 0);
+        });
+        await page.waitForTimeout(800);
+    }
     if (shot.actions) {
         for (const a of shot.actions) {
             if (a.fill) await page.fill(a.fill, a.value);

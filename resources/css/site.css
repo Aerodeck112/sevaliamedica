@@ -1,1 +1,124 @@
-/* Stilul siteului public. Completat de modulul Site (CSS extras din siteul original). */
+/*
+ * Siteul public SEVALIA.
+ * 1. Fonturile originale (Montserrat pentru text și meniu, Manrope pentru titluri), găzduite local.
+ * 2. Foaia de stil a siteului original, redusă la regulile folosite (resources/css/site/odoo.css, generată).
+ * 3. Ajustări proprii minime (bannerul de cookie, înlocuitori pentru comportamente JS Odoo).
+ */
+@import '@fontsource/montserrat/latin-300.css';
+@import '@fontsource/montserrat/latin-ext-300.css';
+@import '@fontsource/montserrat/latin-400.css';
+@import '@fontsource/montserrat/latin-ext-400.css';
+@import '@fontsource/montserrat/latin-400-italic.css';
+@import '@fontsource/montserrat/latin-ext-400-italic.css';
+@import '@fontsource/montserrat/latin-700.css';
+@import '@fontsource/montserrat/latin-ext-700.css';
+@import '@fontsource/manrope/latin-300.css';
+@import '@fontsource/manrope/latin-ext-300.css';
+@import '@fontsource/manrope/latin-400.css';
+@import '@fontsource/manrope/latin-ext-400.css';
+@import '@fontsource/manrope/latin-600.css';
+@import '@fontsource/manrope/latin-ext-600.css';
+@import './site/odoo.css';
+
+/* Meniul extins în meniul mobil: se afișează sub element, nu ca panou separat. */
+.o_navbar_mobile .o_mega_menu.show {
+    position: static;
+    display: block;
+    width: 100%;
+    border: 0;
+    box-shadow: none;
+}
+
+/* Fără JavaScript, elementele animate rămân vizibile. */
+.no-js .o_animate {
+    visibility: visible;
+}
+
+/* Banner de consimțământ: aceleași culori și fonturi ca siteul. */
+.sv-cookie {
+    position: fixed;
+    inset: auto 1rem 1rem 1rem;
+    z-index: 1100;
+    max-width: 720px;
+    margin-inline: auto;
+    background: #fff;
+    color: #212529;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 40px -10px rgb(0 0 0 / 0.35);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9375rem;
+}
+
+.sv-cookie[hidden] {
+    display: none;
+}
+
+.sv-cookie__inner {
+    padding: 1.25rem 1.5rem;
+}
+
+.sv-cookie__title {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.25rem;
+    margin: 0 0 0.5rem;
+    color: #006f75;
+}
+
+.sv-cookie__body {
+    margin: 0 0 1rem;
+}
+
+.sv-cookie__body a {
+    color: #007878;
+}
+
+.sv-cookie__prefs fieldset {
+    border: 0;
+    margin: 0 0 1rem;
+    padding: 0;
+    display: grid;
+    gap: 0.6rem;
+}
+
+.sv-cookie__opt {
+    display: flex;
+    gap: 0.6rem;
+    align-items: flex-start;
+}
+
+.sv-cookie__opt input {
+    margin-top: 0.25rem;
+    width: 1.1rem;
+    height: 1.1rem;
+    accent-color: #007878;
+}
+
+.sv-cookie__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* „Refuz” și „Accept” au aceeași mărime și aceeași greutate vizuală. */
+.sv-cookie__btn {
+    flex: 1 1 200px;
+    min-height: 44px;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    border: 2px solid #007878;
+    background: #007878;
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.sv-cookie__btn--link {
+    background: #fff;
+    color: #007878;
+}
+
+.sv-cookie__btn:focus-visible {
+    outline: 3px solid #00c4c4;
+    outline-offset: 2px;
+}

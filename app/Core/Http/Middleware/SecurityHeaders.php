@@ -2,6 +2,7 @@
 
 namespace App\Core\Http\Middleware;
 
+use App\Core\Security\Csp;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Vite;
@@ -19,16 +20,19 @@ class SecurityHeaders
         $nonce = Str::random(32);
         Vite::useCspNonce($nonce);
         app()->instance('csp-nonce', $nonce);
+        Csp::reset();
 
         $response = $next($request);
 
-        $frames = implode(' ', config('sevalia.csp.frame_src', []));
-        $connect = implode(' ', config('sevalia.csp.connect_src', []));
-        $img = implode(' ', config('sevalia.csp.img_src', []));
+        // Sursele de bază din configurare + cele înregistrate dinamic pentru pagina curentă (App\Core\Security\Csp).
+        $frames = implode(' ', [...config('sevalia.csp.frame_src', []), ...Csp::extra('frame-src')]);
+        $connect = implode(' ', [...config('sevalia.csp.connect_src', []), ...Csp::extra('connect-src')]);
+        $img = implode(' ', [...config('sevalia.csp.img_src', []), ...Csp::extra('img-src')]);
+        $scripts = implode(' ', Csp::extra('script-src'));
 
         $csp = [
             "default-src 'self'",
-            "script-src 'self' 'nonce-{$nonce}'",
+            "script-src 'self' 'nonce-{$nonce}' {$scripts}",
             "style-src 'self' 'unsafe-inline'",
             "img-src 'self' data: blob: {$img}",
             "font-src 'self' data:",

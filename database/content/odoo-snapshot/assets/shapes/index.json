@@ -1,0 +1,27 @@
+{
+ "/html_editor/shape/html_builder/Airy/13_001.svg?c1=%2300C4C4&c4=%23FFFFFF": {
+  "file": "html-builder-Airy-13-001-svg-88822603.svg",
+  "sha256": "9a191f787204ee11a1318b145345f2ee7731d7b45c9f35593b45b690a97ca2b8",
+  "bytes": 4593
+ },
+ "/html_editor/shape/html_builder/Bold/14.svg?c1=%2300C4C4&c5=%23006F75": {
+  "file": "html-builder-Bold-14-svg-18c3e679.svg",
+  "sha256": "15679a209d1c803c6befe4d0d35fdcd5db7b850bd5d9f999419a18448ae333cb",
+  "bytes": 324
+ },
+ "/html_editor/shape/html_builder/Connections/14.svg?c5=%23006F75": {
+  "file": "html-builder-Connections-14-svg-49a41564.svg",
+  "sha256": "d46938a2ff7bcde1b139ea3c97794035649d8c19034a758449eaa7ef8845513a",
+  "bytes": 443
+ },
+ "/html_editor/shape/html_builder/Origins/04_001.svg?c3=%23F8F9FA": {
+  "file": "html-builder-Origins-04-001-svg-2432ed7f.svg",
+  "sha256": "f1dbd77bdec8edb991c31d79a3809541b47d0fd3a77668b975776e25079bdebb",
+  "bytes": 152
+ },
+ "/html_editor/shape/html_builder/Wavy/24.svg?c1=%2300C4C4&c2=%23007878": {
+  "file": "html-builder-Wavy-24-svg-a9f4de8d.svg",
+  "sha256": "0d8751022e834499b3eef387568a026d1811e2946f2814fbe1266aa7055ad8f0",
+  "bytes": 7460
+ }
+}

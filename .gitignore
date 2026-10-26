@@ -30,3 +30,5 @@ Thumbs.db
 /.claude/worktrees/
 /.shared-path
 /dist
+/public/media
+/storage/app/site-css

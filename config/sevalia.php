@@ -23,6 +23,14 @@ return [
         'blind_index_key' => env('SEVALIA_BLIND_INDEX_KEY'),
     ],
 
+    // Biblioteca media publică (în producție: public_html/media) și cache-ul paginilor publice.
+    'media_path' => env('SEVALIA_MEDIA_PATH') ?: public_path('media'),
+    'media_url' => '/media',
+    'site' => [
+        'page_cache' => env('SEVALIA_PAGE_CACHE', null) === null ? null : (bool) env('SEVALIA_PAGE_CACHE'),
+        'canonical_host' => env('SEVALIA_CANONICAL_URL', 'https://www.sevalia.ro'),
+    ],
+
     // Surse externe permise de Content-Security-Policy. Se adaugă numai servicii confirmate.
     'csp' => [
         'frame_src' => ['https://www.google.com', 'https://maps.google.com', 'https://www.youtube-nocookie.com', 'https://www.youtube.com'],
