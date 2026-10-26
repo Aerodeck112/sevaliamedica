@@ -9061,6 +9061,26 @@
     "f4f0753e84.html",
     "fc41ba7328.html"
    ]
+  },
+  "https://www.sevalia.ro/html_editor/shape/html_builder%2FBold%2F14.svg?c1=o-color-4&c5=rgba(0%2C0%2C0%2C0)": {
+   "file": "a07b8c391321fbbc39e8.svg",
+   "type": "image/svg+xml",
+   "bytes": 330,
+   "sha256": "a07b8c391321fbbc39e8487f8edee7f3f280df26b30f7b7e4af43eb71eff7253",
+   "resourceType": "referinta-html",
+   "pages": [
+    "https://www.sevalia.ro/sevalia-cabinet-maurer-mures"
+   ]
+  },
+  "https://www.sevalia.ro/html_editor/shape/html_builder%2FBold%2F14.svg?c1=o-color-4&c5=rgba(0%2C0%2C0%2C0": {
+   "file": "a07b8c391321fbbc39e8.svg",
+   "type": "image/svg+xml",
+   "bytes": 330,
+   "sha256": "a07b8c391321fbbc39e8487f8edee7f3f280df26b30f7b7e4af43eb71eff7253",
+   "resourceType": "referinta-html",
+   "pages": [
+    "https://www.sevalia.ro/sevalia-cabinet-maurer-mures"
+   ]
   }
  },
  "pages": {
