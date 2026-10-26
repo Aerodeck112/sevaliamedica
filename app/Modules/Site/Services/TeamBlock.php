@@ -14,12 +14,19 @@ use Illuminate\Support\Collection;
  * Blocul „echipă” (s_company_team): markupul original se păstrează, iar numele, titulatura, fotografia și
  * vizibilitatea fiecărui medic vin din fișele modulului Clinică (câmpurile show_on_site, display_name,
  * professional_title, photo_media_id). Persoanele noi, afișate pe site, se adaugă la finalul grilei.
+ *
+ * Două moduri:
+ *  - „all” (secțiunile cu toată echipa: prima pagină, /echipa-noastra): numele, titulatura și fotografia vin din fișe,
+ *    iar persoanele noi se adaugă automat;
+ *  - „selected” (secțiunile cu medicii unei specialități, ex. /medicina-interna-…): textele specifice paginii rămân
+ *    neschimbate; se ascund doar persoanele care nu mai sunt afișate pe site.
+ * Implicit, o secțiune cu cel puțin 5 persoane recunoscute este „all”; se poate fixa prin config.mode.
  */
 class TeamBlock
 {
     private static ?Collection $staff = null;
 
-    public static function render(string $html): string
+    public static function render(string $html, ?string $mode = null): string
     {
         $staff = self::staff();
         [$doc, $root] = Dom::load($html);
@@ -30,6 +37,14 @@ class TeamBlock
             return $html;
         }
         $items = iterator_to_array($xp->query('./*[contains(concat(" ", normalize-space(@class), " "), " o_grid_item ")]', $grid));
+        if ($mode === null) {
+            $recognized = 0;
+            foreach ($items as $item) {
+                $h = $xp->query('.//h4', $item)->item(0);
+                $recognized += $h && self::match($staff, Dom::text($h)) ? 1 : 0;
+            }
+            $mode = $recognized >= 5 ? 'all' : 'selected';
+        }
         $shown = [];
         $template = null;
         $maxRow = 0;
@@ -48,12 +63,14 @@ class TeamBlock
 
                 continue;
             }
-            self::fill($xp, $item, $member);
+            if ($mode === 'all') {
+                self::fill($xp, $item, $member);
+            }
             $shown[$member->id] = true;
         }
 
         $template ??= $items[0] ?? null;
-        if ($template instanceof DOMElement) {
+        if ($mode === 'all' && $template instanceof DOMElement) {
             $new = $staff->filter(fn (StaffMember $m) => ! isset($shown[$m->id]) && $m->show_on_site && $m->is_active)->values();
             foreach ($new as $i => $member) {
                 /** @var DOMElement $clone */

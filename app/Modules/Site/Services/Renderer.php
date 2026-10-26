@@ -58,7 +58,7 @@ class Renderer
     private function blockHtml(?Page $page, array $block, ?Request $request, bool $preview): string
     {
         return match ($block['type'] ?? 'html') {
-            'team' => TeamBlock::render($block['html'] ?? ''),
+            'team' => TeamBlock::render($block['html'] ?? '', $block['config']['mode'] ?? null),
             'blog_latest' => $this->blogLatest($block),
             'blog_index' => view('site::blog.index', $this->blogIndexData($request, (int) ($block['config']['per_page'] ?? 12)))->render(),
             'form' => $this->forms->render($block, $preview),
