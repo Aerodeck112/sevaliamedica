@@ -104,5 +104,6 @@ class DemoSeeder extends Seeder
         }
 
         $this->call(SchedulingDemoSeeder::class);
+        $this->call(MedicalRehabDemoSeeder::class);
     }
 }

@@ -336,6 +336,39 @@ class BookingService
     }
 
     /**
+     * Confirmarea ULTERIOARĂ a prezenței, pentru o programare dintr-o zi trecută rămasă activă (ex. terapeutul a uitat
+     * să marcheze sosirea). Acțiune explicită, cu motiv obligatoriu; trece programarea în „finalizată” și consemnează
+     * în istoric că prezența a fost confirmată după data programării. Nu se aplică automat niciodată.
+     */
+    public function recordLateAttendance(Appointment $appointment, User $user, string $reason): Appointment
+    {
+        if (mb_strlen(trim($reason)) < 5) {
+            throw ValidationException::withMessages(['reason' => 'Indicați de ce prezența se confirmă ulterior.']);
+        }
+
+        return DB::transaction(function () use ($appointment, $user, $reason) {
+            $locked = Appointment::whereKey($appointment->id)->lockForUpdate()->firstOrFail();
+            $from = $locked->status;
+            if (! in_array($from, [AppointmentStatus::CONFIRMATA, AppointmentStatus::SOSIT, AppointmentStatus::IN_DESFASURARE], true)) {
+                throw ValidationException::withMessages(['status' => 'Prezența se poate confirma ulterior doar pentru o programare activă (status actual: '.AppointmentStatus::label($from).').']);
+            }
+            if (! $locked->starts_at || ! $locked->starts_at->lt(now()->startOfDay())) {
+                throw ValidationException::withMessages(['status' => 'Pentru programările de azi folosiți pașii obișnuiți (sosit → în desfășurare → finalizată).']);
+            }
+            $locked->status = AppointmentStatus::FINALIZATA;
+            $locked->updated_by = $user->id;
+            $locked->version++;
+            $locked->save();
+            $text = mb_substr('Prezență confirmată ulterior: '.trim($reason), 0, 500);
+            $this->event($locked, $user, 'status', $from, AppointmentStatus::FINALIZATA, $text);
+            Audit::log('scheduling.appointment_late_attendance', $locked, ['din' => $from], $locked->patient_id, $user->id);
+            DB::afterCommit(fn () => event(new AppointmentStatusChanged($locked, $from, AppointmentStatus::FINALIZATA)));
+
+            return $locked;
+        });
+    }
+
+    /**
      * Transformă o solicitare (cu pacient identificat) într-o programare confirmată, rezervând resursele.
      */
     public function confirmRequest(Appointment $request, BookingRequest $r, ?User $user, bool $requirePatient = true): Appointment

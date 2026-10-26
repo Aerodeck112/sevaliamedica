@@ -96,6 +96,8 @@ class ModuleServiceProvider extends BaseProvider
     {
         parent::register();
         $this->app->bind(AppointmentIntake::class, AppointmentIntakeService::class);
+        // Semnale adăugate de alte module pe programări (ex. avertizări clinice din modulul Medical).
+        $this->app->singleton(\App\Modules\Scheduling\Support\AppointmentAnnotations::class);
     }
 
     public function boot(): void

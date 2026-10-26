@@ -11,6 +11,7 @@
 @import '@fontsource/manrope/latin-700.css';
 @import '@fontsource/manrope/latin-ext-700.css';
 @import './panou/calendar.css';
+@import './panou/medical.css';
 
 :root {
     --ink: #0e3b3d;

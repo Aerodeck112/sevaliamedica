@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
     {
         Artisan::call('sevalia:sync-permissions');
         $this->call(ClinicPublicDataSeeder::class);
+        $this->call(MedicalInstallSeeder::class);
     }
 }
