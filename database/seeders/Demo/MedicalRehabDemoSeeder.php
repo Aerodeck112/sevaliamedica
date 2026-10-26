@@ -40,6 +40,7 @@ class MedicalRehabDemoSeeder extends Seeder
         if (app()->isProduction() || config('sevalia.stage') === 'production') {
             throw new RuntimeException('Datele demonstrative nu pot fi încărcate în producție.');
         }
+        $this->call(\Database\Seeders\MedicalInstallSeeder::class);
         if (MedicalTemplate::where('name', 'Fișă demonstrativă (fictivă)')->exists()) {
             return;
         }

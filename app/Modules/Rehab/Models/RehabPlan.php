@@ -81,7 +81,8 @@ class RehabPlan extends Model
 
     public function items(): HasMany
     {
-        return $this->hasMany(RehabPlanItem::class)->orderBy('sort')->orderBy('id');
+        // chaperone(): fiecare procedură primește automat planul părinte (fără interogări suplimentare).
+        return $this->hasMany(RehabPlanItem::class)->orderBy('sort')->orderBy('id')->chaperone('plan');
     }
 
     public function package(): BelongsTo
