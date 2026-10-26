@@ -21,7 +21,7 @@
                         @break
                     @case('table')
                         @php $rows = collect($value ?? [])->filter(fn ($r) => collect($r)->filter()->isNotEmpty()); @endphp
-                        <dd class="{{ $rows->isEmpty() ? 'is-empty' : '' }}">
+                        <dd class="{{ $rows->isEmpty() ? 'is-empty' : '' }}" style="white-space:normal">
                             @if ($rows->isEmpty())
                                 necompletat
                             @else

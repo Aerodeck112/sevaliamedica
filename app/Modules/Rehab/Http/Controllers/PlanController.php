@@ -20,6 +20,7 @@ use App\Modules\Scheduling\Services\SeriesScheduler;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
 
 class PlanController extends Controller
@@ -153,10 +154,13 @@ class PlanController extends Controller
     }
 
     /** Pasul 1 al programării unei proceduri: regula (zile, oră, terapeut). */
-    public function scheduleForm(Request $request, RehabPlanItem $item): View
+    public function scheduleForm(Request $request, RehabPlanItem $item): View|RedirectResponse
     {
         abort_unless($request->user()->can('rehab.schedule'), 403);
         $item->load(['plan.patient', 'plan.location', 'service', 'preferredTherapist']);
+        if (! $item->plan->canSchedule()) {
+            return redirect()->route('panou.rehab.plans.show', $item->rehab_plan_id)->with('warning', 'Se pot programa doar ședințele unui plan aprobat sau în desfășurare.');
+        }
 
         return view('rehab::plans.schedule', [
             'item' => $item,
@@ -171,6 +175,13 @@ class PlanController extends Controller
         abort_unless($request->user()->can('rehab.schedule'), 403);
         $data = $this->ruleData($request);
         $plan = $item->plan;
+        if (! $plan->canSchedule()) {
+            throw ValidationException::withMessages(['series' => 'Se pot programa doar ședințele unui plan aprobat sau în desfășurare.']);
+        }
+        $unscheduled = $this->progress->forItem($item)['unscheduled'];
+        if ((int) $data['count'] > $unscheduled) {
+            throw ValidationException::withMessages(['count' => "Procedura mai are {$unscheduled} ședințe neprogramate."]);
+        }
         $proposal = $scheduler->plan((int) $plan->patient_id, (int) $item->service_id, $data['staff_member_id'] ?? null, (int) $plan->location_id, $this->rule($data));
 
         return view('rehab::plans.schedule-preview', [

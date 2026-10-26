@@ -1,0 +1,33 @@
+{
+  "baseUrl": "http://127.0.0.1:8004",
+  "outDir": "docs/capturi/etapa-5",
+  "shots": [
+    { "name": "01-acasa-medic", "path": "/panou", "role": "medic" },
+    { "name": "02-sabloane", "path": "/panou/medical/sabloane", "role": "medic" },
+    { "name": "03-editor-sablon", "path": "/panou/medical/sabloane/2", "role": "medic" },
+    { "name": "04-consultatie-draft", "path": "/panou/medical/fise/4/editare", "role": "medic" },
+    { "name": "05-fisa-finalizata-istoric", "path": "/panou/medical/fise/1", "role": "medic" },
+    { "name": "06-pacient-fise-avertizari", "path": "/panou/pacienti/1?tab=fise", "role": "medic" },
+    { "name": "07-pacient-documente", "path": "/panou/pacienti/1?tab=documente", "role": "medic" },
+    { "name": "08-pacient-consimtaminte", "path": "/panou/pacienti/1?tab=consimtaminte", "role": "medic" },
+    { "name": "09-plan-recuperare-istoric", "path": "/panou/recuperare/planuri/2", "role": "medic" },
+    { "name": "10-plan-draft-aprobare", "path": "/panou/recuperare/planuri/3", "role": "medic" },
+    { "name": "11-programare-procedura", "path": "/panou/recuperare/proceduri/3/programare", "role": "medic" },
+    { "name": "12-programare-verificare", "path": "/panou/recuperare/proceduri/3/programare", "role": "medic",
+      "actions": [
+        { "click": "input[name=\"weekdays[]\"][value=\"2\"]" },
+        { "click": "input[name=\"weekdays[]\"][value=\"4\"]" },
+        { "click": "main button.btn--primary" },
+        { "wait": 1500 }
+      ] },
+    { "name": "13-calendar-avertizare", "path": "/panou/calendar", "role": "medic", "fullPage": false },
+    { "name": "14-acasa-terapeut", "path": "/panou", "role": "terapeut" },
+    { "name": "15-sedinte-terapeut", "path": "/panou/recuperare/sedinte", "role": "terapeut" },
+    { "name": "16-marcare-sedinta-ulterioara", "path": "/panou/recuperare/sedinte/49", "role": "terapeut" },
+    { "name": "16-marcare-sedinta-ulterioara", "path": "/panou/recuperare/sedinte/49", "role": "terapeut", "viewport": "mobil" },
+    { "name": "17-plan-vazut-de-receptie", "path": "/panou/recuperare/planuri/2", "role": "receptie" },
+    { "name": "18-pachete", "path": "/panou/recuperare/pachete", "role": "manager" },
+    { "name": "19-modele-consimtamant", "path": "/panou/medical/modele-consimtamant", "role": "manager" },
+    { "name": "09-plan-recuperare-istoric", "path": "/panou/recuperare/planuri/2", "role": "medic", "viewport": "mobil" }
+  ]
+}

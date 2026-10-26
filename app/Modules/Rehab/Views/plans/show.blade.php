@@ -25,7 +25,7 @@
         <div class="alert alert--danger"><x-panou.icon name="warn" /><div><strong>Plan suspendat</strong> din {{ $plan->suspended_at->format('d.m.Y') }}: {{ $plan->suspend_reason }}. Ședințele nu se pot marca până la reluare.</div></div>
     @endif
     @if ($progress['totals']['pending'])
-        <div class="alert alert--warn"><x-panou.icon name="clock" /><div>{{ $progress['totals']['pending'] }} ședințe cu ora trecută nu sunt marcate. Nu se consideră efectuate automat: terapeutul le marchează, iar recepția rezolvă neprezentările/anulările.</div></div>
+        <div class="alert alert--warn"><x-panou.icon name="clock" /><div>Ședințe cu ora trecută, nemarcate: {{ $progress['totals']['pending'] }}. Nu se consideră efectuate automat: terapeutul le marchează, iar recepția rezolvă neprezentările/anulările.</div></div>
     @endif
 
     <div class="grid grid--aside">
@@ -65,7 +65,7 @@
                                 @foreach ($p['appointments'] as $a)
                                     @php [$label, $tone] = $states[$a->rehab_state]; @endphp
                                     <tr>
-                                        <td class="num">{{ $a->series_index }}</td>
+                                        <td class="num">{{ $loop->iteration }}</td>
                                         <td class="num">{{ $a->starts_at?->locale('ro')->isoFormat('ddd D MMM, HH:mm') }}</td>
                                         <td>{{ $a->staffMember?->display_name }}</td>
                                         <td><x-panou.badge :tone="$tone">{{ $label }}</x-panou.badge>

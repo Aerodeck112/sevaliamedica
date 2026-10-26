@@ -194,6 +194,24 @@ class MedicalRehabDemoSeeder extends Seeder
         $planMihai = $plans->create($mihai, $medicUser, ['location_id' => $unirii->id, 'payer_type' => 'cas', 'objectives' => 'Obiectiv demonstrativ (fictiv).']);
         $plans->addItem($planMihai, $medicUser, ['service_id' => $kineto->id, 'sessions_count' => 10, 'sessions_per_week' => 2]);
 
+        // Un tip de pachet (fără preț) atribuit lui Mihai.
+        $definition = \App\Modules\Rehab\Models\PackageDefinition::create(['name' => 'Pachet demonstrativ (fictiv)', 'sessions_count' => 10, 'validity_days' => 90,
+            'service_ids' => [$kineto->id, $laser->id], 'notes' => 'Exemplu fără preț.', 'created_by' => $medicUser->id]);
+        \App\Modules\Rehab\Models\PatientPackage::create(['patient_id' => $mihai->id, 'rehab_package_definition_id' => $definition->id, 'sessions_total' => 10,
+            'valid_from' => now()->toDateString(), 'valid_until' => now()->addDays(89)->toDateString(), 'created_by' => $receptie->id]);
+
+        // Un document PDF fictiv, criptat pe disc, atașat consultației Anei.
+        $pdf = "%PDF-1.4\n1 0 obj << /Type /Catalog /Pages 2 0 R >> endobj\n2 0 obj << /Type /Pages /Kids [3 0 R] /Count 1 >> endobj\n"
+            ."3 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >> endobj\n"
+            ."4 0 obj << /Length 60 >> stream\nBT /F1 18 Tf 72 760 Td (Document demonstrativ - fictiv) Tj ET\nendstream endobj\n"
+            ."5 0 obj << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> endobj\ntrailer << /Root 1 0 R >>\n%%EOF";
+        $tmp = tempnam(sys_get_temp_dir(), 'demo').'.pdf';
+        file_put_contents($tmp, $pdf);
+        $stored = app(\App\Modules\Medical\Services\DocumentStorage::class)->store(new \Illuminate\Http\UploadedFile($tmp, 'rezultat-demonstrativ.pdf', 'application/pdf', null, true));
+        @unlink($tmp);
+        \App\Modules\Medical\Models\MedicalDocument::create($stored + ['patient_id' => $ana->id, 'medical_record_id' => $consultAna->id,
+            'title' => 'Rezultat investigație (fictiv)', 'category' => 'rezultat', 'uploaded_by' => $medicUser->id]);
+
         Auth::logout();
     }
 }
