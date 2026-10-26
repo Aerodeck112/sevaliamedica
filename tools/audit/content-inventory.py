@@ -53,11 +53,14 @@ class P(HTMLParser):
             self.items.append({'tip': self.stack[-1] if self.stack else 'text', 'text': t})
 
 
+from urllib.parse import unquote, urljoin
+NORM = {unquote(k): v['file'] for k, v in res.items()}
+
+
 def local(src):
     if not src: return None
-    for k in (src, 'https://www.sevalia.ro' + src if src.startswith('/') else src):
-        if k in res: return res[k]['file']
-    return None
+    full = unquote(urljoin('https://www.sevalia.ro/', html.unescape(src)))
+    return NORM.get(full) or NORM.get(full.replace('https://www.sevalia.ro/en/', 'https://www.sevalia.ro/'))
 
 
 pages = {}

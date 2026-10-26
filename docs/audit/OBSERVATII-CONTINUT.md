@@ -29,6 +29,8 @@ paginile sunt verificate în CMS.
 
 ## Probleme tehnice vizibile pentru vizitatori
 
+- Articolul „Deficitul de vitamina D” conține o imagine goală (`<img>` fără sursă) după paragraful „Ce spun studiile?”.
+
 - Hărțile din subsol afișează „O adresă trebuie specificată pentru a putea fi încorporată o hartă”.
 - Link telefonic invalid către 0365 403 001.
 - Meniul „Neurologie” și linkul `/dry-needling` duc la „Page Not Found”.

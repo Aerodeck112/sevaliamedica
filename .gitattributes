@@ -13,3 +13,4 @@ CHANGELOG.md export-ignore
 # Surse importate: păstrate octet cu octet
 database/content/odoo-snapshot/** -text
 resources/cas/pias/** -text
+database/content/odoo-archive/** -text
