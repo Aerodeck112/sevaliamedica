@@ -10538,7 +10538,7 @@ Let's talk
 
 - 🖼 imagine-fundal: `/web/image/57053-5782152f/2148050599.webp` — alt: „” — arhivat: a669e0a3ddd26e028a3f.webp
 
-- 🖼 imagine-fundal: `/en/html_editor/shape/html_builder%2FBold%2F14.svg?c1=o-color-4&c5=rgba(0%2C0%2C0%2C0` — alt: „” — **NEARHIVAT**
+- 🖼 imagine-fundal: `/en/html_editor/shape/html_builder%2FBold%2F14.svg?c1=o-color-4&c5=rgba(0%2C0%2C0%2C0` — alt: „” — arhivat: a07b8c391321fbbc39e8.svg
 
 Am deschis!
 
@@ -11638,20 +11638,4055 @@ Do you want to perform over long periods?
 
 Allow us to be your support, to give you a general state of well-being. That way, you'll get in the best shape of your life.
 
-## `/en/web/login?redirect=%2Fmy%3F`
+## `/fizioterapie-targu-mures`
+
+- Titlu: Fizioterapie Tîrgu Mureș | SEVALIA
+- Descriere: Contactați-ne acum pentru o programare și descoperiți beneficiile fizioterapiei la Clinica Sevalia din Târgu Mureș!
+
+- 🖼 imagine-fundal: `/web/image/3801-c56d5547/DSC04452.webp` — alt: „” — arhivat: 54a550a15ca1b4ad72dd.webp
+
+### FIZIOTERAPIE
+
+- 🖼 imagine-fundal: `/web/image/3801-c56d5547/DSC04452.webp` — alt: „” — arhivat: 54a550a15ca1b4ad72dd.webp
+
+### FIZIOTERAPIE
+
+###### Fizioterapia este o disciplină medicală care ajută la restabilirea mișcării și funcționalității corpului afectat de boli, leziuni sau dizabilități. Prin tehnici moderne și exerciții specifice, fizioterapia contribuie la ameliorarea durerii, îmbunătățirea mobilității și recuperarea generală a pacienților.
+
+###### Dacă ai nevoie de fizioterapie în Mureș, clinica noastră îți oferă tratamente personalizate pentru o gamă largă de afecțiuni.
+
+#### Beneficiile fizioterapiei
+
+###### Reducerea durerii
+
+prin tehnici de electroterapie, ultrasunete, terapie manuală.
+
+###### Îmbunătățirea mobilității și flexibilității
+
+exerciții specifice pentru recuperarea mișcărilor pierdute.
+
+###### Prevenirea complicațiilor
+
+programe personalizate pentru menținerea sănătății.
+
+###### Creșterea forței musculare
+
+prin exerciții terapeutice adaptate fiecărui pacient.
+
+###### Reeducarea posturală
+
+pentru corectarea poziției corporale și prevenirea durerilor cronice.
+
+- 🖼 imagine: `/web/image/51739-0a1dee24/_DSC3554.webp` — alt: „” — arhivat: 2602cf5eba4684c4a52a.webp
+
+##### Kinetoterapie
+
+Exerciții specifice pentru îmbunătățirea mobilității și forței musculare.
+
+- 🔗 `/kinetoterapie`
+
+Află mai multe
+
+- 🖼 imagine: `/web/image/51740-8414c4bb/DSC04394.webp` — alt: „” — arhivat: 3b56d42a3c852d93e55b.webp
+
+##### Electroterapie
+
+Utilizarea curenților electrici pentru refacerea funcției musculare și reducerea durerii.
+
+- 🔗 `/electroterapie`
+
+Află mai multe
+
+- 🖼 imagine: `/web/image/51741-e159f34a/_DSC3604.webp` — alt: „” — arhivat: ffaa323575252136eafb.webp
+
+##### Hidroterapie
+
+Terapie prin apă pentru relaxare și refacerea articulațiilor.
+
+### Întrebări frecvente despre fizioterapie
+
+- 🔗 `#`
+
+Ce afecțiuni sunt tratate prin fizioterapie?
+
+###### Afecțiuni ortopedice
+
+Exemple: entorse, luxații, hernie de disc, fracturi, scolioză.
+
+Tratament: mobilizări, exerciții terapeutice, electroterapie.
+
+###### Afecțiuni neurologice
+
+Exemple: AVC, Parkinson, scleroză multiplă, neuropatii.
+
+Tratament: stimulare neuromusculară, exerciții de coordonare și echilibru.
+
+###### Afecțiuni reumatologice
+
+Exemple: artrită, artroză, spondiloză, fibromialgie.
+
+Tratament: electroterapie, ultrasunete, hidroterapie.
+
+###### Afecțiuni respiratorii
+
+Exemple: astm, bronșită cronică, BPOC.
+
+Tratament: exerciții respiratorii, drenaj postural, masaj terapeutic.
+
+###### Recuperare post-operatorie
+
+Exemple: protezare de șold/genunchi, operații la coloană.
+
+Tratament: programe individualizate de reabilitare, fizioterapie intensivă.
+
+- 🔗 `#`
+
+Este salinoterapia sigură pentru copii?
+
+Da, salinoterapia este considerată sigură pentru copii și poate fi deosebit de benefică pentru cei care suferă de afecțiuni respiratorii sau alergii. Mediul sărat ajută la curățarea căilor respiratorii și la reducerea inflamației, ceea ce poate ameliora simptomele și îmbunătăți sănătatea generală a copiilor. Totuși, este recomandat să consultați medicul pediatru înainte de a începe tratamentul pentru a vă asigura că este adecvat pentru copilul dumneavoastră.
+
+- 🔗 `#`
+
+Este fizioterapia dureroasă?
+
+Fizioterapia nu ar trebui să provoace durere severă, însă unele proceduri pot provoca un ușor disconfort inițial, care dispare pe măsură ce corpul se adaptează.
+
+- 🔗 `#`
+
+Se poate face fizioterapie în paralel cu alte tratamente?
+
+Da, fizioterapia poate fi combinată cu tratamente medicamentoase, kinetoterapie și alte forme de recuperare medicală.
+
+- 🖼 imagine: `/web/image/51690-98794d9c/user-md_9856334.webp` — alt: „” — arhivat: 80bf4fc4f5594cf2bba0.webp
+
+##### Medic specialist cu experiență în diagnosticarea și tratarea bolilor reumatice.
+
+- 🖼 imagine: `/web/image/51688-9f34e628/hands-heart_12442181.webp` — alt: „” — arhivat: 9f9b021e760d666f591e.webp
+
+##### Abordare personalizată pentru fiecare pacient.
+
+- 🖼 imagine: `/web/image/51689-8bb9542b/add-folder_3914627.webp` — alt: „” — arhivat: 2dd4446b782952f6cbb9.webp
+
+##### Tehnologii moderne pentru investigații precise și tratamente eficiente.
+
+- 🖼 imagine: `/web/image/51691-5bdf4742/calendar-clock_7546728.webp` — alt: „” — arhivat: dd812ff9919ee50dc317.webp
+
+##### Programări rapide și accesibilitate ridicată
+
+- 🔗 `/contactus`
+
+Programează o consultație
+
+##### Echipa care îți este sprijin
+
+Ne asigurăm mereu că toate detaliile au fost luate în considerare și ne dedicăm timp pentru a răspunde tuturor întrebărilor despre diagnosticul stabilit sau procedurile de tratament recomandate. O bună înțelegere a tuturor pașilor necesari în demersul terapeutic este esențială pentru un tratament de succes.
+
+Fiecare dintre noi, dar și împreună, lucrăm pentru a oferi o experiență plăcută fiecărui pacient. Suntem o echipă plină de entuziasm și energie, specializată în tratamentele oferite pentru adulți și copii.
+
+Empatia ne motivează să devenim sprijinul potrivit într-un proces terapeutic complex, minuțios conceput și adaptat la nevoile pacientului.
+
+- 🖼 imagine: `/web/image/5789-50014e7d/dr.svg` — alt: „” — arhivat: 8bdaa9d24efd4f8e45bf.svg
+
+###### dr. Cristina Pop
+
+###### medic specialist reumatolog
+
+- 🔗 `/contactus`
+
+Programează o consultație
+
+- 🖼 imagine: `/web/image/5787-e94b73a6/dr.svg` — alt: „” — arhivat: f27a379a35f643234c3b.svg
+
+###### dr. Gabriela Crișan
+
+###### medic specialist reabilitare medicală
+
+###### medic primar medicină sportiv
+
+- 🔗 `/contactus`
+
+Programează o consultație
+
+- 🖼 imagine: `/web/image/5791-def24153/dr.svg` — alt: „” — arhivat: e165de943049c4f467d8.svg
+
+###### dr. Kinga Fülöp
+
+###### medic specialist reabilitare medicală
+
+- 🔗 `/contactus`
+
+Programează o consultație
+
+- 🖼 imagine: `/web/image/5788-52691f59/Emanuel.svg` — alt: „” — arhivat: b9dc4d40ee23056eeda9.svg
+
+###### Emanuel Petru
+
+###### fiziokinetoterapeut șef
+
+- 🔗 `/echipa-noastra`
+
+Descoperă echipa noastră
+
+## `/ghid-intrebari-medicina-interna`
+
+- Titlu: Ghid intrebari medicina interna | sevalia.ro
+- Descriere: —
+
+- 🖼 imagine-fundal: `/web/image/53847-4fb28f50/DSC03914.webp` — alt: „” — arhivat: a29484ccd8808fd17665.webp
+
+- 🖼 imagine-fundal: `/web/image/53847-4fb28f50/DSC03914.webp` — alt: „” — arhivat: a29484ccd8808fd17665.webp
+
+### Ce întrebări să îi pui medicului internist
+
+Vrei să fii mai pregătit la următoarea vizită la medic?
+
+Am pregătit un ghid GRATUIT cu 5 întrebări esențiale pe care să le pui medicului internist, ca să înțelegi mai bine analizele, prevenția și pașii următori pentru sănătatea ta.
+
+- 🔗 `/web/content/53844?unique=24bf55ec4857947bee7ae929f80d7bc3c05afd75&download=true`
+
+Descarcă ghidul GRATUIT
+
+- 🖼 imagine: `/web/image/53845-e3053fa3/Postare%20Blog%20%27Guta%20si%20manifestarile%20ei%27%20cover%20image.webp` — alt: „” — arhivat: 885c2b00c37e89cdde00.webp
+
+##### Reumatologie
+
+Fiecare pas dureros, fiecare mișcare limitată spune o poveste. Suntem aici să o înțelegem și să te ajutăm să mergi mai departe – la propriu.
+
+- 🔗 `/reumatologie`
+
+Află mai multe
+
+- 🖼 imagine: `/web/image/53848-9ad30e91/IMG_1614.webp` — alt: „” — arhivat: 283f09c95367e54d120d.webp
+
+##### Reabilitare medicală
+
+După accidentări, operații sau perioade de imobilitate, te ajutăm să te miști din nou cu încredere, cu grijă, fără presiune. Recuperarea nu e o cursă.
+
+- 🔗 `/reabilitare-medicala-mures`
+
+Află mai multe
+
+- 🖼 imagine: `/web/image/53846-21bdcbe2/IMG-9.webp` — alt: „” — arhivat: 8725d21b6f3047cfa399.webp
+
+##### Medicină internă
+
+###### Nu știi exact ce e în neregulă, dar știi că ceva nu e în regulă. Suntem aici să înțelegem ce încearcă corpul tău să spună – și să-l ajutăm să se vindece.
+
+- 🔗 `/medicina-interna-consultatii-tirgu-mures`
+
+Află mai multe
+
+## `/hydro-physio-banda-de-alergat-subacvala-recuperare-rapida`
+
+- Titlu: Hydro Physio | Banda de alergat subacvala | Recuperare rapida | sevalia.ro
+- Descriere: —
+
+- 🖼 imagine-fundal: `/web/image/51936-e910b05f/DSC06114.webp` — alt: „” — arhivat: 2adf9db067b1e6811ee2.webp
+
+### HYDRO PHYSIO
+
+#### banda de alergare subacvala
+
+- 🖼 imagine-fundal: `/web/image/51936-e910b05f/DSC06114.webp` — alt: „” — arhivat: 2adf9db067b1e6811ee2.webp
+
+### HYDRO PHYSIO - Bandă de alergat subacvală
+
+###### Banda de alergare subacvatică Hydro Physio este un echipament de ultimă generație utilizat în fizioterapie și recuperare medicală. Aceasta combină beneficiile exercițiului fizic cu proprietățile terapeutice ale apei, permițând mișcarea fără impact articular major. Sistemul include o cabină cu apă încălzită și o bandă de alergare reglabilă, unde pacienții pot face exerciții în condiții de siguranță și confort.
+
+###### Apa reduce greutatea corporală percepută cu până la 80%, ceea ce înseamnă mai puțin stres pe articulații, ligamente și coloană vertebrală, facilitând recuperarea.
+
+#### Afecțiuni reumatismale
+
+#### Recuperare post-operatorie
+
+#### Leziuni sportive
+
+#### Entorse
+
+#### Hernii de disc lombare
+
+##### Peste 1.000 de pacienți și-au îmbunătățit sănătatea.
+
+Vrei să te alături lor?
+
+- 🔗 `/contactus`
+
+﻿﻿Hai să vorbim﻿﻿
+
+- 🖼 imagine: `/web/image/52492-2d53e34d/dureri_inflamatii_articulatii.png` — alt: „” — arhivat: 329711741fa5dce6443b.png
+
+##### Reducerea durerii și a inflamației
+
+- 🖼 imagine: `/web/image/52491-c8dffe97/rezistenta_musculara.webp` — alt: „” — arhivat: 4f3548edde46fc3ba100.webp
+
+##### Creșterea rezistenței musculare fără suprasolicitare
+
+- 🖼 imagine: `/web/image/38273-8fd1382b/Kinetoterapia%20corecteaza%20si%20previne%20deficientele%20fizice.webp` — alt: „” — arhivat: 938f6e76c3edc194bf1a.webp
+
+##### Îmbunătățirea mobilității și flexibilității articulare
+
+- 🖼 imagine: `/web/image/43576-f88a4e47/stress-management_7007364.webp` — alt: „” — arhivat: 19b220426378e170a756.webp
+
+##### Reeducarea mersului și a echilibrului în condiții controlate
+
+- 🔗 `/contactus`
+
+﻿﻿Programează o consultație﻿﻿
+
+### Recuperare medicală modernă, în pas cu tehnologia și confortul pacienților
+
+Terapia începe cu intrarea pacientului în cabina Hydro Physio, unde nivelul apei este ajustat în funcție de înălțime și afecțiunea tratată. Apa este menținută la o temperatură confortabilă (aproximativ 32–35°C), favorizând relaxarea musculară și stimularea circulației.
+
+Banda de alergare poate fi setată la viteze variabile, iar pacientul merge, aleargă ușor sau execută exerciții specifice recomandate de kinetoterapeut. Datorită presiunii hidrostatice, mișcările sunt mai fluide, iar senzația de greutate este redusă, permițând o activitate fizică eficientă chiar și pentru persoanele cu dureri articulare severe.
+
+Pe tot parcursul ședinței, pacientul este monitorizat, iar exercițiile pot fi ajustate în timp real pentru a se adapta progresului și confortului său. Sistemul Hydro Physio permite și exerciții de echilibru sau stretching sub supraveghere.
+
+Această formă de terapie este non-invazivă, sigură și percepută de majoritatea pacienților ca fiind relaxantă și motivantă.
+
+##### INDICAȚII
+
+Principalele indicații ale benzii Hydro Physio sunt:
+
+Recuperare ortopedică sau neurologică
+
+Terapie pentru dureri cronice
+
+Reabilitare sportivă
+
+Reeducare locomotorie după traumatisme
+
+##### CONTRAINDICAȚII
+
+Nu este recomandată procedura pentru pacienții cu următoarele afecțiuni:
+
+Infecții active ale pielii sau plăgi deschise
+
+Afecțiuni cardiace instabile
+
+Epilepsie necontrolată
+
+Incontinență urinară/fecală
+
+Contraindicațiile nu sunt cu caracter absolut.
+
+Este esențial un consult medical de specialitate și în consecință aprobarea medicului.
+
+##### Întrebările și modificările fizice te copleșesc?
+
+Noi suntem sprijinul tău în această perioadă
+
+- 🔗 `/contactus`
+
+﻿﻿Hai să vorbim﻿﻿
+
+## `/kinesio-taping`
+
+- Titlu: Kinesio Taping | Susținere musculară și recuperare fără restricții
+- Descriere: Kinesio Taping aplicat de specialiști în recuperare medicală. Susținere musculară, durere redusă, mișcare liberă și recuperare rapidă.
+
+- 🖼 imagine-fundal: `/web/image/53004-b3527bf3/IMG-174.webp` — alt: „” — arhivat: 124a05dd25c80d838301.webp
+
+### KINESIO TAPING
+
+- 🖼 imagine-fundal: `/web/image/53005-b3527bf3/IMG-174.webp` — alt: „” — arhivat: 124a05dd25c80d838301.webp
+
+### KINESIO TAPING
+
+Kinesio Taping este o tehnică inovatoare de susținere musculară, dezvoltată în anii ’70, devenită între timp o soluție standard în recuperarea medicală și sportivă. Aplicarea benzilor kinesiologice ajută la diminuarea durerii, susținerea articulațiilor și reeducarea funcțională a segmentelor afectate, fără a limita mișcările naturale.
+
+Materialul benzilor este hipoalergenic, elastic, respirabil și imită extensibilitatea pielii umane. Aplicarea se face în funcție de scop: susținere musculară, corectare posturală, reducerea edemelor sau facilitarea mișcării. Terapeuții noștri analizează postura, biomecanica și nivelul de disfuncție înainte de aplicare, pentru a obține un efect terapeutic maxim.
+
+Kinesio Taping se poate folosi singur sau ca parte integrată într-un program de recuperare medicală (alături de fizioterapie, masaj, laser, etc.). Este potrivit pentru pacienți de toate vârstele, inclusiv pentru sportivi, persoane sedentare sau aflate în proces postoperator.
+
+Rezultatele apar frecvent încă din primele 24–48 de ore, cu o durată de acțiune între 3 și 5 zile după aplicare. Este o procedură sigură, confortabilă și fără efecte secundare, atunci când este aplicată corect.
+
+#### Entorse și instabilități articulare
+
+#### Tendinite, bursite, fasciite plantare
+
+#### Dureri lombare, cervicale sau toracale
+
+#### Sindrom de impingement
+
+#### Edeme limfatice
+
+##### Peste 1.000 de pacienți și-au îmbunătățit sănătatea.
+
+Vrei să te alături lor?
+
+- 🔗 `/contactus`
+
+Hai să vorbim
+
+- 🖼 imagine: `/web/image/52492-2d53e34d/dureri_inflamatii_articulatii.png` — alt: „” — arhivat: 329711741fa5dce6443b.png
+
+##### Reduce durerea și inflamația locală
+
+- 🖼 imagine: `/web/image/39070-c11c5ee8/Decompresie%20vertebrala_relaxeaza%20musculatura%20spatelui.webp` — alt: „” — arhivat: 9b8f475c74641e331ac7.webp
+
+##### Corectează postura și alinierea musculară
+
+- 🖼 imagine: `/web/image/38273-8fd1382b/Kinetoterapia%20corecteaza%20si%20previne%20deficientele%20fizice.webp` — alt: „” — arhivat: 938f6e76c3edc194bf1a.webp
+
+##### Susține articulațiile fără a bloca mobilitatea
+
+- 🖼 imagine: `/web/image/53003-4ee4f05f/cycle_4494272.webp` — alt: „” — arhivat: 4ad3d739afbe4fcce72e.webp
+
+##### Accelerează recuperarea post-traumatică
+
+- 🔗 `/contactus`
+
+Programează o consultație
+
+### Terapie cu benzi kinesiologice aplicată de specialiști în recuperare funcțională
+
+Kinesio Taping este o tehnică terapeutică modernă ce utilizează benzi elastice speciale, aplicate strategic pe zonele afectate pentru a susține musculatura, a reduce inflamația și a îmbunătăți funcționalitatea fără a restricționa mișcarea.
+
+Această metodă este 100% non-invazivă și este frecvent folosită în recuperarea medicală, ortopedie, neurologie, dar și în medicina sportivă. În clinica noastră, benzile sunt aplicate exclusiv de către terapeuți specializați, în funcție de diagnosticul pacientului și obiectivele de tratament.
+
+##### INDICAȚII
+
+Principalele indicații ale benzilor kinesiologice sunt:
+
+Leziuni musculare sau articulare ușoare și medii
+
+Instabilități articulare (gleznă, genunchi, umăr)
+
+Dureri cronice de spate, gât sau umeri
+
+Edeme post-traumatice sau postoperatorii
+
+Corectarea posturii vicioase
+
+Sindrom impingement
+
+Suprasolicitare musculară
+
+Tendinite, bursite, fasciite plantare
+
+##### CONTRAINDICAȚII
+
+Nu este recomandată procedura pentru pacienții cu următoarele afecțiuni:
+
+Leziuni cutanate, dermatite sau eczeme
+
+Alergie la adezivi sau materiale textile
+
+Tromboflebită activă
+
+Zone cu infecție locală
+
+Cancer activ în zona aplicării
+
+Contraindicațiile nu sunt cu caracter absolut.
+
+Este esențial un consult medical de specialitate și în consecință aprobarea medicului.
+
+### Întrebări frecvente despre kinesio taping
+
+- 🔗 `#`
+
+Benzile sunt incomode sau rigide?
+
+Nu. Sunt foarte ușoare, elastice și nu limitează deloc mișcarea.
+
+- 🔗 `#`
+
+Pot face duș cu banda aplicată?
+
+Da, benzile sunt rezistente la apă și pot fi purtate câteva zile.
+
+- 🔗 `#`
+
+Este eficient pentru sportivi?
+
+Absolut – reduce riscul de accidentări și susține musculatura în timpul efortului.
+
+- 🔗 `#`
+
+Ce durata are efectul după aplicare?
+
+Între 3 și 5 zile, în funcție de zona aplicării și tipul de piele.
+
+- 🔗 `#`
+
+Cât timp trebuie să aștept între aplicări succesive?
+
+De regulă, benzile se poartă 3–5 zile, după care pielea trebuie evaluată. Aplicarea poate fi reluată imediat, dacă nu sunt iritații.
+
+- 🔗 `#`
+
+Pot face sport cu benzile aplicate?
+
+Da, Kinesio Taping este frecvent utilizat în timpul activității fizice – oferă suport fără să limiteze mișcarea.
+
+- 🔗 `#`
+
+Pot folosi benzile acasă, fără supraveghere medicală?
+
+Nu este recomandat. Aplicarea corectă necesită cunoștințe anatomice și tehnice – o aplicare greșită poate agrava problema.
+
+- 🔗 `#`
+
+Se simte durere sau disconfort la aplicarea benzilor?
+
+Nu, aplicarea este complet nedureroasă, iar majoritatea pacienților uită că le poartă.
+
+##### Întrebările și modificările fizice te copleșesc?
+
+Noi suntem sprijinul tău în această perioadă
+
+- 🔗 `/contactus`
+
+Hai să vorbim
+
+## `/kinetoterapie`
+
+- Titlu: SEVALIA | KINETOTERAPIE | MUREȘ
+- Descriere: Exerciții terapeutice personalizate pentru recuperarea funcției motorii și îmbunătățirea mobilității
+
+- 🖼 imagine-fundal: `/web/image/51617-c7c37ee4/DSC04968.webp` — alt: „” — arhivat: 08b4c71de0723e12b828.webp
+
+### KINETOTERAPIE
+
+- 🖼 imagine-fundal: `/web/image/51618-653d4985/_DSC3554.webp` — alt: „” — arhivat: 36affb2fd8899bebddc4.webp
+
+### KINETOTERAPIE
+
+- 🔗 `#`
+
+###### Kinetoterapia este o formă de terapie care folosește o varietate de exerciții fizice pentru tratarea afecțiunilor ortopedice și neuro-motorii acute, cronice, post-operatorii sau post-traumatice. Prin combinarea mișcărilor active și pasive, kinetoterapia susține recăpătarea sau ameliorarea sănătății și mobilității zonelor afectate.
+
+###### Echipa noastră este specializată în numeroase tehnici de recuperare, iar cele mai performante aparate și echipamente din domeniu asigură efectuarea unui tratament optim printr-un act medical de calitate.
+
+- 🖼 imagine: `/web/image/38273-8fd1382b/Kinetoterapia%20corecteaza%20si%20previne%20deficientele%20fizice.webp` — alt: „” — arhivat: 938f6e76c3edc194bf1a.webp
+
+##### Corectează și previne deficiențele fizice
+
+- 🖼 imagine: `/web/image/38272-8787b168/Kinetoterapia%20sustine%20starea%20generala%20de%20sanatate%20si%20conditia%20fizica.webp` — alt: „” — arhivat: 04dc5f4a66cac03b1c35.webp
+
+##### Susține starea generală de sănătate și condiția fizică
+
+- 🖼 imagine: `/web/image/38271-349aa0c0/Kinetoterapia%20previne%20sau%20reduce%20factorii%20de%20risc.webp` — alt: „” — arhivat: 9e6f7a4a349d2fe544d8.webp
+
+##### Previne sau reduce factorii de risc
+
+- 🖼 imagine: `/web/image/38270-f9593b57/Kinetoterapia%20imbunatateste%20si%20restabileste%20functionalitatea%20fizica.webp` — alt: „” — arhivat: 1a3ab1bccae6412e8324.webp
+
+##### Îmbunătățește și restabilește funcționalitatea fizică
+
+- 🔗 `#table_of_content_heading_1718023867080_7`
+
+- 🔗 `#table_of_content_heading_1718023867080_8`
+
+- 🔗 `#table_of_content_heading_1718023867080_9`
+
+- 🔗 `#table_of_content_heading_1718023867080_10`
+
+- 🔗 `#table_of_content_heading_1718023867080_11`
+
+Obiectivele kinetoterapieiTipuri de kinetoterapieCând este necesară kinetoterapiaBeneficiile kinetoterapieiContraindicații kinetoterapie
+
+### Obiectivele kinetoterapiei
+
+Kinetoterapie este o modalitate de reabilitare a sistemului musculo-scheletic, pe un limbaj mai simplist îi putem spune și terapie prin mișcare. Spre deosebire de alte metode terapeutice și prevenție, kinetoterapia folosește ca principală resursă omul și mișcarea corpului în forma unor exerciții bine definite. De aceea, prezența unui specialist care supraveghează exercițiile este obligatorie.
+
+Kinetoterapia este adaptată fiecărui pacient în parte, iar planul de tratament este conceput de către kinetoterapeut, raportându-se la nevoile și caracteristicile particulare ale pacientului respectiv. Specialistul va adapta exercițiil în funcție de diferitele faze ale recuperării în care se află pacientul, ceea ce va influența frecvența și numărul de repetări, poziția de executare a mișcării, viteza de mișcare, greutatea, tipul de respirație etc.
+
+Toate aceste tehnici grăbesc recuperarea, rolul lor fiind să redea independența pacienților cât mai curând și pentru cât mai mult timp posibil. De asemnea, sunt utile și pentru persoanele care doresc să prevină, nu doar să trateze (scop profilactic).
+
+###### Principalele obiective ale kinetoterapiei sunt:
+
+creșterea forței și a rezistenței
+
+îmbunătățirea coordonării și a echilibrului
+
+creșterea capacității de efort
+
+îmbunătățirea mobilității articulare
+
+întremarea capacității cardio-respiratorie
+
+corectarea și menținerea posturii
+
+Toate acestea contribuie la dobândirea și menținerea unui stil de viață activ.
+
+###### Obiectivele kinetoterapiei pediatrice
+
+controlul capului
+
+educarea echilibrului static și dinamic
+
+îmbunătățirea posturii
+
+dezvoltarea fizică armonioasă
+
+dezvoltarea coordonării
+
+reeducarea respiratorie
+
+îmbunătățirea mobilității articulare
+
+normalizarea tonusului muscular
+
+### Tipuri de kinetoterapie
+
+###### Kinetoterapia profilactică
+
+Kinetoterapia profilactică sau de prevenție urmărește menținerea unei stări de sănătate optimă, prevenirea anumitor afecțiuni, prevenirea complicațiilor și sechelelor sau oprirea cronicizării anumitor afecțiuni severe. Toate acestea se realizează prin intermediul exercițiilor fizice combinate cu ședințele de masaj medical.
+
+Așadar, și persoanele sănătoase pot apela la serviciile unui kinetoterapeut, deoarece prin kinetoterapia profilactică vor reduce semnificativ riscul de traumatism și scurtează perioada de recuperare în cazurile în care un traumatism este produs.
+
+###### Kinetoterapia de recuperare
+
+Presupune refacerea funcțiilor diminuate ale organismului ce au apărut în urma unor traumatisme sau a unor boli printr-un set de exerciții specifice gimnasticii de recuperare.
+
+Adesea, kinetoterapia profilactică și kinetoterapia de recuperare se intercalează, rezultând o altă formă de kinetoterapie, anume cea curativă.
+
+###### Kinetoterapia curativă
+
+După cum este menționat și mai sus, kinetoterapia curativă este o combinație între kinetoterapia profilactică și cea de recuperare. Așadar, se lucrează atât pe refacerea funcțiilor, cât și pe menținerea stării de sănătate sau stoparea cronicizării unei anumite boli, în funcție de simptomatologia pacientului.
+
+###### Kinetoterapia pediatrică
+
+Kinetoterapia pediatrică este special concepută îmbunătățirea abilităților motorii ale copiilor începând cu primele zile de viață până la vârsta de 18 ani. Acestea sunt permanent adaptate diagnosticului și nevoilor fiecărui copil în parte. Kinetoterapia pediatricăajută la combaterea durerii, reeducarea posturii, reeducarea mersului, îmbunătățirea echilibrului și coordonării, îmbunătățirea respirației, recuperare și evitarea posibilelor complicații.
+
+### Când este necesară kinetoterapia
+
+Kinetoterapia poate fi necesară și recomandată oricând o problemă de mișcare vă limitează activitățile zilnice. În multe afecțiuni, kinetoterapia este recomandată ca unic tratament, ceea ce dovedește utilitatea ei și efectele benefice.
+
+###### Recuperare posttraumatică sau postoperatorie
+
+Kinetoterapia este foarte utilă în cazurile posttraumatice sau postoperatorii, unde anumite funcții sunt sever afectate, ajutând la refacerea acestora în procesul de recuperare medicală.
+
+De asemenea, kinetoterapia este din ce în ce mai des folosită pentru îmbunătățirea mobilității în diverse afecțiuni neurologice cum esre de exemplu boala Parkinson sau distrofii musculare (atrofie sau hipotrofie musculară) și pentru pentru ameliorarea deficitului funcțional în cazul anumitor boli cronice.
+
+###### Recuperare sportivă
+
+Una dintre cele mai întâlnite utilizări ale kinetoteraiei este recuperarea sportivă. După un accident sportiv, kinetoterapia ajută atât în recuperarea mai rapidă, cât și în prevenirea accidentelor viitoare ceea ce este vital pentru tinerii sportivi.
+
+###### Afecțiuni reumatologice
+
+Kinetoterapia ajută în reducerea durerilor asociate cu anumite afecțiuni reumatologice, cum ar fi:
+
+poliartrita reumatoidă
+
+gonartroză
+
+osteoporoză
+
+coxartroză.
+
+### Beneficiile kinetoterapiei
+
+###### Recuperarea și Reabilitarea Funcțiilor Motrice
+
+Kinetoterapia este esențială în recuperarea funcțiilor motrice după accidente, intervenții chirurgicale sau afecțiuni care afectează mobilitatea. Prin exerciții specifice și personalizate, pacienții pot recăpăta forța, coordonarea și flexibilitatea mușchilor și articulațiilor. Ajută la restabilirea mobilității și independenței funcționale, ceea ce permite pacienților să revină la activitățile zilnice și să își îmbunătățească calitatea vieții.
+
+###### Reducerea Durerii
+
+Exercițiile kinetoterapeutice pot ajuta la ameliorarea durerii cronice prin îmbunătățirea circulației sanguine, reducerea inflamației și eliberarea endorfinelor, care sunt analgezice naturale ale corpului. Permite pacienților să reducă dependența de medicamente analgezice și să gestioneze durerea într-un mod mai natural și sănătos.
+
+###### Prevenirea și Gestionarea Afecțiunilor Cronice
+
+Kinetoterapia este utilizată pentru a preveni și gestiona afecțiuni cronice precum artrita, diabetul, hipertensiunea și bolile cardiovasculare. Exercițiile regulate pot contribui la menținerea unei greutăți sănătoase, îmbunătățirea metabolismului și a sănătății cardiovasculare. Contribuie la reducerea riscului de complicații asociate cu afecțiunile cronice și îmbunătățește starea generală de sănătate și bunăstare a pacienților.
+
+###### Îmbunătățirea Echilibrului și a Coordonării
+
+Prin programe specifice de exerciții, kinetoterapia poate ajuta la îmbunătățirea echilibrului și coordonării, aspecte esențiale pentru prevenirea căderilor, mai ales în rândul persoanelor vârstnice. Reduce riscul de accidente și leziuni, oferind pacienților mai multă încredere și autonomie în mișcările lor zilnice.
+
+###### Reabilitarea Sportivă și Îmbunătățirea Performanței Fizice
+
+Kinetoterapia joacă un rol crucial în reabilitarea sportivilor după accidentări și în îmbunătățirea performanței fizice. Prin tehnici avansate și exerciții personalizate, sportivii pot recupera mai rapid și mai eficient. Ajută la reducerea timpului de recuperare, previne recidiva leziunilor și îmbunătățește performanța fizică generală.
+
+### Contraindicații kinetoterapie
+
+Kinetoterapia, deși benefică pentru multe afecțiuni, poate avea și contraindicații în anumite situații. Este important ca înainte de a începe un program de kinetoterapie, pacienții să fie consultați și evaluați de un specialist în domeniu.
+
+###### Inflamații sau Infecții Acute
+
+În cazul unor inflamații sau infecții acute, exercițiile fizice pot agrava starea și pot răspândi infecția. De exemplu: infecții severe ale pielii, infecții sistemice sau inflamarea severă a articulațiilor (cum ar fi în artrita reumatoidă acută).
+
+###### Leziuni Acute sau Fracturi Recente
+
+În cazul unor leziuni acute sau fracturi recente, exercițiile fizice pot agrava leziunea și pot întârzia vindecarea. Exemplu: Fracturi neconsolidate, entorse severe sau rupturi musculare.
+
+###### Afecțiuni Cardiovasculare Instabile
+
+Pacienții cu afecțiuni cardiovasculare instabile sau severe trebuie să evite kinetoterapia până când starea lor se stabilizează, deoarece exercițiile fizice pot pune presiune suplimentară pe inimă și sistemul circulator. Exemplu: Insuficiență cardiacă decompensată, angină instabilă, infarct miocardic recent.
+
+###### Probleme Respiratorii Severe
+
+În cazul unor afecțiuni respiratorii severe, exercițiile fizice pot agrava simptomele și pot duce la dificultăți respiratorii. Exemplu: Astm bronșic necontrolat, boala pulmonară obstructivă cronică (BPOC) severă.
+
+###### Afecțiuni Neurologice Instabile
+
+Pacienții cu afecțiuni neurologice instabile sau progresive pot fi contraindicați pentru kinetoterapie, deoarece exercițiile fizice pot agrava starea neurologică.
+
+Exemplu: Epilepsie necontrolată, scleroză multiplă în fază acută.
+
+###### Probleme Ortopedice Severe
+
+În cazul unor probleme ortopedice severe, kinetoterapia poate fi contraindicată sau necesită adaptări specifice pentru a evita agravarea stării. Exemplu: Scolioză severă, deformări osoase majore.
+
+### Întrebări frecvente despre Kinetoterapie
+
+- 🔗 `#`
+
+Care sunt indicațiile kinetoterapiei la copii?
+
+Kinetoterapia la copii este indicată pentru o varietate de afecțiuni, inclusiv:
+
+Tulburări de dezvoltare motorie: precum întârzierea în dezvoltarea abilităților motorii grosiere și fine.
+
+Probleme ortopedice: scolioză, platfus, picior varus equin.
+
+Afecțiuni neurologice: paralizie cerebrală, distrofii musculare.
+
+Recuperare post-traumatică: după fracturi, luxații sau alte leziuni musculo-scheletale.
+
+Boli respiratorii: pentru îmbunătățirea capacității pulmonare la copiii cu astm sau alte afecțiuni respiratorii.
+
+- 🔗 `#`
+
+Care sunt indicațiile kinetoterapiei la adolescenți?
+
+Kinetoterapia la adolescenți este indicată pentru diverse afecțiuni și condiții care pot afecta dezvoltarea, funcția fizică și calitatea vieții. Printre cele mai comune indicații se numără:
+
+Probleme ortopedice și posturale:
+
+Scolioză și alte deformări ale coloanei vertebrale: corectarea posturii și prevenirea progresiei deformărilor.
+
+Platfus (picior plat): îmbunătățirea alinierii și funcției piciorului.
+
+Dureri de spate și alte probleme musculo-scheletale: datorate creșterii rapide și posturii incorecte.
+
+Afecțiuni traumatice și sportive:
+
+Entorse, luxații și fracturi: recuperarea mobilității și forței după leziuni.
+
+Leziuni sportive: tratamentul și prevenirea recurenței leziunilor comune în sporturi, cum ar fi tendinitele, rupturile de ligament și alte traume musculo-scheletale.
+
+Afecțiuni neurologice:
+
+Paralizie cerebrală: îmbunătățirea funcției motorii și a coordonării.
+
+Traumatisme cranio-cerebrale: recuperarea funcțiilor afectate după accidente.
+
+Boli cronice și sistemice:
+
+Artrită juvenilă: gestionarea durerii și îmbunătățirea funcției articulațiilor.
+
+Fibromialgie și alte sindroame dureroase: ameliorarea durerii și îmbunătățirea mobilității.
+
+Probleme respiratorii:
+
+Astmul și alte afecțiuni pulmonare: îmbunătățirea capacității pulmonare și a respirației.
+
+Reabilitare post-chirurgicală:
+
+Recuperarea după intervenții chirurgicale ortopedice sau alte operații care afectează mobilitatea și funcția fizică.
+
+Probleme de dezvoltare:
+
+Întârzieri în dezvoltarea motorie: îmbunătățirea abilităților motorii grosiere și fine.
+
+Deficiențe de coordonare și echilibru: dezvoltarea abilităților necesare pentru activitățile zilnice și sportive.
+
+Controlul greutății și fitness:
+
+Gestionarea obezității: promovarea unui stil de viață activ și sănătos, îmbunătățirea stării generale de sănătate.
+
+Probleme psihosociale:
+
+Îmbunătățirea stimei de sine și a încrederii: prin participarea la activități fizice și realizarea de progrese vizibile în funcția fizică.
+
+Un plan de kinetoterapie pentru adolescenți este personalizat pentru a răspunde nevoilor specifice ale fiecărui pacient, bazat pe o evaluare detaliată efectuată de un kinetoterapeut calificat. Acesta poate include exerciții pentru îmbunătățirea forței, flexibilității, coordonării și echilibrului, precum și tehnici de management al durerii și educație posturală.
+
+- 🔗 `#`
+
+Care sunt indicațiile kinetoterapiei la adulți?
+
+La adulți, kinetoterapia este indicată pentru o gamă largă de afecțiuni și condiții. Printre cele mai comune indicații se numără:
+
+Afecțiuni musculo-scheletale:
+
+Dureri lombare și de coloană cervicală.
+
+Artroze și artrite.
+
+Bursite și tendinite.
+
+Entorse, luxații și alte leziuni ale țesuturilor moi.
+
+Recuperare post-operatorie:
+
+După intervenții chirurgicale ortopedice, cum ar fi protezarea articulațiilor (șold, genunchi).
+
+După intervenții chirurgicale la coloană vertebrală.
+
+După fracturi sau alte intervenții traumatologice.
+
+Afecțiuni neurologice:
+
+Recuperare după accident vascular cerebral (AVC).
+
+Scleroză multiplă.
+
+Boala Parkinson.
+
+Leziuni ale măduvei spinării sau alte traume neurologice.
+
+Reabilitare cardiacă și pulmonară:
+
+După infarct miocardic sau intervenții chirurgicale cardiace.
+
+Boli pulmonare cronice, cum ar fi bronhopneumopatia obstructivă cronică (BPOC).
+
+Boli cronice:
+
+Diabet zaharat (pentru îmbunătățirea circulației și prevenirea complicațiilor).
+
+Osteoporoză (pentru creșterea densității osoase și prevenirea fracturilor).
+
+Afecțiuni reumatice:
+
+Poliartrita reumatoidă.
+
+Lupus eritematos sistemic.
+
+Spondilită anchilozantă.
+
+Reabilitare post-traumatică:
+
+După accidente de muncă sau accidente de circulație.
+
+Leziuni sportive, cum ar fi rupturi de ligament sau tendoane.
+
+Îmbunătățirea stării generale de sănătate și prevenție:
+
+Menținerea și îmbunătățirea mobilității generale.
+
+Prevenirea deteriorării funcției fizice la vârstnici.
+
+Îmbunătățirea posturii și prevenirea durerilor de spate.
+
+Fiecare program de kinetoterapie este personalizat în funcție de nevoile și obiectivele individuale ale pacientului, bazându-se pe o evaluare detaliată a stării acestuia.
+
+- 🔗 `#`
+
+De unde știu când are nevoie copilul meu de kinetoterapie?
+
+Un copil poate avea nevoie de kinetoterapie dacă:
+
+Există întârziere în dezvoltarea motorie: copilul nu atinge anumite etape de dezvoltare la timp.
+
+Are probleme de postură: cum ar fi scolioza sau alte deformări ale coloanei vertebrale.
+
+Prezintă semne de disfuncții musculare sau articulare: dureri sau rigiditate neobișnuite.
+
+A fost diagnosticat cu afecțiuni neurologice sau genetice: care afectează mobilitatea și coordonarea.
+
+Medicul pediatru recomandă: evaluarea și tratamentul prin kinetoterapie în urma unor observații clinice.
+
+- 🔗 `#`
+
+Care este diferența dintre kinetoterapie și fizioterapie?
+
+Kinetoterapia și fizioterapia sunt adesea utilizate interschimbabil, dar există diferențe subtile:
+
+Kinetoterapia se concentrează în special pe exercițiile terapeutice și mișcarea funcțională pentru recuperarea și îmbunătățirea funcției fizice.
+
+Fizioterapia include o gamă mai largă de tehnici, cum ar fi electroterapia, terapia cu ultrasunete, masajul terapeutic, pe lângă exercițiile fizice. În esență, kinetoterapia este un subset al fizioterapiei, axându-se pe mișcare și exerciții.
+
+- 🔗 `#`
+
+Cât durează o ședință de kinetoterapie?
+
+Durata unei ședințe de kinetoterapie poate varia în funcție de nevoile pacientului și de protocolul specific al terapiei, dar în general:
+
+O ședință tipică durează între 30 și 60 de minute.
+
+În unele cazuri, mai ales în reabilitarea intensivă, ședințele pot dura până la 90 de minute.
+
+- 🔗 `#`
+
+De câte ședințe de kinetoterapie am nevoie?
+
+Numărul de ședințe necesare depinde de mai mulți factori, inclusiv:
+
+Tipul și severitatea afecțiunii: problemele mai complexe sau cronice pot necesita un număr mai mare de ședințe.
+
+Răspunsul individual la terapie: unii pacienți pot răspunde mai rapid decât alții.
+
+Obiectivele tratamentului: fie că este vorba de recuperarea completă sau de gestionarea simptomelor pe termen lung.
+
+Recomandarea terapeutului: bazată pe evaluarea inițială și progresul observat în timpul tratamentului. În general, un plan de tratament poate varia de la câteva săptămâni la câteva luni, cu frecvență de 1-3 ședințe pe săptămână.
+
+##### Întrebările și modificările fizice te copleșesc?
+
+Noi suntem sprijinul tău în această perioadă.
+
+- 🔗 `/contactus`
+
+Hai să vorbim
+
+## `/kinetoterapie-atm-articulatia-temporo-mandibulara`
+
+- Titlu: Kinetoterapie ATM - Articulatia temporo-mandibulara
+- Descriere: Kinetoterapie pentru disfuncții ale articulației temporo-mandibulare (ATM). Fără durere, fără blocaje – tratament specializat și personalizat.  Disfuncțiile ATM pot cauza durere, blocaje, cracmente sau limitări în deschiderea gurii, afectând considerabil calitatea vieții.
+
+- 🖼 imagine-fundal: `/web/image/53143-630930f9/IMG_2029.webp` — alt: „” — arhivat: 39ca3dd76618112c2805.webp
+
+### KINETOTERAPIE ATM
+
+#### Articulatia temporo-mandibulara
+
+- 🖼 imagine-fundal: `/web/image/53144-630930f9/IMG_2029.webp` — alt: „” — arhivat: 39ca3dd76618112c2805.webp
+
+#### KINETOTERAPIE ATM
+
+#### Articulatia temporo-mandibulara
+
+###### Kinetoterapia ATM este un tratament funcțional, non-invaziv, esențial în gestionarea disfuncțiilor articulare ale maxilarului. Durerile maxilarului, cracmentele la deschiderea gurii sau senzația de blocaj sunt simptome frecvente ale acestei afecțiuni, care afectează vorbirea, alimentația și calitatea vieții în general.
+
+###### Abordarea începe cu o evaluare funcțională detaliată a articulației ATM, posturii cervicale și musculaturii implicate. Pe baza acestei evaluări, kinetoterapeutul elaborează un plan personalizat ce poate include: exerciții de relaxare și stretching, reeducare musculară, exerciții de control motor, tehnici de mobilizare articulară și reeducare posturală globală.
+
+###### Frecvent, disfuncțiile ATM sunt asociate cu stresul, bruxismul sau dezechilibre ale posturii cervicale, motiv pentru care tratamentul urmărește și corectarea cauzelor care stau la baza problemei.
+
+###### Terapia este blândă, adaptată ritmului fiecărui pacient, iar progresul se observă adesea încă din primele ședințe. Recomandăm includerea acestui tratament cât mai devreme, pentru a evita complicațiile sau rigidizarea articulației în timp.
+
+#### Disfunctia temporo-mandibulara
+
+#### Bruxism (scrâșnirea dinților)
+
+#### Blocaje sau limitări de deschidere bucală (trismus)
+
+#### Durere în articulația mandibulei și a musculaturii înconjurătoare
+
+#### Tulburări post-traumatice sau postoperatorii ale ATM
+
+##### Peste 1.000 de pacienți și-au îmbunătățit sănătatea.
+
+Vrei să te alături lor?
+
+- 🔗 `/contactus`
+
+Hai să vorbim
+
+- 🖼 imagine: `/web/image/53141-e3beaacf/durere_articulara_mandibula.webp` — alt: „” — arhivat: df981f64591384328500.webp
+
+##### Ameliorează durerea articulară și musculară prin exerciții controlate care reduc tensiunea și inflamația.
+
+- 🖼 imagine: `/web/image/52491-c8dffe97/rezistenta_musculara.webp` — alt: „” — arhivat: 4f3548edde46fc3ba100.webp
+
+##### Reechilibrează musculatura implicată, corectând disfuncțiile cauzate de suprasolicitare sau postură incorectă.
+
+- 🖼 imagine: `/web/image/53140-ef11de07/mobilitate_articulara.webp` — alt: „” — arhivat: eaa55cf82fdbe7977d2e.webp
+
+##### Îmbunătățește mobilitatea articulară, permițând deschiderea gurii fără blocaje sau disconfort.
+
+- 🖼 imagine: `/web/image/52659-2dd7f937/recuperare_rapida_post_interventii_chirurgical.webp` — alt: „” — arhivat: 80365bbc355fc810241d.webp
+
+##### Previne reapariția simptomelor, abordând cauzele biomecanice și funcționale ale disfuncției ATM.
+
+- 🔗 `/contactus`
+
+Programează o consultație
+
+### Tratament specializat pentru dureri, disfuncții și blocaje ATM – recâștigă confortul în vorbire și masticație
+
+Articulația temporo-mandibulară (ATM) este una dintre cele mai complexe articulații din corp și joacă un rol esențial în vorbire, masticație și expresie facială. Disfuncțiile ATM pot cauza durere, blocaje, cracmente sau limitări în deschiderea gurii, afectând considerabil calitatea vieții.
+
+##### INDICAȚII
+
+Principalele indicații ale procedurii sunt:
+
+Dureri sau cracmente ATM
+
+Dificultăți la mestecat sau vorbit
+
+Bruxism cronic (scrâșnirea dinților)
+
+Limitări sau blocaje de deschidere bucală (trismus)
+
+Recuperare după intervenții stomatologice sau chirurgicale maxilo-faciale
+
+##### CONTRAINDICAȚII
+
+Nu este recomandată procedura pentru pacienții cu următoarele afecțiuni:
+
+Infecții active în zona craniofacială
+
+Fracturi recente netratate în zona ATM
+
+Tumori ale articulației maxilare
+
+Afecțiuni inflamatorii acute severe (ex: artrite în puseu activ)
+
+Leziuni ale nervilor cranieni necompensate
+
+Contraindicațiile nu sunt cu caracter absolut.
+
+Este esențial un consult medical de specialitate și în consecință aprobarea medicului.
+
+### Întrebări frecvente despre tratament ATM (articulația temporo-mandibulară)
+
+- 🔗 `#`
+
+Ce este disfuncția ATM?
+
+Este o tulburare mecanică sau funcțională a articulației maxilarului, care poate cauza durere, blocaje sau zgomote în timpul mișcării.
+
+- 🔗 `#`
+
+Tratamentul este dureros?
+
+Nu. Exercițiile sunt efectuate într-un mod controlat și progresiv, fără să provoace durere.
+
+- 🔗 `#`
+
+În cât timp apar rezultatele?
+
+Mulți pacienți observă îmbunătățiri în 2–3 ședințe, însă tratamentul complet durează în funcție de severitatea cazului.
+
+- 🔗 `#`
+
+Pot face kinetoterapie ATM și dacă am aparat dentar?
+
+Da, în multe cazuri este chiar recomandată pentru a preveni suprasolicitarea articulației în timpul tratamentului ortodontic.
+
+- 🔗 `#`
+
+E necesară o trimitere de la stomatolog sau ORL?
+
+Nu neapărat, dar o colaborare multidisciplinară este ideală pentru rezultate rapide și complete.
+
+##### Întrebările și modificările fizice te copleșesc?
+
+Noi suntem sprijinul tău în această perioadă
+
+- 🔗 `/contactus`
+
+Hai să vorbim
+
+## `/laserterapie`
+
+- Titlu: Laserterapie | Pentru afecțiuni musculare, articulare și neurologice
+- Descriere: Laserterapie pentru dureri, inflamații și regenerare. Tratament eficient, nedureros și sigur, cu tehnologie medicală de ultimă generație.
+
+- 🖼 imagine-fundal: `/web/image/52984-b414b33a/DSC04684.webp` — alt: „” — arhivat: 41c2576b6acd0b946d23.webp
+
+### LASERTERAPIE
+
+- 🖼 imagine-fundal: `/web/image/52985-b414b33a/DSC04684.webp` — alt: „” — arhivat: 41c2576b6acd0b946d23.webp
+
+### LASERTERAPIE
+
+Laserterapia este o tehnică utilizată în fizioterapie și reumatologie, ce folosește energia luminii pentru a penetra țesuturile afectate și a stimula procesele de regenerare. Se aplică local, cu ajutorul unui dispozitiv laser care emite fascicule concentrate de lumină monocromatică (în general între 650–980 nm), cu efecte terapeutice precise.
+
+Lumina laser de joasă frecvență (LLLT – Low Level Laser Therapy) nu produce căldură intensă, ci acționează la nivel celular, stimulând mitocondriile și producția de ATP, ceea ce duce la regenerarea țesutului afectat și la scăderea inflamației. În același timp, este crescută circulația locală, ceea ce ajută la drenajul limfatic și eliminarea substanțelor proinflamatorii.
+
+Este indicată într-o gamă largă de afecțiuni – de la dureri articulare și musculare cronice până la leziuni acute, recuperare postoperatorie și nevralgii. Procedura este nedureroasă, nu necesită timp de recuperare și poate fi repetată în serii, în funcție de planul de tratament recomandat.
+
+#### Artroză (genunchi, șold, coloană)
+
+#### Tendinite, epicondilite, fasciite plantare
+
+#### Nevralgii
+
+#### Entorse, luxații, leziuni musculare
+
+#### Cicatrici și inflamații postoperatorii
+
+##### Peste 1.000 de pacienți și-au îmbunătățit sănătatea.
+
+Vrei să te alături lor?
+
+- 🔗 `/contactus`
+
+﻿﻿Hai să vorbim﻿﻿
+
+- 🖼 imagine: `/web/image/52492-2d53e34d/dureri_inflamatii_articulatii.png` — alt: „” — arhivat: 329711741fa5dce6443b.png
+
+##### Reducerea rapidă a durerii și inflamației
+
+- 🖼 imagine: `/web/image/52659-2dd7f937/recuperare_rapida_post_interventii_chirurgical.webp` — alt: „” — arhivat: 80365bbc355fc810241d.webp
+
+##### Îmbunătățește microcirculația și reduce inflamația
+
+- 🖼 imagine: `/web/image/38273-8fd1382b/Kinetoterapia%20corecteaza%20si%20previne%20deficientele%20fizice.webp` — alt: „” — arhivat: 938f6e76c3edc194bf1a.webp
+
+##### Stimularea regenerării mobilității articulare
+
+- 🖼 imagine: `/web/image/52986-3ff4338d/chemotherapy_6970768.webp` — alt: „” — arhivat: 3238897f5038ccddb8e0.webp
+
+##### Tratează structurile musculare și articulare profunde
+
+- 🔗 `/contactus`
+
+﻿﻿Programează o consultație﻿﻿
+
+### Laser medical de joasă frecvență pentru afecțiuni musculare, articulare și neurologice
+
+Laserterapia este o metodă terapeutică non-invazivă, ce utilizează lumina laser de joasă frecvență pentru a stimula procesele naturale de vindecare ale organismului. Această procedură este recomandată frecvent în recuperarea medicală, datorită efectelor sale analgezice, antiinflamatoare și biostimulatoare.
+
+În cadrul clinicii noastre, tratamentele sunt efectuate cu echipamente de ultimă generație, sub supravegherea personalului medical specializat, oferind pacienților o soluție eficientă și sigură pentru gestionarea durerii și refacerea țesuturilor.
+
+##### INDICAȚII
+
+Principalele indicații ale laserterapiei sunt:
+
+Artroze, tendinite, fasciite
+
+Contracturi și dureri musculare
+
+Nevralgii (sciatică, intercostală, cervicală)
+
+Leziuni sportive și entorse
+
+Inflamații postoperatorii
+
+##### CONTRAINDICAȚII
+
+Nu este recomandată procedura pentru pacienții cu următoarele afecțiuni:
+
+Zone cu neoplazii active
+
+Sarcină (zona abdominală)
+
+Infecții locale severe
+
+Aparate implantate (în zona tratată)
+
+Epilepsie fotosensibilă
+
+Contraindicațiile nu sunt cu caracter absolut.
+
+Este esențial un consult medical de specialitate și în consecință aprobarea medicului.
+
+### Întrebări frecvente despre laserterapie
+
+- 🔗 `#`
+
+Ce este laserterapia?
+
+Este o procedură ce folosește fascicule de lumină laser pentru a reduce durerea, inflamația și a accelera vindecarea țesuturilor.
+
+- 🔗 `#`
+
+Este dureroasă?
+
+Nu. Procedura este complet nedureroasă, pacientul poate simți o ușoară senzație de căldură sau furnicături.
+
+- 🔗 `#`
+
+Există riscuri?
+
+Laserul de joasă frecvență este sigur dacă este folosit corect. Nu are efecte adverse dacă sunt respectate indicațiile medicale.
+
+- 🔗 `#`
+
+Este eficient pentru artroză sau dureri cronice?
+
+Da, laserterapia este frecvent recomandată pentru calmarea durerii și reducerea inflamației în artroze și afecțiuni cronice ale articulațiilor.
+
+- 🔗 `#`
+
+Se poate combina cu alte proceduri?
+
+Da, este adesea combinată cu fizioterapie, masaj, kinetoterapie sau electroterapie pentru un efect sinergic.
+
+##### Întrebările și modificările fizice te copleșesc?
+
+Noi suntem sprijinul tău în această perioadă
+
+- 🔗 `/contactus`
+
+﻿﻿Hai să vorbim﻿﻿
+
+## `/magnetoterapie`
+
+- Titlu: Magnetoterapie | sevalia.ro
+- Descriere: Magnetoterapia reduce durerea, accelerează vindecarea și ameliorează afecțiuni reumatice, osoase și musculare. Terapie sigură și neinvazivă.
+
+- 🖼 imagine-fundal: `/web/image/52962-71648f40/DSC04641.webp` — alt: „” — arhivat: 8bd68c490dc237c3e79c.webp
+
+### MAGNETOTERAPIE
+
+- 🖼 imagine-fundal: `/web/image/52962-71648f40/DSC04641.webp` — alt: „” — arhivat: 8bd68c490dc237c3e79c.webp
+
+### MAGNETOTERAPIE
+
+Magnetoterapia este o metodă de fizioterapie bazată pe aplicarea câmpurilor magnetice pulsatile asupra corpului. Aceste câmpuri pătrund în țesuturi fără a produce durere sau disconfort, stimulând regenerarea celulară, circulația sanguină și reducerea inflamației la nivel local.
+
+Terapia este realizată cu ajutorul unor aparate speciale care emit unde magnetice la intensități și frecvențe reglate medical. În timpul ședinței, pacientul se află într-o poziție relaxată, iar aplicatoarele se poziționează în zona afectată – genunchi, coloană, umăr etc.
+
+Magnetoterapia este eficientă în afecțiuni cronice, dar și în stadiile acute controlate, precum entorse, contuzii sau recuperări postoperatorii. Este adesea recomandată persoanelor cu boli reumatice degenerative, osteoporoză sau dureri cronice musculo-scheletale. De asemenea, contribuie la scăderea consumului de analgezice prin efectul său natural de reducere a durerii.
+
+#### Osteoporoză și fracturi osoase
+
+#### Artroză (genunchi, șold, coloană)
+
+#### Tendinite și bursite
+
+#### Poliartrită reumatoidă și alte boli inflamatorii
+
+#### Recuperare postoperatorie ortopedică
+
+##### Peste 1.000 de pacienți și-au îmbunătățit sănătatea.
+
+Vrei să te alături lor?
+
+- 🔗 `/contactus`
+
+Hai să vorbim
+
+- 🖼 imagine: `/web/image/52492-2d53e34d/dureri_inflamatii_articulatii.png` — alt: „” — arhivat: 329711741fa5dce6443b.png
+
+##### Reduce inflamația și durerea cronică
+
+- 🖼 imagine: `/web/image/52659-2dd7f937/recuperare_rapida_post_interventii_chirurgical.webp` — alt: „” — arhivat: 80365bbc355fc810241d.webp
+
+##### Accelerează vindecarea țesuturilor și consolidarea osoasă
+
+- 🖼 imagine: `/web/image/52491-c8dffe97/rezistenta_musculara.webp` — alt: „” — arhivat: 4f3548edde46fc3ba100.webp
+
+##### Relaxează musculatura și reduce contracturile
+
+- 🖼 imagine: `/web/image/39073-3fb2e3e7/Decompresie%20vertebrala_imbunatateste%20fluxul%20sanguin.webp` — alt: „” — arhivat: 88b10222ecaa2f2c2e40.webp
+
+##### Îmbunătățește circulația locală și oxigenarea celulară
+
+- 🔗 `/contactus`
+
+Programează o consultație
+
+### Tratament neinvaziv pentru vindecare și regenerare
+
+Terapie cu câmpuri magnetice pulsatile pentru reducerea durerii și accelerarea vindecării
+
+Magnetoterapia este o procedură terapeutică modernă, neinvazivă, care utilizează câmpuri magnetice pulsatile de joasă frecvență pentru a stimula procesele naturale de regenerare celulară și reducerea inflamației. Această terapie este frecvent recomandată în tratamentul durerilor cronice, al afecțiunilor reumatologice și în recuperarea după traumatisme. În cadrul clinicii noastre, magnetoterapia este integrată într-un plan de tratament personalizat, sub supraveghere medicală atentă.
+
+##### INDICAȚII
+
+Principalele indicații ale magnetoterapiei sunt:
+
+Dureri osteoarticulare cronice
+
+Fracturi (în perioada de consolidare osoasă)
+
+Artrită, artroză, spondiloză
+
+Tendinite, entorse, leziuni musculare
+
+Boli neurologice periferice (ex: neuropatii)
+
+##### CONTRAINDICAȚII
+
+Nu este recomandată procedura pentru pacienții cu următoarele afecțiuni:
+
+Sarcină
+
+Prezența unui stimulator cardiac (pacemaker)
+
+Tumori maligne sau afecțiuni oncologice active
+
+Infecții acute sau febră
+
+Epilepsie
+
+Contraindicațiile nu sunt cu caracter absolut.
+
+Este esențial un consult medical de specialitate și în consecință aprobarea medicului.
+
+### Întrebări frecvente despre magnetoterapie
+
+- 🔗 `#`
+
+Ce este magnetoterapia și cum funcționează?
+
+Este o terapie ce utilizează câmpuri magnetice pulsatile pentru a stimula procesele de vindecare, reduce inflamația și ameliora durerea.
+
+- 🔗 `#`
+
+Este dureroasă sau inconfortabilă?
+
+Nu. Magnetoterapia este complet nedureroasă și nu produce senzații fizice intense. Mulți pacienți o percep ca relaxantă.
+
+- 🔗 `#`
+
+Pot face magnetoterapie dacă am implanturi metalice?
+
+Depinde de tipul implantului. Unele sunt compatibile. Medicul va evalua individual situația pentru a stabili siguranța procedurii.
+
+- 🔗 `#`
+
+Este magnetoterapia potrivită pentru copii sau vârstnici?
+
+Da, dacă nu există contraindicații specifice, poate fi utilizată în siguranță și la copii, și la vârstnici.
+
+- 🔗 `#`
+
+Se poate combina cu alte terapii?
+
+Absolut. Magnetoterapia are efecte complementare și este frecvent combinată cu kinetoterapie, masaj sau electroterapie.
+
+##### Întrebările și modificările fizice te copleșesc?
+
+Noi suntem sprijinul tău în această perioadă
+
+- 🔗 `/contactus`
+
+Hai să vorbim
+
+## `/masaj`
+
+- Titlu: Masaj medical efectuat de specialiști în recuperare, inclusiv pe punct
+- Descriere: Masaj terapeutic și pe puncte trigger pentru dureri musculare și recuperare. Personalizat, medical, cu rezultate rapide și efect de durată.
+
+- 🖼 imagine-fundal: `/web/image/52989-1f7d724b/DSC04305.webp` — alt: „” — arhivat: 94d76c6205ffde7c7089.webp
+
+### MASAJ
+
+- 🖼 imagine-fundal: `/web/image/52990-1f7d724b/DSC04305.webp` — alt: „” — arhivat: 94d76c6205ffde7c7089.webp
+
+### MASAJ
+
+Masajul terapeutic este o metodă recunoscută medical pentru tratarea durerilor musculare și articulare, contracturilor și disfuncțiilor cauzate de sedentarism, efort fizic intens sau traumatisme. Executat de terapeuți specializați, acest tip de masaj urmărește relaxarea profundă a musculaturii și stimularea procesului natural de vindecare al organismului.
+
+Una dintre cele mai eficiente variante este masajul pe puncte trigger – zone hiperiritabile din musculatură ce generează durere locală sau iradiată (de exemplu, în umeri, gât sau zona lombară). Prin tehnici specifice de compresie și eliberare, aceste puncte sunt dezactivate, reducând considerabil disconfortul pacientului.
+
+Masajul se integrează adesea într-un plan complex de recuperare ce poate include fizioterapie, electroterapie și kinetoterapie. Fie că este aplicat după traumatisme, în cazul durerilor cronice sau în scop preventiv, masajul terapeutic contribuie la restabilirea funcției musculo-articulare și la îmbunătățirea calității vieții pacientului.
+
+#### Contracturi musculare cronice
+
+#### Dureri cervicale, lombare și dorsale
+
+#### Sindromul miofascial dureros cu puncte trigger
+
+#### Recuperare post-traumatică sau post-operatorie
+
+#### Cefalee cauzată de tensiune musculară
+
+##### Peste 1.000 de pacienți și-au îmbunătățit sănătatea.
+
+Vrei să te alături lor?
+
+- 🔗 `/contactus`
+
+Hai să vorbim
+
+- 🖼 imagine: `/web/image/52491-c8dffe97/rezistenta_musculara.webp` — alt: „” — arhivat: 4f3548edde46fc3ba100.webp
+
+##### Reduce durerea musculară și articulară
+
+- 🖼 imagine: `/web/image/52994-02c743e1/accessibility_18331856.webp` — alt: „” — arhivat: 435872b297b78251b436.webp
+
+##### Recuperează mobilitatea și flexibilitatea
+
+- 🖼 imagine: `/web/image/39073-3fb2e3e7/Decompresie%20vertebrala_imbunatateste%20fluxul%20sanguin.webp` — alt: „” — arhivat: 88b10222ecaa2f2c2e40.webp
+
+##### Îmbunătățește circulația sangvină și limfatică
+
+- 🖼 imagine: `/web/image/52993-bac72289/acupunture_6161271.webp` — alt: „” — arhivat: 6eb16d20f6d7e2bde30f.webp
+
+##### Elimină punctele trigger miofasciale
+
+- 🔗 `/contactus`
+
+Programează o consultație
+
+### Masaj medical efectuat de specialiști în recuperare, inclusiv pe puncte trigger miofasciale
+
+Masajul terapeutic este o componentă esențială în tratamentele de recuperare medicală, având rolul de a relaxa musculatura, de a reduce durerea și de a îmbunătăți mobilitatea. Spre deosebire de masajul de relaxare, acesta este realizat exclusiv de personal calificat în scopuri medicale.
+
+În cadrul clinicii noastre, punem accent pe masajul personalizat, adaptat fiecărei afecțiuni, cu posibilitatea aplicării tehnicii specializate pe puncte trigger, pentru afecțiuni miofasciale cronice sau dureri localizate. Tratamentul este nedureros sau moderat ca intensitate, cu efecte vizibile încă din primele ședințe.
+
+##### INDICAȚII
+
+Principalele indicații ale masajului sunt:
+
+Contracturi musculare, spasme și tensiuni cronice
+
+Dureri de spate, gât, umeri
+
+Recuperare după entorse, luxații, fracturi
+
+Puncte trigger și sindrom miofascial
+
+Cefalee de tensiune și stres muscular
+
+##### CONTRAINDICAȚII
+
+Nu este recomandată procedura pentru pacienții cu următoarele afecțiuni:
+
+Infecții cutanate sau leziuni deschise
+
+Tromboze sau afecțiuni vasculare active
+
+Fracturi netratate sau instabilitate articulară
+
+Febră, stări acute inflamatorii
+
+Tumori maligne (în zonele vizate)
+
+Contraindicațiile nu sunt cu caracter absolut.
+
+Este esențial un consult medical de specialitate și în consecință aprobarea medicului.
+
+### Întrebări frecvente despre masaj
+
+- 🔗 `#`
+
+Masajul terapeutic este dureros?
+
+Poate apărea un ușor disconfort, mai ales în cazul punctelor trigger, dar intensitatea este mereu adaptată pacientului.
+
+- 🔗 `#`
+
+Ce este masajul pe puncte trigger?
+
+Este o tehnică ce vizează zone musculare hiperiritabile, pentru a elimina sursa durerii locale sau iradiate.
+
+- 🔗 `#`
+
+Pot face masaj dacă am hernie de disc?
+
+Da, dar doar cu avizul medicului și adaptând tehnicile pentru a evita zona afectată.
+
+- 🔗 `#`
+
+Este diferit de masajul de relaxare?
+
+Da, masajul terapeutic este medical, cu scop de tratament, și implică tehnici profunde și direcționate.
+
+- 🔗 `#`
+
+Ajută masajul la migrene sau cefalee?
+
+Da, în special când durerile au componentă musculară sau posturală.
+
+##### Întrebările și modificările fizice te copleșesc?
+
+Noi suntem sprijinul tău în această perioadă
+
+- 🔗 `/contactus`
+
+Hai să vorbim
+
+## `/medicina-de-familie-band-mures`
+
+- Titlu: Medicină de familie | Medicină Internă | Band | Mureș
+- Descriere: Servicii medicale de top în Band, Mureș: Medicină de familie, Medicină internă și centru de permanență. Îngrijire dedicată pentru sănătatea ta!
+
+### SEVALIA Band – Sănătatea ta, prioritatea noastră!
+
+#### Servicii medicale de calitate pentru comunitatea din Band și împrejurimi
+
+Sevalia Band oferă servicii medicale complete pentru locuitorii comunei Band și satele alăturate. Punem sănătatea ta pe primul loc, asigurând acces la consultații, tratamente și îngrijire medicală de calitate.
+
+- 🖼 imagine: `/web/image/51793-be6a0189/2148396682.webp` — alt: „” — arhivat: 60655ab9026531203217.webp
+
+#### Medicina de familie – Îngrijire personalizată pentru toată familia
+
+Medicii noștri de familie sunt dedicați prevenirii și tratării afecțiunilor comune. Oferim:
+
+Consultații generale pentru copii și adulți
+
+Monitorizarea bolilor cronice (diabet, hipertensiune, etc.)
+
+Vaccinări și recomandări de prevenție
+
+Eliberarea de rețete și bilete de trimitere către specialiști
+
+Suntem alături de tine pentru un stil de viață sănătos!
+
+#### Centru de permanență – Asistență medicală atunci când ai nevoie
+
+Sevalia Band găzduiește un centru de permanență care asigură servicii medicale de urgență pentru locuitorii comunei Band și localitățile învecinate.
+
+📌 Servicii oferite:
+
+Consultații medicale pentru probleme acute
+
+Tratament și stabilizare în cazuri ușoare
+
+Asistență medicală în afara programului cabinetelor de medicină de familie
+
+Consiliere și îndrumare către unități medicale specializate
+
+📍 Locație accesibilă și program extins pentru confortul tău!
+
+- 🖼 imagine: `/web/image/51794-c91f7667/2148728404.webp` — alt: „” — arhivat: 2754568a26f176c35820.webp
+
+📞 Programează-te acum! Pentru consultații sau informații suplimentare, ne poți contacta la +40 742 281 438 sau ne poți vizita la sediul nostru din Band.
+
+🌐 Sevalia Band – Împreună pentru sănătate!
+
+## `/medicina-interna-consultatii-tirgu-mures`
+
+- Titlu: Medicină Internă | Consultații | Tîrgu Mureș | sevalia.ro
+- Descriere: —
+
+- 🖼 imagine-fundal: `/web/image/51701-dbd70819/IMG-9.webp` — alt: „” — arhivat: 0e0b3c892b44dde9dea6.webp
+
+### MEDICINĂ INTERNĂ
+
+- 🖼 imagine-fundal: `/web/image/51700-dbd70819/IMG-9.webp` — alt: „” — arhivat: 0e0b3c892b44dde9dea6.webp
+
+### MEDICINĂ INTERNĂ
+
+###### Medicina internă este specialitatea medicală care se ocupă cu prevenirea, diagnosticul și tratamentul afecțiunilor organelor interne. Medicul internist evaluează simptome complexe și oferă soluții pentru multiple probleme de sănătate, oferind îngrijire pacienților cu boli cronice sau acute.
+
+###### Dacă ai nevoie de un medic internist în Mureș, specialiștii noștri îți stau la dispoziție pentru consultații și investigații detaliate.
+
+#### Afecțiuni tratate
+
+###### Hipertensiune arterială
+
+Simptome: dureri de cap, amețeli, vedere încețoșată, palpitații.
+
+Cauze: factori genetici, stres, alimentație nesănătoasă, sedentarism.
+
+Tratament: schimbări ale stilului de viață, medicație antihipertensivă, monitorizare periodică.
+
+###### Diabetul zaharat
+
+Simptome: sete excesivă, urinare frecventă, oboseală, pierdere în greutate.
+
+Cauze: predispoziție genetică, alimentație dezechilibrată, obezitate.
+
+Tratament: dietă personalizată, medicație orală sau insulină, control glicemic regulat.
+
+.
+
+###### Bolile gastrointestinale
+
+Simptome: arsuri la stomac, balonare, dureri abdominale, diaree sau constipație.
+
+Cauze: stres, alimentație necorespunzătoare, infecții bacteriene.
+
+Tratament: dietă echilibrată, medicație specifică, investigații detaliate (ecografie abdominală, endoscopie).
+
+###### Boli respiratorii cronice
+
+Simptome: tuse persistentă, dificultăți de respirație, oboseală accentuată.
+
+Cauze: fumat, expunere la poluanți, infecții recurente.
+
+Tratament: bronhodilatatoare, antiinflamatoare, oxigenoterapie dacă este necesar.
+
+###### Anemiile și tulburările metabolice
+
+Simptome: oboseală cronică, paloare, amețeli, dificultăți de concentrare.
+
+Cauze: deficit de fier, boli cronice, probleme de absorbție a nutrienților.
+
+Tratament: suplimente de fier, dietă echilibrată, tratamentul cauzei subiacente.
+
+### Întrebări frecvente despre medicina internă
+
+- 🔗 `#`
+
+Când ar trebui să consult un medic internist?
+
+Dacă ai simptome persistente, cum ar fi oboseală inexplicabilă, dureri abdominale frecvente, palpitații sau probleme de respirație, este indicat să te programezi pentru un consult de medicină internă în Mureș.
+
+- 🔗 `#`
+
+Ce analize sunt recomandate în medicina internă ?
+
+În funcție de simptome, medicul poate recomanda analize de sânge, ecografie abdominală, electrocardiogramă sau alte investigații imagistice pentru un diagnostic precis.
+
+- 🔗 `#`
+
+Care sunt semnele unui nivel ridicat de zahăr în sânge ?
+
+Setea excesivă, urinarea frecventă, oboseala cronică și pierderea inexplicabilă în greutate pot indica un nivel crescut al glicemiei. Este important să consulți un medic internist în Mureș pentru un diagnostic corect.
+
+- 🔗 `#`
+
+Care este diferența dintre un medic internist și un medic de familie ?
+
+Medicul de familie oferă îngrijire primară și tratamente generale, în timp ce medicul internist se concentrează pe diagnosticarea și gestionarea bolilor mai complexe ale organelor interne.
+
+- 🔗 `#`
+
+Ce stil de viață este recomandat pentru prevenirea bolilor metabolice ?
+
+Adoptarea unei diete echilibrate, exercițiile fizice regulate, evitarea consumului excesiv de zahăr și grăsimi, menținerea unei greutăți optime și controalele medicale regulate sunt esențiale pentru prevenirea bolilor metabolice.
+
+- 🖼 imagine: `/web/image/51690-98794d9c/user-md_9856334.webp` — alt: „” — arhivat: 80bf4fc4f5594cf2bba0.webp
+
+##### Medic specialist cu experiență în diagnosticarea și tratarea bolilor reumatice.
+
+- 🖼 imagine: `/web/image/51688-9f34e628/hands-heart_12442181.webp` — alt: „” — arhivat: 9f9b021e760d666f591e.webp
+
+##### Abordare personalizată pentru fiecare pacient.
+
+- 🖼 imagine: `/web/image/51689-8bb9542b/add-folder_3914627.webp` — alt: „” — arhivat: 2dd4446b782952f6cbb9.webp
+
+##### Tehnologii moderne pentru investigații precise și tratamente eficiente.
+
+- 🖼 imagine: `/web/image/51691-5bdf4742/calendar-clock_7546728.webp` — alt: „” — arhivat: dd812ff9919ee50dc317.webp
+
+##### Programări rapide și accesibilitate ridicată
+
+- 🔗 `/contactus`
+
+Programează o consultație
+
+##### Echipa care îți este sprijin
+
+Ne asigurăm mereu că toate detaliile au fost luate în considerare și ne dedicăm timp pentru a răspunde tuturor întrebărilor despre diagnosticul stabilit sau procedurile de tratament recomandate. O bună înțelegere a tuturor pașilor necesari în demersul terapeutic este esențială pentru un tratament de succes.
+
+Fiecare dintre noi, dar și împreună, lucrăm pentru a oferi o experiență plăcută fiecărui pacient. Suntem o echipă plină de entuziasm și energie, specializată în tratamentele oferite pentru adulți și copii.
+
+Empatia ne motivează să devenim sprijinul potrivit într-un proces terapeutic complex, minuțios conceput și adaptat la nevoile pacientului.
+
+- 🖼 imagine: `/web/image/52228-524e810e/IMG-2.svg` — alt: „” — arhivat: 258b6bf4821a8d5e63e1.svg
+
+###### dr. Muresan-Varro Emma-Sarolta
+
+###### medic specialist medicina interna
+
+###### si pneumologie
+
+- 🔗 `/contactus`
+
+Programează o consultație
+
+##### Întrebările și modificările fizice te copleșesc?
+
+Noi suntem sprijinul tău în această perioadă.
+
+- 🔗 `/contactus`
+
+Hai să vorbim
+
+## `/web/login?redirect=%2Fmy%3F`
 
 - Titlu: Login | sevalia.ro
 - Descriere: —
 
-Email
+E-mail
 
-Password
+Parola
 
 - 🔗 `/web/reset_password?redirect=%2Fmy%3F`
 
 - 🔗 `/web/signup?redirect=%2Fmy%3F`
 
-Reset Password Caps Lock is on! Log in Don't have an account?
+Resetează Parola Caps Lock este activat! Autentificare Nu aveți cont?
+
+## `/pediatrie`
+
+- Titlu: Pediatrie | Sevalia Târgu Mureș
+- Descriere: Consultațiile sunt oferite de un medic pediatru dedicat, într-un mediu prietenos pentru copii și liniștitor pentru părinți.
+
+- 🖼 imagine-fundal: `/web/image/58329-552ab562/Pediatrie_Targu%20Mures_Sevalia.webp` — alt: „” — arhivat: c3053dcdeaa1908cc782.webp
+
+##### Ce este pediatria și când este recomandată
+
+Pediatria se ocupă de sănătatea copilului în toate etapele sale de dezvoltare, de la primele zile de viață până la vârsta de 18 ani. Medicul pediatru este primul specialist la care apelezi atunci când copilul tău are o problemă de sănătate și cel care coordonează îngrijirea medicală pe tot parcursul copilăriei și adolescenței.
+
+Dincolo de tratarea afecțiunilor acute, pediatrul joacă un rol esențial în monitorizarea creșterii și dezvoltării copilului, identificând din timp orice abatere de la normal și îndrumând părinții în deciziile legate de sănătatea copilului.
+
+La [Clinică] consultațiile de pediatrie sunt realizate de un medic pediatru dedicat, într-un mediu gândit să fie cât mai puțin intimidant pentru cei mici și cât mai liniștitor pentru părinți.
+
+O consultație de pediatrie este recomandată dacă:
+
+Copilul are febră, tuse, dureri abdominale sau alte simptome acute
+
+Este momentul unui control de rutină sau al unei vaccinări
+
+Ai îngrijorări legate de creșterea sau dezvoltarea copilului
+
+Copilul prezintă simptome recurente de alergie sau intoleranță
+
+Vrei o a doua opinie sau un bilanț general al stării de sănătate a copilului
+
+#### Afecțiuni tratate de către medicul pediatru
+
+#### Afecțiuni respiratorii
+
+Tuse, răceală, bronșită sau astm la copii
+
+Afecțiunile respiratorii sunt printre cele mai frecvente motive de consultație pediatrică. De la răcelile obișnuite până la bronșite, pneumonii sau astm bronșic, medicul pediatru evaluează severitatea, recomandă tratamentul adecvat și monitorizează evoluția pentru a preveni complicațiile.
+
+#### Afecțiuni digestive
+
+Dureri abdominale, vărsături, diaree sau constipație
+
+Problemele digestive la copii sunt frecvente și pot avea cauze variate, de la infecții virale sau bacteriene până la intoleranțe alimentare sau afecțiuni funcționale. Evaluarea pediatrică identifică cauza și stabilește tratamentul potrivit vârstei și situației copilului.
+
+#### Boli infecțioase
+
+Varicela, scarlatina, rujeola și alte boli ale copilăriei
+
+Bolile infecțioase sunt o parte inevitabilă a copilăriei, dar unele necesită tratament specific și monitorizare atentă. Medicul pediatru evaluează severitatea, recomandă tratamentul adecvat și te îndrumă privind măsurile de izolare și prevenție.
+
+#### Alergii
+
+Alergii alimentare, respiratorii sau cutanate
+
+Alergiile la copii sunt în creștere și se pot manifesta în moduri variate, de la erupții cutanate și rinoree până la dificultăți de respirație. Identificarea alergenului și managementul corect al alergiei sunt esențiale pentru calitatea vieții copilului și siguranța sa zilnică.
+
+#### Probleme de creștere și dezvoltare
+
+Când ceva pare diferit față de alți copii de aceeași vârstă
+
+Întârzierile în creștere, dezvoltarea motorie sau limbajul sunt aspecte pe care medicul pediatru le monitorizează atent la controalele periodice. Identificate timpuriu, cele mai multe probleme de dezvoltare pot fi abordate eficient prin intervenție specializată.
+
+#### Consultații de rutină
+
+Prevenția începe cu un control periodic
+
+Controalele periodice și schema de vaccinare sunt pilonii preventivi ai sănătății copilului. Consultația de rutină evaluează creșterea, dezvoltarea și starea generală de sănătate, oferind părinților o imagine clară și liniștitoare asupra evoluției copilului.
+
+##### Dacă copilul tău are simptome care te îngrijorează, a venit momentul unui control de rutină sau vrei să discuți cu un specialist despre dezvoltarea lui, o consultație pediatrică îți oferă răspunsurile și liniștea de care ai nevoie ca părinte.
+
+- 🔗 `/contactus`
+
+Hai să vorbim
+
+#### Cum decurge o consultație
+
+###### Discuția cu părintele și copilul
+
+Medicul începe prin a discuta cu părintele despre simptome, istoricul medical și motivul consultației. Copilul este implicat în discuție într-un mod adaptat vârstei sale, pentru a reduce anxietatea și a facilita cooperarea.
+
+###### Examinare clinică
+
+Medicul efectuează o examinare clinică completă, adaptată vârstei copilului. Abordarea blândă și răbdătoare face ca această etapă să fie cât mai confortabilă pentru cel mic.
+
+###### Diagnosticul și recomandările
+
+La finalul consultației medicul explică părinților constatările și recomandările într-un mod clar și accesibil. Dacă sunt necesare investigații suplimentare sau trimiteri către alți specialiști, acestea sunt coordonate din cadrul aceleiași consultații.
+
+#### Pentru părinții care caută un medic pediatru în care să aibă cu adevărat încredere
+
+Relația dintre un medic pediatru și familia pacientului său mic este una specială. Nu este vorba doar de tratarea afecțiunilor acute, ci de un parteneriat pe termen lung în care părintele știe că poate apela cu orice întrebare, oricât de mică ar părea, și va primi un răspuns clar și sincer.
+
+Mulți părinți schimbă mai mulți pediatri până găsesc unul cu care se simt cu adevărat în largul lor. Unul care ascultă, care explică, care nu minimizează îngrijorările și care tratează copilul ca pe un individ, nu ca pe un caz.
+
+Ne dorim să fim acel medic pentru familia ta.
+
+- 🖼 imagine: `/web/image/58328-c9e5fb0f/DVS08008.webp` — alt: „” — arhivat: 9b8d972c603423bb5de7.webp
+
+##### dr Ioana Boilă
+
+medic specialist pediatru
+
+- 🔗 `/contactus`
+
+Programează un consult
+
+## `/politica-de-confidentialitate`
+
+- Titlu: Politica de confidențialitate | sevalia.ro
+- Descriere: —
+
+##### Politica de confidențialitate
+
+Ultima actualizare: 24.05.2023
+
+Prin prezenta Politică vă informăm despre modul în care colectăm, utilizăm, transferăm și protejăm datele dvs. cu caracter personal. Prelucrarea acestora o realizăm în conformitate cu prevederile Regulamentului (UE) 2016/679 al Parlamentului European și al Consiliului din 27 aprilie 2016 privind protecția persoanelor fizice în ceea ce privește prelucrarea datelor cu caracter personal și privind libera circulație a acestor date, și de abrogare a Directivei nr. 95/46/CE (,,Regulamentul general privind protecția datelor”, în continuare ,,R.G.P.D.”) și ale legislației naționale relevante în materia protecției datelor cu caracter personal.
+
+1. CINE SUNTEM NOI?
+
+SEVALIA MEDICA SRL (în continuare ,,Societatea” sau ,,Noi”) prin intermediul Clinicii de reumatologie și reabilitare medicală oferă servicii la cele mai înalte standarde, în reumatologie și recuperare, kinetoterapie, masaj și electroterapie.
+
+Prin intermediul echipei proprii de experți, aparaturii ultramoderne și ambientului curat și elegant, medicii, fiziokinetoterapeuții și asistenții noștri vor găsi soluția perfectă pentru sănătatea ta.
+
+De asemenea, prin gama largă de tratamente aplicate sunt reabilitate funcțiile, tonusul și mobilitatea sistemului osteoarticular, precum și îmbunătățirea calității vieții prin ameliorarea stării fizice și psihice a pacientului.
+
+Datele noastre de contact sunt:
+
+Adresa sediului: Str. Constandin Hagi Stoian Nr. 3/C, Târgu-Mureș, județul Mureș
+
+Adresă de e-mail: dpo@sevalia.ro
+
+Nr. de tel.: 0371.783.546
+
+2. CUM PRELUCRĂM DATELE DVS. CU CARACTER PERSONAL?
+
+- 🔗 `#_msocom_1`
+
+Societatea, în calitatea sa de Operator, prelucrează datele cu caracter personal ale candidaților care aplică pentru posturile disponibile, angajaților, clienților/pacienților persoane fizice, partenerilor contractuali și ai colaboratorilor, și datele altor persoane fizice care interacționează cu Societatea[u1] și/sau sunt antrenate în relații contractuale cu acesta.
+
+Datele cu caracter personal sunt:
+
+prelucrate în mod legal, echitabil și transparent față de persoana vizată;
+
+colectate în scopuri determinate, explicite și legitime și nu sunt prelucrate ulterior într-un mod incompatibil cu aceste scopuri;
+
+adecvate, relevante și limitate la ceea ce este necesar în raport cu scopurile în care sunt prelucrate; exacte și actualizate în termen;
+
+păstrate într-o formă care permite identificarea persoanelor vizate pe o perioadă care nu depășește perioada necesară îndeplinirii scopurilor în care sunt prelucrate datele. În cazul consimțământului, acesta este păstrat pe perioadă nelimitată.
+
+prelucrate într-un mod care asigură securitatea adecvată a datelor cu caracter personal, inclusiv protecția împotriva prelucrării neautorizate sau ilegale și împotriva pierderii, a distrugerii sau a deteriorării accidentale, prin luarea de măsuri tehnice sau organizatorice corespunzătoare.
+
+3. CARE SUNT TIPURILE DE DATE CU CARACTER PERSONAL PRELUCRATE ȘI ÎN CE SCOP SUNT PRELUCRATE ACESTEA ?
+
+În contextul recrutării de personal, prelucrăm următoarele tipuri de date cu caracter personal: nume, prenume, adresă, data nașterii, cetățenie, genul, nr. de tel., adresa de e-mail, date privind experiența profesională și/sau socială, educația și formarea profesională, competențe și alte date cu caracter personal care reies din informațiile cuprinse în CV-ul depus, și după caz, în urma discuțiilor din cadrul interviului de angajare.
+
+Pentru încheierea și executarea contractelor de prestări servicii și de parteneriat/colaborare, prelucrăm în principal următoarele tipuri de date cu caracter personal: nume, prenume, serie și număr carte de identitate/pașaport, genul, adresă de domiciliu/reședință, numărul de cont bancar, adresă de e-mail, nr. de tel.
+
+- 🔗 `http://www.sevalia.ro`
+
+În scopul prezentării serviciilor medicale oferite de Clinică pe website-ul Societății – www.sevalia.ro, respectiv pentru a adapta aceste servicii nevoilor medicale ale pacienților/persoanelor vizate, prelucrăm următoarele tipuri de date cu caracter personal: nume, prenume, adresă de e-mail, nr. de telefon, tipul de servicii medicale dorit și după caz, alte date dacă sunt lăsate la inițiativa persoanei vizate la secțiunea ,,Mai multe informații”, pentru a putea reveni cu un răspuns/o propunere/o ofertă.
+
+- 🔗 `http://www.sevalia.ro`
+
+În vederea completării și transmiterii formularelor de Contact (,,Contact”) și de Programare la serviciile medicale oferite (”Programează-te”) de pe website-ul Societății – www.sevalia.ro, prelucrăm următoarele tipuri de date cu caracter personal: nume, prenume, adresă de e-mail, nr. de telefon, tipul de servicii medicale dorit și după caz, alte date dacă sunt lăsate la inițiativa persoanei vizate la secțiunea ,,Mai multe informații”, pentru a putea reveni cu un răspuns/o propunere/o ofertă.
+
+În vederea recoltării de probe (pentru analizele medicale desfășurate) la nivelul Clinicii SEVALIA MEDICA și ulterior, pentru comunicarea răspunsului către persoana vizată, prelucrăm următoarele tipuri de date cu caracter personal: nume, prenume, adresă de e-mail, semnătura - pe un dispozitiv electronic intern. Aceste probe recoltate sunt trimise în vederea analizării lor (prin intermediul unui reprezentant al Laboratorului) către colaboratori (ex.: BIOCLINICA Tg. Mureș) iar rezultatele parvin către Clinica SEVALIA MEDICA unde sunt stocate intern, fiind retransmise ulterior pacienților.
+
+Pentru vizitatorii website-ului este posibil să colectăm date prin module cookies sau alte tehnologii similare, precum: adresa IP, navigatorul de internet, locația, paginile web accesate pe website-ul nostru, timpul petrecut pe website, rețeaua de internet, dispozitivul utilizat. Pentru mai multe detalii în acest sens, consultați Politica de cookies-uri.
+
+Nu vă utilizăm datele dvs. cu caracter personal pentru a vă transmite comunicări de tip marketing (ex.: Newsletter-uri) decât dacă vă dați consimțământul în mod expres pentru astfel de comunicări, bifând o căsuță de acord în acest sens. În cazul transmiterii de Newsletter-uri vă prelucrăm doar adresa de e-mail și ne asigurăm că aveți la dispoziție o opțiune simplă de a vă dezabona în orice moment, respectiv de a vă retrage consimțământul cu privire la primirea acestor tipuri de comunicări. În cazul transmiterii altor comunicări de marketing vă prelucrăm doar numărul de telefon (urmând a vă transmite SMS-uri) și ne asigurăm că puteți să vă retrageți consimțământul cu privire la primirea acestor tipuri de comunicări.
+
+4. CARE SUNT TEMEIURILE LEGALE PE CARE SE BAZEAZĂ PRELUCRAREA DATELOR CU CARACTER PERSONAL?
+
+Datele dvs. cu caracter personal sunt prelucrate în vederea:
+
+încheierii și executării diferitelor contracte;
+
+pentruîndeplinirea obligațiilor legale care ne revin;
+
+în baza consimțământului solicitat și/sau oferit în prealabil (în contextul recrutării de personal, de recoltare probe, etc.);
+
+în scopul intereselor legitime urmărite de Societate (ex. adoptarea de măsuri de protecție și securitate a angajaților noștri, exercitarea unor drepturi și interese legitime ale Societății în cadrul procedurilor contencioase sau necontencioase etc.)
+
+5. PE CE DURATĂ PRELUCRĂM DATELE DVS. CU CARACTER PERSONAL?
+
+Datele cu caracter personal ale persoanei vizate sunt stocate în vederea prelucrării lor pe tot parcursul colaborării/relației noastre de ordin contractual și, implicit, după finalizarea acesteia, cel puțin pe perioada necesară atingerii scopurilor de prelucrare menționate în prezenta Politică de confidențialitate sau perioada impusă de prevederile legale din domeniu, inclusiv, dar fără limitare, la dispozițiile privind arhivarea datelor, de contabilitate etc.
+
+6. CUI TRANSMITEM DATELE CU CARACTER PERSONAL?
+
+Nu vom comunica sau transfera vreunui terț, niciuna dintre datele cu caracter personal colectate de la dvs. sau despre dvs. cu excepția:
+
+· Autorităților și instituțiilor publice - când există o obligație legală în acest sens sau în scopul unui interes legitim (apărarea drepturilor Societății în procedurile contencioase sau necontencioase etc.)
+
+· Partenerilor contractuali / colaboratorilor Societății care ne oferă servicii de găzduire web, de dezvoltare website, mentenanță website, marketing on-line și comunicare de marketing, ori altor companii cu care SEVALIA MEDICA SRL poate dezvolta programe comune de prezentare pe piață a serviciilor medicale oferite.
+
+· Oricărui terț – dacă v-ați dat consimțământul în mod expres și punctual, pentru respectiva situație și respectivele date.
+
+În cazul în care datele cu caracter personal prelucrate de Societate sunt transferate de către aceasta direct sau prin intermediul partenerilor contractuali/colaboratorilor săi în afara Spațiului Economic European, vă asigurăm că aceste transferuri au loc cu respectarea R.G.P.D. (în special Art. 46 din R.G.P.D.), a prevederilor legale aplicabile în materie, în baza unor garanții adecvate (clauze standard de protecție a datelor adoptate de Comisie) și cu condiția de a exista drepturi opozabile și căi de atac eficiente pentru persoanele vizate
+
+Datele cu caracter personal prelucrate de Societate nu sunt transferate de către aceasta - direct sau prin intermediul partenerilor contractuali/colaboratorilor săi - în afara României.
+
+7. CE MĂSURI DE PROTECȚIE ȘI GARANȚII LUĂM?
+
+Societatea implementează măsuri tehnice și organizatorice adecvate în vederea asigurării unui nivel înalt de securitate și protecție a datelor cu caracter personal.
+
+Utilizăm metode şi tehnologii de securitate, împreună cu politici şi proceduri interne de lucru, inclusiv de control şi audit, pentru a proteja datele cu caracter personal colectate conform prevederilor legale în vigoare relevante în materia protecției datelor cu caracter personal.
+
+8. CARE SUNT DREPTURILE DVS. ÎN CALITATE DE PERSOANĂ VIZATĂ?
+
+Orice persoană vizată își poate exercita următoarele drepturi, așa cum sunt prevăzute de către Regulamentul general privind protecția datelor:
+
+Dreptul de acces;
+
+Dreptul de rectificare;
+
+Dreptul la ștergere;
+
+Dreptul la restricționarea prelucrării;
+
+Dreptul la portabilitate;
+
+Dreptul la opoziție a prelucrării;
+
+Dreptul de a nu face obiectul unei decizii bazate exclusiv pe prelucrarea automată, inclusiv crearea de profiluri;
+
+Dreptul de a se adresa Autorității Naţionale de Supraveghere a Prelucrării Datelor cu Caracter Personal și instanțelor de judecată.
+
+- 🔗 `mailto:dpo@sevalia.ro`
+
+Pentru orice întrebări, nelămuriri sau exercitarea acestor drepturi ne puteți contacta prin e-mail la adresa: dpo@sevalia.ro, prin poștă sau curier la adresa: Str. Constandin Hagi Stoian Nr. 3/C, Târgu-Mureș, județul Mureș, România.
+
+## `/psihiatrie`
+
+- Titlu: Psihiatrie | Târgu Mureș
+- Descriere: Consultații psihiatrice pentru copii, adolescenți și adulți, într-un cadru confidențial și lipsit de judecată.
+
+- 🖼 imagine-fundal: `/web/image/58331-35fb439a/DVS06929.webp` — alt: „” — arhivat: 43d236d9435b38cc72ff.webp
+
+##### Ce este psihiatria și când este recomandată
+
+Psihiatria se ocupă de diagnosticarea și tratamentul afecțiunilor care afectează gândirea, emoțiile, comportamentul și sănătatea mintală în general. Mulți oameni amână o consultație psihiatrică din cauza stigmei asociate sau pentru că nu știu sigur dacă ceea ce simt justifică o vizită la specialist.
+
+Răspunsul este aproape întotdeauna da. Dacă ceea ce simți îți afectează viața de zi cu zi, relațiile sau capacitatea de a funcționa normal, aceasta este suficientă justificare pentru a cere ajutor specializat.
+
+La Sevalia consultațiile de psihiatrie se desfășoară într-un cadru confidențial, cu un medic psihiatru dedicat care acordă timp și atenție reală fiecărui pacient, indiferent de vârstă sau de natura problemei cu care vine.
+
+O consultație psihiatrică este recomandată dacă:
+
+Simți tristețe persistentă, lipsă de energie sau pierderea interesului pentru lucrurile care îți plăceau
+
+Ai atacuri de panică, anxietate cronică sau frici care îți limitează viața
+
+Nu poți dormi sau dormi prea mult fără să te simți odihnit
+
+Simți că stresul sau epuizarea au ajuns la un nivel pe care nu îl mai poți gestiona singur
+
+Ai primit un diagnostic psihiatric și ai nevoie de monitorizare sau ajustarea tratamentului
+
+Ești îngrijorat de comportamentul sau starea emoțională a copilului sau adolescentului tău
+
+#### Afecțiuni tratate de către medicul psihiatru
+
+#### Depresie și anxietate
+
+Cele mai frecvente afecțiuni mintale, și cele mai tratabile
+
+Depresia și anxietatea afectează milioane de oameni și se manifestă diferit de la o persoană la alta. Tristețea persistentă, lipsa motivației, grijile excesive sau teama constantă nu sunt slăbiciuni de caracter și nu trebuie gestionate singur. Tratamentul potrivit face o diferență reală și măsurabilă în calitatea vieții.
+
+#### Atacuri de panică și fobii
+
+Când frica depășește orice explicație rațională
+
+Atacurile de panică și fobiile pot fi profund debilitante, limitând activitățile zilnice și izolând persoana afectată. Psihiatrul evaluează natura și severitatea simptomelor și stabilește un plan de tratament care combină, acolo unde este cazul, medicația cu recomandarea psihoterapiei.
+
+#### Burnout și stres cronic
+
+Când epuizarea devine un mod de viață
+
+Burnout-ul nu este o simplă oboseală care trece după un weekend de odihnă. Este o stare de epuizare fizică, emoțională și mentală profundă, care necesită o abordare structurată pentru recuperare. O consultație psihiatrică ajută la evaluarea severității și la construirea unui plan concret de revenire.
+
+#### Tulburări de somn
+
+Când te trezești mai obosit decât te-ai culcat
+
+Insomnia cronică, trezirile frecvente sau somnul neodihnitor au un impact profund asupra sănătății fizice și mintale. Psihiatrul evaluează cauzele tulburărilor de somn, care sunt adesea legate de anxietate sau depresie, și stabilește un tratament care adresează problema la origine.
+
+#### ADHD la copii și adulți
+
+Dificultăți de atenție și concentrare la orice vârstă
+
+ADHD nu dispare odată cu vârsta și nu afectează doar copiii. La adulți se manifestă prin dificultăți de organizare, procrastinare cronică, impulsivitate și probleme de concentrare care afectează viața profesională și personală. Diagnosticul corect și tratamentul adecvat pot transforma semnificativ calitatea vieții.
+
+#### Tulburare bipolară și alte afecțiuni psihiatrice
+
+Monitorizare specializată și tratament personalizat
+
+Tulburarea bipolară și alte afecțiuni psihiatrice complexe necesită o monitorizare atentă și un tratament ajustat periodic în funcție de evoluție. Un psihiatru dedicat care cunoaște istoricul pacientului poate lua decizii terapeutice mai bune și poate preveni episoadele acute.
+
+##### Dacă ceea ce simți îți afectează viața de zi cu zi, relațiile sau capacitatea de a funcționa normal, nu trebuie să gestionezi singur această situație.
+
+##### O consultație psihiatrică este primul pas spre a înțelege ce se întâmplă și spre a găsi o cale concretă de a te simți mai bine.
+
+- 🔗 `/contactus`
+
+Hai să vorbim
+
+#### Cum decurge o consultație
+
+###### Discuția despre ce simți
+
+Prima consultație este dedicată în mare parte înțelegerii situației tale. Medicul ascultă, pune întrebări și creează spațiul necesar pentru ca tu să poți vorbi deschis despre ceea ce trăiești, fără presiunea timpului sau a judecății.
+
+###### Evaluarea psihiatrică
+
+Pe baza discuției medicul realizează o evaluare clinică a stării tale mintale, ținând cont de simptome, istoricul medical și contextul vieții tale. Această evaluare stă la baza diagnosticului și a planului de tratament.
+
+###### Planul de tratament
+
+La finalul consultației medicul îți explică constatările și îți propune un plan de tratament clar, care poate include medicație, recomandarea psihoterapiei sau o combinație a celor două. Fiecare decizie este explicată și discutată cu tine.
+
+#### Pentru cei care știu că ceva nu e în regulă, dar tot amână să ceară ajutor
+
+Există multe motive pentru care oamenii amână o consultație psihiatrică. Frica de ce ar putea afla, îngrijorarea că vor fi judecați, convingerea că alții au probleme mai grave sau speranța că lucrurile se vor rezolva de la sine dacă mai trece puțin timp.
+
+Între timp, zilele trec mai greu decât ar trebui.
+
+Nu există un prag minim de suferință de la care să fie justificat să ceri ajutor. Dacă ceea ce simți îți afectează viața, aceasta este suficient. Consultația psihiatrică nu este un ultim resort, este o alegere inteligentă pe care o poți face oricând.
+
+- 🖼 imagine: `/web/image/58343-9121ea88/DVS07999.webp` — alt: „” — arhivat: 9d18a170d0c8867d969a.webp
+
+##### dr Ioana Boilă
+
+medic specialist psihiatru
+
+- 🔗 `/contactus`
+
+Programează un consult
+
+## `/reabilitare-medicala-mures`
+
+- Titlu: Reabilitare Medicală | SEVALIA
+- Descriere: —
+
+- 🖼 imagine-fundal: `/web/image/51728-a09a4961/DSC06437.webp` — alt: „” — arhivat: 307b6c903525a5c7e30a.webp
+
+### REABILITARE MEDICALĂ
+
+- 🖼 imagine-fundal: `/web/image/51729-653d4985/_DSC3554.webp` — alt: „” — arhivat: 36affb2fd8899bebddc4.webp
+
+### REABILITARE MEDICALĂ
+
+- 🔗 `#`
+
+###### Reabilitarea medicală este un proces complex prin care pacienții își pot recăpăta funcțiile pierdute în urma unor afecțiuni sau intervenții medicale. Aceasta include terapii personalizate pentru recuperarea mobilității, ameliorarea durerii și îmbunătățirea calității vieții.
+
+###### Dacă ai nevoie de servicii de recuperare medicală în Mureș, clinica noastră oferă soluții moderne și personalizate pentru diverse afecțiuni.
+
+#### Afecțiuni tratate
+
+###### Afecțiuni ortopedice
+
+Exemple: fracturi, entorse, luxații, hernie de disc.
+
+Tratament: fizioterapie, kinetoterapie, masaj terapeutic.
+
+###### Afecțiuni neurologice
+
+Exemple: accident vascular cerebral (AVC), scleroză multiplă, neuropatii.
+
+Tratament: exerciții pentru coordonare, stimulare neuromusculară, electroterapie.
+
+###### Recuperare post-operatorie
+
+Exemple: protezare de șold/genunchi, intervenții chirurgicale ortopedice.
+
+Tratament: programe individualizate de recuperare, gimnastică medicală, hidroterapie.
+
+###### Afecțiuni reumatologice
+
+Exemple: artrită, artroză, spondilită anchilozantă.
+
+Tratament: terapie manuală, proceduri antiinflamatoare, exerciții de mobilitate.
+
+###### Afecțiuni cardiovasculare
+
+Exemple: recuperare post-infarct miocardic, hipertensiune arterială.
+
+Tratament: exerciții fizice adaptate, reeducare respiratorie, consiliere nutrițională.
+
+- 🖼 imagine: `/web/image/51739-0a1dee24/_DSC3554.webp` — alt: „” — arhivat: 2602cf5eba4684c4a52a.webp
+
+##### Kinetoterapie
+
+Exerciții specifice pentru îmbunătățirea mobilității și forței musculare.
+
+- 🔗 `/kinetoterapie`
+
+Află mai multe
+
+- 🖼 imagine: `/web/image/51740-8414c4bb/DSC04394.webp` — alt: „” — arhivat: 3b56d42a3c852d93e55b.webp
+
+##### Electroterapie
+
+Utilizarea curenților electrici pentru refacerea funcției musculare și reducerea durerii.
+
+- 🔗 `/electroterapie`
+
+Află mai multe
+
+- 🖼 imagine: `/web/image/51741-e159f34a/_DSC3604.webp` — alt: „” — arhivat: ffaa323575252136eafb.webp
+
+##### Hidroterapie
+
+Terapie prin apă pentru relaxare și refacerea articulațiilor.
+
+### Întrebări frecvente despre reabilitare medicală
+
+- 🔗 `#`
+
+Ce afecțiuni necesită recuperare medicală?
+
+Orice afecțiune care afectează mobilitatea, forța musculară sau funcțiile motorii poate beneficia de reabilitare medicală, de la accidentări sportive până la boli neurologice.
+
+- 🔗 `#`
+
+Este reabilitarea medicală dureroasă ?
+
+Majoritatea procedurilor sunt nedureroase, iar terapiile sunt adaptate pentru a minimiza disconfortul și a oferi o recuperare eficientă.
+
+- 🔗 `#`
+
+Cât de des trebuie să particip la ședințele de recuperare ?
+
+Frecvența variază în funcție de afecțiune, dar în general se recomandă între 2 și 5 ședințe pe săptămână.
+
+- 🔗 `#`
+
+Ce tip de exerciții sunt recomandate după finalizarea tratamentului ?
+
+După încheierea programului de reabilitare, este recomandat să continui cu exerciții de întreținere, cum ar fi stretching, exerciții de mobilitate și întărirea musculaturii, conform indicațiilor specialistului.
+
+- 🔗 `#`
+
+Când pot începe recuperarea medicală după o intervenție chirurgicală ?
+
+În funcție de tipul operației, recuperarea poate începe la câteva zile sau săptămâni după intervenție. Medicul specialist îți va recomanda cel mai bun moment pentru a începe terapia.
+
+- 🖼 imagine: `/web/image/51690-98794d9c/user-md_9856334.webp` — alt: „” — arhivat: 80bf4fc4f5594cf2bba0.webp
+
+##### Medic specialist cu experiență în diagnosticarea și tratarea bolilor reumatice.
+
+- 🖼 imagine: `/web/image/51688-9f34e628/hands-heart_12442181.webp` — alt: „” — arhivat: 9f9b021e760d666f591e.webp
+
+##### Abordare personalizată pentru fiecare pacient.
+
+- 🖼 imagine: `/web/image/51689-8bb9542b/add-folder_3914627.webp` — alt: „” — arhivat: 2dd4446b782952f6cbb9.webp
+
+##### Tehnologii moderne pentru investigații precise și tratamente eficiente.
+
+- 🖼 imagine: `/web/image/51691-5bdf4742/calendar-clock_7546728.webp` — alt: „” — arhivat: dd812ff9919ee50dc317.webp
+
+##### Programări rapide și accesibilitate ridicată
+
+- 🔗 `/contactus`
+
+Programează o consultație
+
+##### Echipa care îți este sprijin
+
+Ne asigurăm mereu că toate detaliile au fost luate în considerare și ne dedicăm timp pentru a răspunde tuturor întrebărilor despre diagnosticul stabilit sau procedurile de tratament recomandate. O bună înțelegere a tuturor pașilor necesari în demersul terapeutic este esențială pentru un tratament de succes.
+
+Fiecare dintre noi, dar și împreună, lucrăm pentru a oferi o experiență plăcută fiecărui pacient. Suntem o echipă plină de entuziasm și energie, specializată în tratamentele oferite pentru adulți și copii.
+
+Empatia ne motivează să devenim sprijinul potrivit într-un proces terapeutic complex, minuțios conceput și adaptat la nevoile pacientului.
+
+- 🖼 imagine: `/web/image/5791-def24153/dr.svg` — alt: „” — arhivat: e165de943049c4f467d8.svg
+
+###### dr. Kinga Fülöp
+
+###### medic specialist reabilitare medicală
+
+- 🔗 `/contactus`
+
+Programează o consultație
+
+- 🖼 imagine: `/web/image/53014-d051b633/thumbnail_FullSizeRender.svg` — alt: „” — arhivat: 4358053c573a388ebd64.svg
+
+###### dr. Székely-Varga Margit
+
+###### medic specialist recuperare, medicină fizică și balneologie
+
+- 🔗 `/contactus`
+
+Programează o consultație
+
+- 🖼 imagine: `/web/image/57669-db38a5bc/417432980_363007553245016_2603031876801860113_n.jpg` — alt: „” — arhivat: 08139fe8c08727f3f7b0.svg
+
+###### dr. Voicu Maria
+
+###### medic specialist reabilitare medicală
+
+- 🔗 `/contactus`
+
+Programează o consultație
+
+- 🔗 `/echipa-noastra`
+
+Descoperă echipa noastră
+
+##### Întrebările și modificările fizice te copleșesc?
+
+Noi suntem sprijinul tău în această perioadă.
+
+- 🔗 `/contactus`
+
+Hai să vorbim
+
+## `/recuperare-medicala-mures`
+
+- Titlu: Recuperare Medicală Mureș | sevalia.ro
+- Descriere: —
+
+### Recuperare Medicală SEVALIA
+
+#### Sevalia Medica | Reumatologie și Recuperare Medicală Târgu Mureș
+
+str. Constandin Hagi Stoian 3/C, Târgu Mureș 540256
+
+0365 403 001
+
+- 🖼 imagine: `/web/image/44004-7fe6183f/417432980_363007553245016_2603031876801860113_n.webp` — alt: „” — arhivat: eba3c8eec060ace8143b.webp
+
+Recuperare leziuni sportive
+
+Recuperare posttraumatism
+
+Recuperare AVC
+
+Recuperare proteza sold
+
+Recuperare ruptura ligament incrucisat
+
+Recuperare operatie genunchi
+
+Recuperare postoperatorie
+
+recuperare medicala cu bilet de trimitere
+
+centru de recuperare medicala
+
+kinetoterapie cu bilet de trimitere
+
+## `/recuperare-postoperatorie-cpmotion`
+
+- Titlu: Recuperare postoperatorie ortopedica - CPMotion
+- Descriere: Terapie recuperatorie cu aparat CPMotion pentru mobilizarea pasivă a articulațiilor șoldului, genunchiului și gleznei. Tratament eficient, fără durere, ideal postoperator sau post-traumă.
+
+- 🖼 imagine-fundal: `/web/image/53149-e653a521/IMG_1614.webp` — alt: „” — arhivat: e7a7cbe12045c01bd4ee.webp
+
+### Recuperare postoperatorie - CPMotion
+
+- 🖼 imagine-fundal: `/web/image/53150-913a2c08/IMG_1596.webp` — alt: „” — arhivat: 1724d59f380f410ec005.webp
+
+### Recuperare postoperatorie - CPMotion
+
+###### CPMotion este un dispozitiv medical de ultimă generație, proiectat pentru a efectua mișcări pasive continue (Continuous Passive Motion – CPM) ale articulațiilor afectate. Acest tip de terapie este indicat în faza incipientă a recuperării, imediat după intervenții chirurgicale ortopedice sau în cazul unor afecțiuni care limitează mobilitatea articulațiilor.
+
+###### Prin mobilizarea pasivă a articulației, CPMotion menține articulația în mișcare fără ca pacientul să depună efort. Astfel, se previne rigidizarea, se îmbunătățește lubrifierea intra-articulară, se reduce edemul și se accelerează refacerea țesuturilor.
+
+###### Dispozitivul este complet ajustabil, ceea ce permite setarea unghiurilor, vitezei și duratei de mișcare în funcție de indicațiile terapeutice. Terapia este complet nedureroasă și ideală pentru pacienții cu toleranță scăzută la efort sau durere, inclusiv vârstnici sau persoane în convalescență postoperatorie.
+
+###### CPMotion este folosit ca parte a unui plan complex de recuperare, alături de kinetoterapie activă, fizioterapie și evaluări funcționale periodice, pentru a maximiza rezultatele tratamentului.
+
+#### Recuperare postoperatorie
+
+#### Rigiditate articulara post-traumatica
+
+#### Recuperare dupa leziuni ale ligamentelor sau tendoanelor
+
+#### Artrite sau artroze cu limitare de mobilitate
+
+#### Reabilitare in afectiuni neurologice cu imobilizare articulara secundara
+
+##### Peste 1.000 de pacienți și-au îmbunătățit sănătatea.
+
+Vrei să te alături lor?
+
+- 🔗 `/contactus`
+
+Hai să vorbim
+
+- 🖼 imagine: `/web/image/38273-8fd1382b/Kinetoterapia%20corecteaza%20si%20previne%20deficientele%20fizice.webp` — alt: „” — arhivat: 938f6e76c3edc194bf1a.webp
+
+##### Recâștigă mobilitatea articulară fără durere sau efort activ
+
+- 🖼 imagine: `/web/image/52659-2dd7f937/recuperare_rapida_post_interventii_chirurgical.webp` — alt: „” — arhivat: 80365bbc355fc810241d.webp
+
+##### Stimulează circulația și vindecarea locală
+
+- 🖼 imagine: `/web/image/52492-2d53e34d/dureri_inflamatii_articulatii.png` — alt: „” — arhivat: 329711741fa5dce6443b.png
+
+##### Previne anchiloza și complicațiile postoperatorii
+
+- 🖼 imagine: `/web/image/53140-ef11de07/mobilitate_articulara.webp` — alt: „” — arhivat: eaa55cf82fdbe7977d2e.webp
+
+##### Accesibil chiar și pacienților cu mobilitate redusă
+
+- 🔗 `/contactus`
+
+Programează o consultație
+
+### Terapie pasivă motorizată pentru recâștigarea mobilității articulare, fără durere și fără efort
+
+Recuperarea medicală asistată cu aparatul CPMotion este o metodă inovatoare, eficientă și sigură de redobândire a mobilității articulare după intervenții chirurgicale, traumatisme sau afecțiuni ortopedice.
+
+Acest sistem de mișcare pasivă continuă permite mobilizarea articulațiilor fără implicarea activă a pacientului, fiind ideal în fazele timpurii ale recuperării, când mișcarea activă este contraindicată sau limitată de durere.
+
+##### INDICAȚII
+
+Principalele indicații ale procedurii sunt:
+
+Intervenții chirurgicale ortopedice (ex: proteză genunchi, reconstrucții ligamentare)
+
+Rigiditate articulară post-traumatică
+
+Afecțiuni degenerative cu mobilitate limitată
+
+Recuperare neurologică cu afectare articulară
+
+Reabilitare precoce post-imobilizare gipsată
+
+##### CONTRAINDICAȚII
+
+Nu este recomandată procedura pentru pacienții cu următoarele afecțiuni:
+
+Fracturi instabile sau netratate
+
+Infecții locale în zona articulației
+
+Hemartroză (sânge în articulație)
+
+Durere acută severă la mobilizare pasivă
+
+Contraindicațiile nu sunt cu caracter absolut.
+
+Este esențial un consult medical de specialitate și în consecință aprobarea medicului.
+
+### Întrebări frecvente despre recuperarea postoperatorie cu CPMotion
+
+- 🔗 `#`
+
+Este terapia cu CPMotion dureroasă?
+
+Nu, mișcarea este pasivă și controlată, fără să provoace disconfort.
+
+- 🔗 `#`
+
+Câte ședințe sunt recomandate?
+
+Durata și frecvența sunt stabilite de medicul specialist, în funcție de afecțiune și stadiul recuperării.
+
+- 🔗 `#`
+
+Ce articulații pot fi tratate cu CPMotion?
+
+CPMotion este soluția pentru recuperarea articulațiilor șoldului, genunchiului și gleznei.
+
+- 🔗 `#`
+
+Se poate combina cu alte tipuri de tratamente?
+
+Da, CPMotion este adesea combinat cu fizioterapie, masaj și kinetoterapie activă pentru rezultate optime.
+
+- 🔗 `#`
+
+Poate înlocui kinetoterapia?
+
+Nu, terapia cu CPMotion este complementară. În fazele timpurii este esențială, dar pe termen lung trebuie combinată cu kinetoterapie activă pentru rezultate durabile.
+
+- 🔗 `#`
+
+Este această terapie sigură pentru vârstnici?
+
+Da, este sigură și eficientă pentru pacienți de orice vârstă, mai ales pentru cei care nu pot face mișcare activă din cauza durerii sau intervențiilor recente.
+
+##### Întrebările și modificările fizice te copleșesc?
+
+Noi suntem sprijinul tău în această perioadă
+
+- 🔗 `/contactus`
+
+Hai să vorbim
+
+## `/reumatologie`
+
+- Titlu: Reumatologie | Sevalia | Targu Mures
+- Descriere: Reumatologia este ramura medicinei care se ocupă cu diagnosticarea și tratamentul afecțiunilor musculo-scheletale și autoimune. Dacă resimți disconfort articular sau suferi de reumatism, programează-te la un medic reumatolog în Mureș pentru un diagnostic corect și tratament personalizat.
+
+- 🖼 imagine-fundal: `/web/image/51676-9b706a43/joint-pain-arthritis-tendon-problems-man-touching-nee-pain-point.webp` — alt: „” — arhivat: 336297ab2b833745c80f.webp
+
+### REUMATOLOGIE
+
+- 🖼 imagine-fundal: `/web/image/51677-9b706a43/joint-pain-arthritis-tendon-problems-man-touching-nee-pain-point.webp` — alt: „” — arhivat: 336297ab2b833745c80f.webp
+
+### REUMATOLOGIE
+
+- 🔗 `#`
+
+###### Reumatologia este ramura medicinei care se ocupă cu diagnosticarea și tratamentul afecțiunilor musculo-scheletale și autoimune. Aceste boli pot afecta articulațiile, oasele, mușchii și țesuturile conjunctive, provocând durere, rigiditate și inflamație.
+
+###### Dacă resimți disconfort articular sau suferi de reumatism, programează-te la un medic reumatolog în Mureș pentru un diagnostic corect și tratament personalizat.
+
+#### Afecțiuni tratate
+
+###### Artrita reumatoidă
+
+Simptome: dureri articulare, rigiditate matinală, umflături, oboseală cronică.
+
+Cauze: boală autoimună în care sistemul imunitar atacă articulațiile.
+
+Tratament: medicamente antiinflamatoare, terapii biologice, fizioterapie.
+
+###### Artroza
+
+Simptome: durere și rigiditate articulară, pierderea mobilității, deformări ale articulațiilor.
+
+Cauze: uzura cartilajului articular odată cu înaintarea în vârstă, factori genetici.
+
+Tratament: analgezice, infiltrații cu acid hialuronic, exerciții fizice.
+
+###### Spondilita anchilozantă
+
+Simptome: dureri de spate persistente, rigiditate în zona lombară, inflamații ale ochilor.
+
+Cauze: predispoziție genetică, reacții inflamatorii anormale.
+
+Tratament: antiinflamatoare, terapie biologică, kinetoterapie.
+
+###### Lupus eritematos sistemic
+
+Simptome: erupții cutanate, dureri articulare, oboseală extremă.
+
+Cauze: tulburări autoimune, factori genetici și de mediu.
+
+Tratament: corticosteroizi, imunosupresoare, protecție solară.
+
+###### Guta și pseudoguta
+
+Simptome: dureri intense în articulații (de obicei la degetul mare de la picior), inflamație.
+
+Cauze: acumularea de acid uric (în guta) sau de pirofosfat de calciu (în pseudogută).
+
+Tratament: medicamente care reduc acidul uric, dietă echilibrată, hidratare.
+
+###### Osteoporoza
+
+Simptome: fracturi frecvente, dureri de spate, pierderea înălțimii.
+
+Cauze: deficit de calciu și vitamina D, menopauză, stil de viață sedentar.
+
+Tratament: suplimente de calciu și vitamina D, exerciții fizice, medicamente pentru creșterea densității osoase.
+
+### Întrebări frecvente despre reumatologie
+
+- 🔗 `#`
+
+Când ar trebui să consult un reumatolog?
+
+Dacă ai dureri articulare persistente, rigiditate dimineața sau inflamații frecvente, este recomandat să consulți un specialist pentru un diagnostic corect. În cadrul clinicii noastre de reumatologie din Mureș, vei beneficia de consultații complete și tratamente personalizate.
+
+- 🔗 `#`
+
+Reumatismul este ereditar?
+
+Unele boli reumatice au o componentă genetică, cum ar fi artrita reumatoidă sau spondilita anchilozantă, dar factorii de mediu joacă, de asemenea, un rol important. Un consult reumatologic în Mureș te poate ajuta să afli dacă ai predispoziție pentru astfel de afecțiuni.
+
+- 🔗 `#`
+
+Există remedii naturale pentru durerile articulare ?
+
+Deși unele suplimente și diete pot ajuta la ameliorarea simptomelor, tratamentele medicale sunt esențiale pentru controlul afecțiunii. Discută cu un medic reumatolog din Mureș despre cele mai bune opțiuni pentru tine.
+
+- 🔗 `#`
+
+Care sunt primele semne ale unei boli reumatice?
+
+Primele simptome pot include dureri articulare persistente, rigiditate dimineața, inflamații ale articulațiilor și oboseală cronică. Dacă observi aceste simptome, este recomandat un consult reumatologic.
+
+- 🔗 `#`
+
+Reumatismul poate fi prevenit?
+
+Deși nu toate bolile reumatice pot fi prevenite, un stil de viață sănătos, o alimentație echilibrată și exercițiile fizice regulate pot ajuta la reducerea riscului de apariție a acestora.
+
+- 🔗 `#`
+
+Ce alimente sunt recomandate pentru sănătatea articulațiilor?
+
+Alimente bogate în omega-3 (somon, nuci, semințe de in), legume verzi, fructe bogate în antioxidanți și alimente care conțin vitamina D și calciu sunt benefice pentru articulații.
+
+- 🖼 imagine: `/web/image/51690-98794d9c/user-md_9856334.webp` — alt: „” — arhivat: 80bf4fc4f5594cf2bba0.webp
+
+##### Medic specialist cu experiență în diagnosticarea și tratarea bolilor reumatice.
+
+- 🖼 imagine: `/web/image/51688-9f34e628/hands-heart_12442181.webp` — alt: „” — arhivat: 9f9b021e760d666f591e.webp
+
+##### Abordare personalizată pentru fiecare pacient.
+
+- 🖼 imagine: `/web/image/51689-8bb9542b/add-folder_3914627.webp` — alt: „” — arhivat: 2dd4446b782952f6cbb9.webp
+
+##### Tehnologii moderne pentru investigații precise și tratamente eficiente.
+
+- 🖼 imagine: `/web/image/51691-5bdf4742/calendar-clock_7546728.webp` — alt: „” — arhivat: dd812ff9919ee50dc317.webp
+
+##### Programări rapide și accesibilitate ridicată
+
+- 🔗 `/contactus`
+
+Programează o consultație
+
+##### Echipa care îți este sprijin
+
+Ne asigurăm mereu că toate detaliile au fost luate în considerare și ne dedicăm timp pentru a răspunde tuturor întrebărilor despre diagnosticul stabilit sau procedurile de tratament recomandate. O bună înțelegere a tuturor pașilor necesari în demersul terapeutic este esențială pentru un tratament de succes.
+
+Fiecare dintre noi, dar și împreună, lucrăm pentru a oferi o experiență plăcută fiecărui pacient. Suntem o echipă plină de entuziasm și energie, specializată în tratamentele oferite pentru adulți și copii.
+
+Empatia ne motivează să devenim sprijinul potrivit într-un proces terapeutic complex, minuțios conceput și adaptat la nevoile pacientului.
+
+- 🖼 imagine: `/web/image/5789-50014e7d/dr.svg` — alt: „” — arhivat: 8bdaa9d24efd4f8e45bf.svg
+
+###### dr. Cristina Pop
+
+###### medic specialist reumatolog
+
+- 🔗 `/contactus`
+
+Programează o consultație
+
+- 🖼 imagine: `/web/image/54541-21a82674/DVS00508.svg` — alt: „” — arhivat: 12112f4feeb17aae2c06.svg
+
+###### dr. Moldovan Kitti
+
+###### medic specialist reumatolog
+
+- 🔗 `/contactus`
+
+Programează o consultație
+
+- 🔗 `/echipa-noastra`
+
+Descoperă echipa noastră
+
+##### Întrebările și modificările fizice te copleșesc?
+
+Noi suntem sprijinul tău în această perioadă.
+
+- 🔗 `/contactus`
+
+Hai să vorbim
+
+## `/salinoterapie`
+
+- Titlu: SEVALIA | SALINOTERAPIE | MURES
+- Descriere: Terapie naturală ce utilizează aerosoli salini pentru a ameliora afecțiunile respiratorii și pentru a îmbunătăți sănătatea generală.
+
+- 🖼 imagine-fundal: `/web/image/51505-20a4af51/IMG-188.webp` — alt: „” — arhivat: af6ee14819f284a3bca7.webp
+
+### SALINOTERAPIE
+
+- 🔗 `#`
+
+- 🖼 imagine-fundal: `/web/image/51504-20a4af51/IMG-188.webp` — alt: „” — arhivat: af6ee14819f284a3bca7.webp
+
+### SALINOTERAPIE
+
+###### Salinoterapia poate oferi numeroase beneficii pentru sănătate, dar este important să fiți bine informați și să discutați cu un specialist pentru a vă asigura că acest tratament este potrivit pentru nevoile dumneavoastră specifice. În clinica noastră, vă oferim consiliere personalizată pentru a vă ajuta să obțineți cele mai bune rezultate posibile.
+
+- 🖼 imagine: `/web/image/43575-966f0c43/therapy_11518913.webp` — alt: „” — arhivat: 2b707a7d98d5a11fb548.webp
+
+##### Terapie naturală non-invazivă
+
+- 🖼 imagine: `/web/image/43574-9f392892/lungs_5608861.webp` — alt: „” — arhivat: d399a96711c0e995616d.webp
+
+##### Purificarea și detoxifierea căilor respiratorii
+
+- 🖼 imagine: `/web/image/43577-86d8f013/skin-protection_12275642.webp` — alt: „” — arhivat: 247a76ec87a396ab32b9.webp
+
+##### Îmbunătățirea sănătății pielii
+
+- 🖼 imagine: `/web/image/43576-f88a4e47/stress-management_7007364.webp` — alt: „” — arhivat: 19b220426378e170a756.webp
+
+##### Reducerea stresului și îmbunătățirea stării de bine
+
+- 🔗 `/contactus`
+
+Programează o consultație
+
+- 🔗 `#table_of_content_heading_1721120456766_1409`
+
+- 🔗 `#table_of_content_heading_1721120456766_1410`
+
+- 🔗 `#table_of_content_heading_1721120456766_1411`
+
+- 🔗 `#table_of_content_heading_1721120456766_1412`
+
+Obiectivele SalinoterapieiTipuri de SalinoterapieCând este necesară salinoterapiaContraindicații salinoterapie
+
+### Obiectivele Salinoterapiei
+
+Salinoterapia, cunoscută și sub denumirea de haloterapie, are multiple obiective care vizează îmbunătățirea stării generale de sănătate și bunăstare prin utilizarea proprietăților terapeutice ale sării. Aceasta terapie se bazează pe inhalarea particulelor fine de sare într-un mediu controlat, creând un efect similar cu cel obținut într-o salină naturală. Mai jos sunt detaliate principalele obiective ale salinoterapiei:1
+
+1. Îmbunătățirea Funcției Respiratorii:
+
+Curățarea Căilor Respiratorii: Particulele de sare ajută la curățarea căilor respiratorii prin eliminarea mucusului și a particulelor de praf sau polen, facilitând o respirație mai ușoară.
+
+Reducerea Inflamației: Sarea are proprietăți antiinflamatoare naturale care pot reduce inflamația din căile respiratorii, ajutând la ameliorarea simptomelor astmului, bronșitei cronice și altor afecțiuni respiratorii.
+
+2. Ameliorarea Simptomelor Alergiilor:
+
+Descongestionarea Sinusurilor: Inhalarea particulelor de sare poate ajuta la descongestionarea sinusurilor, reducând astfel simptomele rinitei alergice și ale altor tipuri de alergii.
+
+Reducerea Reacțiilor Alergice: Salinoterapia poate diminua sensibilitatea organismului la alergeni, reducând frecvența și intensitatea reacțiilor alergice.
+
+3. Detoxifierea Organismului:
+
+Eliminarea Toxinelor: Sarea contribuie la eliminarea toxinelor din organism, atât prin piele cât și prin căile respiratorii, promovând un mediu intern mai sănătos.
+
+Îmbunătățirea Circulației Sanguine: Expunerea la mediul salin poate stimula circulația sanguină, ajutând la transportul eficient al nutrienților și la eliminarea deșeurilor metabolice.
+
+4. Îmbunătățirea Calității Somnului:
+
+Inducerea Relaxării: Mediul relaxant și bogat în aerosoli de sare poate contribui la reducerea nivelului de stres și anxietate, promovând un somn mai odihnitor și de calitate.
+
+Reglarea Respirației: Salinoterapia poate ajuta la deschiderea căilor respiratorii, reducând apneea de somn și alte probleme respiratorii nocturne.
+
+5. Stimularea Sistemului Imunitar:
+
+Creșterea Rezistenței la Infecții: Inhalarea particulelor de sare poate stimula sistemul imunitar, crescând rezistența organismului la infecții și boli.
+
+Reducerea Incidenței Răcelilor: Salinoterapia poate reduce frecvența și severitatea răcelilor și a altor infecții respiratorii prin crearea unui mediu ostil pentru bacterii și viruși.
+
+6. Susținerea Performanței Fizice:
+
+Îmbunătățirea Capacității Respiratorii: Sportivii pot beneficia de salinoterapie prin îmbunătățirea capacității respiratorii și a performanței fizice, datorită aerului bogat în ioni de sare care facilitează o mai bună oxigenare a sângelui.
+
+Recuperare Rapidă: Proprietățile antiinflamatoare ale sării pot accelera recuperarea după efort fizic intens, reducând inflamația musculară și durerile asociate.
+
+7. Beneficii pentru Piele:
+
+Tratamentul Afecțiunilor Dermatologice: Sarea poate avea efecte benefice în tratamentul afecțiunilor dermatologice precum psoriazisul, eczema și acneea, datorită proprietăților sale antibacteriene și antiinflamatoare.
+
+Îmbunătățirea Texturii Pielii: Salinoterapia poate contribui la detoxifierea și curățarea pielii, îmbunătățind textura și aspectul acesteia.
+
+Salinoterapia este o metodă naturală și eficientă de a susține sănătatea respiratorie, imunitatea și bunăstarea generală, oferind beneficii semnificative pentru o gamă largă de afecțiuni și nevoi. Această terapie, disponibilă în cadrul clinicii noastre, este ideală pentru cei care doresc să experimenteze proprietățile terapeutice ale sării într-un mediu controlat și relaxant.
+
+### Tipuri de Salinoterapie
+
+Există mai multe tipuri de salinoterapie disponibile, fiecare având beneficii unice. Printre acestea se numără:
+
+1. Salinoterapia activă
+
+Această metodă implică utilizarea unui generator de aerosoli salini, cunoscut sub numele de halogenerator, care pulverizează particule fine de sare în aerul din încăpere.
+
+Mecanism de Acțiune: Halogeneratorul mărunțește sarea de calitate medicală în particule microscopice și le eliberează în aer. Aceste particule sunt inhalate și ajung în căile respiratorii, oferind beneficii terapeutice.
+
+Beneficii: Salinoterapia activă este eficientă pentru ameliorarea simptomelor afecțiunilor respiratorii, detoxifierea organismului și îmbunătățirea calității somnului. Este potrivită pentru sesiuni individuale sau de grup, într-o încăpere special amenajată.
+
+2. Salinoterapia pasivă
+
+Această metodă implică petrecerea timpului într-o cameră sau într-o grotă construită din blocuri de sare, fără utilizarea unui halogenerator.
+
+Mecanism de Acțiune: Blocurile de sare eliberează ioni de sare în mod natural în aer, creând un microclimat asemănător cu cel din salinele naturale.
+
+Beneficii: Salinoterapia pasivă oferă un mediu relaxant și calmant, benefic pentru reducerea stresului și îmbunătățirea sănătății generale. Este ideală pentru persoanele care doresc să beneficieze de proprietățile sării într-un mod mai blând și mai natural.
+
+3. Inhalarea de aerosoli salini
+
+Această metodă utilizează inhalatoare speciale care eliberează aerosoli de sare direct în căile respiratorii.
+
+Mecanism de Acțiune: Inhalatoarele creează un flux constant de aerosoli salini, care sunt inhalați prin nas sau gură, ajungând direct în sistemul respirator.
+
+Beneficii: Inhalarea de aerosoli salini este o metodă rapidă și eficientă pentru ameliorarea simptomelor afecțiunilor respiratorii și pentru curățarea căilor respiratorii. Este deosebit de utilă pentru persoanele care suferă de astm, bronșită cronică sau sinuzită.
+
+### Când este necesară salinoterapia
+
+Salinoterapia, sau haloterapia, este un tratament natural eficient pentru diverse afecțiuni și probleme de sănătate. Acest tip de terapie este indicat în mai multe situații, având beneficii semnificative pentru sănătatea respiratorie, dermatologică și generală. Mai jos sunt detaliate cazurile în care salinoterapia este necesară și poate aduce îmbunătățiri notabile:
+
+###### Afecțiuni respiratorii cronice
+
+Astmul: Pacienții cu astm pot beneficia de salinoterapie, deoarece particulele de sare ajută la curățarea căilor respiratorii, reducerea inflamației și ameliorarea simptomelor de respirație grea și tuse.
+
+Bronșita Cronică: Salinoterapia poate ajuta la deschiderea căilor respiratorii și la eliminarea mucusului acumulat, ameliorând astfel simptomele bronșitei cronice.
+
+Sinuzita: Expunerea la aerosoli salini poate ajuta la descongestionarea sinusurilor, reducerea inflamației și prevenirea infecțiilor sinusale recurente.
+
+###### Alergii respiratorii
+
+Rinita Alergică: Persoanele care suferă de rinită alergică pot experimenta o reducere a simptomelor precum strănutul, congestia nazală și mâncărimea, datorită efectului de curățare al particulelor de sare asupra căilor respiratorii.
+
+Febra Fânului: Salinoterapia poate ajuta la reducerea inflamației și iritației cauzate de alergeni sezonieri, îmbunătățind astfel calitatea vieții în perioadele de expunere crescută la polen.
+
+###### Afecțiuni dermatologice
+
+Psoriazis: Sarea are proprietăți antiinflamatoare și antibacteriene, care pot ajuta la ameliorarea simptomelor psoriazisului, reducând plăcile și iritația pielii.
+
+Eczemă: Pacienții cu eczemă pot experimenta o ameliorare a simptomelor prin salinoterapie, datorită efectului calmant și de curățare al sării asupra pielii.
+
+Acneea: Proprietățile antibacteriene ale sării pot ajuta la reducerea inflamației și la curățarea porilor, ameliorând simptomele acneei.
+
+###### Reducerea stresului și îmbunătățirea calității somnului
+
+Stres și Anxietate: Salinoterapia poate avea un efect calmant și relaxant, ajutând la reducerea nivelului de stres și anxietate. Mediul salin poate induce o stare de bine și relaxare profundă.
+
+Insomnie: Persoanele care suferă de insomnie pot găsi un somn mai odihnitor și profund prin salinoterapie, datorită efectului relaxant și îmbunătățirii respirației nocturne.
+
+###### Îmbunătățirea sistemului imunitar
+
+Prevenirea Infecțiilor: Salinoterapia poate stimula sistemul imunitar, ajutând organismul să lupte mai eficient împotriva infecțiilor bacteriene și virale.
+
+Recuperarea după Răceli și Gripe: Expunerea la aerosoli salini poate accelera recuperarea după infecții respiratorii, reducând durata și severitatea simptomelor.
+
+###### Detoxifierea organismului
+
+Expunerea la Poluare: Persoanele care trăiesc în medii urbane sau industrializate, cu niveluri ridicate de poluare a aerului, pot beneficia de salinoterapie pentru a-și curăța căile respiratorii de particule nocive și toxine.
+
+Fumatul: Fumătorii activi sau cei care au renunțat la fumat pot folosi salinoterapia pentru a-și detoxifia plămânii și a ameliora simptomele asociate cu fumatul.
+
+### Contraindicații salinoterapie
+
+Deși salinoterapia este recunoscută pentru numeroasele sale beneficii, este esențial să se ia în considerare și contraindicațiile asociate acestei terapii. Există anumite condiții și situații în care salinoterapia poate să nu fie recomandată sau poate necesita precauții suplimentare. Mai jos sunt detaliate principalele contraindicații ale salinoterapiei:
+
+###### Hipertensiune arterială severă
+
+Persoanele care suferă de hipertensiune arterială severă trebuie să fie prudente când folosesc salinoterapia deoarece inhalarea de aerooli salini poate duce la fluctuații ale tensiunii arteriale.
+
+Este recomandată consultarea medicului înainte de a încee salinoterapia pentru a evita posibile complicații.
+
+###### Bolile renale severe
+
+Pacienții cu afecțiuni renale severe trebuie să fie atenți la nivelurile de sare din organism. Excesul de sare poate agrava funcția renală și poate provoca retenție de lichide.
+
+Evaluarea medicală prealabilă și monitorizarea continuă sunt necesare.
+
+###### Probleme cardiace
+
+Persoanele cu probleme cardiace, cum ar fi insuficiența cardiacă sau bolile coronariene, ar trebui să fie precauți. Sarea poate contribui la retenția de lichide, crescând astfel presiunea asupra inimii.
+
+Medicul cardiolog trebuie consultat înainte de inițierea salinoterapiei.
+
+###### Probleme respiratorii severe
+
+În cazul unor afecțiuni respiratorii severe, exercițiile fizice pot agrava simptomele și pot duce la dificultăți respiratorii. Exemplu: Astm bronșic necontrolat, boala pulmonară obstructivă cronică (BPOC) severă.
+
+###### Infecții respiratorii acute
+
+Pacienții cu infecții respiratorii acute, cum ar fi pneumonia sau tuberculoza, ar trebui să evite salinoterapia. Inhalarea de aerosoli salini poate irita căile respiratorii inflamate și poate agrava infecția.
+
+Este recomandat să se aștepte până la vindecarea completă a infecției înainte de a începe terapia.
+
+###### Epilepsie
+
+Persoanele cu epilepsie trebuie să fie atente la medii care pot declanșa crize. Anumite medii de salinoterapie pot induce schimbări în echilibrul electrolitic, care pot fi problematice pentru persoanele epileptice.
+
+Consultarea unui neurolog și evaluarea riscurilor sunt necesare înainte de a începe tratamentul.
+
+###### Femeile însărcinate
+
+Femeile însărcinate ar trebui să fie prudente cu privire la orice tratament nou, inclusiv salinoterapia. Nu există suficiente studii care să confirme siguranța salinoterapiei în timpul sarcinii.
+
+Este esențial ca femeile însărcinate să consulte medicul obstetrician înainte de a începe salinoterapia.
+
+### Întrebări frecvente despre salinoterapie
+
+- 🔗 `#`
+
+Pentru ce afecțiuni este recomandată salinoterapia?
+
+Salinoterapia este recomandată pentru o gamă largă de afecțiuni respiratorii și alergice, inclusiv astm, bronșită cronică, sinuzită, rinită alergică și febra fânului.
+
+De asemenea, este benefică pentru persoanele care suferă de afecțiuni dermatologice, cum ar fi psoriazisul și eczema. Salinoterapia poate îmbunătăți și calitatea somnului, reduce stresul și anxietatea și stimula sistemul imunitar.
+
+- 🔗 `#`
+
+Este salinoterapia sigură pentru copii?
+
+Da, salinoterapia este considerată sigură pentru copii și poate fi deosebit de benefică pentru cei care suferă de afecțiuni respiratorii sau alergii. Mediul sărat ajută la curățarea căilor respiratorii și la reducerea inflamației, ceea ce poate ameliora simptomele și îmbunătăți sănătatea generală a copiilor. Totuși, este recomandat să consultați medicul pediatru înainte de a începe tratamentul pentru a vă asigura că este adecvat pentru copilul dumneavoastră.
+
+- 🔗 `#`
+
+Cât de des ar trebui să urmez ședințele de salinoterapie pentru a vedea rezultatele?
+
+Frecvența ședințelor de salinoterapie poate varia în funcție de afecțiunea tratată și de severitatea simptomelor. Pentru probleme respiratorii cronice, cum ar fi astmul sau bronșita cronică, se recomandă inițial 2-3 ședințe pe săptămână timp de câteva săptămâni. Ulterior, frecvența poate fi redusă la o ședință pe săptămână pentru întreținere. Este important să discutați cu un specialist pentru a stabili un plan de tratament personalizat.
+
+- 🔗 `#`
+
+Cât durează o ședință de salinoterapie?
+
+O ședință de salinoterapie durează, în general, între 30 și 60 de minute. Durata poate varia în funcție de specificul tratamentului și de nevoile individuale ale pacientului. Este important să urmați recomandările specialistului care vă monitorizează tratamentul.
+
+- 🔗 `#`
+
+Ce ar trebui să port în timpul unei ședințe de salinoterapie?
+
+Este recomandat să purtați haine confortabile și lejere în timpul ședințelor de salinoterapie. Deoarece particulele de sare pot intra în contact cu îmbrăcămintea, este bine să evitați hainele delicate sau costisitoare. În unele centre, vi se poate oferi un halat sau îmbrăcăminte de protecție pentru a vă schimba înainte de sesiune.
+
+- 🔗 `#`
+
+Pot să folosesc salinoterapia dacă am o răceală sau o gripă?
+
+Salinoterapia poate ajuta la ameliorarea simptomelor unei răceli sau gripe, cum ar fi congestia nazală și tusea. Cu toate acestea, este important să consultați un medic înainte de a începe tratamentul, mai ales dacă aveți febră mare sau simptome severe. În cazul infecțiilor respiratorii acute, este recomandat să așteptați până la ameliorarea simptomelor acute înainte de a începe salinoterapia.
+
+- 🔗 `#`
+
+Este salinoterapia eficientă pentru fumători sau foști fumători?
+
+Da, salinoterapia poate fi benefică pentru fumători și foști fumători. Inhalarea de aerosoli salini ajută la curățarea căilor respiratorii și la eliminarea mucusului și toxinelor acumulate în plămâni. Aceasta poate contribui la îmbunătățirea funcției respiratorii și la reducerea tusei cronice asociate fumatului. Este important să discutați cu un specialist pentru a stabili un plan de tratament adecvat.
+
+- 🔗 `#`
+
+Există vreo pregătire specială necesară înainte de o ședință de salinoterapie?
+
+Nu este necesară o pregătire specială înainte de o ședință de salinoterapie. Totuși, este recomandat să beți apă suficientă înainte și după ședință pentru a vă menține hidratat. Dacă aveți întrebări specifice sau condiții medicale care ar putea necesita atenție specială, discutați cu specialistul înainte de a începe tratamentul.
+
+##### Întrebările și modificările fizice te copleșesc?
+
+Noi suntem sprijinul tău în această perioadă.
+
+- 🔗 `/contactus`
+
+Hai să vorbim
+
+## `/servicii`
+
+- Titlu: Servicii Complete de Reumatologie și Recuperare Medicală Personalizată
+- Descriere: Descoperă gama completă de servicii de reumatologie și recuperare medicală. Tratament personalizat, tehnologie modernă și grijă față de pacient.
+
+- 🖼 imagine-fundal: `/web/image/39083-6c6453ff/_DSC2864.webp` — alt: „” — arhivat: a5da2ee327ce6567c805.webp
+
+### SERVICIILE NOASTRE
+
+- 🔗 `/electroterapie`
+
+###### Electroterapie
+
+Electroterapie este o componentă a fizioterapie ce în combinație cu alte metode, ajută în mai multe afecțiuni ale sistemului muscular.
+
+- 🔗 `/salinoterapie`
+
+###### Salinoterapie
+
+Salinoterapia, cunoscută și sub denumirea de haloterapie, are multiple obiective care vizează îmbunătățirea stării generale de sănătate și bunăstare prin utilizarea proprietăților terapeutice ale sării.
+
+- 🔗 `/kinetoterapie`
+
+###### Kinetoterapie
+
+Kinetoterapie este o modalitate de reabilitare a sistemului musculo-scheletic, ce folosește ca principală resursă omul și mișcarea corpului în forma unor exerciții bine definite.
+
+- 🔗 `/baie-stanger-electrohidroterapie`
+
+###### Baie Stanger
+
+Un tratament inovator bazat pe curenți electrici de joasă intensitate, aplicat în apă, care ajută la reducerea durerii, relaxarea musculară și îmbunătățirea circulației. Ideal pentru persoanele cu probleme neurologice sau reumatismale.
+
+- 🔗 `/bai-galvanice`
+
+###### Bai galvanice
+
+Terapie combinată cu apă și curenți electrici galvanici, utilizată pentru relaxarea mușchilor, stimularea circulației și reducerea inflamațiilor. Este recomandată în cazuri de afecțiuni articulare sau dureri cronice.
+
+- 🔗 `/dus-subacval`
+
+###### Dus subacval
+
+Un masaj sub apă, aplicat cu un jet puternic, ce stimulează circulația, relaxează țesuturile și ajută la ameliorarea tensiunilor musculare. Ideal pentru relaxare și refacere fizică.
+
+- 🔗 `/dry-needling`
+
+###### Dry needling
+
+Dry needling funcționează prin inactivarea punctelor de declanșare miofasciale, adică zone ale mușchilor care au devenit tensionate din cauza stresului, posturii incorecte sau suprasolicitării.
+
+- 🔗 `/magnetoterapie`
+
+###### Magnetoterapie
+
+Terapie bazată pe utilizarea câmpurilor magnetice pentru a reduce inflamația, durerea și pentru a stimula regenerarea celulară. Eficientă în tratarea afecțiunilor articulare și reumatismale.
+
+- 🔗 `/termoterapie`
+
+###### Termoterapie
+
+Un tratament care utilizează căldura pentru a relaxa mușchii, a reduce durerile și a stimula circulația. Ideal pentru afecțiuni reumatice și tensiuni musculare cronice.
+
+- 🔗 `/drenaj-limfatic`
+
+###### Drenaj limfatic
+
+O tehnică de masaj delicat, care stimulează circulația limfatică, reducând retenția de lichide și eliminând toxinele din organism. Perfect pentru combaterea edemelor și pentru îmbunătățirea imunității.
+
+- 🔗 `/ultrasonoterapie`
+
+###### Ultrasonoterapie
+
+Un tratament modern care folosește ultrasunete pentru a reduce durerea, inflamația și pentru a accelera vindecarea țesuturilor. Util în cazuri de leziuni musculare sau articulare.
+
+- 🔗 `/laserterapie`
+
+###### Laserterapie
+
+Terapie non-invazivă care utilizează fascicule laser pentru a reduce durerea, accelera vindecarea și stimula regenerarea țesuturilor. Recomandată pentru afecțiuni cronice sau leziuni acute.
+
+- 🔗 `/masaj`
+
+###### Masaj
+
+O tehnică tradițională de relaxare și refacere, ideală pentru reducerea stresului, ameliorarea durerilor musculare și îmbunătățirea circulației. Oferă beneficii atât pentru corp, cât și pentru minte.
+
+- 🔗 `/kinesio-taping`
+
+###### Kinesio taping
+
+Kinesio taping este o tehnică terapeutică modernă ce utilizează benzi elastice speciale, aplicate strategic pe zonele afectate pentru a susține musculatura, a reduce inflamația și a îmbunătăți funcționalitatea fără a restricționa mișcarea.
+
+##### Echipa care îți este sprijin
+
+- 🖼 imagine: `/web/image/5789-50014e7d/dr.svg` — alt: „” — arhivat: 8bdaa9d24efd4f8e45bf.svg
+
+###### dr. Cristina Pop
+
+###### medic specialist reumatolog
+
+- 🔗 `/contactus`
+
+Programează o consultație
+
+- 🖼 imagine: `/web/image/5787-e94b73a6/dr.svg` — alt: „” — arhivat: f27a379a35f643234c3b.svg
+
+###### dr. Gabriela Crișan
+
+###### medic specialist reabilitare medicală
+
+###### medic primar medicină sportiv
+
+- 🔗 `/contactus`
+
+Programează o consultație
+
+- 🖼 imagine: `/web/image/5791-def24153/dr.svg` — alt: „” — arhivat: e165de943049c4f467d8.svg
+
+###### dr. Kinga Fülöp
+
+###### medic specialist reabilitare medicală
+
+- 🔗 `/contactus`
+
+Programează o consultație
+
+- 🖼 imagine: `/web/image/5788-52691f59/Emanuel.svg` — alt: „” — arhivat: b9dc4d40ee23056eeda9.svg
+
+###### Emanuel
+
+###### fiziokinetoterapeut șef
+
+- 🖼 imagine: `/web/image/49990-a9c57606/DSCF3282.00_01_30_04.Still004.webp` — alt: „” — arhivat: 005e255314440ba7dffa.webp
+
+##### Decompresie vertebrala robotizata
+
+Este un tratament non-invaziv pentru durerea sciatică acută și cronică declanșată de o hernie de disc sau de o protuzie discală în partea inferioară a spatelui sau de stenoza vertebrală.
+
+- 🔗 `/decompresie-vertebrala-robotizata`
+
+Află mai multe
+
+- 🖼 imagine: `/web/image/49991-6ecd5425/EMSELLA_REBEca.webp` — alt: „” — arhivat: 20a200ecd9be2dc48114.webp
+
+##### Terapia planseului pelvin
+
+Terapia EMSELLA este indicată în tratarea incontinenței urinare, acționând prin fortifierea musculaturii planșeului pelvin. Astfel se redobândește controlul asupra vezicii urinare.
+
+- 🔗 `/emsella-tratament-pentru-incontinenta-urinara`
+
+Află mai multe
+
+- 🖼 imagine: `/web/image/49992-6f908dd0/DSC04394.webp` — alt: „” — arhivat: 7cf63f3d866db3d6c6bd.webp
+
+##### ShockWave Focusat
+
+Această terapie favorizează procesele de reparare de la nivelul tendoanelor și oaselor, elimină calcificările, reduce durerea persistentă și relaxează musculatura suprasolicitată. Este un tratament eficient pentru tendinopatii profunde, calcificări și în întârzieri de mineralizare a calusului cartilaginos, cum ar fi pseudoartroza.
+
+- 🔗 `/shockwave-focusat`
+
+Află mai multe
+
+##### Peste 1.000 de pacienți și-au îmbunătățit sănătatea.
+
+Vrei să te alături lor?
+
+- 🔗 `/contactus`
+
+Hai să vorbim
+
+## `/sevalia-cabinet-maurer-mures`
+
+- Titlu: Sevalia | Cabinet MAURER
+- Descriere: Cabinet medical Târgu Mureș (Maurer): pediatrie, cardiologie pediatrică, neurologie și psihiatrie. Consultații de specialitate și tratamente personalizate.
+
+- 🖼 imagine-fundal: `/web/image/57053-5782152f/2148050599.webp` — alt: „” — arhivat: a669e0a3ddd26e028a3f.webp
+
+- 🖼 imagine-fundal: `/html_editor/shape/html_builder%2FBold%2F14.svg?c1=o-color-4&c5=rgba(0%2C0%2C0%2C0` — alt: „” — arhivat: a07b8c391321fbbc39e8.svg
+
+Am deschis!
+
+### Pediatrie | Cardiologie Pediatrică | Neurologie | Psihiatrie
+
+- 🔗 `/contactus`
+
+Programează un consult
+
+#### Cardiologie pediatrică
+
+Evaluarea și monitorizarea afecțiunilor cardiace la copii, controale de specialitate și recomandări personalizate pentru o dezvoltare sănătoasă.
+
+Când este necesar un consult de cardiologie pediatrică?
+
+Un consult este recomandat atunci când apar simptome precum oboseală rapidă, palpitații, respirație dificilă sau suflu cardiac depistat la control.
+
+Ce simptome pot indica probleme cardiace la copii?
+
+Semnele pot include oboseală rapidă la efort, respirație dificilă, transpirații excesive, culoare vineție a buzelor sau episoade de leșin. Acestea necesită evaluare de specialitate.
+
+Ce înseamnă un suflu cardiac la copil și trebuie să mă îngrijorez?
+
+Un suflu cardiac este un zgomot auzit la ascultarea inimii. În multe cazuri este inofensiv, dar uneori poate indica o afecțiune cardiacă. Un consult de cardiologie pediatrică ajută la diferențierea între un suflu benign și unul care necesită investigații.
+
+- 🖼 imagine: `/web/image/57040-5d87d0de/Cardiologie_Maurer_Mures.webp` — alt: „Cardiologie pediatrica” — arhivat: 2c1c39382d6239e75f09.webp
+
+- 🖼 imagine: `/web/image/57043-1fa06a54/Pediatrie_Maurer_mures.webp` — alt: „Pediatrie” — arhivat: 04caf795da8d3ad5127b.webp
+
+#### Pediatrie
+
+Consultații pediatrice complete, monitorizarea dezvoltării copilului și îngrijire medicală adaptată fiecărei etape de creștere.
+
+Cum îmi dau seama dacă o răceală este ceva mai serios?
+
+Semnele de alarmă includ tuse persistentă, respirație greoaie, febră care nu cedează la tratament sau stare generală alterată. În aceste cazuri este necesară evaluarea pediatrică.
+
+Cât de importante sunt controalele de rutină la copil?
+
+Controalele periodice ajută la monitorizarea dezvoltării fizice și neurologice și la depistarea precoce a eventualelor probleme.
+
+Când trebuie să duc copilul la medic dacă are febră?
+
+Este recomandat consultul dacă febra depășește 38.5°C, persistă mai mult de 2–3 zile sau este însoțită de simptome precum somnolență, refuzul alimentației sau dificultăți de respirație.
+
+#### Neurologie
+
+Diagnostic și tratament pentru afecțiuni neurologice, evaluări specializate și planuri terapeutice personalizate.
+
+Când ar trebui să mă prezint la un neurolog?
+
+Consultația este recomandată în cazul durerilor de cap frecvente, amețelilor, tulburărilor de echilibru, amorțelilor sau problemelor de memorie.
+
+Sunt durerile de cap frecvente un motiv de îngrijorare?
+
+Dacă durerile sunt recurente, intense sau afectează activitățile zilnice, este important un consult neurologic pentru stabilirea cauzei.
+
+- 🖼 imagine: `/web/image/57041-3996b98b/Neurologie_Maurer_Mures.webp` — alt: „Neurologie” — arhivat: 74054aa166fe4f02f0fd.webp
+
+- 🖼 imagine: `/web/image/57046-081df119/Psihiatrie_Maurer_Mures.webp` — alt: „Psihiatrie” — arhivat: de2c922fcc503d7db767.webp
+
+Se pot trata tulburările de somn la neurolog? Da, anumite tulburări de somn pot avea cauze neurologice și necesită evaluare și tratament specific.
+
+#### Psihiatrie
+
+Servicii de psihiatrie și sănătate mintală, într-un cadru sigur și confidențial, orientat spre echilibrul emoțional al pacientului.
+
+Care este diferența dintre psiholog și psihiatru?
+
+Psihiatrul este medic și poate recomanda tratament medicamentos, în timp ce psihologul oferă consiliere și terapie fără medicație. În unele cazuri, colaborarea între cei doi este benefică.
+
+Când ar trebui să cer ajutor pentru anxietate sau depresie?
+
+Dacă simptomele persistă mai multe săptămâni și afectează viața de zi cu zi (somn, muncă, relații), este recomandat un consult de specialitate.
+
+Este normal să am nevoie de tratament psihiatric?
+
+Da, afecțiunile emoționale și psihice sunt frecvente și tratabile. Un consult poate aduce claritate și soluții adaptate fiecărui pacient.
+
+##### Întrebările și modificările fizice te copleșesc?
+
+Noi suntem sprijinul tău în această perioadă.
+
+- 🔗 `/contactus`
+
+Hai să vorbim
+
+## `/shockwave-focusat`
+
+- Titlu: SEVALIA | Terapia Shockwave | Mures
+- Descriere: Tratament non-invaziv pentru reducerea durerii și accelerarea vindecării țesuturilor prin unde de șoc.
+
+- 🖼 imagine-fundal: `/web/image/51634-df2eeec2/DSC04394.webp` — alt: „” — arhivat: 0bd78b3006fac02f175c.webp
+
+### SHOCKWAVE FOCUSAT
+
+- 🖼 imagine-fundal: `/web/image/51635-df2eeec2/DSC04394.webp` — alt: „” — arhivat: 0bd78b3006fac02f175c.webp
+
+### SHOCKWAVE FOCUSAT
+
+- 🔗 `#`
+
+###### Undele de șoc sunt unde acustice tranzitorii care au capacitatea unică de a transmite energie de înaltă intensitate la nivelul punctelor dureroase ale sistemului musculo-scheletal. Undele de șoc determină stimularea celulară și eliberarea factorului de creștere, rezultând regenerarea tisulară. Această terapie favorizează procesele de reparare de la nivelul tendoanelor și oaselor, elimină calcificările, reduce durerea persistentă și relaxează musculatura suprasolicitată.
+
+###### UNDELE DE ȘOC FOCALIZATE (SHOCKWAVE FOCUSAT) permit selecția adâncimii de penetrare cu o intensitate maximă constantă. Această terapie este indicată atât pentru tratamentul afecțiunilor superficiale, cât şi a celor în profunzime.
+
+###### Este un tratament eficient pentru tendinopatii profunde, calcificări și în întârzieri de mineralizare a calusului cartilaginos, cum ar fi pseudoartroza.
+
+##### Calcificări osteotendinoase
+
+##### Fracturi neconsolidate
+
+##### Puncte de tensiune (trigger)
+
+##### Tendinopatie
+
+- 🖼 imagine: `/web/image/4310-cac9f764/aim_9415793%20%281%29.webp` — alt: „” — arhivat: a9aa43f5d9707f3e845f.webp
+
+##### Precizie și focalizare
+
+Controlul precis asupra direcției și intensității undelor de șoc permit focalizarea exactă pe zona afectată. Astfel eficacitatea tratamentului este maximizată și este redus impactul asupra țesuturilor sănătoase din jur.
+
+- 🖼 imagine: `/web/image/4312-e1f26c31/medical_14242636.webp` — alt: „” — arhivat: 289d0a2065184e1cbd83.webp
+
+##### Stimularea vindecării și regenerării
+
+Undele de șoc pot stimula procesele de vindecare și regenerare la nivel celular. Acest lucru poate contribui la accelerarea recuperării pentru afecțiuni precum leziunile tendoanelor și întinderile musculare
+
+- 🖼 imagine: `/web/image/4311-2c30b85f/rheumatology_12024663%20%281%29.webp` — alt: „” — arhivat: b2d8fc27c9b89c6294e6.webp
+
+##### Efecte antiinflamatorii
+
+Asupra zonelor tratate, terapia ShockWave Focusat poate avea efecte antiinflamatorii, ceea ce ajută la diminuarea durerii, reducerea umflăturii și atenuarea altor simptome asociate cu afecțiunile inflamatorii.
+
+- 🖼 imagine: `/web/image/4313-af41dcc0/pain_12024719%20%281%29.webp` — alt: „” — arhivat: d8fa36f83778973396b3.webp
+
+##### Tratarea punctelor de tensiune (trigger)
+
+Undele de șoc pot fi utilizate pentru a trata punctele trigger ale mușchilor sau țesuturilor moi. Tratarea punctelor trigger poate ameliora durerea și disconfortul asociate cu condiții precum sindromul miofascial și alte tulburări musculoscheletale.
+
+- 🔗 `/contactus`
+
+Programează o consultație
+
+### Terapia Shockwave Focusat – Unde care pătrund adânc, vindecă precis
+
+Tratament avansat cu unde acustice concentrate pentru afecțiuni musculo-scheletale complexe
+
+Shockwave Focusat utilizează unde acustice de înaltă energie, direcționate cu precizie către zonele afectate ale țesuturilor moi sau osoase. Spre deosebire de terapia radială, undele focalizate pătrund mai adânc (până la 12 cm), fiind eficiente pentru leziuni cronice sau profunde, unde alte terapii nu au dat rezultate.
+
+##### INDICAȚII
+
+Principalele indicații ale procedurii sunt:
+
+Tendinopatii cronice (ex. tendinita achileană, epicondilită, fasceită plantară)
+
+Calcificări ale umărului (periartropatii scapulohumerale)
+
+Dureri lombare cronice cu origine miofascială
+
+Sindrom de tunel carpian (în stadii incipiente)
+
+Afectiuni ale punctelor trigger (durere musculară localizată)
+
+##### CONTRAINDICAȚII
+
+Nu este recomandată procedura pentru pacienții cu următoarele afecțiuni:
+
+Sarcină;
+
+Tumori în zona tratată
+
+Afectiuni de coagulare sau tratament cu anticoagulante
+
+Pacemaker sau alte dispozitive electronice implantate
+
+Infecții acute în zona aplicării
+
+Contraindicațiile nu sunt cu caracter absolut.
+
+Este esențial un consult medical de specialitate și în consecință aprobarea medicului.
+
+##### Întrebările și modificările fizice te copleșesc?
+
+Noi suntem sprijinul tău în această perioadă.
+
+- 🔗 `/contactus`
+
+Contactează-ne
+
+## `/sunt-insarcinata`
+
+- Titlu: SEVALIA | Programe sigure pentru gravide
+- Descriere: Reabilitare pentru femei însărcinate: Exerciții sigure și eficiente pentru a menține sănătatea și bunăstarea mamei și copilului.
+
+### Felicitări, ești viitoare mămică!
+
+Ți-ai dorit mult asta, dar parcă acum îți redescoperi corpul, lucrurile sunt diferite. Te miști mai greu, picioarele ți se umflă, nu poți dormi, te doare spatele.
+
+Am trecut și noi prin asta, așa că am conceput un program special de kinetoterapie și masaj pentru mămici. Dorim să te ajutăm să ai o naștere cât mai ușoară și o recuperare cât mai rapidă, iar copilul tău să aibă o dezvoltare armonioasă și sănătoasă.
+
+- 🔗 `/contactus`
+
+- 🖼 imagine-fundal: `/unsplash/SCteCA0Mf1A/person in pain.jpg?unique=ed743633` — alt: „” — arhivat: 8bf92b741e643eabe47a.jpg
+
+- 🖼 imagine: `/web/image/2482-3130205d/shot-beautiful-pregnant-woman-with-her-physiotherapist-doing-pilates-exercises-with-ball-preparing-childbirth.webp` — alt: „” — arhivat: cb6c44d0bd3b28071c1e.webp
+
+Lasă-ne să te ajutăm
+
+##### Pregătirea pentru naștere
+
+Sarcina aduce cu sine multe întrebări, cum ar fi: cum o să fiu, ce să fac ca să mă simt bine și să am o sarcină și o naștere cât mai ușoară?
+
+Tot ce ai nevoie este să introduci în rutina ta exercițiile cardio, gimnastica și stretchingul. Ceea ce va fi ușor și în siguranță pentru tine și cel mic cu ajutorul unui kinetoterapeut priceput și cu experiență, cum sunt toți cei din echipa Sevalia.
+
+- 🖼 imagine: `/web/image/2481-9f9fbe9c/physiotherapist-giving-massage-her-patient-clinic.webp` — alt: „” — arhivat: f0b100d8269e88fd7786.webp
+
+##### Îngrijirea după naștere
+
+La fel cum stilul tău de viață se transformă acum că l-ai cunoscut pe cel mic, și corpul tău trece de la o stare în care s-a acomodat treptat, la alta.
+
+Știm că este o perioadă copleșitoare pentru tine, așa că lasă-ne pe noi să îți oferim grija de care ai nevoie, ca tu să fii puternică și pregătită pentru micuțul tău.
+
+- 🖼 imagine: `/web/image/51640-28a5fca8/IMG_2459.webp` — alt: „” — arhivat: 5429725e0ee05000805f.webp
+
+##### Incontinența urinară
+
+Datorită sarcinii și nașterii, probabilitatea de a dezvolta incontinența urinară este mai crescută. Însă acest lucru nu trebuie să te oprească din a fi o mamă prezentă și activă.
+
+Am adus pentru tine o soluție neinvazivă și nedureroasă. Cu fotoliul EMSELLA, te vei putea întoarce imediat după tratament la activitățile tale zilnice, fără contraindicații sau perioadă de recuperare.
+
+- 🔗 `/emsella-tratament-pentru-incontinenta-urinara`
+
+Află mai multe
+
+##### Cum te putem ajuta?
+
+#### Primul trimestru
+
+Știm cât de emoționantă poate fi această perioadă. Treci printr-un amalgam de emoții, iar simptomele specifice primului trimestru te pot neliniști.
+
+Lasă-ne să te ajutăm să te relaxezi și să prinzi încredere.
+
+Alături de o echipă de specialiști te vom ajuta să te simți bine în corpul tău și să te bucuri la maxim de emoțiile plăcute ale sarcinii.
+
+#### Al doilea trimestru
+
+Încă te acomodezi cu schimbările care vin odată cu înaintarea sarcinii. Probabil îți este mai dificil acum să te odihnești.
+
+Hai să îți oferim o stare generală de bine.
+
+Vei descoperi oaza de relaxare și liniște de care ai nevoie în aceast perioadă.
+
+#### Ultimul trimestru
+
+Momentul cel mare se apropie, iar nerăbdarea crește cu fiecare zi. Probabil ai pregătit deja hăinuțele de spital și camera pentru cel mic.
+
+Lasă-ne să îți asigurăm o naștere mai ușoară.
+
+Te vom ajuta să prinzi putere și să te încrezi în tine și corpul tău când va veni momentul cel mare.
+
+#### Am născut
+
+Felicitări!
+
+Știm că ești cea mai bună mămică. Meriți să primești și tu iubirea și răsfățul pe care îl oferi celui mic.
+
+Lasă-ne să avem grijă de tine.
+
+Îți oferim un loc relaxant și o echipă dedicată să îți fie sprijin în această nouă aventură.
+
+*Cum experiența ta este una atât de personală, la fel procedăm și cu planul de îngrijire. Este complet personalizat nevoii tale, creat de medicii specialiști după un consult medical.
+
+##### Întrebările și modificările fizice te copleșesc?
+
+Noi suntem srijinul tău în această perioadă.
+
+- 🔗 `/contactus`
+
+Hai să vorbim
+
+##### Kinetoterapie prenatală
+
+Îți dorești o naștere ușoară?
+
+Lasă-ne să îți personalizăm un plan de kinetoterapie ce îți va oferi puterea de care ai nevoie.
+
+##### Kinetoterapie postnatală
+
+Îți dorești o recuperare rapidă?
+
+Dă-ne voie să îți personalizăm un plan de kinetoterapie ce te va ajuta să îți recapeți starea de bine.
+
+##### Masaj prenatal
+
+Durerea de spate te ține trează noaptea?
+
+Lasă-ne să îți îmbunătățim somnul cu sesiunile de masaj personalizate special pentru tine.
+
+##### Masaj postnatal
+
+Vrei să fii puternică pentru cel mic?
+
+Dă-ne voie să îți fim sprijin, să îți oferim o stare generală de bine. Astfel, vei putea fi cea mai bună mămică.
+
+## `/super-inductive-system-sis`
+
+- Titlu: SEVALIA | Super Inductive System (SIS)
+- Descriere: Soluție avansată pentru reabilitarea rapidă și eficientă, ideală pentru pacienți cu afecțiuni musculo-scheletice.
+
+- 🖼 imagine-fundal: `/web/image/51637-a6667867/IMG-138.webp` — alt: „” — arhivat: fad5b0ddd3503b83b43d.webp
+
+### SUPER INDUCTIVE SYSTEM (SIS)
+
+- 🖼 imagine-fundal: `/web/image/51638-a6667867/IMG-138.webp` — alt: „” — arhivat: fad5b0ddd3503b83b43d.webp
+
+### SUPER INDUCTIVE SYSTEM
+
+- 🔗 `#`
+
+###### Această tehnologie se bazează pe intensitatea înaltă a câmpului electromagnetic ce depolarizează nervii și determină contracții musculare.
+
+###### Terapia oferă un mare avantaj prin faptul că permite administrarea terapiei fără contact. Așadar, în cazul fracturilor se poate eficientiza procesul de vindecare prin efectuarea terapiei încă din momentul în care zona afectată este imobilizată în ghips.
+
+###### Terapia cu Super Inductive System a fost creată pentru reducerea durerii acute și cronice, relaxarea și stimularea musculară, restabilirea mobilității articulare sau facilitarea vindecării fracturilor.
+
+###### Terapia nu prezintă niciun risc și nu are efecte secundare. Este un tratament eficient pentru dureri acute și cronice, blocaje articulare și fracturi, slăbiciune musculară și spasticitate.
+
+##### Spasticitate
+
+##### Edem osos
+
+##### Atrofie musculară
+
+##### Leziuni nervoase
+
+##### Blocaj articular
+
+- 🖼 imagine: `/web/image/4318-060dcee7/cardiology_12024594%20%281%29.webp` — alt: „” — arhivat: 0e97f367d7e494c8fde6.webp
+
+##### Stimularea circulației saguine
+
+Terapia SIS poate stimula circulația sanguină în zona tratată. Ceea ce ajută la transportul mai eficient al nutrienților și oxigenului către țesuturile afectate, și la eliminarea deșeurilor metabolice, accelerând astfel procesul de vindecare.
+
+- 🖼 imagine: `/web/image/4314-2c30b85f/rheumatology_12024663%20%281%29.webp` — alt: „” — arhivat: b2d8fc27c9b89c6294e6.webp
+
+##### Reducerea inflamației
+
+Această terapie inovatoare are efecte antiinflamatorii, contribuind la reducerea inflamației în jurul zonei afectate. Prin influențarea activității celulelor care joacă un rol important în procesul inflamator, terapia SIS favorizează o mai bună gestionare a inflamației.
+
+- 🖼 imagine: `/web/image/4316-bd66f894/heartbeat_12813267.webp` — alt: „” — arhivat: 810260d301043a99a86c.webp
+
+##### Putere și intensitate ridicate
+
+Cu o putere și o intensitate ridicată a undelor electromagnetice este asigurată pătrunderea eficientă în țesuturile adânci. Datorită acestor caracteristici este eficientizat și tratamentul efectuat.
+
+- 🖼 imagine: `/web/image/4317-cac9f764/aim_9415793%20%281%29.webp` — alt: „” — arhivat: a9aa43f5d9707f3e845f.webp
+
+##### Focalizare precisă
+
+Terapia SIS poate fi focalizată precis pe zona afectată, permițând concentrarea undelor electromagnetice în punctele care necesită tratament. Focalizarea precisă maximizează eficacitatea terapiei și poate reduce impactul asupra țesuturilor sănătoase din jur.
+
+- 🔗 `/contactus`
+
+Programează o consultație
+
+### Terapie cu inducție electromagnetică de înaltă intensitate pentru reabilitare neuromusculară
+
+Tehnologie inovatoare cu câmpuri electromagnetice intense pentru recuperare rapidă și nedureroasă
+
+SIS utilizează impulsuri electromagnetice de înaltă intensitate (până la 2 Tesla) care pătrund adânc în țesuturi fără contact fizic direct. Această metodă stimulează contracția musculară, ameliorează durerea și accelerează vindecarea – fiind ideală pentru pacienții cu durere acută, mobilitate limitată sau în imposibilitate de a tolera atingerea.
+
+##### INDICAȚII
+
+Principalele indicații ale procedurii sunt:
+
+Dureri lombare și cervicale acute
+
+Blocaje articulare și contracturi musculare
+
+Neuropatii periferice (sciatică, radiculopatii)
+
+Osteoporoză – stimulare osoasă non-invazivă
+
+Recuperare post-fractură (fără deplasare)
+
+##### CONTRAINDICAȚII
+
+Nu este recomandată procedură pentru pacienții cu următoarele afecțiuni:
+
+Sarcină
+
+Dispozitive metalice sau electronice implantate (proteze, pacemaker)
+
+Epilepsie
+
+Tumori în zona tratată
+
+Hemoragii sau afecțiuni vasculare instabile
+
+Contraindicațiile nu sunt cu caracter absolut.
+
+Este esențial un consult medical de specialitate și în consecință aprobarea medicului.
+
+##### Întrebările și modificările fizice te copleșesc?
+
+Noi suntem srijinul tău în această perioadă.
+
+- 🔗 `/contactus`
+
+Contactează-ne
+
+## `/tarife-asistenta-medicala-ambulatorie-clinica`
+
+- Titlu: Tarife asistenta medicala ambulatorie clinica | sevalia.ro
+- Descriere: —
+
+- 🖼 imagine-fundal: `/web/image/1429-f7ee6332/Panorama1.webp` — alt: „” — arhivat: bb827bb87241515dc751.webp
+
+##### PACHETUL DE SERVICII MEDICALE ÎN ASISTENȚĂ MEDICALĂ AMBULATORIE DE SPECIALITATE PENTRU SPECIALITĂȚI CLINICE
+
+- 🖼 imagine: `/web/image/47149-8a5dc219/Tarife_asisten%C8%9B%C4%83_medical%C4%83_ambulatorie%20clinic%C4%83_2024-01.png` — alt: „” — arhivat: fb7fa87aa7daea9c5e0b.png
+
+- 🖼 imagine: `/web/image/47150-e57982eb/Tarife_asisten%C8%9B%C4%83_medical%C4%83_ambulatorie%20clinic%C4%83_2024-02.png` — alt: „” — arhivat: 4f0302abb025045597f7.png
+
+- 🖼 imagine: `/web/image/47151-61268a00/Tarife_asisten%C8%9B%C4%83_medical%C4%83_ambulatorie%20clinic%C4%83_2024-03.png` — alt: „” — arhivat: ddd47b9f58a070500e20.png
+
+- 🖼 imagine: `/web/image/47152-13b802c9/Tarife_asisten%C8%9B%C4%83_medical%C4%83_ambulatorie%20clinic%C4%83_2024-04.png` — alt: „” — arhivat: 5617ad1155df05975994.png
+
+- 🖼 imagine: `/web/image/47153-fb76204f/Tarife_asisten%C8%9B%C4%83_medical%C4%83_ambulatorie%20clinic%C4%83_2024-05.png` — alt: „” — arhivat: cf73a753dca520269faa.png
+
+- 🖼 imagine: `/web/image/47154-f85013b2/Tarife_asisten%C8%9B%C4%83_medical%C4%83_ambulatorie%20clinic%C4%83_2024-06.png` — alt: „” — arhivat: 158b8d3a9cc8a0973347.png
+
+- 🖼 imagine: `/web/image/47155-922e4c65/Tarife_asisten%C8%9B%C4%83_medical%C4%83_ambulatorie%20clinic%C4%83_2024-07.png` — alt: „” — arhivat: f05a95e44e92f324fcfb.png
+
+- 🖼 imagine: `/web/image/47156-5b2bf34f/Tarife_asisten%C8%9B%C4%83_medical%C4%83_ambulatorie%20clinic%C4%83_2024-08.png` — alt: „” — arhivat: 1f39b8b288a909d26a38.png
+
+- 🖼 imagine: `/web/image/47157-3c367ecf/Tarife_asisten%C8%9B%C4%83_medical%C4%83_ambulatorie%20clinic%C4%83_2024-09.png` — alt: „” — arhivat: ccee1c4f69eb018a4788.png
+
+- 🖼 imagine: `/web/image/47158-30f15482/Tarife_asisten%C8%9B%C4%83_medical%C4%83_ambulatorie%20clinic%C4%83_2024-10.png` — alt: „” — arhivat: a2d22db03623e344dded.png
+
+- 🖼 imagine: `/web/image/47160-94efb9c1/Tarife_asisten%C8%9B%C4%83_medical%C4%83_ambulatorie%20clinic%C4%83_2024-12.png` — alt: „” — arhivat: 6ab63e8d5a6a88c5310e.png
+
+- 🖼 imagine: `/web/image/47161-da186656/Tarife_asisten%C8%9B%C4%83_medical%C4%83_ambulatorie%20clinic%C4%83_2024-13.png` — alt: „” — arhivat: 6fe761ea5dbe795a13be.png
+
+- 🖼 imagine: `/web/image/47163-f773b3b4/Tarife_asisten%C8%9B%C4%83_medical%C4%83_ambulatorie%20clinic%C4%83_2024-14.png` — alt: „” — arhivat: 642cc76fa4e101407d7f.png
+
+## `/termeni-si-conditii`
+
+- Titlu: Termeni și condiții | sevalia.ro
+- Descriere: —
+
+##### Termeni și condiții
+
+Ultima actualizare: 24.05.2023
+
+- 🔗 `http://www.sevalia.ro`
+
+Prezentul document (împreună cu toate documentele menţionate în acesta) stabileşte termenii şi condiţiile care guvernează utilizarea acestui website – www.sevalia.ro (în continuare „Website-ul”).
+
+Scopul Website-ului este de prezentare și promovare a serviciilor medicale de reumatologie, recuperare, kinetoterapie, masaj și electroterapie, recoltare probe, oferite de Clinica Sevalia Medica şi de contractare, prin intermediul Website-ului, cu potențialii clienți/pacienți interesați de aceste servicii medicale.
+
+Vă rugăm să citiţi prezenții Termeni și Condiții, Politica de cookies-uri şi Politica de confidenţialitate înainte de a utiliza Website-ul.
+
+Prin accesarea și utilizarea Website-ului, recunoașteți în mod expres caracterul obligatoriu al acestor documente și vă asumați angajamentul de a le respecta.
+
+1. CINE SUNTEM NOI
+
+SEVALIA MEDICA SRL (în continuare ,,Societatea” sau ,,Noi”) prin intermediul Clinicii de reumatologie și reabilitare medicală oferă servicii la cele mai înalte standarde, în reumatologie și recuperare, kinetoterapie, masaj și electroterapie.
+
+Prin intermediul echipei proprii de experți, aparaturii ultramoderne și ambientului curat și elegant, medicii, fiziokinetoterapeuții și asistenții noștri vor găsi soluția perfectă pentru sănătatea ta.
+
+- 🔗 `#_msocom_1`
+
+De asemenea, prin gama largă de tratamente aplicate sunt reabilitate funcțiile, tonusul și mobilitatea sistemului osteoarticular, precum și îmbunătățirea calității vieții prin ameliorarea stării fizice și psihice a pacientului.[u1]
+
+Datele noastre de contact sunt:
+
+Adresa sediului: Str. Constandin Hagi Stoian Nr. 3/C, Târgu-Mureș, județul Mureș
+
+- 🔗 `mailto:dpo@sevalia.ro`
+
+Adresă de e-mail: dpo@sevalia.ro
+
+Nr. de tel.: 0371.783.546
+
+2. PROPRIETATEA INTELECTUALĂ
+
+Societatea este titularul exclusiv al tuturor drepturilor de proprietate intelectuală referitoare la conținutul Website-ului, inclusiv, fără a se limita la: articole, text, fotografii, ilustrații, muzică, clipuri audio și video, mărci comerciale, embleme și modele.
+
+- 🔗 `#_msocom_1`
+
+Vizitatorii Website-ului pot accesa, descărca şi tipări materialele publicate pe Website, în mod gratuit, exclusiv pentru uz personal şi doar în scop necomercial. Ca urmare a realizării oricăreia dintre aceste acțiuni, vizitatorilor Website-ului nu l-i se transmite sau recunoște nici un drept, titlu sau nu l-i se garantează nici un interes legitim cu privire la materialele publicate pe Website.[u1]
+
+Nicio secțiune din conținutul Website-ului asupra căreia Societatea are un drept de proprietate intelectuală nu poate fi reprodusă, distribuită sau publicată sub nici o formă, în nici un scop sau prin niciun mijloc, fără acordul prealabil scris al Societății.
+
+Prin urmare, vizitatorii Website-ului declară că, prin simpla utilizare a Website-ului înțeleg și consimt să nu copieze, modifice, vândă, distribuie, transmită, afișeze, reproducă, publice sau să nu creeze lucrări/opere/derivate pe baza informațiilor publicate pe Website.
+
+3. ACCESUL LA WEBSITE
+
+- 🔗 `http://www.sevalia.ro`
+
+Accesul la platforma oferită se face exclusiv prin domeniul public: www.sevalia.ro
+
+Vizitatorul/Pacientul nu are dreptul de a descărca, modifica parțial sau total Website-ul, reproduce parțial sau integral Website-ul, copia, vinde/revinde sau exploata în alt mod Website-ul în scopuri comerciale sau în scopuri contrare intereselor SEVALIA MEDICA SRL.
+
+Vizitator – orice persoană fizică care este interesată de serviciile medicale oferite de SEVALIA MEDICA SRL prin intermediul Clinicii cu același nume, și care are acces la conținutul Website-ul, fără a se programa sau contacta personalul medical al clinicii;
+
+Pacient - orice persoană fizică care are vârsta peste 18 ani și obține acces la Conținutul site-ului, prin orice mijloc de comunicare pus la dispoziție de către SEVALIA MEDICA SRL (electronic, telefonic, etc.) și care poate solicita o programare medicală, în vederea obținerii unui consult adecvat de specialitate;
+
+Comunicarea cu Societatea noastră se poate realiza prin interacțiune directă cu SEVALIA MEDICA SRL, prin adresele menționate în secțiunea „Contact” a Site-ului, dar și prin formularele de contact / de programare prezente pe Website.
+
+4. UTILIZAREA WEBSITE-ULUI
+
+Prin utilizarea Website-ului vă obligaţi:
+
+a) Să nu efectuaţi vreo programare medicală falsă sau frauduloasă. În cazul în care avem motive întemeiate să credem că aţi efectuat o astfel de programare, avem dreptul să nu răspundem acesteia şi să informăm în mod corespunzător autorităţile competente.
+
+b) Să ne furnizaţi nume și prenume, o adresă de e-mail şi/sau alte date de contact corecte şi exacte. Dacă nu ne furnizaţi toate informaţiile de care avem nevoie, este posibil să nu putem să răspundem solicitării dvs.
+
+Prin utilizarea Website-ului în orice mod și scop, declarați că îndepliniți condițiile prevăzute de lege, respectiv că aveți capacitate de exercițiu pentru încheierea de acte juridice care nasc în sarcina dvs. obligațiile prevăzute în Termeni și condiții, Politica de confidențialitate și Politica de cookies-uri.
+
+Simpla utilizare a Website-ului și/sau transmiterea unei programări medicale prin formularul de contact/de programare și răspunsul la această solicitare nu obligă Societatea în nici un fel față de Vizitator/Pacient, respectiv nu reprezintă încheierea unui contract între Societate și Vizitator/Pacient.
+
+Prin intermediul Website-ului, Societatea invită Vizitatorul/Pacientul la contractarea serviciilor medicale prestate de aceasta. Ulterior, Pacientul va contacta Societatea (completând Formularul de Contact ori utilizând oricare din datele de contact publicate pe Website și prevăzute la pct. 1 din prezenții Termeni și condiții) în scopul programării unor consultații medicale de specialitate și încheierii unui contract de prestări servicii în acest sens. În respectivul contract vor fi stabilite toate elementele esențiale încheierii acestuia conform legii.
+
+5. PROGRAMAREA UNEI CONSULTAȚII
+
+- 🔗 `#_msocom_1`
+
+5.1. Orice utilizator care accesează SITE-UL www.sevalia.ro, și are vârsta peste 18 ani [u1] poate solicita un consult medical de specialitate la Clinica SEVALIA MEDICA.
+
+Prin solicitarea unei programări medicale, fiecare utilizator este de acord să accepte Termenii și Condițiile, să ia act de Politica de confidențialitate (de prelucrare a datelor cu caracter personal) și de Politica privind cookies-urile, fiind responsabil pentru acuratețea informațiilor furnizate.
+
+Pentru a solicita o programare medicală/consultație de specialitate, este suficient să parcurgeți unul dintre următorii pași:
+
+- Apăsați pe secțiunea ”Servicii”, alegeți una dintre procedurile medicale efectuate la nivelul Clinicii (”Procedurile noastre”) și apasă butonul ”Contactează-ne”. Ulterior, la secțiunea ”Cu ce te putem ajuta?” veți introduce datele personale (nume, prenume, adresă de e-mail, nr. de telefon), tipul de servicii medicale dorite și după caz, alte date dacă sunt lăsate la inițiativa persoanei vizate la secțiunea ,,Mai multe informații”. Bifați apoi căsuța privind luarea la cunoștință a Politicii de confidențialitate și acceptarea Termenilor și Condițiilor și apăsați butonul ”Trimite mesajul tău”, sau
+
+- În cazul solicitării unor servicii medicale pentru tratarea Incontinenței urinare, apăsați pe secțiunea ”Tratament Incontinență Urinară” și citiți informațiile utile despre: cum funcționează fotoliul medical EMSELLA, durata tratamentului, cum acționează tratamentul, recomandări și ce analize trebuie să facă pacientul înainte de începerea tratamentului cu fotoliul EMSELLA. Apăsați apoi pe butonul ”Programează-te” din dreapta-sus și introduceți datele personale (nume, prenume, adresă de e-mail, nr. de telefon) și după caz, alte date dacă sunt lăsate la inițiativa persoanei vizate la secțiunea ,,Mai multe informații”. Bifați apoi căsuța privind luarea la cunoștință a Politicii de confidențialitate și acceptarea Termenilor și Condițiilor iar la final apăsați butonul ”Trimite mesajul tău”, sau
+
+- Pentru a efectua o programare la unul dintre serviciile medicale oferite de Clinică, apăsați pe butonul ”Programează-te” din dreapta-sus, introduceți datele personale (nume, prenume, adresă de e-mail, nr. de telefon), tipul de servicii medicale selectate/dorite și după caz, alte date dacă sunt lăsate la inițiativa persoanei vizate la secțiunea ,,Mai multe informații”. Bifați apoi căsuța privind luarea la cunoștință a Politicii de confidențialitate și acceptarea Termenilor și Condițiilor și apăsați butonul ”Trimite mesajul tău”.
+
+- 🔗 `mailto:office@sevalia.ro`
+
+Puteți solicita o programare la o consultație medicală și apelând direct la numărul de telefon 0371.783.546 sau transmițând un mesaj la adresa de e-mail office@sevalia.ro
+
+5.2. În vederea recoltării de probe (pentru analizele medicale desfășurate) la nivelul Clinicii SEVALIA MEDICA și ulterior, pentru comunicarea răspunsului către persoana vizată, pacientul transmite la Recepția Clinicii datele sale personale (nume, prenume, adresă de e-mail) și își dă consimțământul pentru analizarea probelor, prin semnătură - pe un dispozitiv electronic intern, după ce în prealabil a luat cunoștiință de Nota de Informare.
+
+Aceste probe recoltate sunt trimise în vederea analizării lor (prin intermediul unui reprezentant al Laboratorului) către colaboratori (ex.: BIOCLINICA Tg. Mureș) iar rezultatele parvin către Clinica SEVALIA MEDICA unde sunt stocate intern, fiind retransmise pacienților.
+
+Programul de consultații la Clinică este de Luni-Joi între orele 07:00 – 21:00 și Vineri între 07:00 - 18:00. Sâmbătă și Duminică este închis.
+
+6. PLĂȚI AFERENTE SERVICIILOR MEDICALE OFERITE
+
+Accesul la platformă este gratuit, iar orice fel de plăți pentru serviciie medicale oferite, vor fi tratate la nivelul contractelor încheiate în mod distinct.
+
+7. GARANȚII DE SECURITATE
+
+- 🔗 `http://www.sevalia.ro`
+
+Pentru toate serviciile medicale promovate pe www.sevalia.ro compania noastră garantează că va lua toate măsurile tehnice și organizatorice necesare pentru a asigura un nivel ridicat de securitate și confidențialitate a datelor cu caracter special chiar și în cazul unor amenințări externe la adresa site-ului nostru (ex.: atacuri cibernetice).
+
+8. LIMITAREA RĂSPUNDERII
+
+Societatea nu își asumă răspunderea pentru nici un fel de daune pe care Vizitatorul Website-ului, potențialul Pacient sau oricare alt terț le poate suferi ca urmarea a utilizării Website-ului în orice mod sau scop sau ca rezultat al îndeplinirii conforme de către Societate a oricăreia din obligațiile legale și/sau contractuale care îi revin.
+
+Pacientul va utiliza serviciile medicale oferite prin intermediul Website-ului, în totalitate pe propria răspundere. Acesta este răspunzător pentru păstrarea confidențialității asupra informațiilor transferate/primite prin intermediul Website-ului și pentru prelucrarea acestora în conformitate cu dispozițiile legale în materia protecției datelor cu caracter personal.
+
+Informațiile de orice tip prezentate prin intermediul Website-ului sunt furnizate de către Societate în forma și conținutul în care au fost primite sau preluate, fără modificări. Societatea nu garantează și nu își asumă răspunderea cu privire la corectitudinea, acuratețea sau actualitatea nici uneia dintre aceste informații.
+
+9. DREPTUL NOSTRU DE A MODIFICA TERMENII ȘI CONDIȚIILE
+
+Avem dreptul de a revizui şi modifica Termenii și Condițiile în mod ocazional și discreționar.
+
+Aveţi responsabilitatea de a citi în întregime Termenii și Condițiile, Politica de cookies-uri şi Politica de confidenţialitate, întrucât aplicabilă va fi varianta actualizată a acestora, în vigoare la momentul utilizării Website-ului.
+
+10. LEGISLAŢIA APLICABILĂ ŞI JURISDICŢIA
+
+Utilizarea Website-ului şi încheierea, executarea și încetarea contractelor încheiate cu Societatea prin intermediul Website-ului vor fi guvernate de legislaţia română.
+
+Eventualele litigii care decurg din sau în legătură cu folosirea Website-ului sau cu încheierea, executarea și încetarea acestor contracte se vor soluționa pe cale amiabilă sau, în cazul în care aceasta nu va fi posibilă, litigiile vor fi soluționate de instanțele judecătorești române competente.
+
+11. PRELUCRAREA DATELOR CU CARACTER PERSONAL
+
+Prelucrarea datelor cu caracter personal de către Societate are loc cu respectarea Regulamentului (UE) 2016/679 al Parlamentului European și al Consiliului din 27 aprilie 2016 privind protecția persoanelor fizice în ceea ce privește prelucrarea datelor cu caracter personal și privind libera circulație a acestor date, și de abrogare a Directivei nr. 95/46/CE (,,Regulamentul general privind protecția datelor”) și a legislației naționale relevante în materia protecției datelor cu caracter personal.
+
+Pentru a cunoaște mai mult detalii legate de prelucrarea datelor cu caracter personal, vă rugăm să consultați Politica de confidențialitate și Politica de cookies-uri .
+
+- 🔗 `mailto:dpo@sevalia.ro`
+
+Pentru orice întrebări sau solicitări privind protecția datelor cu caracter personal vă rugăm să ne contactați la adresa de e-mail: dpo@sevalia.ro
+
+- ▣ iframe `https://maps.google.com/maps?q=Sevalia%20Medica&t=m&z=14&ie=UTF8&iwloc=&output=embed`
+
+O adresă trebuie specificată pentru a putea fi încorporată o hartă
+
+## `/termoterapie`
+
+- Titlu: Termoterapie | Terapie prin aplicatii calde cu parafina
+- Descriere: Termoterapia reduce durerea și inflamația prin aplicarea de căldură terapeutică. Eficientă în artroză, reumatism și relaxare musculară profundă.
+
+- 🖼 imagine-fundal: `/web/image/52965-ae9dd449/DSC04720.webp` — alt: „” — arhivat: d4a230442878edfde61f.webp
+
+### TERMOTERAPIE
+
+- 🖼 imagine-fundal: `/web/image/52966-ae9dd449/DSC04720.webp` — alt: „” — arhivat: d4a230442878edfde61f.webp
+
+### TERMOTERAPIE
+
+Termoterapia utilizează aplicații calde pentru a trata diverse afecțiuni ale aparatului locomotor. Căldura aplicată local are un efect vasodilatator, stimulează circulația sanguină și limfatică, reduce inflamația și ameliorează senzația de durere.
+
+În funcție de indicațiile medicale, tratamentul poate fi realizat prin parafină caldă (ideală pentru mâini și încheieturi), nămol terapeutic, infraroșii sau saci cu semințe calde. Fiecare dintre aceste metode are specificitatea sa și este selectată în funcție de nevoile pacientului.
+
+Este o terapie adesea utilizată în reumatologie, ortopedie și recuperare posttraumatică. Se recomandă în special pacienților cu dureri cronice, rigiditate articulară sau inflamații recurente. De asemenea, termoterapia este extrem de eficientă în relaxarea mușchilor tensionați și creșterea flexibilității țesuturilor.
+
+#### Artroză și spondiloză
+
+#### Lombalgii și dureri cervicale cronice
+
+#### Tendinite, bursite, entorse
+
+#### Contracturi și spasme musculare
+
+#### Reumatism degenerativ și inflamator
+
+##### Peste 1.000 de pacienți și-au îmbunătățit sănătatea.
+
+Vrei să te alături lor?
+
+- 🔗 `/contactus`
+
+Hai să vorbim
+
+- 🖼 imagine: `/web/image/52492-2d53e34d/dureri_inflamatii_articulatii.png` — alt: „” — arhivat: 329711741fa5dce6443b.png
+
+##### Reducerea durerii și inflamației la nivel local
+
+- 🖼 imagine: `/web/image/52491-c8dffe97/rezistenta_musculara.webp` — alt: „” — arhivat: 4f3548edde46fc3ba100.webp
+
+##### Relaxarea profundă a mușchilor și țesuturilor moi
+
+- 🖼 imagine: `/web/image/52659-2dd7f937/recuperare_rapida_post_interventii_chirurgical.webp` — alt: „” — arhivat: 80365bbc355fc810241d.webp
+
+##### Stimularea circulației și accelerarea vindecării
+
+- 🖼 imagine: `/web/image/38273-8fd1382b/Kinetoterapia%20corecteaza%20si%20previne%20deficientele%20fizice.webp` — alt: „” — arhivat: 938f6e76c3edc194bf1a.webp
+
+##### Îmbunătățirea mobilității articulare
+
+- 🔗 `/contactus`
+
+Programează o consultație
+
+### Procedură pentru ameliorarea durerii și redobândirea mobilității
+
+Terapie prin aplicații calde (parafină, nămol, infraroșu) pentru relaxare profundă și regenerare articulară
+
+Termoterapia este o metodă terapeutică consacrată ce folosește căldura controlată pentru a reduce durerea, a stimula circulația și a relaxa musculatura. Prin aplicarea de parafină, nămol cald sau alte surse termice, se obțin efecte benefice în tratarea afecțiunilor reumatismale, musculare și articulare. În clinica noastră, termoterapia este utilizată în condiții optime de siguranță și igienă, integrată într-un plan personalizat de recuperare.
+
+##### INDICAȚII
+
+Principalele indicații ale termoterapiei sunt:
+
+Afecțiuni reumatice cronice (artroză, artrită)
+
+Rigiditate articulară
+
+Dureri musculare cronice
+
+Stări posttraumatice cu contracturi musculare
+
+Circulație periferică deficitară
+
+##### CONTRAINDICAȚII
+
+Nu este recomandată procedura pentru pacienții cu următoarele afecțiuni:
+
+Afecțiuni acute inflamatorii sau infecțioase
+
+Varice sau insuficiență venoasă severă
+
+Boli dermatologice active în zona aplicării
+
+Hipotensiune severă
+
+Tumori sau boli oncologice active
+
+Contraindicațiile nu sunt cu caracter absolut.
+
+Este esențial un consult medical de specialitate și în consecință aprobarea medicului.
+
+### Întrebări frecvente despre termoterapie
+
+- 🔗 `#`
+
+Ce este termoterapia și cum funcționează?
+
+Este o terapie ce aplică căldură locală pentru a relaxa mușchii, reduce durerea și stimula circulația sanguină.
+
+- 🔗 `#`
+
+Este potrivită pentru toată lumea?
+
+Nu. Termoterapia are contraindicații și necesită evaluare medicală înainte de aplicare, mai ales în caz de boli circulatorii sau inflamații acute.
+
+- 🔗 `#`
+
+Pot face termoterapie în caz de osteoporoză?
+
+Da, în majoritatea cazurilor este permisă, dar decizia se ia după o evaluare individuală.
+
+- 🔗 `#`
+
+Este eficientă pentru mâinile afectate de artroză?
+
+Da, aplicarea parafinei calde este una dintre cele mai eficiente forme de termoterapie pentru artroza de mâini.
+
+- 🔗 `#`
+
+Este termoterapia combinată cu alte proceduri?
+
+Da. Poate fi combinată cu masaj, kinetoterapie sau electroterapie pentru un efect sinergic în recuperare.
+
+##### Întrebările și modificările fizice te copleșesc?
+
+Noi suntem sprijinul tău în această perioadă
+
+- 🔗 `/contactus`
+
+Hai să vorbim
+
+## `/terms`
+
+- Titlu: Terms & Conditions | sevalia.ro
+- Descriere: —
+
+### STANDARD TERMS AND CONDITIONS OF SALE
+
+You should update this document to reflect your T&C.
+
+Below text serves as a suggestion and doesn’t engage Odoo S.A. responsibility.
+
+The client explicitly waives its own standard terms and conditions, even if these were drawn up after these standard terms and conditions of sale. In order to be valid, any derogation must be expressly agreed to in advance in writing.
+
+Our invoices are payable within 21 working days, unless another payment timeframe is indicated on either the invoice or the order. In the event of non-payment by the due date, SEVALIA MEDICA reserves the right to request a fixed interest payment amounting to 10% of the sum remaining due. SEVALIA MEDICA will be authorized to suspend any provision of services without prior warning in the event of late payment.
+
+If a payment is still outstanding more than sixty (60) days after the due payment date, SEVALIA MEDICA reserves the right to call on the services of a debt recovery company. All legal expenses will be payable by the client.
+
+Certain countries apply withholding at source on the amount of invoices, in accordance with their internal legislation. Any withholding at source will be paid by the client to the tax authorities. Under no circumstances can SEVALIA MEDICA become involved in costs related to a country's legislation. The amount of the invoice will therefore be due to SEVALIA MEDICA in its entirety and does not include any costs relating to the legislation of the country in which the client is located.
+
+SEVALIA MEDICA undertakes to do its best to supply performant services in due time in accordance with the agreed timeframes. However, none of its obligations can be considered as being an obligation to achieve results. SEVALIA MEDICA cannot under any circumstances, be required by the client to appear as a third party in the context of any claim for damages filed against the client by an end consumer.
+
+In order for it to be admissible, SEVALIA MEDICA must be notified of any claim by means of a letter sent by recorded delivery to its registered office within 8 days of the delivery of the goods or the provision of the services.
+
+All our contractual relations will be governed exclusively by Romania law.
+
+## `/tr-therapy`
+
+- Titlu: Sevalia | TR-THERAPY Metodă avansată de reabilitare
+- Descriere: Tratament inovator pentru recuperare rapidă și durabilă a articulațiilor și mușchilor
+
+- 🖼 imagine-fundal: `/web/image/4644-d53e35b5/BTL-6000_TR-Therapy_PIC_application_muscle_activation_technique.webp` — alt: „” — arhivat: 227b366ed5eddf8379f8.webp
+
+### TR-THERAPY (TECAR)
+
+- 🖼 imagine-fundal: `/web/image/4644-d53e35b5/BTL-6000_TR-Therapy_PIC_application_muscle_activation_technique.webp` — alt: „” — arhivat: 227b366ed5eddf8379f8.webp
+
+### TR-THERAPY (TECAR)
+
+- 🔗 `#`
+
+###### Terapia TECAR (Transfer Energetic Capacitiv și Rezistiv) utilizează curenți de radiofrecvență ce pătrund în țesut și se transformă în căldură, având ca efecte ameliorarea durerii, miorelaxarea, creșterea circulației sanguine locale și reducerea edemelor.
+
+###### Procedura promovează regenerarea musculară și ameliorarea durerii printr-o combinație unică de elemente de masaj cu o senzație plăcută de încălzire oferită de curenții de radiofrecvență.
+
+###### Permite efectuarea terapiilor convenționale cu un singur aplicator, antrenamentelor musculare cu aplicații statice sau sesiunilor creative cu aplicația bipolară (folosind doi aplicatori). De asemenea, procedura permite un tratament atermic potrivit pentru edeme și hematoame posttraumatice.
+
+###### Terapia prin radiofrecvență BTL-6000 transferă curent electromagnetic de înaltă frecvență prin toate țesuturile corpului și creează o bună localizare a efectului termic în țesut.
+
+##### Dureri cronice de spate
+
+##### Regenerare musculară
+
+##### Edeme post
+
+##### traumatice
+
+##### Sindrom miofascial
+
+##### Spasme și hipertonus muscular
+
+- 🖼 imagine: `/web/image/4313-af41dcc0/pain_12024719%20%281%29.webp` — alt: „” — arhivat: d8fa36f83778973396b3.webp
+
+##### Reducerea durerii
+
+Efectul principal al terapiei prin radiofrecvență este reducerea durerii, acesta fiind rezultatul relaxării musculare, reducerea edemului, regenerarea și vindecarea țesutului.
+
+- 🖼 imagine: `/web/image/4319-9b2486ba/strength_14230042%20%281%29.webp` — alt: „” — arhivat: cb3eb907cf97572689ae.webp
+
+##### Regenerarea și vindecarea țesutului
+
+Îmbunătățirea metabolismului țesutului este un efect secundar natural al terapiei. Aceasta duce la o vindecare mai rapidă a țesutului afectat și resorbția rapidă a hematoamelor post-traumatice.
+
+- 🖼 imagine: `/web/image/4314-2c30b85f/rheumatology_12024663%20%281%29.webp` — alt: „” — arhivat: b2d8fc27c9b89c6294e6.webp
+
+##### Reducerea edemului
+
+Pereții arteriolelor sunt lărgiți și sfincterele precapilare sunt relaxate, permițând creșterea fluxului de sânge la nivel local. Acest lucru duce la o creștere a procesului limfatic (drenaj) și ulterior, la reducerea edemului.
+
+- 🖼 imagine: `/web/image/4321-87144069/rehabilitation_12024810%20%281%29.webp` — alt: „” — arhivat: 4fd67932cea54fda69e4.webp
+
+##### Relaxarea musculară
+
+Terapia prin radiofrecvență asupra mușchiului hipertonic produce relaxarea musculară imediată. Efectul de miorelaxare se bazează în principal pe vasodilatație, ce apare în timpul terapiei și favorizează creșterea aportului de nutrienți în țesut.
+
+- 🔗 `/contactus`
+
+Programează o consultație
+
+### Tecar (TR-Therapy) – Tehnologie avansată pentru reducerea inflamației și regenerare celulară
+
+Transfer de energie care accelerează vindecarea, reduce durerea și inflamația în profunzime
+
+TR-Therapy (Tecar = Transfer Energetic Capacitiv și Rezistiv) folosește curenți de radiofrecvență pentru a stimula regenerarea naturală a țesuturilor. Eficientă atât în faza acută, cât și în cea cronică, terapia acționează rapid și fără disconfort, fiind ideală în combinație cu mobilizarea sau exercițiile fizice.
+
+##### INDICAȚII
+
+Principalele indicații ale procedurii sunt:
+
+Entorse, întinderi, rupturi musculare
+
+Dureri articulare (genunchi, umăr, șold)
+
+Recuperare după intervenții ortopedice
+
+Inflamații și edeme post-traumatice
+
+Boli reumatice în fază subacută sau cronică
+
+##### CONTRAINDICAȚII
+
+Nu este recomandată procedura pentru pacienții cu următoarele afecțiuni:
+
+Sarcină (mai ales în primul trimestru)
+
+Dispozitive electronice implantate (pacemaker, neurostimulator)
+
+Infecții active sau febră
+
+Tromboze venoase profunde
+
+Tumori sau afecțiuni oncologice în tratament
+
+Contraindicațiile nu sunt cu caracter absolut.
+
+Este esențial un consult medical de specialitate și în consecință aprobarea medicului.
+
+##### Peste 1.000 de pacienți și-au îmbunătățit sănătatea.
+
+Vrei să te alături lor?
+
+- 🔗 `/contactus`
+
+Hai să vorbim
+
+## `/ultrasonoterapie`
+
+- Titlu: Ultrasonoterapie | Terapie cu ultrasunete
+- Descriere: Ultrasonoterapia reduce durerea, inflamația și contracturile musculare. Terapie sigură și eficientă în recuperare și afecțiuni reumatice cronice.
+
+- 🖼 imagine-fundal: `/web/image/52972-67ee94b0/_DSC3210.webp` — alt: „” — arhivat: 052e558b6a7dac6970e5.webp
+
+### ULTRASONONTERAPIE
+
+- 🖼 imagine-fundal: `/web/image/52971-67ee94b0/_DSC3210.webp` — alt: „” — arhivat: 052e558b6a7dac6970e5.webp
+
+### ULTRASONOTERAPIE
+
+Ultrasonoterapia este o tehnică utilizată în fizioterapie care se bazează pe emiterea de unde sonore de înaltă frecvență, imperceptibile auzului uman, dar cu un efect profund la nivelul țesuturilor. Aceste unde sunt transmise printr-un capăt de tratament aplicat direct pe piele, cu ajutorul unui gel special care facilitează conducerea undelor.
+
+Frecvența folosită (1–3 MHz) pătrunde până la 5 cm în profunzime și produce o micromasaj celular și o încălzire localizată. Aceste efecte contribuie la accelerarea proceselor de vindecare, reducerea inflamațiilor cronice, ameliorarea durerii și creșterea mobilității.
+
+Ultrasonoterapia este indicată într-o gamă largă de afecțiuni musculo-scheletale și reumatice, dar și în recuperarea după traumatisme sau intervenții chirurgicale. În plus, este utilizată și în tratamente estetice, pentru combaterea celulitei și remodelare localizată.
+
+Terapia este nedureroasă și de scurtă durată (5–15 minute pe zonă), dar cu efecte cumulative semnificative după mai multe ședințe.
+
+#### Tendinite și bursite cronice
+
+#### Contracturi musculare și tensiuni locale
+
+#### Entorse, luxații și leziuni ligamentare
+
+#### Artroze (gonartroză, coxartroză, spondiloze)
+
+#### Cicatrici postoperatorii
+
+##### Peste 1.000 de pacienți și-au îmbunătățit sănătatea.
+
+Vrei să te alături lor?
+
+- 🔗 `/contactus`
+
+﻿﻿Hai să vorbim﻿﻿
+
+- 🖼 imagine: `/web/image/52492-2d53e34d/dureri_inflamatii_articulatii.png` — alt: „” — arhivat: 329711741fa5dce6443b.png
+
+##### Reduce inflamația și durerea locală
+
+- 🖼 imagine: `/web/image/43577-86d8f013/skin-protection_12275642.webp` — alt: „” — arhivat: 247a76ec87a396ab32b9.webp
+
+##### Stimulează regenerarea țesuturilor moi
+
+- 🖼 imagine: `/web/image/38273-8fd1382b/Kinetoterapia%20corecteaza%20si%20previne%20deficientele%20fizice.webp` — alt: „” — arhivat: 938f6e76c3edc194bf1a.webp
+
+##### Ameliorează mobilitatea articulară
+
+- 🖼 imagine: `/web/image/39073-3fb2e3e7/Decompresie%20vertebrala_imbunatateste%20fluxul%20sanguin.webp` — alt: „” — arhivat: 88b10222ecaa2f2c2e40.webp
+
+##### Crește circulația sanguină în zona tratată
+
+- 🔗 `/contactus`
+
+﻿﻿Programează o consultație﻿﻿
+
+### Terapie cu ultrasunete pentru vindecare și ameliorarea durerii
+
+Terapie profundă, precisă și non-invazivă pentru inflamații, contracturi musculare și afecțiuni articulare
+
+Ultrasonoterapia este o procedură terapeutică modernă ce utilizează unde sonore de înaltă frecvență pentru a penetra în profunzimea țesuturilor, având efecte antiinflamatorii, analgezice și de regenerare. Este o metodă frecvent recomandată în tratamentul durerilor musculo-scheletale și în recuperarea medicală, datorită eficienței și toleranței excelente din partea pacienților.
+
+##### INDICAȚII
+
+Principalele indicații ale ultrasonoterapiei sunt:
+
+Afecțiuni reumatismale cronice (artroză, tendinite, bursite)
+
+Recuperare posttraumatică și postoperatorie
+
+Contracturi și dureri musculare cronice
+
+Fibroze, cicatrici retractile
+
+Stimularea drenajului și regenerării tisulare
+
+##### CONTRAINDICAȚII
+
+Nu este recomandată procedura pentru pacienții cu următoarele afecțiuni:
+
+Sarcină (zona abdominală/lombară)
+
+Tumori active sau suspiciuni oncologice
+
+Tromboflebită acută
+
+Zone cu proteze metalice (fără aviz medical)
+
+Aparate electronice implantate (ex: pacemaker)
+
+Contraindicațiile nu sunt cu caracter absolut.
+
+Este esențial un consult medical de specialitate și în consecință aprobarea medicului.
+
+### Întrebări frecvente despre ultrasonoterapie
+
+- 🔗 `#`
+
+Este dureroasă terapia?
+
+Nu. Ultrasonoterapia este complet nedureroasă. Pacientul poate simți o ușoară căldură sau vibrație în zona tratată.
+
+- 🔗 `#`
+
+Este sigură în cazul protezelor sau implanturilor?
+
+Se poate aplica doar cu aviz medical și la distanță de implantul metalic sau electronic.
+
+- 🔗 `#`
+
+Poate fi folosită în combinație cu alte terapii?
+
+Da. Ultrasonoterapia este frecvent combinată cu electroterapie, kinetoterapie sau masaj terapeutic pentru rezultate mai bune.
+
+##### Întrebările și modificările fizice te copleșesc?
+
+Noi suntem sprijinul tău în această perioadă
+
+- 🔗 `/contactus`
+
+﻿﻿Hai să vorbim﻿﻿
+
+## `/vreau-sa-ma-simt-bine`
+
+- Titlu: Sevalia | Programe de recuperare adaptate nevoilor fiecărui pacient
+- Descriere: Reabilitare avansată în reumatologie pentru recuperarea mobilității și ameliorarea durerii.
+
+### Pasiunea pe care o meriți
+
+### Grija de care ai nevoie
+
+Cu toții ne dorim să ne simțim bine în pielea noastră. E posibil un scop esențial în viață pentru mulți dintre noi. Însă ne este greu uneori să facem un pas în această direcție.
+
+Am trecut și noi prin asta, așa că am conceput un program special de relaxare, energizare și bunăstare generală. Dorim să îți fim sprijin în drumul tău către un stil de viață prosper.
+
+- 🔗 `/contactus`
+
+- 🖼 imagine-fundal: `/web/image/1522-19a65db6/DSC04065.webp` — alt: „” — arhivat: 6490e25495f80a52e24d.webp
+
+- 🖼 imagine: `/web/image/1521-5fd4aff0/DSC04171.webp` — alt: „” — arhivat: 878557524dc125bdb66e.webp
+
+Începe acum
+
+##### RELAXARE
+
+Treci printr-o perioadă stresantă? Stările de oboseală și agitație sunt la ordinea zilei?
+
+Dă-ne voie să îți personalizăm un plan de relaxare. Cu acest plan vei reuși să te eliberezi de presiunea acumulată și îți va da puterea de care ai nevoie să confrunți problemele zilei cu o altă stare de spirit.
+
+- 🖼 imagine: `/web/image/1526-8e2d3b3b/DSC05691.webp` — alt: „” — arhivat: f3b5e5b0d79bf64e120e.webp
+
+##### ENERGIZARE
+
+Ai zile în care simți că nu mai ai putere să faci lucrurile ce ți le-ai propus? Știm cum e, cu toții ne confruntăm cu acest lucru la un moment dat.
+
+Experiența ne-a ajutat să dezvoltăm un plan de energizare. Lasă-ne să îl personalizăm nevoilor tale specifice, să îți oferim impulsul de care ai nevoie.
+
+- 🖼 imagine: `/web/image/1527-ceb0e3b2/DSC05584.webp` — alt: „” — arhivat: ce058a7e9240546049a2.webp
+
+##### BUNĂSTARE
+
+Îți dorești să te menții fără prea mult efort și timp? Freamătul zilelor cotidiene te determină să revii către sine și bunăstarea generală?
+
+Am conceput un plan pentru a-ți oferi starea de bine pe care ne-o dorim cu toții. Dă-ne voie să îl personalizăm pentru tine, să poți astfel să găsești calmul de care ai nevoie.
+
+##### În ce punct te afli acum?
+
+#### Încă mă informez
+
+Simți o nevoie care încă îți este neclară? Ai nevoie de mai mult timp și informații să îți dai seama ce este mai exact acest sentiment?
+
+Lasă-ne să te ajutăm și să îți răspundem la întrebări.
+
+Alături de o echipă de specialiști te vom ghida să descoperi de ce anume ai sau nu nevoie.
+
+#### Știu ce îmi doresc
+
+Încă te acomodezi cu schimbările care vin odată cu înaintarea sarcinii. Probabil îți este mai dificil acum să te odihnești. Ai nevoie de un loc sigur în care să te simți confortabil.
+
+Lasă-ne să îți oferim o stare generală de bine.
+
+Vei descoperi oaza de relaxare și liniște de care ai nevoie în această perioadă.
+
+#### Am nevoie de o rutină
+
+Ai început să lucrezi la sănătatea ta, dar încă nu ți-ai format un obicei din asta? Probabil intervin alte mici lucruri prioritare pentru tine.
+
+Lasă-ne să îți creăm un plan și o strategie personalizată.
+
+Totul devine mai ușor odată ce ai sprijin la început de drum pentru a crea o nouă rutină.
+
+#### Vreau să încerc ceva nou
+
+Punctul în care te afli acum te mulțumește, dar parcă ai vrea să încerci ceva nou? Poate vrei să te răsfeți pentru o zi sau să sărbătorești un moment important.
+
+Hai să vorbim și să vedem ce ți s-ar potrivi.
+
+Îți oferim un loc relaxant și o echipă dedicată să îți fie sprijin.
+
+* Fiecare experiență este unică și trebuie evaluată cu mare grijă de către un specialist. Această pagină are scopul de a-ți oferim infomațiile generale de care ai nevoie, dar asta nu exclude sau substituie vizita și consultul unui medic specialist.
+
+##### Treci printr-o perioadă stresantă?
+
+Noi suntem srijinul tău în această perioadă.
+
+- 🔗 `/contactus`
+
+Contactează-ne
+
+##### Masaj de relaxare
+
+Simți cum ți s-a aduat tensiunea în umeri?
+
+Masajul de relaxare într-o ambianță liniștitoare precum avem la Sevalia este răspusul pe care îl cauți.
+
+##### Reducerea stresului
+
+Ai dureri de cap sau stări de neliniște și oboseală?
+
+Acestea sunt semne că treci printr-o perioadă stresantă. Alături de o echipă de specialiști te vom ghida să descoperi de ce anume ai sau nu nevoie.
+
+##### Salină
+
+Ai nevoie să te relaxezi și să te detașezi de activitățile zilnice?
+
+Poți face acest lucru și în același timp să profiți de efectele benefice ale salinoterapiei, chiar aici în Târgu Mureș.
+
+##### Îmbunătățirea energiei
+
+Vrei să ai randament pe perioade îndelungate?
+
+Dă-ne voie să îți fim sprijin, să îți oferim o stare generală de bine. Astfel, vei ajunge în cea mai bună formă a ta.
 
 ## `/web/image/website/1/favicon`
 

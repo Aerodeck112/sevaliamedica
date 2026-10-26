@@ -28,11 +28,16 @@ const extFor = (ct, u) => {
 
 (async () => {
     const browser = await chromium.launch({ proxy: { server: process.env.HTTPS_PROXY } });
-    const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, locale: 'ro-RO', ignoreHTTPSErrors: true,
-        extraHTTPHeaders: { 'Accept-Language': 'ro-RO,ro' } });
-    await ctx.addCookies([{ name: 'frontend_lang', value: 'ro_RO', domain: 'www.sevalia.ro', path: '/' }]);
     for (const u of urls) {
-        if (index.pages[u]?.ok) continue;
+        const wantsRo = !new URL(u).pathname.startsWith('/en');
+        const prev = index.pages[u];
+        // O pagină românească arhivată din greșeală în varianta /en (cookie de limbă schimbat) se reface.
+        if (prev?.ok && !(wantsRo && /^\/en(\/|$)/.test(new URL(prev.final || u).pathname))) continue;
+        // Context nou pentru fiecare pagină: Odoo memorează limba în cookie, iar vizitarea unei pagini /en ar
+        // redirecționa paginile următoare către engleză.
+        const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, locale: wantsRo ? 'ro-RO' : 'en-US', ignoreHTTPSErrors: true,
+            extraHTTPHeaders: { 'Accept-Language': wantsRo ? 'ro-RO,ro' : 'en-US,en' } });
+        await ctx.addCookies([{ name: 'frontend_lang', value: wantsRo ? 'ro_RO' : 'en_US', domain: 'www.sevalia.ro', path: '/' }]);
         const page = await ctx.newPage();
         const used = new Set();
         page.on('response', async (res) => {
@@ -61,6 +66,7 @@ const extFor = (ct, u) => {
             // Odoo ține deschise conexiuni de fundal: așteptăm „rețea liberă” cel mult 8 s.
             await page.waitForLoadState('networkidle', { timeout: 8000 }).catch(() => {});
             await page.waitForTimeout(1000);
+            if (wantsRo && /^\/en(\/|$)/.test(new URL(page.url()).pathname)) throw new Error('redirecționat la /en: ' + page.url());
             const slug = (new URL(page.url()).pathname.replace(/^\/|\/$/g, '').replace(/\//g, '__')) || 'home';
             fs.writeFileSync(path.join(outDir, 'rendered', `${slug}.html`), await page.content());
             index.pages[u] = { ok: (resp?.status() ?? 599) < 500, status: resp?.status(), final: page.url(), rendered: `rendered/${slug}.html`, resources: [...used] };
@@ -70,6 +76,7 @@ const extFor = (ct, u) => {
             console.log('ERR', u, e.message.split('\n')[0]);
         }
         await page.close();
+        await ctx.close();
         save();
     }
     await browser.close();
