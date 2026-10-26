@@ -6,12 +6,14 @@ use App\Modules\Cms\Services\Import\SiteImporter;
 use Database\Seeders\ClinicPublicDataSeeder;
 
 /**
- * Importă instantaneul siteului (fără imagini, pentru viteză) în baza de test.
+ * Importă conținutul siteului (fără variantele WebP, pentru viteză) în baza de test. Fișierele media se scriu
+ * într-un director de test, nu în public/media.
  */
 trait ImportsSite
 {
     protected function importSite(): array
     {
+        config(['sevalia.media_path' => storage_path('framework/testing/media')]);
         $this->seed(ClinicPublicDataSeeder::class);
 
         return app(SiteImporter::class)->run(false);

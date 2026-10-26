@@ -23,13 +23,16 @@ class MediaLibrary
 
     public const UPLOAD_MIMES = ['image/jpeg' => 'jpg', 'image/png' => 'png', 'image/webp' => 'webp', 'image/gif' => 'gif'];
 
-    public function importFile(string $sourcePath, ?string $sourceUrl, ?string $alt = null): Media
+    public function importFile(string $sourcePath, ?string $sourceUrl, ?string $alt = null, bool $variants = true): Media
     {
         $bytes = file_get_contents($sourcePath);
         $sha = hash('sha256', $bytes);
         if ($existing = Media::where('sha256', $sha)->first()) {
             if ($sourceUrl && ! $existing->source_url) {
                 $existing->update(['source_url' => $sourceUrl]);
+            }
+            if ($variants && empty($existing->variants) && is_file($existing->absolutePath())) {
+                $existing->update(['variants' => $this->makeVariants($existing)]);
             }
 
             return $existing;
@@ -59,7 +62,9 @@ class MediaLibrary
             'source' => 'import',
             'source_url' => $sourceUrl ? mb_substr($sourceUrl, 0, 500) : null,
         ]);
-        $media->update(['variants' => $this->makeVariants($media)]);
+        if ($variants) {
+            $media->update(['variants' => $this->makeVariants($media)]);
+        }
 
         return $media;
     }

@@ -20,7 +20,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 /**
- * Importul conținutului din instantaneul siteului Odoo (database/content/odoo-snapshot).
+ * Importul conținutului siteului original din sursele locale (vezi SourceCatalog): arhiva completă și instantaneul.
+ * Importul nu accesează rețeaua; siteul vechi poate fi șters.
  *
  * Idempotent: o pagină se reimportă doar dacă nu a fost modificată din CMS după importul anterior
  * (hash-ul versiunii curente = hash-ul importului). Paginile editate sunt raportate și lăsate neatinse.
@@ -40,37 +41,53 @@ class SiteImporter
 
     public function __construct(private readonly MediaLibrary $media, private readonly PageService $pages) {}
 
-    public function snapshotPath(string $rel = ''): string
+    /** Rețelele sociale: linkurile Odoo /website/social/<rețea> sunt rescrise direct la adresele finale. */
+    public const SOCIAL = [
+        'facebook' => 'https://www.facebook.com/SevaliaMedica/',
+        'youtube' => 'https://www.youtube.com/@sevaliamedica',
+        'instagram' => 'https://www.instagram.com/sevalia.medica/',
+        'tiktok' => 'https://www.tiktok.com/@sevaliamedica',
+    ];
+
+    /** Prefixe de resurse care existau doar pe platforma Odoo; nu au voie să rămână în conținutul publicat. */
+    public const ODOO_PREFIXES = ['/web/image', '/web/content', '/web/static', '/web/assets', '/unsplash/', '/html_editor/', '/website/image', '/base/static'];
+
+    private ?SourceCatalog $catalog = null;
+
+    private string $currentPage = '';
+
+    public function withCatalog(SourceCatalog $catalog): static
     {
-        return database_path('content/odoo-snapshot'.($rel !== '' ? '/'.$rel : ''));
+        $this->catalog = $catalog;
+
+        return $this;
     }
 
-    public function run(bool $withMedia = true): array
+    /**
+     * @param  bool  $variants  generează variantele WebP (lent; în teste se poate dezactiva)
+     */
+    public function run(bool $variants = true): array
     {
-        if ($withMedia) {
-            $this->importMedia();
-        } else {
-            $this->loadMediaMap();
-        }
-        $this->importFiles();
+        $this->catalog ??= new SourceCatalog;
+        $this->report['surse'] = $this->catalog->hasArchive() ? 'arhivă + instantaneu' : 'instantaneu (arhiva lipsește)';
+        $this->importAssets($variants);
 
-        $pages = json_decode(file_get_contents($this->snapshotPath('pages.json')), true);
         $homeHtml = null;
-        foreach ($pages as $url => $info) {
-            if (($info['code'] ?? null) !== 200 || ! str_starts_with($url, self::BASE)) {
-                continue;
-            }
-            $path = substr($url, strlen(self::BASE)) ?: '/';
+        foreach ($this->catalog->pages() as $path => $source) {
             if (str_starts_with($path, '/en') || in_array($path, self::SYSTEM_PATHS, true) || str_contains($path, '/feed') || str_contains($path, '/page/')) {
                 continue;
             }
             if ($path === '/blog') {
                 continue; // redirect către /blog/blog-sevalia-1
             }
-            $html = file_get_contents($this->snapshotPath('pages/'.$info['file'].'.html'));
+            $html = (string) file_get_contents($source['path']);
+            if ($source['rendered']) {
+                $html = RenderedCleaner::clean($html);
+            }
             if ($path === '/') {
                 $homeHtml = $html;
             }
+            $this->currentPage = $path;
             if (str_starts_with($path, Page::BLOG_PATH.'/')) {
                 $this->importArticle($path, $html);
             } elseif ($path === Page::BLOG_PATH) {
@@ -81,6 +98,7 @@ class SiteImporter
         }
 
         if ($homeHtml) {
+            $this->currentPage = 'meniu/subsol';
             $this->importMenu($homeHtml);
             $this->importFooter($homeHtml);
         }
@@ -89,69 +107,29 @@ class SiteImporter
         if (($logo = $this->mediaFor('/web/image/website/1/logo/sevalia.ro?unique=b2c6804')) && ! app(\App\Core\Settings\Settings::class)->get('site.logo_media_id')) {
             app(\App\Core\Settings\Settings::class)->set('site.logo_media_id', $logo->id);
         }
+        $this->report['imagini_lipsa'] = array_values(array_unique($this->report['imagini_lipsa']));
 
         return $this->report;
     }
 
     // ------------------------------------------------------------------ media
 
-    private function importMedia(): void
+    /** Toate resursele locale (arhivă, apoi instantaneu) intră în biblioteca media; dublurile se unesc după SHA-256. */
+    private function importAssets(bool $variants): void
     {
-        $index = json_decode(file_get_contents($this->snapshotPath('images/index.json')), true);
-        foreach ($index as $path => $info) {
-            if (empty($info['file'])) {
-                continue;
-            }
-            $file = $this->snapshotPath('images/'.$info['file']);
-            if (! is_file($file)) {
-                continue;
-            }
-            $media = $this->media->importFile($file, $path);
-            $this->mediaByPath[$this->normalizeUrl($path)] = $media;
+        foreach ($this->catalog->assets() as $url => $asset) {
+            $media = $this->media->importFile($asset['path'], $url, null, $variants);
+            $this->mediaByPath[$url] = $media;
             $this->report['imagini']++;
-        }
-    }
-
-    /** Documentele descărcabile (ex. PDF) legate din pagini prin /web/content/<id>. */
-    private function importFiles(): void
-    {
-        $indexFile = $this->snapshotPath('files/index.json');
-        if (! is_file($indexFile)) {
-            return;
-        }
-        foreach (json_decode(file_get_contents($indexFile), true) as $path => $info) {
-            $file = $this->snapshotPath('files/'.$info['file']);
-            if (is_file($file)) {
-                $media = $this->media->importFile($file, $path);
-                if ($media->original_name !== $info['file']) {
-                    $media->update(['original_name' => $info['file']]);
-                }
-                $this->mediaByPath[$this->normalizeUrl($path)] = $media;
-                Redirect::firstOrCreate(['source_path' => $path], ['target' => $media->url(), 'status_code' => 301, 'note' => 'Document mutat din Odoo în biblioteca media']);
-            }
-        }
-    }
-
-    private function loadMediaMap(): void
-    {
-        // Mai multe adrese Odoo pot indica același fișier (același SHA-256): le mapăm pe toate.
-        $bySha = Media::all()->keyBy('sha256');
-        $index = json_decode(file_get_contents($this->snapshotPath('images/index.json')), true);
-        foreach ($index as $path => $info) {
-            if (! empty($info['sha256']) && isset($bySha[$info['sha256']])) {
-                $this->mediaByPath[$this->normalizeUrl($path)] = $bySha[$info['sha256']];
+            if (str_starts_with($url, '/web/content/')) {
+                Redirect::firstOrCreate(['source_path' => strtok($url, '?')], ['target' => $media->url(), 'status_code' => 301, 'note' => 'Document mutat din Odoo în biblioteca media']);
             }
         }
     }
 
     private function normalizeUrl(string $url): string
     {
-        $url = html_entity_decode(trim($url, " \t\n\"'"));
-        if (str_starts_with($url, self::BASE)) {
-            $url = substr($url, strlen(self::BASE));
-        }
-
-        return rawurldecode($url);
+        return SourceCatalog::normalize($url);
     }
 
     private function mediaFor(string $url): ?Media
@@ -160,10 +138,9 @@ class SiteImporter
         if (isset($this->mediaByPath[$key])) {
             return $this->mediaByPath[$key];
         }
-        // aceeași imagine fără parametrul ?unique / ?access_token
-        $noQuery = strtok($key, '?');
+        $bare = strtok($key, '?');
         foreach ($this->mediaByPath as $k => $m) {
-            if (strtok($k, '?') === $noQuery) {
+            if (strtok($k, '?') === $bare) {
                 return $m;
             }
         }
@@ -171,46 +148,92 @@ class SiteImporter
         return null;
     }
 
-    /** Înlocuiește adresele imaginilor Odoo cu cele din biblioteca media. */
+    private function missing(string $url): void
+    {
+        $this->report['imagini_lipsa'][] = $url.'  (pe '.$this->currentPage.')';
+    }
+
+    private static function isOdooOnly(string $url): bool
+    {
+        $path = SourceCatalog::normalize($url);
+        foreach (self::ODOO_PREFIXES as $prefix) {
+            if (str_starts_with($path, $prefix)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Rescrie adresele: imaginile și documentele Odoo → biblioteca media; linkurile absolute către siteul vechi → căi
+     * relative; /website/social/* → adresele finale ale rețelelor. Ce nu se găsește local este raportat ca lipsă.
+     */
     private function rewriteMedia(DOMElement $root): void
     {
         $xp = new DOMXPath($root->ownerDocument);
-        foreach ($xp->query('.//img[@src]', $root) as $img) {
+        foreach ($xp->query('.//img', $root) as $img) {
             /** @var DOMElement $img */
-            $media = $this->mediaFor($img->getAttribute('src'));
+            $src = $img->getAttribute('src') ?: $img->getAttribute('data-src');
+            $media = $src !== '' ? $this->mediaFor($src) : null;
             if ($media) {
                 $img->setAttribute('src', $media->url());
                 $img->setAttribute('data-cms-media', (string) $media->id);
                 if (! $img->hasAttribute('alt')) {
                     $img->setAttribute('alt', '');
                 }
-            } elseif (! str_starts_with($img->getAttribute('src'), 'data:')) {
-                $this->report['imagini_lipsa'][] = $img->getAttribute('src');
+            } elseif ($src !== '' && ! str_starts_with($src, 'data:')) {
+                $this->missing($src);
+                if (self::isOdooOnly($src) || str_contains($src, 'sevalia.ro')) {
+                    $img->setAttribute('src', 'data:image/gif;base64,R0lGODlhAQABAAAAACw=');
+                }
             }
+            $img->removeAttribute('data-src');
+            $img->removeAttribute('srcset'); // variantele se generează din biblioteca media
         }
-        foreach ($xp->query('.//a[starts-with(@href, "/web/content/")]', $root) as $a) {
+        foreach ($xp->query('.//*[@href]', $root) as $a) {
             /** @var DOMElement $a */
-            $media = $this->mediaFor(strtok($a->getAttribute('href'), '?'));
-            if ($media) {
-                $a->setAttribute('href', $media->url());
+            $href = $a->getAttribute('href');
+            $path = SourceCatalog::normalize($href);
+            if ($path !== $href && (str_starts_with($href, 'http') || str_starts_with($href, '//'))) {
+                $a->setAttribute('href', $path); // link absolut către siteul vechi → cale relativă
+            }
+            if (preg_match('~^/website/social/([a-z]+)~', $path, $m)) {
+                if (isset(self::SOCIAL[$m[1]])) {
+                    $a->setAttribute('href', self::SOCIAL[$m[1]]);
+                    $a->setAttribute('rel', 'noopener');
+                } else {
+                    $this->missing($href);
+                }
+
+                continue;
+            }
+            if (self::isOdooOnly($path)) {
+                $media = $this->mediaFor($path);
+                if ($media) {
+                    $a->setAttribute('href', $media->url());
+                } else {
+                    $this->missing($href);
+                }
             }
         }
         foreach ($xp->query('.//*[contains(@style, "url(")]', $root) as $el) {
             /** @var DOMElement $el */
-            $style = $el->getAttribute('style');
             $style = preg_replace_callback('/url\(\s*([\'"]?)(.*?)\1\s*\)/i', function ($m) use ($el) {
+                if (str_starts_with($m[2], 'data:')) {
+                    return $m[0];
+                }
                 $media = $this->mediaFor($m[2]);
                 if ($media) {
                     $el->setAttribute('data-cms-media-bg', (string) $media->id);
 
                     return 'url("'.$media->url().'")';
                 }
-                if (! str_starts_with($m[2], 'data:')) {
-                    $this->report['imagini_lipsa'][] = $m[2];
-                }
+                $this->missing($m[2]);
 
-                return $m[0];
-            }, html_entity_decode($style));
+                // O resursă Odoo inexistentă local nu rămâne în pagină (siteul vechi va fi șters).
+                return self::isOdooOnly($m[2]) || str_contains($m[2], 'sevalia.ro') ? 'none' : $m[0];
+            }, html_entity_decode($el->getAttribute('style')));
             $el->setAttribute('style', $style);
         }
     }
@@ -233,8 +256,11 @@ class SiteImporter
     {
         $meta = fn (string $q) => ($n = $xp->query($q)->item(0)) instanceof DOMElement ? html_entity_decode($n->getAttribute('content')) : null;
         $title = ($t = $xp->query('//title')->item(0)) ? trim(html_entity_decode($t->textContent)) : null;
-        $og = $meta('//meta[@property="og:image"]');
+        $og = $meta('//meta[@property="og:image"]') ?? $meta('//meta[@name="twitter:image"]');
         $ogMedia = $og ? $this->mediaFor($og) : null;
+        if ($og && ! $ogMedia) {
+            $this->missing($og.' [og:image]');
+        }
 
         return array_filter([
             'title' => $title,
@@ -361,6 +387,9 @@ class SiteImporter
         $cover = null;
         if ($coverEl instanceof DOMElement && preg_match('/url\(\s*([\'"]?)(.*?)\1\s*\)/', html_entity_decode($coverEl->getAttribute('style')), $m)) {
             $cover = $this->mediaFor($m[2]);
+            if (! $cover) {
+                $this->missing($m[2].' [copertă articol]');
+            }
         }
         $filterEl = $xp->query('//section[@id="o_wblog_post_top"]//div[contains(@class,"o_record_cover_filter")]')->item(0);
         $coverContainer = $xp->query('//section[@id="o_wblog_post_top"]//div[contains(@class,"o_record_cover_container")]')->item(0);
