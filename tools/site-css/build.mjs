@@ -53,6 +53,22 @@ const header = `/*
  * Fișier generat de tools/site-css/build.mjs — nu editați manual; ajustările se fac în resources/css/site.css.
  */
 `;
+// Formele decorative SVG (fundaluri Odoo) se servesc local, din copia descărcată (tools/audit/download_shapes.py).
+let purged = result[0].css;
+const shapesDir = path.join(root, 'database/content/odoo-snapshot/assets/shapes');
+const shapes = fs.existsSync(path.join(shapesDir, 'index.json')) ? JSON.parse(fs.readFileSync(path.join(shapesDir, 'index.json'), 'utf8')) : {};
+const missingShapes = [];
+purged = purged.replace(/url\("(\/html_editor\/shape\/[^"]+)"\)/g, (m, url) => {
+    if (!shapes[url]) {
+        missingShapes.push(url);
+        return m;
+    }
+    return `url("../../../database/content/odoo-snapshot/assets/shapes/${shapes[url].file}")`;
+});
+if (missingShapes.length) {
+    console.warn('Forme SVG lipsă (rulați tools/audit/download_shapes.py):\n' + missingShapes.join('\n'));
+    process.exitCode = 1;
+}
 fs.mkdirSync(path.dirname(outFile), { recursive: true });
-fs.writeFileSync(outFile, header + result[0].css);
+fs.writeFileSync(outFile, header + purged);
 console.log(`CSS original: ${(css.length / 1024).toFixed(0)} KB → redus: ${(result[0].css.length / 1024).toFixed(0)} KB (${outFile})`);
