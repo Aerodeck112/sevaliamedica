@@ -1,0 +1,20 @@
+SEVALIA {versiune} — instalare pe cPanel, fără Terminal
+=======================================================
+
+1. cPanel → MySQL Database Wizard: creați o bază nouă (ex. cont_sevalia), un utilizator cu parolă
+   și bifați ALL PRIVILEGES. Notați numele bazei, utilizatorul și parola.
+2. cPanel → MultiPHP Manager: domeniul pe PHP 8.3 (sau mai nou).
+   cPanel → SSL/TLS Status: AutoSSL activ (https).
+3. cPanel → File Manager → directorul principal al contului (/home/<cont>, cel care conține public_html)
+   → Upload: încărcați această arhivă → clic dreapta pe arhivă → Extract → în /home/<cont>.
+   Apar: directorul „sevalia” (lângă public_html) și fișierul public_html/install.php.
+4. Deschideți în browser:  https://<domeniul-dumneavoastră>/install.php
+   Codul cerut de instalator se află în File Manager: sevalia/shared/install/cod-instalare.txt
+5. Urmați pașii din browser. La final:
+   - notați CHEIA DE RECUPERARE (afișată o singură dată);
+   - adăugați în cPanel → Cron Jobs linia afișată de instalator (Once Per Minute);
+   - descărcați și păstrați offline sevalia/shared/.env și sevalia/shared/keys/.
+6. Ștergeți arhiva încărcată (instalatorul se dezactivează singur).
+
+Actualizările viitoare se instalează din panou: Panou → Administrare → Actualizări → încărcați pachetul ZIP primit.
+Pentru pachete mari: cPanel → MultiPHP INI Editor → upload_max_filesize = 256M, post_max_size = 256M.

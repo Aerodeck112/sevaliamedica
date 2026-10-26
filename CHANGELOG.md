@@ -3,6 +3,21 @@
 Formatul: o secțiune `## [versiune] — dată` pentru fiecare release. Textul secțiunii este inclus în pachetul de
 actualizare și afișat administratorului înainte de instalare.
 
+## [0.9.0] — 2026-10-26
+
+Prima versiune instalabilă pe hosting (pre-lansare; de verificat pe staging înainte de producție).
+
+- Instalare din browser pe cPanel fără Terminal (`install.php`), cu cod de instalare, verificarea serverului,
+  configurarea bazei de date și a administratorului, import reluabil al conținutului.
+- Siteul public reconstruit fidel din arhiva completă a siteului vechi (pagini, texte, servicii, articole, fotografii),
+  CMS cu editor pe blocuri controlate, versiuni, bibliotecă media, meniuri, redirecturi, SEO, consimțământ cookie propriu.
+- Pacienți, programări (calendar, resurse fără conflicte, serii, listă de așteptare, solicitări de pe site),
+  servicii efectuate.
+- Dosar medical (fișe configurabile, finalizare și rectificare trasabilă, documente criptate, consimțăminte)
+  și recuperare medicală (planuri, serii de ședințe, efectuare explicită, pachete).
+- Notificări (e-mail, SMS, WhatsApp) cu șabloane, jurnal de livrări și fără duplicate.
+- Cheia de semnare de producție pentru actualizări (`config/update-keys/fb3391f2ed370c28.pub`).
+
 ## [0.1.0] — 2026-10-25
 
 Prima versiune de lucru (nevalidată în producție).

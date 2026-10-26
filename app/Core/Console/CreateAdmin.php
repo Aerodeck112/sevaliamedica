@@ -13,7 +13,8 @@ use Illuminate\Support\Str;
  */
 class CreateAdmin extends Command
 {
-    protected $signature = 'sevalia:create-admin {email} {--name=Administrator tehnic}';
+    protected $signature = 'sevalia:create-admin {email} {--name=Administrator tehnic}
+        {--password= : Doar pentru instalarea din browser (apel intern); din terminal parola se cere interactiv}';
 
     protected $description = 'Creează un cont de administrator tehnic';
 
@@ -28,7 +29,7 @@ class CreateAdmin extends Command
             return self::FAILURE;
         }
 
-        $password = $this->secret('Parola (minimum '.config('sevalia.security.password_min_length').' caractere)');
+        $password = $this->option('password') ?: $this->secret('Parola (minimum '.config('sevalia.security.password_min_length').' caractere)');
         if (mb_strlen((string) $password) < (int) config('sevalia.security.password_min_length') || ! preg_match('/\d/', $password) || ! preg_match('/\pL/u', $password)) {
             $this->error('Parola trebuie să aibă lungimea minimă și să conțină litere și cifre.');
 

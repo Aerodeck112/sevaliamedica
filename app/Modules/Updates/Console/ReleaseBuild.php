@@ -17,6 +17,7 @@ class ReleaseBuild extends Command
         {--from= : Pentru update: intervalul de versiuni acceptat, „min-max” (ex. 0.1.0-0.1.99)}
         {--key= : Calea cheii private Ed25519}
         {--out=dist : Directorul de ieșire}
+        {--cpanel : Pentru install: produce și pachetul „instalare cPanel” (de dezarhivat în File Manager, cu install.php)}
         {--vendor=local : local (copiază vendor/ și elimină offline pachetele dev cu composer install --no-dev) | composer (instalare curată, necesită rețea) | copy (doar pentru teste)}';
 
     protected $description = 'Construiește un pachet ZIP semnat (install sau update)';
@@ -27,7 +28,7 @@ class ReleaseBuild extends Command
 
     /** Excluderi (prefixe relative). Datele demo și fișierele locale nu ajung în pachete. */
     private const EXCLUDE = ['bootstrap/cache/', 'public/hot', 'public/storage', 'database/seeders/Demo/', 'database/database.sqlite',
-        'public/build/.vite/'];
+        'public/build/.vite/', 'public/media/'];
 
     public function handle(PackageBuilder $builder): int
     {
@@ -75,6 +76,10 @@ class ReleaseBuild extends Command
                 'builder' => ['git_commit' => trim((string) @shell_exec('git -C '.escapeshellarg(base_path()).' rev-parse HEAD 2>/dev/null')), 'host' => gethostname()],
             ]);
             sodium_memzero($secret);
+            if ($type === 'install' && $this->option('cpanel')) {
+                $bundle = $this->cpanelBundle($tmp, $version, rtrim($outDir, '/'));
+                $this->info("Pachet de instalare cPanel (fără Terminal): {$bundle}");
+            }
         } catch (RuntimeException $e) {
             $this->error($e->getMessage());
 
@@ -171,6 +176,38 @@ class ReleaseBuild extends Command
                 @unlink($f->getPathname());
             }
         }
+    }
+
+    /**
+     * Arhiva pentru instalarea fără Terminal. Se dezarhivează în directorul principal al contului cPanel:
+     *   sevalia/releases/<versiune>/…   codul aplicației (în afara public_html)
+     *   public_html/install.php         instalatorul din browser
+     *   CITESTE-MA-INSTALARE.txt        pașii pe scurt
+     */
+    private function cpanelBundle(string $tmp, string $version, string $outDir): string
+    {
+        $file = "{$outDir}/sevalia-{$version}-instalare-cpanel.zip";
+        @unlink($file);
+        $zip = new \ZipArchive;
+        if ($zip->open($file, \ZipArchive::CREATE | \ZipArchive::EXCL) !== true) {
+            throw new RuntimeException("Nu pot crea {$file}.");
+        }
+        $it = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($tmp, \FilesystemIterator::SKIP_DOTS));
+        foreach ($it as $f) {
+            if (! $f->isFile() || $f->isLink()) {
+                continue;
+            }
+            $rel = substr($f->getPathname(), strlen($tmp) + 1);
+            $zip->addFile($f->getPathname(), "sevalia/releases/{$version}/{$rel}");
+        }
+        $zip->addFile($tmp.'/deploy/public_html/install.php', 'public_html/install.php');
+        $zip->addFromString('CITESTE-MA-INSTALARE.txt', str_replace('{versiune}', $version, (string) file_get_contents(base_path('deploy/CITESTE-MA-INSTALARE.txt'))));
+        if (! $zip->close()) {
+            throw new RuntimeException("Arhiva {$file} nu a putut fi scrisă.");
+        }
+        file_put_contents($file.'.sha256', hash_file('sha256', $file).'  '.basename($file)."\n");
+
+        return $file;
     }
 
     private function changelogFor(string $version): string

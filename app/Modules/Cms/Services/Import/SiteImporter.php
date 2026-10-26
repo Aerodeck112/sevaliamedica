@@ -66,11 +66,18 @@ class SiteImporter
     /**
      * @param  bool  $variants  generează variantele WebP (lent; în teste se poate dezactiva)
      */
-    public function run(bool $variants = true): array
+    /**
+     * @param  float|null  $deadline  moment (microtime) după care importul se oprește după resursa curentă; importul
+     *                                e idempotent, deci o rulare ulterioară continuă de unde a rămas (instalarea din browser)
+     */
+    public function run(bool $variants = true, ?float $deadline = null): array
     {
         $this->catalog ??= new SourceCatalog;
         $this->report['surse'] = $this->catalog->hasArchive() ? 'arhivă + instantaneu' : 'instantaneu (arhiva lipsește)';
-        $this->importAssets($variants);
+        $this->report['complet'] = $this->importAssets($variants, $deadline);
+        if (! $this->report['complet']) {
+            return $this->report;
+        }
 
         $homeHtml = null;
         foreach ($this->catalog->pages() as $path => $source) {
@@ -115,9 +122,16 @@ class SiteImporter
     // ------------------------------------------------------------------ media
 
     /** Toate resursele locale (arhivă, apoi instantaneu) intră în biblioteca media; dublurile se unesc după SHA-256. */
-    private function importAssets(bool $variants): void
+    private function importAssets(bool $variants, ?float $deadline = null): bool
     {
-        foreach ($this->catalog->assets() as $url => $asset) {
+        $assets = $this->catalog->assets();
+        $this->report['resurse_total'] = count($assets);
+        $this->report['resurse_procesate'] = 0;
+        foreach ($assets as $url => $asset) {
+            if ($deadline !== null && microtime(true) > $deadline) {
+                return false;
+            }
+            $this->report['resurse_procesate']++;
             $media = $this->media->importFile($asset['path'], $url, null, $variants);
             $this->mediaByPath[$url] = $media;
             $this->report['imagini']++;
@@ -125,6 +139,8 @@ class SiteImporter
                 Redirect::firstOrCreate(['source_path' => strtok($url, '?')], ['target' => $media->url(), 'status_code' => 301, 'note' => 'Document mutat din Odoo în biblioteca media']);
             }
         }
+
+        return true;
     }
 
     private function normalizeUrl(string $url): string

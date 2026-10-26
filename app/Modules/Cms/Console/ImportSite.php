@@ -13,14 +13,25 @@ use Illuminate\Console\Command;
  */
 class ImportSite extends Command
 {
-    protected $signature = 'sevalia:import-site {--fara-variante : Nu generează variantele WebP (mai rapid; doar pentru verificări)}';
+    protected $signature = 'sevalia:import-site
+        {--fara-variante : Nu generează variantele WebP (mai rapid; doar pentru verificări)}
+        {--buget= : Durata maximă în secunde; dacă nu termină, raportează INCOMPLET și se reia cu aceeași comandă}';
+
+    /** Codul de ieșire când importul s-a oprit la bugetul de timp (instalarea din browser îl reia). */
+    public const INCOMPLETE = 3;
 
     protected $description = 'Importă paginile, articolele, meniul, subsolul, imaginile și documentele siteului original';
 
     public function handle(SiteImporter $importer): int
     {
         $this->info('Import în curs…');
-        $report = $importer->run(! $this->option('fara-variante'));
+        $budget = (float) $this->option('buget');
+        $report = $importer->run(! $this->option('fara-variante'), $budget > 0 ? microtime(true) + $budget : null);
+        if (! $report['complet']) {
+            $this->line("INCOMPLET {$report['resurse_procesate']}/{$report['resurse_total']}");
+
+            return self::INCOMPLETE;
+        }
         $templates = $importer->saveTemplates();
 
         $this->line('Surse: '.$report['surse']);
