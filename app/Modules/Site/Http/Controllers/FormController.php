@@ -10,6 +10,7 @@ use App\Modules\Clinic\Models\Specialty;
 use App\Modules\Clinic\Models\StaffMember;
 use App\Modules\Cms\Models\Page;
 use App\Modules\Site\Services\FormBlock;
+use App\Modules\Site\Services\FormSubmissionIntake;
 use App\Modules\Site\Services\FormToken;
 use App\Modules\Site\Services\SiteView;
 use Carbon\CarbonImmutable;
@@ -86,7 +87,7 @@ class FormController extends Controller
             $notes[] = $data['message'];
         }
 
-        $result = $intake->submit(new PublicAppointmentRequest(
+        $requestData = new PublicAppointmentRequest(
             name: $data['name'],
             phone: $phone,
             email: $data['email'] ?? null,
@@ -101,7 +102,13 @@ class FormController extends Controller
             consentAt: CarbonImmutable::now(),
             sourceUrl: self::SOURCE_PAGES[$form],
             ipHash: $ipHash,
-        ));
+        );
+        $result = $intake->submit($requestData);
+        // Dacă CRM-ul nu preia solicitarea (ex. solicitările online sunt oprite), mesajul nu se pierde:
+        // se păstrează în „Mesaje din site”, de unde recepția îl poate contacta.
+        if (! $result->accepted) {
+            $result = app(FormSubmissionIntake::class)->submit($requestData);
+        }
 
         $target = self::SUCCESS_PAGE;
         // Mesajul paginii de confirmare nu promite un interval; doar o rezervare reală adaugă detaliul primit.

@@ -9,6 +9,7 @@ use App\Core\Settings\Settings;
 use App\Modules\Clinic\Models\Specialty;
 use App\Modules\Clinic\Models\StaffMember;
 use App\Modules\Cms\Models\FormSubmission;
+use App\Modules\Scheduling\Models\Appointment;
 use App\Modules\Site\Services\FormToken;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\RateLimiter;
@@ -52,11 +53,27 @@ class PublicFormTest extends TestCase
         $this->get('/contactus')->assertSee('Data nasterii');
     }
 
-    public function test_valid_submission_is_stored_encrypted_and_does_not_promise_a_slot(): void
+    public function test_valid_submission_becomes_a_crm_request_without_promising_a_slot(): void
     {
         $this->post('/formular/contact', $this->payload(), ['Origin' => config('app.url')])
             ->assertStatus(303)->assertRedirect('/contactus-thank-you');
 
+        $request = Appointment::sole();
+        $this->assertSame('solicitare', $request->status);
+        $this->assertSame('site', $request->source);
+        $this->assertNull($request->patient_id);
+        $this->assertStringNotContainsString('Pacient Fictiv', (string) \DB::table('appointments')->value('request_contact'));
+        $this->assertSame(0, FormSubmission::count());
+        $this->get('/contactus-thank-you')->assertOk()->assertSee('Mulțumim!');
+    }
+
+    public function test_submission_is_kept_when_online_requests_are_disabled(): void
+    {
+        app(Settings::class)->set('scheduling.online.enabled', false);
+        $this->post('/formular/contact', $this->payload(), ['Origin' => config('app.url')])
+            ->assertStatus(303)->assertRedirect('/contactus-thank-you');
+
+        $this->assertSame(0, Appointment::count());
         $submission = FormSubmission::sole();
         $this->assertSame('Pacient Fictiv', $submission->payload['nume']);
         $this->assertNull($submission->payload['data_nasterii']);
@@ -84,7 +101,7 @@ class PublicFormTest extends TestCase
     {
         $this->post('/formular/contact', $this->payload(['website' => 'http://spam.example']))->assertStatus(303);
         $this->post('/formular/contact', $this->payload([FormToken::FIELD => FormToken::issue('contact')]))->assertStatus(303);
-        $this->assertSame(0, FormSubmission::count());
+        $this->assertSame(0, FormSubmission::count() + Appointment::count());
     }
 
     public function test_invalid_or_foreign_token_is_rejected(): void
@@ -112,7 +129,7 @@ class PublicFormTest extends TestCase
             $this->post('/formular/contact', $this->payload())->assertStatus(303);
         }
         $this->post('/formular/contact', $this->payload())->assertStatus(429)->assertSee('Ați trimis deja mai multe mesaje');
-        $this->assertSame(5, FormSubmission::count());
+        $this->assertSame(5, Appointment::where('source', 'site')->count());
     }
 
     public function test_token_round_trip(): void
