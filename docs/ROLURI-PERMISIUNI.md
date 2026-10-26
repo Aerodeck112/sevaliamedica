@@ -30,6 +30,12 @@ permisiune, o relație de îngrijire (vezi `SECURITATE.md`). Administratorul teh
 | Dosar medical | `medical.templates` | Configurează șabloanele de fișă pe specialități |  | ✔ |  | ✔ |  |  |  |  |  |
 | Dosar medical | `medical.consent_templates` | Administrează modelele de consimțământ (text furnizat de clinică) |  | ✔ |  |  |  |  |  |  |  |
 | Dosar medical | `medical.documents.retract` | Retrage documente încărcate greșit (cu motiv, fără ștergere) |  |  |  | ✔ |  |  |  |  |  |
+| Notificări | `notifications.view` | Vede jurnalul livrărilor de notificări |  | ✔ | ✔ |  |  |  |  |  |  |
+| Notificări | `notifications.retry` | Reîncearcă manual o notificare eșuată |  | ✔ | ✔ |  |  |  |  |  |  |
+| Notificări | `notifications.send` | Trimite manual mesaje administrative (follow-up) din șabloane |  | ✔ | ✔ |  |  |  |  |  |  |
+| Notificări | `notifications.templates` | Editează șabloanele de mesaje |  | ✔ |  |  |  |  |  |  |  |
+| Notificări | `notifications.settings` | Configurează canalele (e-mail, SMS, WhatsApp) și regulile de trimitere | ✔ | ✔ |  |  |  |  |  |  |  |
+| Notificări | `feedback.view` | Vede răspunsurile la solicitările de feedback |  | ✔ |  |  |  |  |  |  |  |
 | Pacienți | `patients.view` | Consultă fișele administrative ale pacienților (identificare, contact, programări) |  | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |  |
 | Pacienți | `patients.create` | Creează fișe de pacient |  | ✔ | ✔ | ✔ |  |  |  |  |  |
 | Pacienți | `patients.edit` | Modifică datele administrative și reprezentanții |  | ✔ | ✔ | ✔ |  | ✔ |  |  |  |
