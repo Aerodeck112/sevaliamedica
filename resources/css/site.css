@@ -122,3 +122,15 @@
     outline: 3px solid #00c4c4;
     outline-offset: 2px;
 }
+
+/* Variabile de transparență definite de tema originală (folosite în stiluri inline, ex. fundalul ferestrei pop-up). */
+:root {
+    --black-15: rgba(0, 0, 0, 0.15);
+    --black-25: rgba(0, 0, 0, 0.25);
+    --black-50: rgba(0, 0, 0, 0.5);
+    --black-75: rgba(0, 0, 0, 0.75);
+    --white-25: rgba(255, 255, 255, 0.25);
+    --white-50: rgba(255, 255, 255, 0.5);
+    --white-75: rgba(255, 255, 255, 0.75);
+    --white-85: rgba(255, 255, 255, 0.85);
+}
