@@ -60,3 +60,8 @@ analiza specificațiilor oficiale este deja făcută (`docs/integrari/CAS-ANALIZ
 - **2026-10-25 — Etapa 2:** fundația (autentificare cu MFA, roluri, audit, modul Clinică, panou). Răspunsuri
   clinică: hosting compatibil; resursele se configurează din panou; CAS la final; toate paginile rămân,
   consimțământ cookie propriu, Google Ads configurabil din panou.
+- **2026-10-26 — Decizie clinică:** siteul actual www.sevalia.ro va fi șters complet după migrare. Tot conținutul
+  (servicii, texte, fotografii, articole, fișiere) se arhivează integral în repository
+  (`database/content/odoo-archive/`: HTML randat cu browser + toate resursele încărcate + resursele doar referite),
+  iar importul în CMS nu depinde de siteul live. Criteriu de acceptanță nou: niciun conținut publicat nu mai
+  referă www.sevalia.ro sau căi Odoo (`/web/image`), iar raportul de import nu are resurse „lipsă”.

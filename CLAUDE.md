@@ -12,6 +12,7 @@ Citește întâi: `docs/PLAN.md`, `docs/ARHITECTURA.md`, `docs/STATUS.md`, `docs
   confirmat rămâne configurabil și marcat „neconfirmat”/„blocat de date” în `docs/STATUS.md`.
 - **Date fictive** în teste, demo și capturi (`@demo.sevalia.invalid`, nume evident fictive). Seederul demo e
   `database/seeders/Demo/` și refuză să ruleze în producție.
+- Siteul vechi (Odoo) va fi **șters**: sursa conținutului este exclusiv arhiva din `database/content/` (nu siteul live).
 - Siteul public păstrează textele, imaginile, meniurile și ordinea secțiunilor originale. Greșelile se notează în
   `docs/audit/OBSERVATII-CONTINUT.md`, nu se corectează în tăcere.
 - Autorizare **pe server** pentru fiecare acțiune (`permission:` pe rute + politici pe obiect). Datele medicale
