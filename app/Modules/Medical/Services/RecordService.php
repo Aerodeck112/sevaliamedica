@@ -36,7 +36,7 @@ class RecordService
         $version = null;
         if ($template) {
             $version = $template->latestVersion;
-            if (! $version || ! $template->is_active) {
+            if (! $version || $template->getAttribute('is_active') === false) {
                 throw ValidationException::withMessages(['template_id' => 'Șablonul nu are o versiune publicată.']);
             }
         }
