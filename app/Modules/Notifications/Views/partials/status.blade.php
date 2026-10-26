@@ -1,0 +1,1 @@
+<x-panou.badge :tone="\App\Modules\Notifications\Models\NotificationDelivery::TONES[$status] ?? null">{{ \App\Modules\Notifications\Models\NotificationDelivery::LABELS[$status] ?? $status }}</x-panou.badge>

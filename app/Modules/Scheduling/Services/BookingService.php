@@ -10,6 +10,8 @@ use App\Modules\Clinic\Models\Room;
 use App\Modules\Clinic\Models\Service;
 use App\Modules\Clinic\Models\StaffMember;
 use App\Modules\Scheduling\Events\AppointmentCancelled;
+use App\Modules\Scheduling\Events\AppointmentBooked;
+use App\Modules\Scheduling\Events\AppointmentMoved;
 use App\Modules\Scheduling\Events\AppointmentStatusChanged;
 use App\Modules\Scheduling\Models\Appointment;
 use App\Modules\Scheduling\Models\AppointmentEvent;
@@ -214,6 +216,7 @@ class BookingService
                 'avertizari' => $eval['warnings'],
             ]);
             Audit::log('scheduling.appointment_created', $appointment, ['status' => $r->status, 'sursa' => $r->source], $appointment->patient_id, $user?->id);
+            DB::afterCommit(fn () => event(new AppointmentBooked($appointment)));
 
             return $appointment->setRelation('bookingWarnings', collect($eval['warnings']));
         }, 3);
@@ -283,6 +286,7 @@ class BookingService
                 'avertizari' => $eval['warnings'],
             ]);
             Audit::log('scheduling.appointment_moved', $locked, [], $locked->patient_id);
+            DB::afterCommit(fn () => event(new AppointmentMoved($locked, $before['inceput'])));
 
             return $locked->setRelation('bookingWarnings', collect($eval['warnings']));
         }, 3);
