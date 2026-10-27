@@ -22,6 +22,11 @@ permisiune, o relație de îngrijire (vezi `SECURITATE.md`). Administratorul teh
 | Conturi și securitate | `users.manage` | Administrează conturile de utilizator și rolurile | ✔ |  |  |  |  |  |  |  |  |
 | Conturi și securitate | `audit.view` | Consultă jurnalul de audit | ✔ | ✔ |  |  |  |  |  |  |  |
 | Conturi și securitate | `settings.manage` | Modifică setările generale ale aplicației | ✔ |  |  |  |  |  |  |  |  |
+| Tablete recepție | `kiosk.devices` | Adaugă, asociază și deconectează tabletele de la recepție | ✔ | ✔ |  |  |  |  |  |  |  |
+| Tablete recepție | `kiosk.consent.send` | Trimite consimțăminte spre semnare pe tabletă |  | ✔ | ✔ | ✔ | ✔ | ✔ |  |  |  |
+| Tablete recepție | `kiosk.review.send` | Cere recenzii pe tabletă după serviciile efectuate |  | ✔ | ✔ | ✔ | ✔ | ✔ |  |  |  |
+| Tablete recepție | `reviews.view` | Consultă recenziile pacienților și statisticile pe medici și servicii |  | ✔ |  |  |  |  |  |  | ✔ |
+| Tablete recepție | `reviews.moderate` | Publică pe site recenziile pentru care pacientul și-a dat acordul |  | ✔ |  |  |  |  |  |  | ✔ |
 | Dosar medical | `medical.view` | Consultă fișele, documentele, consimțămintele și avertizările pacienților în îngrijire |  |  |  | ✔ | ✔ | ✔ |  |  |  |
 | Dosar medical | `medical.write` | Redactează fișe (draft), încarcă documente, introduce avertizări |  |  |  | ✔ |  |  |  |  |  |
 | Dosar medical | `medical.finalize` | Finalizează propriile fișe (cu reconfirmarea identității) |  |  |  | ✔ |  |  |  |  |  |

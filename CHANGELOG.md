@@ -3,6 +3,11 @@
 Formatul: o secțiune `## [versiune] — dată` pentru fiecare release. Textul secțiunii este inclus în pachetul de
 actualizare și afișat administratorului înainte de instalare.
 
+## [Nelansat]
+
+- Tablete la recepție: consimțăminte semnate pe ecran cu cod de 6 cifre și recenzii 1–5 stele după servicii
+  (serviciu, specialist, comentariu), statistici pe specialiști și servicii, cod QR opțional către recenzia Google.
+
 ## [0.9.0] — 2026-10-26
 
 Prima versiune instalabilă pe hosting (pre-lansare; de verificat pe staging înainte de producție).

@@ -34,7 +34,7 @@ Citește întâi: `docs/PLAN.md`, `docs/ARHITECTURA.md`, `docs/STATUS.md`, `docs
 - Migrările stau în `database/migrations/`, cu prefix de dată pe modul (ordinea contează):
   `2026_01_01` core · `2026_01_02` clinic · `2026_02_*` cms/site · `2026_03_*` patients/scheduling ·
   `2026_04_*` medical · `2026_05_*` rehab · `2026_06_*` cas · `2026_07_*` notifications · `2026_08_*` billing ·
-  `2026_09_*` reports · `2026_10_*` updates/backup. Numele de indici ≤ 64 caractere (MariaDB).
+  `2026_09_*` reports · `2026_10_*` updates/backup · `2026_11_*` kiosk (tablete recepție). Numele de indici ≤ 64 caractere (MariaDB).
 - Pagini de panou: `@extends('layouts.panou')`, `@section('title')`, `@section('content')`; componente
   `x-panou.page-head`, `x-panou.panel`, `x-panou.field`, `x-panou.badge`, `x-panou.empty`, `x-panou.icon`.
   Nomenclatoarele simple folosesc `App\Core\Http\Crud\ResourceController`.

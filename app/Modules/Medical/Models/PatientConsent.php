@@ -14,6 +14,8 @@ class PatientConsent extends Model
     public const METHODS = [
         'hartie_scanat' => 'Semnat pe hârtie (formular scanat)',
         'verbal_consemnat' => 'Acord verbal consemnat de personal',
+        // Semnătură electronică simplă (desenată pe tableta clinicii), NU semnătură electronică calificată.
+        'semnat_tableta' => 'Semnat pe tableta clinicii (semnătură electronică simplă)',
     ];
 
     public const GIVEN_BY = ['pacient' => 'Pacientul', 'reprezentant' => 'Reprezentantul legal'];

@@ -64,6 +64,23 @@ class DocumentStorage
         ];
     }
 
+    /**
+     * Stochează conținut generat de aplicație (ex. semnătura desenată pe tabletă), cu aceleași garanții:
+     * imaginile se reencodează, totul se criptează pe discul privat.
+     *
+     * @return array{mime: string, size: int, sha256: string, storage_path: string, original_name: string}
+     */
+    public function storeBytes(string $bytes, string $mime, string $name): array
+    {
+        if (str_starts_with($mime, 'image/')) {
+            [$bytes, $mime] = $this->reencodeImage($bytes, $mime);
+        }
+        $relative = Str::lower(Str::random(2)).'/'.Str::lower(Str::random(2)).'/'.Str::random(40).'.bin';
+        $this->write($relative, $bytes);
+
+        return ['mime' => $mime, 'size' => strlen($bytes), 'sha256' => hash('sha256', $bytes), 'storage_path' => $relative, 'original_name' => $name];
+    }
+
     /** Conținutul decriptat; verifică suma de control. */
     public function read(MedicalDocument $document): string
     {

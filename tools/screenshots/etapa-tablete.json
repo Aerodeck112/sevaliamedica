@@ -1,0 +1,12 @@
+{
+  "baseUrl": "http://127.0.0.1:8000",
+  "outDir": "docs/capturi/etapa-tablete",
+  "shots": [
+    { "name": "10-panou-tablete", "path": "/panou/tablete", "role": "manager" },
+    { "name": "11-panou-recenzii", "path": "/panou/recenzii", "role": "manager" },
+    { "name": "12-pacient-tab-tableta", "path": "/panou/pacienti/1?tab=tableta", "role": "receptie" },
+    { "name": "13-pacient-tab-tableta-mobil", "path": "/panou/pacienti/1?tab=tableta", "role": "receptie", "viewport": "mobil" },
+    { "name": "14-pacient-consimtaminte-semnat", "path": "/panou/pacienti/1?tab=consimtaminte", "role": "medic" },
+    { "name": "15-acasa-manager-widget", "path": "/panou", "role": "manager" }
+  ]
+}

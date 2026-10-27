@@ -9,6 +9,8 @@ export default defineConfig({
                 'resources/js/panou.js',
                 'resources/css/site.css',
                 'resources/js/site.js',
+                'resources/css/kiosk.css',
+                'resources/js/kiosk.js',
                 'resources/css/cms.css',
             ],
             refresh: true,

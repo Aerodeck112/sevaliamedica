@@ -62,6 +62,24 @@ locală) · **testat staging** (pe hostingul clinicii) · **verificat cu servici
 | UI Backupuri (listă, creare, verificare, descărcare auditată) | da | da | nu | — | — |
 | Copie externă a backupurilor (în afara serverului) | doar documentat | — | — | — | alegerea spațiului de stocare de către clinică |
 
+## Tablete recepție: consimțăminte și recenzii (modulul Kiosk)
+
+| Funcționalitate | Implementat | Testat local | Testat staging | Verificat cu serviciul extern | Blocat de acces/date |
+|---|---|---|---|---|---|
+| Asocierea tabletei cu un cod de 8 caractere (o singură dată), token păstrat doar ca hash, revocare | ✅ | ✅ | ❌ | — | — |
+| Cod de 6 cifre per pacient (HMAC, expirare configurabilă, blocare după 5 coduri greșite) | ✅ | ✅ | ❌ | — | — |
+| Semnarea consimțământului pe ecran: text versionat, bifă de acord, reprezentant legal opțional, refuz | ✅ | ✅ (teste + capturi în browser) | ❌ | — | Textele reale ale consimțămintelor: le introduce clinica |
+| Semnătura salvată criptat ca document al pacientului + amprentele SHA-256 ale textului și semnăturii | ✅ | ✅ | ❌ | — | — |
+| Recenzie după un serviciu efectuat: serviciu, specialist, 1–5 stele, comentariu opțional criptat | ✅ | ✅ | ❌ | — | — |
+| Recenzie trimisă direct pe tabletă (se deschide singură, fără cod) | ✅ | ✅ | ❌ | — | — |
+| Statistici pe specialiști și servicii, publicare pe site doar cu acordul pacientului | ✅ | ✅ | ❌ | — | Afișarea recenziilor publicate pe site: neimplementată încă |
+| Cod QR către recenzia Google după orice recenzie (fără filtrare după notă) | ✅ | ⚠️ randare testată, linkul real lipsește | ❌ | ❌ | Linkul Google Business Profile al clinicii |
+| Ecranul tabletei revine singur la început după inactivitate | ✅ | ⚠️ verificat manual | ❌ | — | — |
+
+Semnătura desenată pe tabletă este o **semnătură electronică simplă**, nu o semnătură electronică calificată.
+Dacă un anumit document cere semnătură calificată, clinica trebuie să folosească un serviciu calificat separat.
+Modul „kiosk” al tabletei (fixarea aplicației/browserului pe ecran) se configurează din sistemul tabletei.
+
 ## Cerințe de hosting
 
 Confirmate de clinică la 2026-10-25 (PHP 8.3+, SSH/Terminal, Composer, cron); **de verificat la instalare** cu
