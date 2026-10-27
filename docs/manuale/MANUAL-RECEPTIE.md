@@ -48,7 +48,7 @@ pacientului și pacienții care au cerut reprogramarea prin link.
 
 Pacientul alege serviciul, locația, eventual specialistul, apoi ziua și ora dintre intervalele **libere reale**
 din calendar (aceleași verificări ca la recepție: program, pauze, concedii, săli, aparate). Apar doar:
-- serviciile marcate „programare online” (Administrare → Servicii);
+- serviciile marcate „Programare online pe site” (Administrare → Catalog servicii);
 - orele din programul public al locației, între avansul minim și maxim din Setări programări;
 - numele specialiștilor afișați pe site (ceilalți apar ca „oricare specialist disponibil”).
 

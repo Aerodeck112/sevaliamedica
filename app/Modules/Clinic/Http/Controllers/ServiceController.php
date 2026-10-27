@@ -62,7 +62,7 @@ class ServiceController extends ResourceController
             Field::make('price_note', 'Notă tarif')->rules('nullable|string|max:190'),
             Field::make('cas_reportable', 'Poate fi decontat CAS', 'checkbox')->hint('Numai pentru servicii din contractul CAS confirmat.'),
             Field::make('cas_code', 'Cod serviciu CNAS')->rules('nullable|string|max:40'),
-            Field::make('online_booking', 'Poate fi solicitat de pe site', 'checkbox'),
+            Field::make('online_booking', 'Programare online pe site (/programare-online)', 'checkbox'),
             Field::make('online_auto_confirm', 'Confirmare automată online', 'checkbox')->hint('Doar dacă regulile de disponibilitate permit; altfel solicitarea așteaptă recepția.'),
             Field::make('is_active', 'Activ', 'checkbox')->list(),
         ];
