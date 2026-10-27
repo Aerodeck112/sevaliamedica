@@ -24,3 +24,5 @@
         </div>
     </div>
 </div>
+{{-- Afișare imediată (înaintea scriptului principal), ca bannerul să nu întârzie prima afișare a paginii. --}}
+<script nonce="{{ app('csp-nonce') }}">try{if(!/(?:^|;\s*){{ \App\Modules\Site\Services\ConsentConfig::COOKIE }}=/.test(document.cookie)){document.getElementById('sv-cookie').hidden=false;}}catch(e){}</script>

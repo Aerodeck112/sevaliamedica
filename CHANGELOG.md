@@ -18,6 +18,9 @@ actualizare și afișat administratorului înainte de instalare.
   AI extern și fără păstrarea întrebărilor. Se poate opri din Setări site.
 - Schițe anatomice animate în linie pe copertele paginilor de servicii (zona tratată evidențiată) și harta
   „Unde simțiți durere sau disconfort?” pe prima pagină, cu legături spre terapii; se pot opri din Setări site.
+- Performanță pe mobil: imaginea principală corectă preîncărcată pe telefoane, fonturi de bază cerute devreme
+  (fără reașezarea textului), banner de cookie afișat imediat, favicon de 6,5 KB în loc de 43 KB, pictograme
+  pentru telefon; corecturi de accesibilitate fără schimbări vizibile.
 - Paginile fără descriere SEO primesc automat începutul textului lor ca descriere; imaginea principală devine
   imaginea de distribuire.
 

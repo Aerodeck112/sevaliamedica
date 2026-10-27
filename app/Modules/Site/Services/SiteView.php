@@ -26,7 +26,7 @@ class SiteView
         $settings = (array) ($version->settings ?? []);
         // Schițele anatomice se adaugă peste conținut; JSON-LD și descrierea se calculează din conținutul original.
         $content = $rendered['main'];
-        $rendered['main'] = $this->anatomy->decorate($rendered['main'], $page->path);
+        $rendered['main'] = A11y::fix($this->anatomy->decorate($rendered['main'], $page->path));
         if ($page->path === '/') {
             $rendered['main'] = $this->anatomy->withBodyMap($rendered['main']);
         }
@@ -86,7 +86,7 @@ class SiteView
         return [
             'menu' => $menu,
             'megaMenus' => $mega,
-            'footerHtml' => $footerRendered['main'],
+            'footerHtml' => A11y::fix($footerRendered['main']),
             'footerCss' => $footerRendered['css'].$megaCompiler->css(),
             'logoUrl' => $logo?->url() ?? '/images/sevalia-logo.webp',
             'currentPath' => $request ? '/'.trim($request->getPathInfo(), '/') : '/',

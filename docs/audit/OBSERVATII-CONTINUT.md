@@ -28,6 +28,12 @@ paginile sunt verificate în CMS.
 | `/contactus` | lista de medici din formular nu îl include pe dr. Crauciuc Andrei, prezent pe pagina echipei | de sincronizat |
 | `/contactus` vs `/contactus-thank-you` | programul de vineri: „07:00 - 19:00” pe pagina de contact, „07:00 - 17:00” în caseta paginii de confirmare | contradicție; aplicația folosește programul de pe `/contactus` (07–19) pentru date structurate, llms.txt și programarea online — de confirmat de clinică (Clinică → Locații) |
 
+## Accesibilitate (din designul original, nemodificat)
+
+- Contrast insuficient pentru unele texte mici colorate `rgb(0, 159, 174)` și pentru linkurile din cuprinsul paginilor
+  de servicii; titluri care sar niveluri (H1 → H4); linkuri marcate doar prin culoare. Detalii și măsurători în
+  `docs/audit/PERFORMANTA-LIGHTHOUSE.md`.
+
 ## Probleme tehnice vizibile pentru vizitatori
 
 - Articolul „Deficitul de vitamina D” conține o imagine goală (`<img>` fără sursă) după paragraful „Ce spun studiile?”.

@@ -18,9 +18,16 @@
         <meta name="twitter:card" content="summary_large_image">
     @endisset
     @foreach ($verification ?? [] as $name => $content)<meta name="{{ $name }}" content="{{ $content }}">@endforeach
-    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/images/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
     @foreach ($preloads as $p)
         <link rel="preload" as="image" href="{{ $p['href'] }}" media="{{ $p['media'] }}" fetchpriority="high">
+    @endforeach
+    {{-- Fonturile textului de bază (inclusiv setul cu ă, ș, ț) se cer devreme: fără ele textul se reașază (CLS). --}}
+    @foreach (['montserrat/files/montserrat-latin-400-normal.woff2', 'montserrat/files/montserrat-latin-ext-400-normal.woff2', 'montserrat/files/montserrat-latin-700-normal.woff2'] as $font)
+        @php try { $fontUrl = \Illuminate\Support\Facades\Vite::asset('node_modules/@fontsource/'.$font); } catch (\Throwable) { $fontUrl = null; } @endphp
+        @if ($fontUrl)<link rel="preload" href="{{ $fontUrl }}" as="font" type="font/woff2" crossorigin>@endif
     @endforeach
     @vite(['resources/css/site.css'])
     @if (($pageCss ?? '') !== '' || ($footerCss ?? '') !== '')

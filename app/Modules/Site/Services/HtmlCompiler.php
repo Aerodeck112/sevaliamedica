@@ -137,6 +137,12 @@ class HtmlCompiler
         return $this->preloads;
     }
 
+    /** Imaginea principală e preîncărcată pentru toate ecranele (sau nu e nevoie de alta). */
+    public function preloadsComplete(): bool
+    {
+        return isset($this->preloadedRanges['mic'], $this->preloadedRanges['mare']) || ($this->preloads !== [] && $this->preloadedRanges === []);
+    }
+
     private function preloadMedia(DOMXPath $xp, DOMElement $root): void
     {
         $ids = [];
@@ -239,10 +245,37 @@ class HtmlCompiler
         if ($desktop !== $tablet) {
             $this->bgCss[] = "@media (min-width:1440px){.$class{background-image:url(\"$desktop\")}}";
         }
-        if ($aboveFold && count($this->preloads) === 0) {
-            // Aceleași praguri ca regulile CSS de mai sus, deci se descarcă o singură variantă.
+        if ($aboveFold) {
+            $this->preloadBackground($el, $mobile, $tablet, $desktop);
+        }
+    }
+
+    /** Intervalele de ecran (sub / peste 992 px) care au deja imaginea principală preîncărcată. */
+    private array $preloadedRanges = [];
+
+    /**
+     * Preîncarcă imaginea principală doar pentru ecranele pe care secțiunea e vizibilă: copertele Odoo au o variantă
+     * pentru telefon (d-lg-none) și una pentru desktop (d-none d-lg-flex), fiecare cu altă imagine.
+     */
+    private function preloadBackground(DOMElement $el, string $mobile, string $tablet, string $desktop): void
+    {
+        $section = $el;
+        while ($section instanceof DOMElement && $section->nodeName !== 'section') {
+            $section = $section->parentNode;
+        }
+        $classes = ' '.($section instanceof DOMElement ? $section->getAttribute('class') : '').' ';
+        $mobileOnly = str_contains($classes, ' d-lg-none ') || str_contains($classes, ' o_snippet_desktop_invisible ');
+        $desktopOnly = str_contains($classes, ' o_snippet_mobile_invisible ') || (str_contains($classes, ' d-none ') && preg_match('/ d-lg-(flex|block) /', $classes));
+
+        // Aceleași praguri ca regulile CSS de mai sus, deci se descarcă o singură variantă pe ecran.
+        if (! $desktopOnly && ! isset($this->preloadedRanges['mic'])) {
+            $this->preloadedRanges['mic'] = true;
             $this->preloads[] = ['href' => $mobile, 'media' => '(max-width: 767.98px)'];
-            $this->preloads[] = ['href' => $tablet, 'media' => '(min-width: 768px) and (max-width: 1439.98px)'];
+            $this->preloads[] = ['href' => $tablet, 'media' => '(min-width: 768px) and (max-width: 991.98px)'];
+        }
+        if (! $mobileOnly && ! isset($this->preloadedRanges['mare'])) {
+            $this->preloadedRanges['mare'] = true;
+            $this->preloads[] = ['href' => $tablet, 'media' => '(min-width: 992px) and (max-width: 1439.98px)'];
             $this->preloads[] = ['href' => $desktop, 'media' => '(min-width: 1440px)'];
         }
     }

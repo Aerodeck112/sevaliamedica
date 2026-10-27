@@ -1,6 +1,6 @@
 {{-- Asistentul Sevalia: răspunsuri din informațiile publice ale siteului (modulul Assistant). --}}
 <div class="sv-assist" data-assistant data-endpoint="{{ route('asistent.ask', absolute: false) }}">
-    <button type="button" class="sv-assist__fab" aria-expanded="false" aria-controls="sv-assist-panel">
+    <button type="button" class="sv-assist__fab" aria-expanded="false" aria-controls="sv-assist-panel" aria-label="Întrebați asistentul Sevalia">
         <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.2 3.6A.5.5 0 0 1 5 19.2V16h0a2.5 2.5 0 0 1-1-2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 9.5h7M8.5 12.5h4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
         <span>Întrebați asistentul</span>
     </button>

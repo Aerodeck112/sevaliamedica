@@ -34,7 +34,8 @@
     visibility: visible;
 }
 
-/* Banner de consimțământ: aceleași culori și fonturi ca siteul. */
+/* Banner de consimțământ: aceleași culori ca siteul. Fontul de sistem (fără schimbare la încărcarea fonturilor
+   web) împiedică bannerul să-și modifice înălțimea pe ecran (CLS) și să întârzie prima afișare. */
 .sv-cookie {
     position: fixed;
     inset: auto 1rem 1rem 1rem;
@@ -45,7 +46,7 @@
     color: #212529;
     border-radius: 0.5rem;
     box-shadow: 0 10px 40px -10px rgb(0 0 0 / 0.35);
-    font-family: 'Montserrat', sans-serif;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
     font-size: 0.9375rem;
 }
 
@@ -58,7 +59,8 @@
 }
 
 .sv-cookie__title {
-    font-family: 'Manrope', sans-serif;
+    font-family: inherit;
+    font-weight: 600;
     font-size: 1.25rem;
     margin: 0 0 0.5rem;
     color: #006f75;
@@ -70,6 +72,7 @@
 
 .sv-cookie__body a {
     color: #007878;
+    text-decoration: underline;
 }
 
 .sv-cookie__prefs fieldset {

@@ -35,7 +35,10 @@ class Renderer
         $visible = array_values(array_filter($version->blocks, fn ($b) => empty($b['hidden'])));
         foreach ($visible as $i => $block) {
             $html = $this->blockHtml($page, $block, $request, $preview);
-            $out .= $compiler->compile($html, $i === 0 && $coverClass === null)."\n";
+            // Al doilea bloc contează ca „deasupra pliului” doar dacă primul acoperă un singur tip de ecran
+            // (coperta Odoo are o variantă pentru desktop și una pentru telefon).
+            $aboveFold = $coverClass === null && ($i === 0 || ($i === 1 && ! $compiler->preloadsComplete()));
+            $out .= $compiler->compile($html, $aboveFold)."\n";
         }
 
         return ['main' => $out, 'css' => $compiler->css(), 'preloads' => $compiler->preloads(), 'blocks' => count($visible), 'cover_class' => $coverClass];
