@@ -81,7 +81,8 @@ class SiteImporter
 
         $homeHtml = null;
         foreach ($this->catalog->pages() as $path => $source) {
-            if (str_starts_with($path, '/en') || in_array($path, self::SYSTEM_PATHS, true) || str_contains($path, '/feed') || str_contains($path, '/page/')) {
+            // Paginile tehnice Odoo (ex. /web/login, la care redirecționa /my) nu sunt conținut al clinicii.
+            if (str_starts_with($path, '/en') || str_starts_with($path, '/web/') || in_array($path, self::SYSTEM_PATHS, true) || str_contains($path, '/feed') || str_contains($path, '/page/')) {
                 continue;
             }
             if ($path === '/blog') {
@@ -278,7 +279,7 @@ class SiteImporter
             $this->missing($og.' [og:image]');
         }
 
-        return array_filter([
+        $seo = array_filter([
             'title' => $title,
             'description' => $meta('//meta[@name="description"]'),
             'keywords' => $meta('//meta[@name="keywords"]'),
@@ -286,6 +287,32 @@ class SiteImporter
             'og_image_media_id' => $ogMedia?->id,
             'noindex' => false,
         ], fn ($v) => $v !== null && $v !== '');
+
+        // Recomandările SEO cerute de clinică (database/content/seo-recomandat.json) au prioritate față de valorile
+        // vechi; textul vizibil al paginii rămâne neschimbat.
+        $recommended = self::recommendedSeo()[$this->currentPage] ?? [];
+        foreach (['title', 'description', 'keywords'] as $field) {
+            if (! empty($recommended[$field])) {
+                $seo[$field] = $recommended[$field];
+            }
+        }
+        if (! empty($recommended['serviciu'])) {
+            $seo['service_name'] = $recommended['serviciu'];
+        }
+
+        return $seo;
+    }
+
+    /** @return array<string, array<string, string>> */
+    public static function recommendedSeo(): array
+    {
+        static $cache = null;
+        if ($cache === null) {
+            $file = base_path('database/content/seo-recomandat.json');
+            $cache = is_file($file) ? array_filter((array) json_decode((string) file_get_contents($file), true), 'is_array') : [];
+        }
+
+        return $cache;
     }
 
     private function bodyClass(DOMXPath $xp): string

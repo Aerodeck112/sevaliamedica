@@ -56,7 +56,7 @@ class PublicSiteTest extends TestCase
         $this->importSite();
         $response = $this->get('/kinetoterapie')->assertOk()
             ->assertSee('<link rel="canonical" href="https://www.sevalia.ro/kinetoterapie">', false)
-            ->assertSee('<title>SEVALIA | KINETOTERAPIE | MUREȘ</title>', false);
+            ->assertSee('<title>Kinetoterapie Târgu Mureș pentru adulți și copii | SEVALIA</title>', false);
         $etag = $response->headers->get('ETag');
         $this->assertNotEmpty($etag);
         $this->get('/kinetoterapie', ['If-None-Match' => $etag])->assertStatus(304);

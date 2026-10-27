@@ -1,0 +1,43 @@
+{
+  "_despre": "Titluri și descrieri pentru motoarele de căutare (nu modifică textul vizibil al paginilor), cerute de clinică la 2026-10-26 pentru cuvintele cheie de mai jos. Descrierile folosesc numai afirmații existente pe pagini. Se aplică la import doar paginilor needitate din CMS; din CMS se pot schimba oricând (Pagină → SEO).",
+  "/kinetoterapie": {
+    "title": "Kinetoterapie Târgu Mureș pentru adulți și copii | SEVALIA",
+    "description": "Kinetoterapie în Târgu Mureș pentru adulți și copii: programe personalizate de recuperare posttraumatică, postoperatorie, sportivă și reumatologică.",
+    "keywords": "kinetoterapie Târgu Mureș, kinetoterapie Tg. Mureș, kinetoterapie Mureș, kinetoterapie copii, kinetoterapie pediatrică",
+    "serviciu": "Kinetoterapie"
+  },
+  "/kinetoterapie-atm-articulatia-temporo-mandibulara": {
+    "title": "Kinetoterapie ATM (temporo-mandibulară) Târgu Mureș | SEVALIA",
+    "description": "Kinetoterapie ATM în Târgu Mureș: tratament specializat și personalizat pentru disfuncțiile articulației temporo-mandibulare — durere, blocaje, cracmente.",
+    "keywords": "kinetoterapie ATM, kinetoterapie temporo-mandibulară, kinetoterapie mandibulară Mureș, kinetoterapie ATM Târgu Mureș",
+    "serviciu": "Kinetoterapie pentru articulația temporo-mandibulară (ATM)"
+  },
+  "/masaj": {
+    "title": "Masaj terapeutic Târgu Mureș – masaj medical | SEVALIA",
+    "description": "Masaj terapeutic și medical în Târgu Mureș, efectuat de specialiști în recuperare, inclusiv pe puncte trigger, pentru contracturi și dureri cervicale, lombare.",
+    "keywords": "masaj Târgu Mureș, masaj terapeutic Tg. Mureș, masaj Mureș, masaj terapeutic Mureș, masaj medical",
+    "serviciu": "Masaj terapeutic"
+  },
+  "/reabilitare-medicala-mures": {
+    "title": "Reabilitare medicală Târgu Mureș | SEVALIA",
+    "description": "Reabilitare medicală în Târgu Mureș, Mureș: terapii personalizate pentru afecțiuni ortopedice, neurologice, reumatologice și recuperare post-operatorie.",
+    "keywords": "reabilitare medicală Târgu Mureș, reabilitare Mureș, reabilitare Tg. Mureș",
+    "serviciu": "Reabilitare medicală"
+  },
+  "/recuperare-medicala-mures": {
+    "title": "Recuperare medicală Târgu Mureș | SEVALIA",
+    "description": "Recuperare medicală în Târgu Mureș, Mureș: leziuni sportive, posttraumatism, AVC, proteză de șold, ligament încrucișat, operații de genunchi.",
+    "keywords": "recuperare medicală Târgu Mureș, recuperare Mureș, recuperare Tg. Mureș, centru de recuperare medicală",
+    "serviciu": "Recuperare medicală"
+  },
+  "/emsella-tratament-pentru-incontinenta-urinara": {
+    "title": "Terapia planșeului pelvin Târgu Mureș – EMSELLA | SEVALIA",
+    "description": "Terapie pentru incontinența urinară în Târgu Mureș: EMSELLA, terapia planșeului pelvin — non-invazivă și fără durere, întărește musculatura pelviană.",
+    "keywords": "terapia planșeului pelvin Mureș, terapia planșeului pelvin Tg. Mureș, terapie incontinență urinară, EMSELLA Târgu Mureș",
+    "serviciu": "Terapia planșeului pelvin (EMSELLA) pentru incontinența urinară"
+  },
+  "/fizioterapie-targu-mures": {
+    "title": "Fizioterapie Târgu Mureș | SEVALIA",
+    "serviciu": "Fizioterapie"
+  }
+}

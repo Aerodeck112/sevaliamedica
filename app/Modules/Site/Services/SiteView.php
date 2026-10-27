@@ -35,7 +35,7 @@ class SiteView
             'coverBgClass' => $rendered['cover_class'] ?? '',
             'articleSettings' => $settings,
             'notice' => $notice,
-            'jsonLd' => $this->jsonLd($page),
+            'jsonLd' => $this->jsonLd($page, (array) ($version->seo ?? []), $rendered['main']),
         ]);
     }
 
@@ -96,9 +96,44 @@ class SiteView
         ];
     }
 
-    /** Date structurate doar din informații verificate (locațiile și programul din modulul Clinică). */
-    private function jsonLd(Page $page): ?array
+    /**
+     * Date structurate doar din informații verificate: locațiile și programul (modulul Clinică), întrebările
+     * frecvente exact cum apar pe pagină, numele serviciului (SEO al paginii) și firul de navigare.
+     */
+    private function jsonLd(Page $page, array $seo = [], string $html = ''): ?array
     {
+        if ($page->path !== '/' && $page->path !== '/contactus' && $page->kind !== Page::KIND_ARTICLE) {
+            $base = rtrim((string) config('sevalia.site.canonical_host', config('app.url')), '/');
+            $graph = [[
+                '@type' => 'BreadcrumbList',
+                'itemListElement' => [
+                    ['@type' => 'ListItem', 'position' => 1, 'name' => 'Acasă', 'item' => $base.'/'],
+                    ['@type' => 'ListItem', 'position' => 2, 'name' => $page->title, 'item' => $base.$page->path],
+                ],
+            ]];
+            if (! empty($seo['service_name']) && ($loc = Location::active()->first())) {
+                $graph[] = [
+                    '@type' => 'Service',
+                    'name' => $seo['service_name'],
+                    'serviceType' => $seo['service_name'],
+                    'areaServed' => [['@type' => 'City', 'name' => 'Târgu Mureș'], ['@type' => 'AdministrativeArea', 'name' => 'Județul Mureș']],
+                    'url' => $base.$page->path,
+                    'description' => $seo['description'] ?? null,
+                    'provider' => array_filter([
+                        '@type' => 'MedicalClinic',
+                        'name' => 'Sevalia Medica',
+                        'url' => $base.'/',
+                        'telephone' => $loc->phone,
+                        'address' => array_filter(['@type' => 'PostalAddress', 'streetAddress' => $loc->address, 'addressLocality' => $loc->city, 'addressRegion' => $loc->county, 'addressCountry' => 'RO']),
+                    ]),
+                ];
+            }
+            if ($faq = self::faqFromHtml($html)) {
+                $graph[] = ['@type' => 'FAQPage', 'mainEntity' => $faq];
+            }
+
+            return ['@context' => 'https://schema.org', '@graph' => array_map(fn ($n) => array_filter($n), $graph)];
+        }
         if ($page->path !== '/' && $page->path !== '/contactus') {
             return $page->kind === Page::KIND_ARTICLE ? [
                 '@context' => 'https://schema.org',
@@ -131,5 +166,32 @@ class SiteView
         }
 
         return $places ? ['@context' => 'https://schema.org', '@graph' => $places] : null;
+    }
+
+    /**
+     * Întrebările frecvente din blocurile acordeon (s_faq_collapse) ale paginii, textul exact afișat.
+     *
+     * @return list<array<string, mixed>>
+     */
+    public static function faqFromHtml(string $html): array
+    {
+        if ($html === '' || ! str_contains($html, 'accordion')) {
+            return [];
+        }
+        $doc = new \DOMDocument;
+        @$doc->loadHTML('<?xml encoding="utf-8"?><div>'.$html.'</div>', LIBXML_NOERROR | LIBXML_NOWARNING);
+        $xp = new \DOMXPath($doc);
+        $items = [];
+        foreach ($xp->query('//*[contains(concat(" ", normalize-space(@class), " "), " accordion ")]//*[contains(concat(" ", normalize-space(@class), " "), " card ")]') as $card) {
+            $q = $xp->query('.//*[contains(concat(" ", normalize-space(@class), " "), " card-header ")]', $card)->item(0);
+            $a = $xp->query('.//*[contains(concat(" ", normalize-space(@class), " "), " card-body ")]', $card)->item(0);
+            $question = $q ? trim(preg_replace('/\s+/u', ' ', str_replace("\u{00A0}", ' ', $q->textContent))) : '';
+            $answer = $a ? trim(preg_replace('/\s+/u', ' ', str_replace("\u{00A0}", ' ', $a->textContent))) : '';
+            if ($question !== '' && $answer !== '') {
+                $items[] = ['@type' => 'Question', 'name' => $question, 'acceptedAnswer' => ['@type' => 'Answer', 'text' => $answer]];
+            }
+        }
+
+        return $items;
     }
 }

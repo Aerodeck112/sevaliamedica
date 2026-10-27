@@ -106,7 +106,23 @@ class SourceCatalog
                 $this->pages[self::pathOf((string) $url)] = ['path' => $file, 'source' => 'arhiva', 'rendered' => true];
             }
         }
+        // Paginile care pe siteul vechi nu au răspuns 200 (ex. „Page Not Found” pentru /neurologie) sunt păstrate în
+        // arhivă ca dovadă, dar nu se importă ca pagini.
+        $notOk = [];
+        foreach ((array) ($index['pages'] ?? []) as $info) {
+            if (is_array($info) && isset($info['rendered'], $info['status']) && (int) $info['status'] !== 200) {
+                $notOk[basename((string) $info['rendered'])] = true;
+            }
+        }
+        foreach ((array) ($index['pages'] ?? []) as $info) {
+            if (is_array($info) && isset($info['rendered'], $info['status']) && (int) $info['status'] === 200) {
+                unset($notOk[basename((string) $info['rendered'])]);
+            }
+        }
         foreach (glob($dir.'/rendered/*.html') ?: [] as $file) {
+            if (isset($notOk[basename($file)])) {
+                continue;
+            }
             $slug = basename($file, '.html');
             $path = $slug === 'home' || $slug === 'index' ? '/' : '/'.str_replace('__', '/', $slug);
             $this->pages[$path] ??= ['path' => $file, 'source' => 'arhiva', 'rendered' => true];
