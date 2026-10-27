@@ -7,6 +7,13 @@ actualizare și afișat administratorului înainte de instalare.
 
 - Tablete la recepție: consimțăminte semnate pe ecran cu cod de 6 cifre și recenzii 1–5 stele după servicii
   (serviciu, specialist, comentariu), statistici pe specialiști și servicii, cod QR opțional către recenzia Google.
+- Marketing: audit SEO automat (în fiecare noapte și la cerere) cu scor, istoric și cuvinte cheie urmărite;
+  verificare Google Search Console și Bing, profil Google Business în datele structurate, IndexNow, `/llms.txt`
+  și controlul accesului asistenților AI din robots.txt.
+- Schițe anatomice animate în linie pe copertele paginilor de servicii (zona tratată evidențiată) și harta
+  „Unde simțiți durere sau disconfort?” pe prima pagină, cu legături spre terapii; se pot opri din Setări site.
+- Paginile fără descriere SEO primesc automat începutul textului lor ca descriere; imaginea principală devine
+  imaginea de distribuire.
 
 ## [0.9.0] — 2026-10-26
 

@@ -2,13 +2,22 @@
 
 namespace App\Modules\Site\Http\Controllers;
 
+use App\Core\Settings\Settings;
 use App\Http\Controllers\Controller;
 use App\Modules\Cms\Models\Page;
 use Illuminate\Http\Response;
 
 class SeoController extends Controller
 {
-    public function robots(): Response
+    /** Crawlerii care adună date pentru antrenarea modelelor AI. */
+    public const AI_TRAINING_BOTS = ['GPTBot', 'ClaudeBot', 'Google-Extended', 'Applebot-Extended', 'CCBot', 'meta-externalagent', 'Bytespider', 'cohere-training-data-crawler'];
+
+    /** Crawlerii prin care asistenții AI caută și citează pagini în răspunsuri. */
+    public const AI_SEARCH_BOTS = ['OAI-SearchBot', 'ChatGPT-User', 'Claude-SearchBot', 'Claude-User', 'PerplexityBot', 'Perplexity-User'];
+
+    private const PRIVATE_PATHS = ['/panou', '/formular', '/tableta'];
+
+    public function robots(Settings $settings): Response
     {
         $base = rtrim((string) config('sevalia.site.canonical_host', config('app.url')), '/');
         $lines = ['User-agent: *'];
@@ -16,10 +25,26 @@ class SeoController extends Controller
         if (config('sevalia.stage') !== 'production') {
             $lines[] = 'Disallow: /';
         } else {
-            $lines[] = 'Disallow: /panou';
-            $lines[] = 'Disallow: /formular';
+            foreach (self::PRIVATE_PATHS as $path) {
+                $lines[] = 'Disallow: '.$path;
+            }
             $lines[] = 'Allow: /';
+            // Accesul asistenților AI (Marketing → Google și AI): implicit permis, pentru vizibilitate.
+            $mode = (string) $settings->get('marketing.ai_crawlers', 'permite');
+            $blocked = match ($mode) {
+                'blocheaza' => [...self::AI_TRAINING_BOTS, ...self::AI_SEARCH_BOTS],
+                'doar_cautare' => self::AI_TRAINING_BOTS,
+                default => [],
+            };
+            if ($blocked) {
+                $lines[] = '';
+                foreach ($blocked as $bot) {
+                    $lines[] = 'User-agent: '.$bot;
+                }
+                $lines[] = 'Disallow: /';
+            }
         }
+        $lines[] = '';
         $lines[] = 'Sitemap: '.$base.'/sitemap.xml';
 
         return response(implode("\n", $lines)."\n", 200, ['Content-Type' => 'text/plain; charset=UTF-8', 'Cache-Control' => 'public, max-age=3600']);

@@ -4,6 +4,7 @@ namespace App\Modules\Cms\Services;
 
 use App\Core\Audit\Audit;
 use App\Models\User;
+use App\Modules\Cms\Events\PageVisibilityChanged;
 use App\Modules\Cms\Models\Page;
 use App\Modules\Cms\Models\PageVersion;
 use App\Modules\Site\Services\PageCache;
@@ -71,6 +72,7 @@ class PageService
         });
         Audit::log('cms.page.published', $page, ['versiune' => $version->number]);
         PageCache::flush();
+        PageVisibilityChanged::dispatch($page, true);
     }
 
     public function unpublish(Page $page): void
@@ -78,6 +80,7 @@ class PageService
         $page->forceFill(['status' => 'draft'])->save();
         Audit::log('cms.page.unpublished', $page);
         PageCache::flush();
+        PageVisibilityChanged::dispatch($page, false);
     }
 
     /** Restaurarea creează o versiune nouă identică cu cea veche (istoricul rămâne complet). */

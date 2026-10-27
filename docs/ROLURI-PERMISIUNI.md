@@ -27,6 +27,8 @@ permisiune, o relație de îngrijire (vezi `SECURITATE.md`). Administratorul teh
 | Tablete recepție | `kiosk.review.send` | Cere recenzii pe tabletă după serviciile efectuate |  | ✔ | ✔ | ✔ | ✔ | ✔ |  |  |  |
 | Tablete recepție | `reviews.view` | Consultă recenziile pacienților și statisticile pe medici și servicii |  | ✔ |  |  |  |  |  |  | ✔ |
 | Tablete recepție | `reviews.moderate` | Publică pe site recenziile pentru care pacientul și-a dat acordul |  | ✔ |  |  |  |  |  |  | ✔ |
+| Marketing și SEO | `marketing.seo` | Consultă auditul SEO automat, îl pornește și administrează cuvintele cheie urmărite | ✔ | ✔ |  |  |  |  |  |  | ✔ |
+| Marketing și SEO | `marketing.integrations` | Configurează Google Search Console, Google Business, IndexNow și vizibilitatea în asistenții AI | ✔ | ✔ |  |  |  |  |  |  |  |
 | Dosar medical | `medical.view` | Consultă fișele, documentele, consimțămintele și avertizările pacienților în îngrijire |  |  |  | ✔ | ✔ | ✔ |  |  |  |
 | Dosar medical | `medical.write` | Redactează fișe (draft), încarcă documente, introduce avertizări |  |  |  | ✔ |  |  |  |  |  |
 | Dosar medical | `medical.finalize` | Finalizează propriile fișe (cu reconfirmarea identității) |  |  |  | ✔ |  |  |  |  |  |

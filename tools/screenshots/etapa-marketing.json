@@ -1,0 +1,14 @@
+{
+  "baseUrl": "http://127.0.0.1:8000",
+  "outDir": "docs/capturi/etapa-marketing",
+  "shots": [
+    { "name": "01-audit-seo", "path": "/panou/marketing/audit-seo", "role": "manager" },
+    { "name": "02-audit-seo-erori", "path": "/panou/marketing/audit-seo?gravitate=error", "role": "manager" },
+    { "name": "03-cuvinte-cheie", "path": "/panou/marketing/cuvinte-cheie", "role": "manager" },
+    { "name": "04-google-si-ai", "path": "/panou/marketing/google-ai", "role": "manager" },
+    { "name": "05-acasa-widget-seo", "path": "/panou", "role": "manager" },
+    { "name": "06-audit-seo-mobil", "path": "/panou/marketing/audit-seo", "role": "manager", "viewport": "mobil" },
+    { "name": "07-llms-txt", "path": "/llms.txt", "role": null },
+    { "name": "08-robots-txt", "path": "/robots.txt", "role": null }
+  ]
+}

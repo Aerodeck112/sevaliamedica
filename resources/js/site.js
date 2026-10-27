@@ -196,6 +196,55 @@ if (reducedMotion || !('IntersectionObserver' in window)) {
     animated.forEach((el) => observer.observe(el));
 }
 
+// ---------- Schițe anatomice: se desenează când intră în ecran ----------
+const sketches = document.querySelectorAll('.sv-anatomy');
+if (!reducedMotion && 'IntersectionObserver' in window) {
+    const sketchObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            sketchObserver.unobserve(entry.target);
+            entry.target.classList.add('is-drawn');
+        });
+    }, { threshold: 0.25 });
+    sketches.forEach((el) => {
+        el.classList.add('is-ready');
+        sketchObserver.observe(el);
+    });
+}
+
+// ---------- Harta corpului: zona aleasă arată terapiile ei ----------
+document.querySelectorAll('[data-bodymap]').forEach((map) => {
+    const tabs = [...map.querySelectorAll('.sv-bodymap__zone')];
+    const select = (zone, focus = false) => {
+        map.dataset.active = zone;
+        tabs.forEach((tab) => {
+            const on = tab.dataset.zone === zone;
+            tab.setAttribute('aria-selected', on ? 'true' : 'false');
+            tab.tabIndex = on ? 0 : -1;
+            if (on && focus) tab.focus();
+        });
+        map.querySelectorAll('.sv-bodymap__panel').forEach((panel) => {
+            const on = panel.dataset.zone === zone;
+            panel.hidden = !on;
+            panel.classList.toggle('is-active', on);
+        });
+    };
+    tabs.forEach((tab, i) => {
+        tab.addEventListener('click', () => select(tab.dataset.zone));
+        tab.addEventListener('keydown', (e) => {
+            const step = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
+            if (step) {
+                e.preventDefault();
+                select(tabs[(i + step + tabs.length) % tabs.length].dataset.zone, true);
+            } else if (e.key === 'Home' || e.key === 'End') {
+                e.preventDefault();
+                select(tabs[e.key === 'Home' ? 0 : tabs.length - 1].dataset.zone, true);
+            }
+        });
+    });
+    map.querySelectorAll('.sv-bodymap__hotspot').forEach((spot) => spot.addEventListener('click', () => select(spot.dataset.zone)));
+});
+
 // ---------- Carusel (testimoniale) ----------
 document.querySelectorAll('.carousel').forEach((carousel) => {
     const items = () => Array.from(carousel.querySelectorAll('.carousel-item'));

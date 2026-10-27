@@ -22,6 +22,9 @@ class SettingsController extends Controller
             'birthdate' => (bool) $settings->get('site.contact_birthdate', false),
             'enRedirect' => (bool) $settings->get('site.en_redirect', true),
             'languageSelector' => (bool) $settings->get('site.language_selector', true),
+            'anatomy' => (bool) $settings->get('site.anatomy', true),
+            'bodyMap' => (bool) $settings->get('site.body_map', true),
+            'bodyMapAfter' => (int) $settings->get('site.body_map_after', 3),
             'social' => array_merge(SitePageController::SOCIAL_DEFAULTS, (array) $settings->get('site.social', [])),
             'cookie' => ConsentConfig::texts(),
         ]);
@@ -33,6 +36,9 @@ class SettingsController extends Controller
             'contact_birthdate' => ['boolean'],
             'en_redirect' => ['boolean'],
             'language_selector' => ['boolean'],
+            'anatomy' => ['boolean'],
+            'body_map' => ['boolean'],
+            'body_map_after' => ['nullable', 'integer', 'min:0', 'max:30'],
             'social' => ['array'],
             'social.*' => ['nullable', 'url:https', 'max:300'],
             'cookie' => ['array'],
@@ -46,6 +52,9 @@ class SettingsController extends Controller
         $settings->set('site.contact_birthdate', (bool) ($data['contact_birthdate'] ?? false));
         $settings->set('site.en_redirect', (bool) ($data['en_redirect'] ?? false));
         $settings->set('site.language_selector', (bool) ($data['language_selector'] ?? false));
+        $settings->set('site.anatomy', (bool) ($data['anatomy'] ?? false));
+        $settings->set('site.body_map', (bool) ($data['body_map'] ?? false));
+        $settings->set('site.body_map_after', (int) ($data['body_map_after'] ?? 3));
         $settings->set('site.social', array_intersect_key(array_filter((array) ($data['social'] ?? [])), SitePageController::SOCIAL_DEFAULTS));
         $settings->set('site.cookie', array_map(fn ($v) => strip_tags((string) $v), array_intersect_key(array_filter((array) ($data['cookie'] ?? [])), array_flip(self::COOKIE_TEXT_KEYS))));
         PageCache::flush();

@@ -80,6 +80,40 @@ Semnătura desenată pe tabletă este o **semnătură electronică simplă**, nu
 Dacă un anumit document cere semnătură calificată, clinica trebuie să folosească un serviciu calificat separat.
 Modul „kiosk” al tabletei (fixarea aplicației/browserului pe ecran) se configurează din sistemul tabletei.
 
+## Marketing: audit SEO automat, Google și vizibilitate AI (modulul Marketing)
+
+| Funcționalitate | Implementat | Testat local | Testat staging | Verificat cu serviciul extern | Blocat de acces/date |
+|---|---|---|---|---|---|
+| Audit SEO automat al tuturor paginilor publicate (noaptea, pe loturi din cron; manual din panou) | ✅ | ✅ (teste + rulare reală pe 62 de pagini: scor 95) | ❌ | — | — |
+| Verificări: titlu, descriere, H1, canonical, limbă, alt, linkuri rupte, trimiteri la siteul vechi, JSON-LD, text puțin, duplicate | ✅ | ✅ | ❌ | — | — |
+| Cuvinte cheie urmărite (22 implicite, cerute de clinică) cu potrivire în titlu/H1/descriere/text | ✅ | ✅ | ❌ | — | — |
+| Istoric și evoluția scorului, widget pe ecranul principal | ✅ | ✅ | ❌ | — | — |
+| Descriere implicită din primul paragraf al paginii, când lipsește în CMS (marcată în audit) | ✅ | ✅ | ❌ | — | Descrierile scrise de mână: clinica |
+| Verificare Google Search Console și Bing (etichetă meta) | ✅ | ✅ | ❌ | ❌ | Contul Google/Bing al clinicii |
+| Linkuri directe de inspectare/reindexare în Search Console | ✅ | ✅ | ❌ | ❌ | Proprietatea Search Console |
+| Google Business Profile legat în datele structurate (`sameAs`) | ✅ | ✅ | ❌ | ❌ | Linkul profilului |
+| IndexNow (Bing, Yandex…) la publicare, din cron, doar în producție | ✅ | ✅ (cerere simulată) | ❌ | ❌ | — |
+| `/llms.txt` și accesul crawlerilor AI în robots.txt (permis / doar căutare / blocat) | ✅ | ✅ | ❌ | — | — |
+| Poziții reale în Google și trafic (Search Console API) | ❌ | — | — | — | Necesită OAuth cu contul Google al clinicii; neimplementat |
+
+Limite asumate: Google nu oferă un API de reindexare pentru siteuri obișnuite (Indexing API e doar pentru anunțuri de
+joburi și transmisiuni live), iar ping-ul de sitemap a fost retras în 2023; reindexarea rămâne un clic în Search
+Console. Auditul măsoară ce ține de site; poziția în Google depinde și de recenzii, profilul Google Business și
+linkuri externe. Nimic din audit nu garantează locul 1.
+
+## Site: schițe anatomice animate și harta corpului
+
+| Funcționalitate | Implementat | Testat local | Testat staging | Verificat cu serviciul extern | Blocat de acces/date |
+|---|---|---|---|---|---|
+| Siluetă anatomică în linie pe copertele paginilor de servicii, desenată la apariție, cu zona tratată evidențiată | ✅ | ✅ (teste + capturi desktop/mobil) | ❌ | — | — |
+| Harta „Unde simțiți durere sau disconfort?” pe prima pagină, cu legături doar spre pagini publicate | ✅ | ✅ | ❌ | — | — |
+| Respectă `prefers-reduced-motion` (desen static), funcționează fără JavaScript, navigare din tastatură | ✅ | ⚠️ verificat manual | ❌ | — | — |
+| Pornire/oprire și poziția hărții din Site → Setări | ✅ | ✅ | ❌ | — | — |
+
+Asocierea zonă → terapie este navigare orientativă (pe baza paginilor existente), nu o recomandare medicală; harta
+afișează mențiunea că tratamentul îl stabilește medicul. Conținutul și ordinea secțiunilor originale nu se schimbă:
+harta se inserează la randare, după secțiunea aleasă.
+
 ## Cerințe de hosting
 
 Confirmate de clinică la 2026-10-25 (PHP 8.3+, SSH/Terminal, Composer, cron); **de verificat la instalare** cu

@@ -17,6 +17,7 @@
         @if (! empty($seo['description']))<meta property="og:description" content="{{ $seo['description'] }}">@endif
         <meta name="twitter:card" content="summary_large_image">
     @endisset
+    @foreach ($verification ?? [] as $name => $content)<meta name="{{ $name }}" content="{{ $content }}">@endforeach
     <link rel="icon" href="/favicon.ico">
     @foreach ($preloads as $p)
         <link rel="preload" as="image" href="{{ $p['href'] }}" media="{{ $p['media'] }}" fetchpriority="high">

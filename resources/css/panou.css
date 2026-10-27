@@ -345,6 +345,11 @@ p {
     margin-top: 1.25rem;
 }
 
+/* În grile spațierea o dă „gap”; marginea ar decala al doilea panou pe rând. */
+.grid > .panel + .panel {
+    margin-top: 0;
+}
+
 .panel__head {
     display: flex;
     align-items: center;
@@ -1110,3 +1115,22 @@ body.auth {
         background: #fff;
     }
 }
+
+/* Audit SEO */
+.seo-score--ok { color: var(--ok); }
+.seo-score--warn { color: var(--warn); }
+.seo-score--danger { color: var(--danger); }
+.seo-trend { display: flex; align-items: flex-end; gap: 4px; height: 56px; margin-top: .5rem; }
+.seo-trend__bar { display: block; width: 12px; border-radius: 3px 3px 0 0; background: var(--line-strong); opacity: .7; }
+.seo-trend__bar--ok { background: var(--ok); }
+.seo-trend__bar--warn { background: #d98a1c; }
+.seo-trend__bar--danger { background: var(--danger); }
+.seo-trend__bar.is-current { opacity: 1; outline: 2px solid currentColor; outline-offset: 1px; }
+.seo-list { list-style: none; margin: 0; padding: .5rem 1.25rem 1rem; }
+.seo-list li { padding: .5rem 0; border-bottom: 1px solid var(--line); font-size: .925rem; }
+.seo-list li:last-child { border-bottom: 0; }
+.seo-issues { margin: .5rem 0 0; padding-left: 1.1rem; font-size: .875rem; }
+.seo-issues li { margin: .2rem 0; }
+.seo-issues__error { color: var(--danger); }
+.seo-issues__info { color: var(--ink-3); }
+.code-copy { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .85rem; background: var(--muted-soft); padding: .35rem .5rem; border-radius: var(--radius-s); word-break: break-all; }

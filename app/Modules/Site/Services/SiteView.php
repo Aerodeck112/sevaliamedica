@@ -8,6 +8,7 @@ use App\Modules\Cms\Models\Media;
 use App\Modules\Cms\Models\MenuItem;
 use App\Modules\Cms\Models\Page;
 use App\Modules\Cms\Models\PageVersion;
+use App\Modules\Site\Http\Controllers\PageController;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
@@ -16,12 +17,18 @@ use Illuminate\Http\Request;
  */
 class SiteView
 {
-    public function __construct(private readonly Renderer $renderer, private readonly Settings $settings) {}
+    public function __construct(private readonly Renderer $renderer, private readonly Settings $settings, private readonly Anatomy $anatomy) {}
 
     public function page(Page $page, PageVersion $version, ?Request $request = null, bool $preview = false, ?string $notice = null): View
     {
         $rendered = $this->renderer->render($page, $version, $request, $preview);
         $settings = (array) ($version->settings ?? []);
+        // Schițele anatomice se adaugă peste conținut; JSON-LD și descrierea se calculează din conținutul original.
+        $content = $rendered['main'];
+        $rendered['main'] = $this->anatomy->decorate($rendered['main'], $page->path);
+        if ($page->path === '/') {
+            $rendered['main'] = $this->anatomy->withBodyMap($rendered['main']);
+        }
 
         return view($page->kind === Page::KIND_ARTICLE ? 'site::article' : 'site::page', $this->common($request, $preview) + [
             'page' => $page,
@@ -31,11 +38,11 @@ class SiteView
             'preloads' => $rendered['preloads'],
             'bodyClass' => $settings['body_class'] ?? '',
             'wrapClass' => $settings['wrap_class'] ?? 'oe_structure oe_empty',
-            'seo' => $this->seo($page, $version, $request),
+            'seo' => $this->seo($page, $version, $request, ['main' => $content] + $rendered),
             'coverBgClass' => $rendered['cover_class'] ?? '',
             'articleSettings' => $settings,
             'notice' => $notice,
-            'jsonLd' => $this->jsonLd($page, (array) ($version->seo ?? []), $rendered['main']),
+            'jsonLd' => $this->jsonLd($page, (array) ($version->seo ?? []), $content),
         ]);
     }
 
@@ -73,24 +80,31 @@ class SiteView
             'consent' => ConsentConfig::forPage($request ? '/'.trim($request->getPathInfo(), '/') : '/'),
             'preview' => $preview,
             'showLanguageSelector' => (bool) $this->settings->get('site.language_selector', true),
+            // Codurile de verificare Search Console / Bing (setate din Marketing → Google și AI), doar pe prima pagină.
+            'verification' => ($request ? '/'.trim($request->getPathInfo(), '/') : '/') === '/' ? array_filter([
+                'google-site-verification' => $this->settings->get('marketing.verification.google'),
+                'msvalidate.01' => $this->settings->get('marketing.verification.bing'),
+            ]) : [],
         ];
     }
 
-    private function seo(Page $page, PageVersion $version, ?Request $request): array
+    private function seo(Page $page, PageVersion $version, ?Request $request, array $rendered = []): array
     {
         $seo = (array) ($version->seo ?? []);
+        $html = (string) ($rendered['main'] ?? '');
         $base = rtrim((string) config('sevalia.site.canonical_host', config('app.url')), '/');
         $og = ! empty($seo['og_image_media_id']) ? Media::find($seo['og_image_media_id']) : ($page->kind === Page::KIND_ARTICLE ? $page->cover : null);
         $isPaged = $request && $request->route('number');
 
         return [
             'title' => $seo['title'] ?? ($version->title.' | sevalia.ro'),
-            'description' => $seo['description'] ?? null,
+            // Fără descriere scrisă în CMS, se folosește începutul textului paginii (nimic inventat).
+            'description' => ($seo['description'] ?? null) ?: self::excerpt($html),
             'keywords' => $seo['keywords'] ?? null,
             'canonical' => $seo['canonical'] ?? ($base.($page->path === '/' ? '/' : $page->path).($isPaged ? '/page/'.$request->route('number') : '')),
             'noindex' => (bool) ($seo['noindex'] ?? false),
             'og_title' => $seo['og_title'] ?? ($seo['title'] ?? $version->title),
-            'og_image' => $og ? $base.$og->bestUrl(1200) : null,
+            'og_image' => $og ? $base.$og->bestUrl(1200) : self::firstImage($rendered, $base),
             'og_type' => $page->kind === Page::KIND_ARTICLE ? 'article' : 'website',
             'url' => $base.($page->path === '/' ? '/' : $page->path),
         ];
@@ -118,7 +132,8 @@ class SiteView
                     'serviceType' => $seo['service_name'],
                     'areaServed' => [['@type' => 'City', 'name' => 'Târgu Mureș'], ['@type' => 'AdministrativeArea', 'name' => 'Județul Mureș']],
                     'url' => $base.$page->path,
-                    'description' => $seo['description'] ?? null,
+                    // Fără descriere scrisă în CMS, se folosește începutul textului paginii (nimic inventat).
+            'description' => ($seo['description'] ?? null) ?: self::excerpt($html),
                     'provider' => array_filter([
                         '@type' => 'MedicalClinic',
                         'name' => 'Sevalia Medica',
@@ -162,10 +177,64 @@ class SiteView
                 'url' => $base.'/',
                 'address' => array_filter(['@type' => 'PostalAddress', 'streetAddress' => $loc->address, 'addressLocality' => $loc->city, 'addressRegion' => $loc->county, 'addressCountry' => 'RO']),
                 'openingHoursSpecification' => $hours,
+                'sameAs' => $this->sameAs() ?: null,
             ]);
         }
 
         return $places ? ['@context' => 'https://schema.org', '@graph' => $places] : null;
+    }
+
+    /** Primul paragraf consistent al paginii, scurtat la ~155 de caractere la limită de cuvânt. */
+    public static function excerpt(string $html, int $max = 155): ?string
+    {
+        if (! preg_match_all('#<p\b[^>]*>(.*?)</p>#is', $html, $m)) {
+            return null;
+        }
+        $text = '';
+        foreach ($m[1] as $p) {
+            $p = trim(preg_replace('/\s+/u', ' ', html_entity_decode(strip_tags($p), ENT_QUOTES | ENT_HTML5, 'UTF-8')));
+            if (mb_strlen($p) < 50) {
+                continue;
+            }
+            $text = trim($text.' '.$p);
+            if (mb_strlen($text) >= 110) {
+                break;
+            }
+        }
+        if ($text === '') {
+            return null;
+        }
+        if (mb_strlen($text) <= $max) {
+            return $text;
+        }
+        $cut = mb_substr($text, 0, $max - 1);
+        $space = mb_strrpos($cut, ' ');
+
+        return rtrim(mb_substr($cut, 0, $space ?: $max - 1), " ,;:–-").'…';
+    }
+
+    /** Imaginea de distribuire implicită: imaginea principală a paginii (preîncărcată) sau prima din conținut. */
+    private static function firstImage(array $rendered, string $base): ?string
+    {
+        $src = $rendered['preloads'][0]['href'] ?? null;
+        if (! $src && preg_match('#<img\b[^>]*\ssrc="(/[^"]+)"#i', (string) ($rendered['main'] ?? ''), $m)) {
+            $src = html_entity_decode($m[1]);
+        }
+
+        return $src && str_starts_with($src, '/') ? $base.$src : null;
+    }
+
+    /**
+     * Profilurile oficiale ale clinicii (Google Business și rețelele sociale din setări), pentru legarea entității.
+     *
+     * @return list<string>
+     */
+    private function sameAs(): array
+    {
+        $links = array_merge(PageController::SOCIAL_DEFAULTS, (array) $this->settings->get('site.social', []));
+        $links[] = $this->settings->get('marketing.gbp_url');
+
+        return array_values(array_unique(array_filter($links, fn ($l) => is_string($l) && str_starts_with($l, 'https://'))));
     }
 
     /**

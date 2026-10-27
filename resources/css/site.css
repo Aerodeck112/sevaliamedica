@@ -134,3 +134,200 @@
     --white-75: rgba(255, 255, 255, 0.75);
     --white-85: rgba(255, 255, 255, 0.85);
 }
+
+/* ---------- Schițe anatomice (adăugate peste conținutul original; decorative) ---------- */
+.sv-anatomy__svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.sv-anatomy__body,
+.sv-anatomy__inner {
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+}
+
+.sv-anatomy__body { stroke-width: 1.6; }
+.sv-anatomy__inner { stroke-width: 1; opacity: 0.55; }
+.sv-anatomy__floor { stroke-dasharray: 0.04 0.04; }
+.sv-anatomy__ring { fill: none; stroke: #00c4c4; stroke-width: 1.4; vector-effect: non-scaling-stroke; transform-box: fill-box; transform-origin: center; }
+.sv-anatomy__dot { fill: #00c4c4; }
+
+/* Desen progresiv: fiecare traseu are pathLength=1. */
+.sv-anatomy.is-ready .sv-anatomy__body > *,
+.sv-anatomy.is-ready .sv-anatomy__inner > * {
+    stroke-dasharray: 1 1;
+    stroke-dashoffset: 1;
+}
+
+.sv-anatomy.is-ready .sv-anatomy__floor { stroke-dasharray: 1 1; }
+.sv-anatomy.is-ready .sv-anatomy__focus { opacity: 0; }
+
+.sv-anatomy.is-drawn .sv-anatomy__body > * { animation: sv-draw 2.2s cubic-bezier(.45, 0, .2, 1) forwards; }
+.sv-anatomy.is-drawn .sv-anatomy__inner > * { animation: sv-draw 1.8s cubic-bezier(.45, 0, .2, 1) 0.9s forwards; }
+.sv-anatomy.is-drawn .sv-anatomy__inner > .sv-anatomy__vertebra { animation-duration: 0.5s; }
+.sv-anatomy.is-drawn .sv-anatomy__focus { animation: sv-fade 0.6s ease calc(2.2s + var(--d, 0s)) forwards; }
+.sv-anatomy.is-drawn .sv-anatomy__ring { animation: sv-pulse 2.4s ease-out calc(2.4s + var(--d, 0s)) infinite; }
+
+@keyframes sv-draw { to { stroke-dashoffset: 0; } }
+@keyframes sv-fade { to { opacity: 1; } }
+@keyframes sv-pulse {
+    0% { transform: scale(0.6); opacity: 0.9; }
+    70% { transform: scale(1.9); opacity: 0; }
+    100% { transform: scale(1.9); opacity: 0; }
+}
+
+/* Vertebrele se desenează de sus în jos. */
+.sv-anatomy.is-drawn .sv-anatomy__inner > .sv-anatomy__vertebra { animation-delay: calc(0.9s + var(--v, 0) * 0.06s); }
+
+/* Pe copertă: în dreapta, alb pe fundalul colorat; pe mobil, discret în colț. */
+.s_cover { position: relative; }
+.sv-anatomy--hero {
+    position: absolute;
+    z-index: 1;
+    right: max(4vw, calc((100vw - 1140px) / 2));
+    bottom: 6%;
+    height: 82%;
+    aspect-ratio: 200 / 444;
+    color: rgb(255 255 255 / 0.85);
+    pointer-events: none;
+}
+
+.s_cover > .container,
+.s_cover > .o_container_small,
+.s_cover > .o_scroll_button { position: relative; z-index: 2; }
+
+@media (max-width: 991.98px) {
+    .sv-anatomy--hero {
+        right: 4%;
+        bottom: 14%;
+        height: 42%;
+        color: rgb(255 255 255 / 0.55);
+    }
+}
+
+/* ---------- Harta corpului (prima pagină) ---------- */
+.sv-bodymap {
+    padding: 72px 0;
+    background: linear-gradient(180deg, #f2fafa 0%, #ffffff 100%);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sv-bodymap__grid {
+    display: grid;
+    grid-template-columns: minmax(180px, 300px) 1fr;
+    gap: clamp(24px, 6vw, 96px);
+    align-items: center;
+}
+
+.sv-bodymap__figure {
+    position: relative;
+    aspect-ratio: 200 / 444;
+    width: 100%;
+    max-width: 300px;
+    margin-inline: auto;
+    color: #006f75;
+}
+
+.sv-bodymap .sv-anatomy__focus { opacity: 0.15; transition: opacity 0.3s ease; }
+.sv-bodymap .sv-anatomy__ring { animation-play-state: paused; }
+.sv-bodymap[data-active="coloana"] .sv-anatomy__focus[data-zone="coloana"],
+.sv-bodymap[data-active="gat_umeri"] .sv-anatomy__focus[data-zone="gat_umeri"],
+.sv-bodymap[data-active="atm"] .sv-anatomy__focus[data-zone="atm"],
+.sv-bodymap[data-active="genunchi"] .sv-anatomy__focus[data-zone="genunchi"],
+.sv-bodymap[data-active="pelvin"] .sv-anatomy__focus[data-zone="pelvin"],
+.sv-bodymap[data-active="articulatii"] .sv-anatomy__focus[data-zone="articulatii"] { opacity: 1 !important; }
+.sv-bodymap .sv-anatomy.is-drawn .sv-anatomy__focus { animation: none; }
+.sv-bodymap .sv-anatomy.is-drawn .sv-anatomy__ring { animation: sv-pulse 2.4s ease-out infinite; animation-play-state: running; }
+
+.sv-bodymap__hotspot {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    margin: -22px 0 0 -22px;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+}
+
+.sv-bodymap__eyebrow {
+    margin: 0 0 0.5rem;
+    color: #007878;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.8125rem;
+}
+
+.sv-bodymap__title {
+    margin: 0 0 0.75rem;
+    color: #006f75;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+    line-height: 1.2;
+}
+
+.sv-bodymap__lead { margin: 0 0 1.5rem; color: #37474f; font-size: 1.05rem; }
+
+.sv-bodymap__zones { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
+
+.sv-bodymap__zone {
+    min-height: 44px;
+    padding: 0.55rem 1.1rem;
+    border: 1.5px solid #b8e3e3;
+    border-radius: 999px;
+    background: #fff;
+    color: #006f75;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.sv-bodymap__zone:hover { border-color: #00c4c4; }
+.sv-bodymap__zone[aria-selected="true"] { background: #006f75; border-color: #006f75; color: #fff; }
+.sv-bodymap__zone:focus-visible { outline: 3px solid #00c4c4; outline-offset: 2px; }
+
+.sv-bodymap__panel ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+.sv-bodymap__panel a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 48px;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    background: #fff;
+    box-shadow: 0 1px 0 #e3f1f1, 0 6px 18px -12px rgb(0 111 117 / 0.45);
+    color: #0e3b3d;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sv-bodymap__panel a:hover { transform: translateX(4px); box-shadow: 0 1px 0 #cdeaea, 0 10px 24px -12px rgb(0 111 117 / 0.55); }
+.sv-bodymap__panel a span { color: #00c4c4; }
+.sv-bodymap__panel[hidden] { display: none; }
+.sv-bodymap__panel.is-active { animation: sv-fade-in 0.35s ease; }
+@keyframes sv-fade-in { from { opacity: 0; transform: translateY(6px); } }
+
+.sv-bodymap__note { margin: 1rem 0 0; color: #607d8b; font-size: 0.85rem; }
+
+@media (max-width: 767.98px) {
+    .sv-bodymap { padding: 48px 0; }
+    .sv-bodymap__grid { grid-template-columns: 1fr; }
+    .sv-bodymap__figure { max-width: 130px; }
+    .sv-bodymap__text { text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sv-anatomy * { animation: none !important; stroke-dashoffset: 0 !important; }
+    .sv-anatomy .sv-anatomy__focus { opacity: 1; }
+    .sv-bodymap__panel a { transition: none; }
+}
