@@ -3,7 +3,7 @@
 Formatul: o secțiune `## [versiune] — dată` pentru fiecare release. Textul secțiunii este inclus în pachetul de
 actualizare și afișat administratorului înainte de instalare.
 
-## [Nelansat]
+## [0.9.1] — 2026-10-27
 
 - Tablete la recepție: consimțăminte semnate pe ecran cu cod de 6 cifre și recenzii 1–5 stele după servicii
   (serviciu, specialist, comentariu), statistici pe specialiști și servicii, cod QR opțional către recenzia Google.
@@ -21,6 +21,8 @@ actualizare și afișat administratorului înainte de instalare.
 - Performanță pe mobil: imaginea principală corectă preîncărcată pe telefoane, fonturi de bază cerute devreme
   (fără reașezarea textului), banner de cookie afișat imediat, favicon de 6,5 KB în loc de 43 KB, pictograme
   pentru telefon; corecturi de accesibilitate fără schimbări vizibile.
+- După actualizare, permisiunile modulelor noi (Marketing, Tablete, Recenzii) se creează automat din cron și se
+  acordă rolurilor implicite, fără a reface acordările retrase manual.
 - Paginile fără descriere SEO primesc automat începutul textului lor ca descriere; imaginea principală devine
   imaginea de distribuire.
 

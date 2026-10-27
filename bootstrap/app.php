@@ -25,6 +25,9 @@ $app = Application::configure(basePath: dirname(__DIR__))
             ->everyMinute()->withoutOverlapping(5)->runInBackground(false);
         $schedule->command('queue:prune-failed --hours=720')->daily();
         $schedule->command('auth:clear-resets')->hourly();
+        // După o actualizare: permisiunile modulelor noi (o dată pe versiune, fără a reface acordările retrase).
+        $schedule->call(fn () => app(\App\Core\Security\PermissionUpgrade::class)->runIfVersionChanged())
+            ->everyMinute()->name('permisiuni-dupa-actualizare')->withoutOverlapping(5);
     })
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->web(append: [SecurityHeaders::class]);

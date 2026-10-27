@@ -140,14 +140,14 @@ class ReleaseBuild extends Command
     {
         if ($this->option('vendor') === 'copy') {
             $this->warn('vendor/ copiat din proiect (poate conține pachete de dezvoltare) — doar pentru teste.');
-            (new Process(['cp', '-a', base_path('vendor'), $tmp.'/vendor']))->mustRun();
+            (new Process(['cp', '-a', base_path('vendor'), $tmp.'/vendor'], null, null, null, 900))->mustRun();
 
             return;
         }
         if ($this->option('vendor') === 'local') {
             // Pornim de la vendor/ existent: composer doar elimină pachetele dev (fără descărcări) și
-            // regenerează autoloaderul optimizat pentru producție.
-            (new Process(['cp', '-a', base_path('vendor'), $tmp.'/vendor']))->mustRun();
+            // regenerează autoloaderul optimizat pentru producție. vendor/ poate avea peste 1 GB cu pachetele dev.
+            (new Process(['cp', '-a', base_path('vendor'), $tmp.'/vendor'], null, null, null, 900))->mustRun();
         }
         $process = new Process(['composer', 'install', '--no-dev', '--optimize-autoloader', '--no-interaction', '--no-scripts', '--prefer-dist', '--no-progress'], $tmp, ['COMPOSER_ALLOW_SUPERUSER' => '1'], null, 900);
         $process->run(fn ($t, $line) => $this->output->write($line));
