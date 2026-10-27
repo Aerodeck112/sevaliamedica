@@ -21,6 +21,9 @@ locală) · **testat staging** (pe hostingul clinicii) · **verificat cu servici
 | Listă de așteptare + potrivire la anulare + ofertă (eveniment pentru notificări) | ✅ | ✅ | ❌ | — | Trimiterea mesajului: modulul Notifications |
 | Calendar zi/săptămână, coloane personal/săli, filtre, drag-and-drop, alternativă accesibilă | ✅ | ⚠️ randare testată automat; tragerea verificată manual în capturi, fără test automat de browser | ❌ | — | — |
 | Solicitări de pe site (contract AppointmentIntake), confirmare automată după reguli | ✅ | ✅ | ❌ | — | Formularul public îl leagă modulul Site |
+| Programare online pe site (`/programare-online`): serviciu → locație/specialist → zi → oră libere reale → date | ✅ | ✅ (teste + parcurgere completă în browser, desktop și mobil) | ❌ | — | Serviciile oferite online și programul real: le marchează clinica (Servicii → „programare online”) |
+| Reverificarea intervalului la trimitere; confirmare automată doar după regulile clinicii, altfel solicitare | ✅ | ✅ | ❌ | — | — |
+| Ore online limitate la programul public al locației; bară „Sună acum / Programare online” pe mobil | ✅ | ✅ | ❌ | — | Programul de vineri e contradictoriu pe siteul vechi (vezi OBSERVATII-CONTINUT) |
 | Linkuri pentru pacient (anulare, cerere reprogramare) | ✅ | ✅ | ❌ | — | Trimiterea linkului: modulul Notifications |
 | Servicii efectuate (service_records) cu corectare fără ștergere | ✅ | ✅ | ❌ | — | — |
 | Reguli de programare și acces editabile din panou, auditate | ✅ | ✅ | ❌ | — | Valorile reale: le stabilește clinica |

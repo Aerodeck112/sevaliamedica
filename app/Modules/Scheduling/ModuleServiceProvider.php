@@ -3,6 +3,7 @@
 namespace App\Modules\Scheduling;
 
 use App\Core\Contracts\AppointmentIntake;
+use App\Core\Contracts\PublicBooking;
 use App\Core\Modules\ModuleServiceProvider as BaseProvider;
 use App\Core\Modules\NavItem;
 use App\Models\User;
@@ -20,6 +21,7 @@ use App\Modules\Scheduling\Models\ServiceRecord;
 use App\Modules\Scheduling\Models\WaitlistEntry;
 use App\Modules\Scheduling\Policies\AppointmentPolicy;
 use App\Modules\Scheduling\Services\AppointmentIntakeService;
+use App\Modules\Scheduling\Services\PublicBookingService;
 use App\Modules\Scheduling\Support\AppointmentCareEvidence;
 use App\Modules\Scheduling\Support\AppointmentStatus;
 use Illuminate\Console\Scheduling\Schedule;
@@ -96,6 +98,7 @@ class ModuleServiceProvider extends BaseProvider
     {
         parent::register();
         $this->app->bind(AppointmentIntake::class, AppointmentIntakeService::class);
+        $this->app->bind(PublicBooking::class, PublicBookingService::class);
         // Semnale adăugate de alte module pe programări (ex. avertizări clinice din modulul Medical).
         $this->app->singleton(\App\Modules\Scheduling\Support\AppointmentAnnotations::class);
     }

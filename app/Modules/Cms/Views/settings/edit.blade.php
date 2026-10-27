@@ -14,6 +14,7 @@
                 <x-panou.field name="language_selector" type="checkbox" label="Afișează selectorul de limbă în antet (ca pe siteul original)" :value="$languageSelector" />
                 <x-panou.field name="anatomy" type="checkbox" label="Schițe anatomice animate pe copertele paginilor de servicii" :value="$anatomy" />
                 <x-panou.field name="body_map" type="checkbox" label="Harta „Unde simțiți disconfort?” pe prima pagină" :value="$bodyMap" />
+                <x-panou.field name="cta_bar" type="checkbox" label="Bară fixă „Sună acum / Programare online” pe telefoane" :value="$ctaBar" />
                 <x-panou.field name="body_map_after" type="number" label="Harta apare după secțiunea nr." :value="$bodyMapAfter" hint="Numărul secțiunii primei pagini după care se afișează harta (0 = la început)." />
                 <p class="small muted">Decizie provizorie a clinicii (2026-10-25): versiunea /en generată de Odoo conținea majoritar text în română; până la o traducere reală, adresele /en duc la pagina în română.</p>
             </div>

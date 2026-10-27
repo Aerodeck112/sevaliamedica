@@ -3,11 +3,13 @@
 namespace App\Modules\Site;
 
 use App\Core\Contracts\AppointmentIntake;
+use App\Core\Contracts\PublicBooking;
 use App\Core\Http\Middleware\SecurityHeaders;
 use App\Core\Modules\ModuleServiceProvider as BaseProvider;
 use App\Modules\Site\Http\Controllers\PageController;
 use App\Modules\Site\Services\FormBlock;
 use App\Modules\Site\Services\FormSubmissionIntake;
+use App\Modules\Site\Services\NoPublicBooking;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +36,7 @@ class ModuleServiceProvider extends BaseProvider
         // Implementarea implicită: dacă modulul de programări nu își leagă propria implementare, solicitările
         // se păstrează criptat în form_submissions și apar în „Mesaje din site”.
         $this->app->bindIf(AppointmentIntake::class, FormSubmissionIntake::class);
+        $this->app->bindIf(PublicBooking::class, NoPublicBooking::class);
     }
 
     public function boot(): void

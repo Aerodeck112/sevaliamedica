@@ -25,6 +25,7 @@ class SettingsController extends Controller
             'anatomy' => (bool) $settings->get('site.anatomy', true),
             'bodyMap' => (bool) $settings->get('site.body_map', true),
             'bodyMapAfter' => (int) $settings->get('site.body_map_after', 3),
+            'ctaBar' => (bool) $settings->get('site.cta_bar', true),
             'social' => array_merge(SitePageController::SOCIAL_DEFAULTS, (array) $settings->get('site.social', [])),
             'cookie' => ConsentConfig::texts(),
         ]);
@@ -39,6 +40,7 @@ class SettingsController extends Controller
             'anatomy' => ['boolean'],
             'body_map' => ['boolean'],
             'body_map_after' => ['nullable', 'integer', 'min:0', 'max:30'],
+            'cta_bar' => ['boolean'],
             'social' => ['array'],
             'social.*' => ['nullable', 'url:https', 'max:300'],
             'cookie' => ['array'],
@@ -55,6 +57,7 @@ class SettingsController extends Controller
         $settings->set('site.anatomy', (bool) ($data['anatomy'] ?? false));
         $settings->set('site.body_map', (bool) ($data['body_map'] ?? false));
         $settings->set('site.body_map_after', (int) ($data['body_map_after'] ?? 3));
+        $settings->set('site.cta_bar', (bool) ($data['cta_bar'] ?? false));
         $settings->set('site.social', array_intersect_key(array_filter((array) ($data['social'] ?? [])), SitePageController::SOCIAL_DEFAULTS));
         $settings->set('site.cookie', array_map(fn ($v) => strip_tags((string) $v), array_intersect_key(array_filter((array) ($data['cookie'] ?? [])), array_flip(self::COOKIE_TEXT_KEYS))));
         PageCache::flush();

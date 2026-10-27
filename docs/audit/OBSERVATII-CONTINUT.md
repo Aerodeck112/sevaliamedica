@@ -26,6 +26,7 @@ paginile sunt verificate în CMS.
 | `/echipa-noastra`, `/contactus` | „Peste 1.000 de pacienți și-au îmbunătățit sănătatea” | afirmație cantitativă; de confirmat |
 | `/` (hero) | „CARDIOLOGIE PEDIATRICĂ \| PEDIATRIE \| NEUROLOGIE \| PSIHIATRIE” | „Neurologie” are link 404 în meniu |
 | `/contactus` | lista de medici din formular nu îl include pe dr. Crauciuc Andrei, prezent pe pagina echipei | de sincronizat |
+| `/contactus` vs `/contactus-thank-you` | programul de vineri: „07:00 - 19:00” pe pagina de contact, „07:00 - 17:00” în caseta paginii de confirmare | contradicție; aplicația folosește programul de pe `/contactus` (07–19) pentru date structurate, llms.txt și programarea online — de confirmat de clinică (Clinică → Locații) |
 
 ## Probleme tehnice vizibile pentru vizitatori
 

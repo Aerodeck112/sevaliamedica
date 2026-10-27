@@ -2,6 +2,7 @@
 
 namespace App\Modules\Site\Http\Controllers;
 
+use App\Core\Contracts\PublicBooking;
 use App\Core\Settings\Settings;
 use App\Http\Controllers\Controller;
 use App\Modules\Cms\Models\Page;
@@ -59,6 +60,9 @@ class SeoController extends Controller
         $xml = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'];
         foreach ($pages as $page) {
             $xml[] = '  <url><loc>'.e($base.($page->path === '/' ? '/' : $page->path)).'</loc><lastmod>'.$page->updated_at?->toDateString().'</lastmod></url>';
+        }
+        if (app(PublicBooking::class)->available()) {
+            $xml[] = '  <url><loc>'.e($base.'/programare-online').'</loc></url>';
         }
         $xml[] = '</urlset>';
 

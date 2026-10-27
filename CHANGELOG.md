@@ -10,6 +10,9 @@ actualizare și afișat administratorului înainte de instalare.
 - Marketing: audit SEO automat (în fiecare noapte și la cerere) cu scor, istoric și cuvinte cheie urmărite;
   verificare Google Search Console și Bing, profil Google Business în datele structurate, IndexNow, `/llms.txt`
   și controlul accesului asistenților AI din robots.txt.
+- Programare online pe site (`/programare-online`) cu intervalele libere reale din calendar: serviciu, locație,
+  specialist (opțional), zi și oră; intervalul se reverifică la trimitere, iar confirmarea automată urmează
+  regulile din panou. Bară „Sună acum / Programare online” pe telefoane.
 - Schițe anatomice animate în linie pe copertele paginilor de servicii (zona tratată evidențiată) și harta
   „Unde simțiți durere sau disconfort?” pe prima pagină, cu legături spre terapii; se pot opri din Setări site.
 - Paginile fără descriere SEO primesc automat începutul textului lor ca descriere; imaginea principală devine

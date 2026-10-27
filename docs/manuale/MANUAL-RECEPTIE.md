@@ -44,6 +44,17 @@ Nimic nu se schimbă singur când trece ora. Neprezentarea se poate marca doar d
 Tot aici apar programările confirmate automat (dacă clinica a activat regula) care așteaptă identificarea
 pacientului și pacienții care au cerut reprogramarea prin link.
 
+### Programarea online (`/programare-online`)
+
+Pacientul alege serviciul, locația, eventual specialistul, apoi ziua și ora dintre intervalele **libere reale**
+din calendar (aceleași verificări ca la recepție: program, pauze, concedii, săli, aparate). Apar doar:
+- serviciile marcate „programare online” (Administrare → Servicii);
+- orele din programul public al locației, între avansul minim și maxim din Setări programări;
+- numele specialiștilor afișați pe site (ceilalți apar ca „oricare specialist disponibil”).
+
+La trimitere intervalul se verifică din nou. Dacă regula de confirmare automată e pornită și serviciul o permite,
+programarea e confirmată imediat; altfel devine o **solicitare** cu ora dorită, pe care o confirmați de aici.
+
 ## Serii de ședințe
 
 **Serii de ședințe → Serie nouă**: pacient, serviciu, terapeut, zilele săptămânii, ora, numărul de ședințe.

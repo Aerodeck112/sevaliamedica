@@ -47,6 +47,12 @@
         </div>
     </footer>
 </div>
+@if (! empty($ctaBar))
+    <nav class="sv-ctabar" aria-label="Contact rapid">
+        @if ($ctaBar['phone'])<a class="sv-ctabar__call" href="tel:{{ preg_replace('/[^0-9+]/', '', $ctaBar['phone']) }}">Sună acum</a>@endif
+        @if ($ctaBar['booking'])<a class="sv-ctabar__book" href="/programare-online">Programare online</a>@endif
+    </nav>
+@endif
 @include('site::partials.cookie-banner')
 <script type="application/json" id="site-consent-config" nonce="{{ app('csp-nonce') }}">{!! json_encode(['tags' => $consent['tags'], 'cookie' => \App\Modules\Site\Services\ConsentConfig::COOKIE], JSON_HEX_TAG | JSON_UNESCAPED_SLASHES) !!}</script>
 @vite(['resources/js/site.js'])

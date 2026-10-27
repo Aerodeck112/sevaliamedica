@@ -1,5 +1,6 @@
 <?php
 
+use App\Modules\Site\Http\Controllers\BookingController;
 use App\Modules\Site\Http\Controllers\FormController;
 use App\Modules\Site\Http\Controllers\PageController;
 use App\Modules\Site\Http\Controllers\SeoController;
@@ -16,3 +17,7 @@ Route::get('blog/blog-sevalia-1/page/{number}', [PageController::class, 'blogPag
 
 Route::post('formular/{form}', [FormController::class, 'submit'])->whereIn('form', ['contact', 'emsella'])
     ->middleware('throttle:20,1')->name('site.form.submit');
+
+// Programarea online cu intervale libere reale (fără sesiune; pașii sunt parametri în URL).
+Route::get('programare-online', [BookingController::class, 'show'])->middleware('throttle:120,1')->name('site.booking');
+Route::post('programare-online', [BookingController::class, 'submit'])->middleware('throttle:20,1')->name('site.booking.submit');

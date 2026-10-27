@@ -2,6 +2,7 @@
 
 namespace App\Modules\Site\Services;
 
+use App\Core\Contracts\PublicBooking;
 use App\Core\Settings\Settings;
 use App\Modules\Clinic\Models\Location;
 use App\Modules\Cms\Models\Media;
@@ -46,6 +47,18 @@ class SiteView
         ]);
     }
 
+    /** O pagină generată de aplicație (nu din CMS), cu antetul, meniul și subsolul siteului. */
+    public function standalone(string $view, array $data, Request $request, array $seo): View
+    {
+        $base = rtrim((string) config('sevalia.site.canonical_host', config('app.url')), '/');
+        $path = '/'.trim($request->getPathInfo(), '/');
+
+        return view($view, $this->common($request, false) + [
+            'seo' => $seo + ['canonical' => $base.$path, 'url' => $base.$path, 'og_title' => $seo['title'], 'og_type' => 'website', 'noindex' => false],
+            'pageCss' => '', 'preloads' => [], 'bodyClass' => '', 'jsonLd' => $data['jsonLd'] ?? null,
+        ] + $data);
+    }
+
     public function notFound(?Request $request): View
     {
         return view('site::not-found', $this->common($request, false) + [
@@ -80,6 +93,8 @@ class SiteView
             'consent' => ConsentConfig::forPage($request ? '/'.trim($request->getPathInfo(), '/') : '/'),
             'preview' => $preview,
             'showLanguageSelector' => (bool) $this->settings->get('site.language_selector', true),
+            // Bara „Sună / Programare online” de pe mobil (Site → Setări), doar dacă programarea online funcționează.
+            'ctaBar' => $this->ctaBar($request),
             // Codurile de verificare Search Console / Bing (setate din Marketing → Google și AI), doar pe prima pagină.
             'verification' => ($request ? '/'.trim($request->getPathInfo(), '/') : '/') === '/' ? array_filter([
                 'google-site-verification' => $this->settings->get('marketing.verification.google'),
@@ -182,6 +197,19 @@ class SiteView
         }
 
         return $places ? ['@context' => 'https://schema.org', '@graph' => $places] : null;
+    }
+
+    /** @return array{phone: ?string, booking: bool}|null */
+    private function ctaBar(?Request $request): ?array
+    {
+        if (! $this->settings->get('site.cta_bar', true)) {
+            return null;
+        }
+        $path = $request ? '/'.trim($request->getPathInfo(), '/') : '/';
+        $booking = $path !== '/programare-online' && app(PublicBooking::class)->available();
+        $phone = Location::active()->value('phone');
+
+        return $booking || $phone ? ['phone' => $phone, 'booking' => $booking] : null;
     }
 
     /** Primul paragraf consistent al paginii, scurtat la ~155 de caractere la limită de cuvânt. */
