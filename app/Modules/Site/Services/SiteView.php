@@ -95,6 +95,7 @@ class SiteView
             'showLanguageSelector' => (bool) $this->settings->get('site.language_selector', true),
             // Bara „Sună / Programare online” de pe mobil (Site → Setări), doar dacă programarea online funcționează.
             'ctaBar' => $this->ctaBar($request),
+            'assistant' => ! $preview && (bool) $this->settings->get('site.assistant', true),
             // Codurile de verificare Search Console / Bing (setate din Marketing → Google și AI), doar pe prima pagină.
             'verification' => ($request ? '/'.trim($request->getPathInfo(), '/') : '/') === '/' ? array_filter([
                 'google-site-verification' => $this->settings->get('marketing.verification.google'),
@@ -275,6 +276,8 @@ class SiteView
         if ($html === '' || ! str_contains($html, 'accordion')) {
             return [];
         }
+        // Un spațiu înaintea elementelor de bloc, ca textul din liste și paragrafe să nu se lipească („inclusiv:Tulburări”).
+        $html = preg_replace('#<(/?)(p|li|ul|ol|br|div|h[1-6])\b#i', ' <$1$2', $html);
         $doc = new \DOMDocument;
         @$doc->loadHTML('<?xml encoding="utf-8"?><div>'.$html.'</div>', LIBXML_NOERROR | LIBXML_NOWARNING);
         $xp = new \DOMXPath($doc);

@@ -53,6 +53,9 @@
         @if ($ctaBar['booking'])<a class="sv-ctabar__book" href="/programare-online">Programare online</a>@endif
     </nav>
 @endif
+@if (($assistant ?? false) && \Illuminate\Support\Facades\Route::has('asistent.ask'))
+    @include('site::partials.assistant')
+@endif
 @include('site::partials.cookie-banner')
 <script type="application/json" id="site-consent-config" nonce="{{ app('csp-nonce') }}">{!! json_encode(['tags' => $consent['tags'], 'cookie' => \App\Modules\Site\Services\ConsentConfig::COOKIE], JSON_HEX_TAG | JSON_UNESCAPED_SLASHES) !!}</script>
 @vite(['resources/js/site.js'])

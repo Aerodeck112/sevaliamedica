@@ -65,3 +65,12 @@ flux manual de transmitere. Nicio regulă contractuală nu este activă până l
 1. Persoana responsabilă (DPO `dpo@sevalia.ro`?) care validează scopurile prelucrării și termenele de retenție.
 2. Modelele de consimțământ informat folosite acum, pe proceduri.
 3. Facturare: rămâne în sistemul actual (ce sistem?) sau se dorește integrare ulterioară?
+
+## F. Asistentul de pe site (adăugat 2026-10-27)
+
+1. Asistentul Sevalia răspunde acum local, numai din conținutul public al siteului, fără AI extern și fără a păstra
+   întrebările. Doriți, opțional, un model AI extern (ex. Claude) pentru răspunsuri mai naturale? Ar necesita un
+   contract de prelucrare a datelor cu furnizorul, informarea vizitatorilor și o cheie API; răspunsurile ar rămâne
+   limitate la conținutul siteului.
+2. La mesajele despre gânduri de autovătămare asistentul trimite la 112. Doriți să adăugăm și o linie de sprijin
+   emoțional (număr confirmat de clinică)?

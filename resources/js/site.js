@@ -2,6 +2,7 @@
 // meniuri derulante, meniul mobil, antetul care dispare la derulare, carusel, acordeon, animații la apariție,
 // câmpurile condiționate ale formularelor și consimțământul pentru cookie-uri.
 import { initConsent } from './site/consent.js';
+import { initAssistant } from './site/assistant.js';
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const desktop = window.matchMedia('(min-width: 992px)');
@@ -414,3 +415,6 @@ if (!reducedMotion && !saveData) {
 }
 
 initConsent();
+
+// ---------- Asistentul Sevalia ----------
+initAssistant();

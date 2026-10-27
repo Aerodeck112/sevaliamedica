@@ -13,6 +13,9 @@ actualizare și afișat administratorului înainte de instalare.
 - Programare online pe site (`/programare-online`) cu intervalele libere reale din calendar: serviciu, locație,
   specialist (opțional), zi și oră; intervalul se reverifică la trimitere, iar confirmarea automată urmează
   regulile din panou. Bară „Sună acum / Programare online” pe telefoane.
+- Asistentul Sevalia pe site: răspunde la program, adrese, programare, specialități și la întrebările despre
+  terapii din conținutul public al siteului, cu legătură la pagina-sursă; urgențele sunt trimise la 112; fără
+  AI extern și fără păstrarea întrebărilor. Se poate opri din Setări site.
 - Schițe anatomice animate în linie pe copertele paginilor de servicii (zona tratată evidențiată) și harta
   „Unde simțiți durere sau disconfort?” pe prima pagină, cu legături spre terapii; se pot opri din Setări site.
 - Paginile fără descriere SEO primesc automat începutul textului lor ca descriere; imaginea principală devine

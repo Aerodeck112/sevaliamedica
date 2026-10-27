@@ -404,3 +404,46 @@
     .sv-ctabar__book { background: #006f75; color: #fff; }
     body:has(.sv-ctabar) #wrapwrap { padding-bottom: 72px; }
 }
+
+/* ---------- Asistentul Sevalia ---------- */
+.sv-assist { position: fixed; right: 1rem; bottom: 1rem; z-index: 1045; font-family: 'Montserrat', sans-serif; }
+.sv-assist__fab {
+    display: inline-flex; align-items: center; gap: .5rem; min-height: 52px; padding: .7rem 1.1rem;
+    border: 0; border-radius: 999px; background: #006f75; color: #fff; font: inherit; font-weight: 700;
+    box-shadow: 0 12px 28px -10px rgb(0 111 117 / .7); cursor: pointer; transition: transform .2s ease, background-color .2s ease;
+}
+.sv-assist__fab:hover { background: #005a5f; transform: translateY(-2px); }
+.sv-assist__fab:focus-visible { outline: 3px solid #00c4c4; outline-offset: 3px; }
+.sv-assist__fab[aria-expanded="true"] { display: none; }
+.sv-assist__panel {
+    position: absolute; right: 0; bottom: 0; width: min(380px, calc(100vw - 2rem)); max-height: min(620px, calc(100vh - 2rem));
+    display: flex; flex-direction: column; overflow: hidden; border-radius: 1rem; background: #fff;
+    box-shadow: 0 24px 60px -20px rgb(0 0 0 / .45); animation: sv-fade-in .25s ease;
+}
+.sv-assist__panel[hidden] { display: none; }
+.sv-assist__head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; padding: 1rem 1.1rem; background: linear-gradient(135deg, #006f75, #00a3a3); color: #fff; }
+.sv-assist__title { margin: 0; font-family: 'Manrope', sans-serif; font-size: 1.1rem; font-weight: 600; color: #fff; }
+.sv-assist__sub { margin: .1rem 0 0; font-size: .8rem; opacity: .85; }
+.sv-assist__close { width: 36px; height: 36px; border: 0; border-radius: 50%; background: rgb(255 255 255 / .15); color: #fff; font-size: 1.4rem; line-height: 1; cursor: pointer; }
+.sv-assist__log { flex: 1; overflow-y: auto; padding: 1rem; display: grid; gap: .6rem; align-content: start; background: #f6fbfb; }
+.sv-assist__msg { max-width: 88%; padding: .65rem .85rem; border-radius: .9rem; font-size: .925rem; line-height: 1.45; white-space: pre-line; }
+.sv-assist__msg--bot { justify-self: start; background: #fff; color: #1d3b3d; border: 1px solid #dcefef; border-bottom-left-radius: .25rem; }
+.sv-assist__msg--user { justify-self: end; background: #006f75; color: #fff; border-bottom-right-radius: .25rem; }
+.sv-assist__msg--wait { color: #607d8b; font-style: italic; }
+.sv-assist__links { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .5rem; }
+.sv-assist__links a { display: inline-block; padding: .3rem .6rem; border-radius: 999px; background: #e3f5f5; color: #006f75; font-size: .8rem; font-weight: 600; text-decoration: none; }
+.sv-assist__links a:hover { background: #cdeeee; }
+.sv-assist__chips { display: flex; gap: .4rem; overflow-x: auto; padding: .6rem 1rem 0; background: #fff; }
+.sv-assist__chip { flex: none; min-height: 36px; padding: .35rem .75rem; border: 1.5px solid #b8e3e3; border-radius: 999px; background: #fff; color: #006f75; font: inherit; font-size: .8rem; font-weight: 600; cursor: pointer; }
+.sv-assist__form { display: flex; gap: .5rem; padding: .6rem 1rem; background: #fff; }
+.sv-assist__form input { flex: 1; min-height: 44px; padding: .55rem .8rem; border: 1.5px solid #c9dede; border-radius: .6rem; font: inherit; font-size: 1rem; }
+.sv-assist__form input:focus { outline: 3px solid rgb(0 196 196 / .35); border-color: #00c4c4; }
+.sv-assist__form button { width: 44px; border: 0; border-radius: .6rem; background: #006f75; color: #fff; cursor: pointer; }
+.sv-assist__head, .sv-assist__chips, .sv-assist__form, .sv-assist__note { flex: none; }
+.sv-assist__note { margin: 0; padding: 0 1rem .75rem; background: #fff; color: #607d8b; font-size: .72rem; }
+@media (max-width: 991.98px) {
+    body:has(.sv-ctabar) .sv-assist { bottom: 76px; }
+    .sv-assist__fab span { display: none; }
+    .sv-assist__fab { width: 52px; justify-content: center; padding: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .sv-assist__panel { animation: none; } .sv-assist__fab { transition: none; } }

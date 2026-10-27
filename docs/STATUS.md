@@ -117,6 +117,20 @@ Asocierea zonă → terapie este navigare orientativă (pe baza paginilor existe
 afișează mențiunea că tratamentul îl stabilește medicul. Conținutul și ordinea secțiunilor originale nu se schimbă:
 harta se inserează la randare, după secțiunea aleasă.
 
+## Site: asistentul Sevalia (modulul Assistant)
+
+| Funcționalitate | Implementat | Testat local | Testat staging | Verificat cu serviciul extern | Blocat de acces/date |
+|---|---|---|---|---|---|
+| Asistent pe site: program, adrese, contact, programare, specialități și medici, din datele clinicii | ✅ | ✅ (teste + capturi desktop/mobil) | ❌ | — | — |
+| Răspunsuri din conținutul public (întrebări frecvente, descrieri, texte), cu legătură la pagina-sursă | ✅ | ✅ | ❌ | — | — |
+| Tarife și decontare: trimite la pagina de tarife / recepție; nu afișează prețuri inventate | ✅ | ✅ | ❌ | — | — |
+| Urgențe (durere în piept, respirație, leșin, semne de AVC, sângerare, autovătămare) → 112 | ✅ | ✅ | ❌ | — | Linie de sprijin emoțional: de confirmat de clinică |
+| Confidențialitate: fără AI extern, fără cookie, întrebarea doar în corpul cererii, nu se păstrează | ✅ | ✅ | ❌ | — | — |
+| Model AI extern (opțional) | ❌ | — | — | — | Decizia clinicii + contract de prelucrare (INTREBARI.md, F) |
+
+Asistentul nu înțelege limbajul ca un model AI: recunoaște intențiile practice după cuvinte și caută în textele
+siteului. Întrebările formulate neobișnuit pot primi răspunsul „nu am găsit un răspuns sigur” cu trimitere la recepție.
+
 ## Cerințe de hosting
 
 Confirmate de clinică la 2026-10-25 (PHP 8.3+, SSH/Terminal, Composer, cron); **de verificat la instalare** cu
