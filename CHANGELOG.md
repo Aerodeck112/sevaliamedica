@@ -23,6 +23,7 @@ actualizare și afișat administratorului înainte de instalare.
   pentru telefon; corecturi de accesibilitate fără schimbări vizibile.
 - După actualizare, permisiunile modulelor noi (Marketing, Tablete, Recenzii) se creează automat din cron și se
   acordă rolurilor implicite, fără a reface acordările retrase manual.
+- Cheie nouă de semnare a actualizărilor: `config/update-keys/e9582d2db2648293.pub` (prima instalare se face cu 0.9.1).
 - Paginile fără descriere SEO primesc automat începutul textului lor ca descriere; imaginea principală devine
   imaginea de distribuire.
 
@@ -39,7 +40,7 @@ Prima versiune instalabilă pe hosting (pre-lansare; de verificat pe staging în
 - Dosar medical (fișe configurabile, finalizare și rectificare trasabilă, documente criptate, consimțăminte)
   și recuperare medicală (planuri, serii de ședințe, efectuare explicită, pachete).
 - Notificări (e-mail, SMS, WhatsApp) cu șabloane, jurnal de livrări și fără duplicate.
-- Cheia de semnare de producție pentru actualizări (`config/update-keys/fb3391f2ed370c28.pub`).
+- Cheia de semnare de producție pentru actualizări (înlocuită în 0.9.1, înainte de prima instalare).
 
 ## [0.1.0] — 2026-10-25
 
