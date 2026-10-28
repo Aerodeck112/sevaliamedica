@@ -10,28 +10,6 @@
                     <span role="img" aria-label="Logo of sevalia.ro" title="sevalia.ro"><img src="{{ $logoUrl }}" class="img img-fluid" width="95" height="40" alt="sevalia.ro" fetchpriority="high"></span>
                 </a>
                 <div class="flex-fill min-w-0">
-                    @if ($showLanguageSelector)
-                        <ul class="o_header_sales_three_small_links navbar-nav justify-content-end align-items-center gap-2 w-100 o_header_separator">
-                            <li class="o_header_language_selector position-relative">
-                                <div class="js_language_selector dropdown d-print-none">
-                                    <button type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="border-0 dropdown-toggle nav-link d-flex align-items-center fw-bold text-uppercase o_nav-link_secondary">
-                                        <img class="o_lang_flag" src="/images/flag-ro.png" alt="" width="37" height="25" loading="lazy">
-                                        <span class="ms-1"> română</span>
-                                    </button>
-                                    <div role="menu" class="dropdown-menu dropdown-menu-end">
-                                        <a class="dropdown-item js_change_lang" role="menuitem" href="/en" title="English (US)">
-                                            <img class="o_lang_flag" src="/images/flag-us.png" alt="" width="47" height="25" loading="lazy">
-                                            <span class="ms-1">English (US)</span>
-                                        </a>
-                                        <a class="dropdown-item js_change_lang active" role="menuitem" href="{{ $currentPath }}" title=" română">
-                                            <img class="o_lang_flag" src="/images/flag-ro.png" alt="" width="37" height="25" loading="lazy">
-                                            <span class="ms-1"> română</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    @endif
                     <ul role="menu" id="top_menu" class="nav navbar-nav top_menu justify-content-start">
                         @foreach ($menu as $item)
                             @if ($item->kind === 'mega' || $item->kind === 'dropdown')
@@ -108,28 +86,6 @@
                             </ul>
                         </li>
                     </ul>
-                    @if ($showLanguageSelector)
-                        <ul class="navbar-nav gap-2 mt-3 w-100">
-                            <li class="o_header_language_selector">
-                                <div class="js_language_selector dropup dropdown d-print-none">
-                                    <button type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="border-0 dropdown-toggle nav-link d-flex align-items-center w-100">
-                                        <img class="o_lang_flag me-2" src="/images/flag-ro.png" alt="" width="37" height="25" loading="lazy">
-                                        <span class="me-auto small"> română</span>
-                                    </button>
-                                    <div role="menu" class="dropdown-menu w-100">
-                                        <a class="dropdown-item js_change_lang" role="menuitem" href="/en" title="English (US)">
-                                            <img class="o_lang_flag me-2" src="/images/flag-us.png" alt="" width="47" height="25" loading="lazy">
-                                            <span class="me-auto small">English (US)</span>
-                                        </a>
-                                        <a class="dropdown-item js_change_lang active" role="menuitem" href="{{ $currentPath }}" title=" română">
-                                            <img class="o_lang_flag me-2" src="/images/flag-ro.png" alt="" width="37" height="25" loading="lazy">
-                                            <span class="me-auto small"> română</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    @endif
                 </div>
             </div>
         </div>

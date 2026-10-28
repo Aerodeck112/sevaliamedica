@@ -41,3 +41,12 @@ paginile sunt verificate în CMS.
 - Hărțile din subsol afișează „O adresă trebuie specificată pentru a putea fi încorporată o hartă”.
 - Link telefonic invalid către 0365 403 001.
 - Meniul „Neurologie” și linkul `/dry-needling` duc la „Page Not Found”.
+
+## Modificări cerute explicit de clinică (față de siteul original)
+
+- 2026-10-28: anul din copyright, „© Copyright Sevalia Medica 2023” → „2026” (subsol).
+- 2026-10-28: a treia hartă în subsol, „MEDICINĂ DE FAMILIE | BAND, JUD. MUREȘ”, după hărțile celor două locații din
+  Târgu Mureș; adresa exactă din Band nu există în arhivă (vezi `docs/INTREBARI.md`, secțiunea G), harta indică
+  localitatea.
+- 2026-10-28: selectorul de limbă (română / English) a fost eliminat complet din antet și din meniul mobil.
+

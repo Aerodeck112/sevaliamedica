@@ -585,6 +585,8 @@ class SiteImporter
         // Decizia clinicii (2026-10-25): „Politica de cookie” deschide setările de cookie.
         foreach ($blocks as &$block) {
             $block['html'] = preg_replace('~<p([^>]*)>Politica de cookie</p>~u', '<p$1><a href="#setari-cookie" data-cookie-settings="1">Politica de cookie</a></p>', $block['html']);
+            // Decizia clinicii (2026-10-28): copyright 2026 și harta pentru Band.
+            $block['html'] = \App\Modules\Cms\Services\FooterChanges::apply($block['html']);
         }
         unset($block);
         $this->store(Page::FOOTER_PATH, Page::KIND_GLOBAL, 'Subsol (toate paginile)', $blocks, [], []);

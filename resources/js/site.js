@@ -23,6 +23,13 @@ function toggleDropdown(toggle, force) {
     const menu = owner?.querySelector(':scope > .dropdown-menu, :scope > .o_mega_menu');
     if (!menu) return;
     const open = force ?? !menu.classList.contains('show');
+    if (!open) {
+        // Închiderea privește doar acest meniu (o închidere întârziată nu închide meniul deschis între timp).
+        menu.classList.remove('show');
+        toggle.classList.remove('show');
+        toggle.setAttribute('aria-expanded', 'false');
+        return;
+    }
     // Ca în Bootstrap: în bara de meniu, poziția vine din CSS (sus 100%, stânga 0), nu din locul butonului; altfel
     // meniurile extinse (lățime 100%) pornesc de sub buton și ies din ecran în dreapta.
     if (open && toggle.closest('.navbar')) menu.setAttribute('data-bs-popper', 'static');
@@ -50,11 +57,62 @@ document.addEventListener('keydown', (event) => {
 });
 
 // Antetul cu „o_hoverable_dropdown”: pe desktop, meniurile se deschid la trecerea mouse-ului.
+// Între buton și meniul extins rămâne o fâșie a barei de meniu: închiderea așteaptă puțin, ca mouse-ul să poată
+// coborî până la subcategorii; trecerea în drum peste alt buton nu schimbă meniul decât după o scurtă oprire.
+const HOVER_CLOSE_MS = 400;
+const HOVER_SWITCH_MS = 180;
+let pointer = null;
+let downAt = 0;
+document.addEventListener('mousemove', (e) => {
+    if (pointer && e.clientY > pointer[1]) downAt = performance.now();
+    pointer = [e.clientX, e.clientY];
+}, { passive: true });
+// Mouse-ul coboară (spre meniul deschis): nu se comută și nu se închide nimic pe drum, chiar dacă trece peste un
+// buton vecin.
+const movingDown = () => performance.now() - downAt < 250;
 document.querySelectorAll('header.o_hoverable_dropdown .navbar-expand-lg .dropdown').forEach((item) => {
     const toggle = item.querySelector('[data-bs-toggle="dropdown"]');
     if (!toggle) return;
-    item.addEventListener('mouseenter', () => desktop.matches && toggleDropdown(toggle, true));
-    item.addEventListener('mouseleave', () => desktop.matches && toggleDropdown(toggle, false));
+    let closeTimer = null;
+    let openTimer = null;
+    const otherOpen = () => [...document.querySelectorAll('header .dropdown-menu.show')].some((m) => !item.contains(m));
+    item.addEventListener('mouseenter', () => {
+        if (!desktop.matches) return;
+        clearTimeout(closeTimer);
+        clearTimeout(openTimer);
+        openTimer = setTimeout(() => toggleDropdown(toggle, true), otherOpen() ? HOVER_SWITCH_MS : 0);
+    });
+    // Cât timp alt meniu e deschis, mouse-ul care doar trece (spre subcategoriile aceluia) nu comută meniul:
+    // comutarea are loc abia când mouse-ul se oprește pe acest element al meniului.
+    item.addEventListener('mousemove', (event) => {
+        if (!desktop.matches || !otherOpen() || event.target.closest('.dropdown-menu')) return;
+        clearTimeout(openTimer);
+        openTimer = setTimeout(function open() {
+            if (otherOpen() && movingDown()) openTimer = setTimeout(open, HOVER_SWITCH_MS);
+            else if (item.matches(':hover')) toggleDropdown(toggle, true);
+        }, HOVER_SWITCH_MS);
+    });
+    // Mouse-ul încă e în fâșia dintre buton și meniu (oricât de încet coboară) și nu a ajuns pe alt element al
+    // meniului: meniul rămâne deschis.
+    const inBridge = () => {
+        const menu = item.querySelector(':scope > .dropdown-menu.show');
+        if (!menu || !pointer) return false;
+        const [x, y] = pointer;
+        const m = menu.getBoundingClientRect();
+        const t = toggle.getBoundingClientRect();
+        if (y < t.top || y > m.top + 2 || x < m.left || x > m.right) return false;
+        const other = document.elementFromPoint(x, y)?.closest('.nav-item');
+        return !other || other === item || movingDown();
+    };
+    const scheduleClose = () => {
+        closeTimer = setTimeout(() => (inBridge() ? scheduleClose() : toggleDropdown(toggle, false)), HOVER_CLOSE_MS);
+    };
+    item.addEventListener('mouseleave', () => {
+        if (!desktop.matches) return;
+        clearTimeout(openTimer);
+        clearTimeout(closeTimer);
+        scheduleClose();
+    });
 });
 
 // ---------- Meniul mobil (offcanvas) ----------

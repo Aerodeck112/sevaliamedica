@@ -92,7 +92,6 @@ class SiteView
             'currentPath' => $request ? '/'.trim($request->getPathInfo(), '/') : '/',
             'consent' => ConsentConfig::forPage($request ? '/'.trim($request->getPathInfo(), '/') : '/'),
             'preview' => $preview,
-            'showLanguageSelector' => (bool) $this->settings->get('site.language_selector', true),
             // Bara „Sună / Programare online” de pe mobil (Site → Setări), doar dacă programarea online funcționează.
             'ctaBar' => $this->ctaBar($request),
             'assistant' => ! $preview && (bool) $this->settings->get('site.assistant', true),

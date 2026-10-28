@@ -16,7 +16,11 @@ final class PageCache
     {
         // Versiunea aplicației face parte din cheie: după o actualizare, paginile se generează din nou, cu stilurile
         // și scripturile noi (altfel rămâneau până la 12 ore cele vechi).
-        return 'site.page.'.config('sevalia.version').'.'.self::version().'.'.sha1($path);
+        // Și domeniul cererii: HTML-ul conține adrese absolute ale stilurilor și scripturilor, care trebuie să fie de
+        // pe același domeniu (Content-Security-Policy „'self'”).
+        $host = app()->bound('request') ? strtolower(request()->getHost()) : '';
+
+        return 'site.page.'.config('sevalia.version').'.'.self::version().'.'.sha1($host.'|'.$path);
     }
 
     public static function version(): int

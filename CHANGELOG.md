@@ -3,6 +3,21 @@
 Formatul: o secțiune `## [versiune] — dată` pentru fiecare release. Textul secțiunii este inclus în pachetul de
 actualizare și afișat administratorului înainte de instalare.
 
+## [0.9.6] — 2026-10-28
+
+Se poate instala direct peste 0.9.1 – 0.9.5.
+
+- Corectură importantă: siteul fără stiluri (doar text și linkuri) când era deschis când cu `sevalia.ro`, când cu
+  `www.sevalia.ro`. Pagina păstrată în cache trimitea stilurile de pe celălalt domeniu, pe care browserul le
+  blochează. Acum `sevalia.ro` trimite permanent (301) la `www.sevalia.ro` (adresa din configurare), iar cache-ul
+  paginilor ține cont de domeniu.
+- Meniul de pe desktop: subcategoriile rămân deschise cât timp mouse-ul coboară spre ele, chiar încet sau pe
+  diagonală peste alt buton; meniul se schimbă doar când mouse-ul se oprește pe alt buton și se închide la scurt
+  timp după ce mouse-ul pleacă.
+- Subsol: copyright 2026 și a treia hartă, „Medicină de familie | Band, jud. Mureș” (cerute de clinică; versiune
+  nouă a subsolului, vizibilă în istoricul paginii).
+- Selectorul de limbă a fost eliminat complet (antet, meniul mobil, setarea din panou).
+
 ## [0.9.5] — 2026-10-28
 
 Se poate instala direct peste 0.9.1 – 0.9.4.

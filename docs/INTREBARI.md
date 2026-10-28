@@ -74,3 +74,10 @@ flux manual de transmitere. Nicio regulă contractuală nu este activă până l
    limitate la conținutul siteului.
 2. La mesajele despre gânduri de autovătămare asistentul trimite la 112. Doriți să adăugăm și o linie de sprijin
    emoțional (număr confirmat de clinică)?
+
+## G. Subsol și locații (adăugat 2026-10-28)
+
+1. Adresa exactă a cabinetului de medicină de familie din Band (stradă, număr). Arhiva siteului vechi spune doar
+   „sediul nostru din Band” și telefonul +40 742 281 438; harta din subsol arată deocamdată localitatea
+   („Band, județul Mureș”). Adresa se poate schimba și din panou: Site → Pagini → Subsol.
+2. Programul cabinetului din Band, ca să fie adăugat ca locație în Administrare → Locații (pentru programări).

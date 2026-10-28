@@ -11,7 +11,6 @@
         <x-panou.panel title="Limbă">
             <div class="stack">
                 <x-panou.field name="en_redirect" type="checkbox" label="Redirecționează versiunea /en către pagina echivalentă în română (301)" :value="$enRedirect" />
-                <x-panou.field name="language_selector" type="checkbox" label="Afișează selectorul de limbă în antet (ca pe siteul original)" :value="$languageSelector" />
                 <x-panou.field name="anatomy" type="checkbox" label="Schițe anatomice animate pe copertele paginilor de servicii" :value="$anatomy" />
                 <x-panou.field name="body_map" type="checkbox" label="Harta „Unde simțiți disconfort?” pe prima pagină" :value="$bodyMap" />
                 <x-panou.field name="assistant" type="checkbox" label="Asistentul Sevalia pe site (răspunde din conținutul public; fără AI extern; întrebările nu se păstrează)" :value="$assistant" />

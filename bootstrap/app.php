@@ -37,6 +37,8 @@ $app = Application::configure(basePath: dirname(__DIR__))
         })->everyFiveMinutes()->name('htaccess-sevalia')->withoutOverlapping(5);
     })
     ->withMiddleware(function (Middleware $middleware): void {
+        // sevalia.ro ↔ www.sevalia.ro: o singură adresă (vezi CanonicalHost), înainte de orice altă procesare.
+        $middleware->prepend(\App\Core\Http\Middleware\CanonicalHost::class);
         $middleware->web(append: [SecurityHeaders::class]);
         $middleware->alias([
             'panou' => EnsurePanelAccess::class,
