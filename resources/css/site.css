@@ -450,3 +450,18 @@
     .sv-assist__fab { width: 52px; justify-content: center; padding: 0; }
 }
 @media (prefers-reduced-motion: reduce) { .sv-assist__panel { animation: none; } .sv-assist__fab { transition: none; } }
+
+/* ---------- Telefoane și tablete: nimic nu iese din lățimea ecranului ----------
+   Titlurile originale au cuvinte lungi la dimensiuni mari („antigravitațională”, „salinoterapie”), iar unele imagini
+   din grilele Odoo își păstrează lățimea naturală. Pe desktop aspectul rămâne neschimbat. */
+@media (max-width: 991.98px) {
+    #wrap :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .display-1, .display-2, .display-3, .display-4, .display-5, .display-6) {
+        overflow-wrap: break-word;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+    }
+    #wrap :is(p, li, td, blockquote, a) { overflow-wrap: break-word; }
+    #wrap img { max-width: 100%; height: auto; }
+    #wrap .row > *, #wrap .o_grid_mode > * { min-width: 0; }
+    #wrap table { max-width: 100%; }
+}

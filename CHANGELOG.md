@@ -3,6 +3,20 @@
 Formatul: o secțiune `## [versiune] — dată` pentru fiecare release. Textul secțiunii este inclus în pachetul de
 actualizare și afișat administratorului înainte de instalare.
 
+## [0.9.3] — 2026-10-28
+
+Se poate instala direct peste 0.9.1 sau 0.9.2 (conține și corecturile din 0.9.2).
+
+- Panou pe telefon: nicio pagină nu mai iese din lățimea ecranului (ecranul principal, lista de așteptare, programul
+  de lucru, programările, planurile de recuperare, fișa pacientului, tabletele, profilul etc.): coloanele nu se mai
+  lărgesc după conținut, tabelele se derulează în interiorul panoului, butoanele trec pe rândul următor. Verificat
+  automat pe toate paginile panoului la 390, 768 și 1440 px.
+- Site pe telefon și tabletă: titlurile cu cuvinte lungi („antigravitațională”, „salinoterapie”) și imaginile mari din
+  grilele preluate de pe siteul vechi nu mai împing pagina în lateral (verificat pe toate cele 63 de pagini la 360,
+  390, 768 și 1440 px). Pe desktop aspectul rămâne neschimbat.
+- Cuvinte cheie: câmpurile din tabel au stilul panoului.
+- Ghid nou: programul medicilor și programările, pas cu pas (`docs/manuale/GHID-PROGRAM-SI-PROGRAMARI.md`).
+
 ## [0.9.2] — 2026-10-28
 
 - Corectură importantă pentru hostingurile cPanel: dacă `public_html/.htaccess` exista deja (cPanel îl creează pentru

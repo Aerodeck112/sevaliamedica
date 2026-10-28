@@ -1027,7 +1027,7 @@ body.auth {
     }
 
     .grid--aside {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
     }
 }
 
@@ -1070,11 +1070,43 @@ body.auth {
         padding: 1.1rem 1rem;
     }
 
+    /* minmax(0, 1fr): coloana nu se lărgește după conținut (tabele, texte lungi) peste lățimea ecranului. */
     .grid--2,
     .grid--3,
     .form-grid,
     .form-grid--3 {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .grid > *,
+    .stack > *,
+    .panel,
+    .panel__body {
+        min-width: 0;
+    }
+
+    /* Tabelele fără container propriu primesc derulare orizontală în panou, nu întreaga pagină. */
+    .panel__body > table.table,
+    .panel__body > form > table.table,
+    .panel > table.table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .panel__head {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .alert > div,
+    .page-head__text {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .panel__actions {
+        flex-wrap: wrap;
     }
 
     .span-2 {

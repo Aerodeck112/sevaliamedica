@@ -131,6 +131,12 @@ harta se inserează la randare, după secțiunea aleasă.
 Asistentul nu înțelege limbajul ca un model AI: recunoaște intențiile practice după cuvinte și caută în textele
 siteului. Întrebările formulate neobișnuit pot primi răspunsul „nu am găsit un răspuns sigur” cu trimitere la recepție.
 
+## Aranjare pe ecrane (verificare automată)
+
+`tools/screenshots/depasiri-panou.mjs` (panou: 88 de pagini, 5 roluri, 390/768/1440 px) și verificarea paginilor
+publice (63 de pagini, 360/390/768/1440 px) nu găsesc elemente care ies din ecran (2026-10-28). Calendarul pe
+telefon are derulare orizontală proprie când sunt multe coloane de personal (intenționat).
+
 ## Cerințe de hosting
 
 Confirmate de clinică la 2026-10-25 (PHP 8.3+, SSH/Terminal, Composer, cron); **de verificat la instalare** cu

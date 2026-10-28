@@ -1,0 +1,18 @@
+{
+  "baseUrl": "http://127.0.0.1:8000",
+  "outDir": "docs/capturi/ghid-programari",
+  "shots": [
+    { "name": "01-personal-lista", "path": "/panou/clinica/personal", "role": "manager" },
+    { "name": "02-personal-fisa-medic", "path": "/panou/clinica/personal/1", "role": "manager" },
+    { "name": "03-program-de-lucru", "path": "/panou/program-lucru", "role": "manager" },
+    { "name": "04-program-saptamanal-medic", "path": "/panou/program-lucru/1", "role": "manager" },
+    { "name": "05-catalog-servicii", "path": "/panou/clinica/servicii", "role": "manager" },
+    { "name": "06-serviciu-programare-online", "path": "/panou/clinica/servicii/1", "role": "manager" },
+    { "name": "07-calendar-zi", "path": "/panou/calendar", "role": "receptie" },
+    { "name": "08-programare-noua", "path": "/panou/programari/noua", "role": "receptie" },
+    { "name": "09-programare-detalii", "path": "/panou/programari/1", "role": "receptie" },
+    { "name": "10-solicitari-de-pe-site", "path": "/panou/solicitari", "role": "receptie" },
+    { "name": "11-calendar-telefon", "path": "/panou/calendar", "role": "receptie", "viewport": "mobil" },
+    { "name": "12-programare-noua-telefon", "path": "/panou/programari/noua", "role": "receptie", "viewport": "mobil" }
+  ]
+}

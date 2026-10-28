@@ -16,9 +16,9 @@
                             <form method="post" action="{{ route('panou.marketing.keywords.update', $k) }}" class="cluster" id="kw{{ $k->id }}">
                                 @csrf @method('put')
                                 <label class="sr-only" for="kw{{ $k->id }}p">Expresie</label>
-                                <input id="kw{{ $k->id }}p" name="phrase" value="{{ $k->phrase }}" maxlength="150" required style="min-width:14rem">
+                                <input type="text" id="kw{{ $k->id }}p" name="phrase" value="{{ $k->phrase }}" maxlength="150" required style="flex:1 1 12rem;min-width:0">
                                 <label class="sr-only" for="kw{{ $k->id }}t">Pagina țintă</label>
-                                <select id="kw{{ $k->id }}t" name="target_path">
+                                <select id="kw{{ $k->id }}t" name="target_path" style="flex:1 1 12rem;min-width:0">
                                     @unless ($pages->has($k->target_path))<option value="{{ $k->target_path }}" selected>{{ $k->target_path }} (nepublicată)</option>@endunless
                                     @foreach ($pages as $path => $label)<option value="{{ $path }}" @selected($path === $k->target_path)>{{ \Illuminate\Support\Str::limit($label, 60) }}</option>@endforeach
                                 </select>
