@@ -12,7 +12,12 @@ CITESTE-MA-INSTALARE.txt       pașii pe scurt
 ```
 
 Arhiva se dezarhivează în **directorul principal al contului** (`/home/<cont>`), astfel încât `sevalia/` ajunge
-lângă `public_html/` (în afara zonei publice), iar `install.php` în `public_html/`.
+lângă `public_html/` (în afara zonei publice), iar `install.php` în `public_html/`. Arhiva se încarcă direct în
+cPanel, **nu se dezarhivează pe calculator**; în `sevalia/releases/<versiune>/` e normal să fie multe directoare.
+
+Dacă arhiva e dezarhivată în interiorul `public_html` (greșeala cea mai frecventă: File Manager se deschide implicit
+acolo), `install.php` se oprește înainte de orice pas, fără să creeze fișiere, și arată cum se corectează (captura
+`capturi/instalare-0.9.1/00-dezarhivare-gresita.png`).
 
 ## Pași
 
@@ -47,7 +52,8 @@ cPanel → **MultiPHP INI Editor** → `upload_max_filesize` și `post_max_size`
 
 | Simptom | Ce faceți |
 |---------|-----------|
-| „Pachetul nu a fost găsit” | Arhiva a fost dezarhivată în alt director; `sevalia/` trebuie să fie lângă `public_html/`. |
+| „Arhiva a fost dezarhivată în locul greșit” | S-a dezarhivat în `public_html`: ștergeți `public_html/public_html`, `public_html/sevalia`, `public_html/CITESTE-MA-INSTALARE.txt`, apoi încărcați și dezarhivați în `/home/<cont>`. |
+| „Lipsește directorul sevalia” / „Pachetul nu a fost găsit” | Arhiva a fost dezarhivată în alt director; `sevalia/` trebuie să fie lângă `public_html/`. |
 | Eroare la conectarea bazei | Verificați că utilizatorul e **adăugat la bază** cu ALL PRIVILEGES (pasul 1). Numele au prefixul contului (`cont_`). |
 | Importul se oprește | Apăsați „Reia importul”: continuă de unde a rămas. |
 | Pagina albă / eroare 500 după instalare | `https://<domeniu>/recovery.php` cu cheia de recuperare; jurnalul: `sevalia/shared/storage/logs/`. |

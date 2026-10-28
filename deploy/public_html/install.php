@@ -36,6 +36,43 @@ session_start();
 
 $h = static fn ($v): string => htmlspecialchars((string) $v, ENT_QUOTES, 'UTF-8');
 
+// Arhiva trebuie dezarhivată în directorul contului (cel care conține public_html), nu în public_html: altfel codul,
+// cheile și fișierul .env ar ajunge în zona publică a siteului. Instalatorul se oprește și explică remedierea.
+if (! getenv('SEVALIA_DEPLOY_PATH')) {
+    $parentName = strtolower(basename(dirname(__DIR__)));
+    $tree = '<pre style="word-break:normal">'.implode("\n", [
+        '/home/&lt;cont&gt;/              ← aici se încarcă și se dezarhivează arhiva',
+        '├── public_html/',
+        '│   ├── install.php',
+        '│   └── (celelalte fișiere ale domeniului)',
+        '├── sevalia/',
+        '│   └── releases/0.9.x/     (codul aplicației — multe directoare, e normal)',
+        '└── CITESTE-MA-INSTALARE.txt',
+    ]).'</pre>';
+    // Semnul dezarhivării în locul greșit: install.php stă într-un „public_html” aflat la rândul lui într-un director public.
+    if (strtolower(basename(__DIR__)) === 'public_html' && in_array($parentName, ['public_html', 'www', 'htdocs', 'httpdocs', 'html'], true)) {
+        sevalia_page('Arhiva a fost dezarhivată în locul greșit',
+            '<div class="alert err">Arhiva a fost dezarhivată <strong>în interiorul</strong> directorului <code>'.$h(basename(dirname(__DIR__))).'</code>. '
+            .'Așa, codul și fișierele secrete ar fi accesibile public — instalarea nu continuă.</div>'
+            .'<p>Remediere din cPanel → File Manager:</p><ol>'
+            .'<li>În <code>'.$h(basename(dirname(__DIR__))).'</code> ștergeți ce a apărut la dezarhivare: directoarele <code>'.$h(basename(__DIR__)).'</code> și <code>sevalia</code> și fișierul <code>CITESTE-MA-INSTALARE.txt</code>.</li>'
+            .'<li>Urcați un nivel (butonul „Up One Level”), în directorul contului — cel în care vedeți <code>public_html</code>.</li>'
+            .'<li>Încărcați arhiva acolo și dezarhivați-o acolo (clic dreapta → Extract).</li>'
+            .'<li>Deschideți din nou <code>https://&lt;domeniu&gt;/install.php</code>.</li></ol>'
+            .'<p>Rezultatul corect:</p>'.$tree, 0);
+    }
+    if (! is_dir($deployPath.'/releases')) {
+        sevalia_page('Lipsește directorul „sevalia”',
+            '<div class="alert err">Instalatorul nu găsește directorul <code>sevalia</code> lângă <code>'.$h(basename(__DIR__)).'</code>.</div>'
+            .'<p>Arhiva conține două directoare care trebuie să stea <strong>unul lângă altul</strong>, în directorul contului: '
+            .'<code>public_html</code> (aici ajunge doar <code>install.php</code>) și <code>sevalia</code> (codul aplicației, în afara zonei publice).</p>'
+            .'<ol><li>cPanel → File Manager → directorul contului (cel care conține <code>public_html</code>).</li>'
+            .'<li>Încărcați arhiva acolo și dezarhivați-o acolo, fără să o dezarhivați întâi pe calculator.</li>'
+            .'<li>Dacă domeniul folosește alt director decât <code>public_html</code> (domeniu suplimentar), mutați <code>install.php</code> în directorul domeniului și puneți <code>sevalia</code> lângă el.</li></ol>'
+            .'<p>Rezultatul corect:</p>'.$tree, 0);
+    }
+}
+
 /** Cea mai nouă versiune completă din releases/. */
 function sevalia_release(string $deployPath): ?string
 {

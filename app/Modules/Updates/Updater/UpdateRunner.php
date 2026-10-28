@@ -3,6 +3,7 @@
 namespace App\Modules\Updates\Updater;
 
 use App\Core\Audit\Audit;
+use App\Core\Support\Htaccess;
 use App\Modules\Backup\BackupManager;
 use App\Modules\Backup\Models\Backup;
 use App\Modules\Updates\Models\UpdateRun;
@@ -436,6 +437,10 @@ class UpdateRunner
         }
         $data['cursor'] = count($data['list']);
         unset($data['list']);
+        // .htaccess: regulile versiunii noi + blocurile cPanel și regulile proprii existente.
+        if (is_file($template = $release.'/deploy/public_html/.htaccess')) {
+            $data['htaccess'] = Htaccess::write($public, (string) file_get_contents($template)) ? 'actualizat' : 'neschimbat';
+        }
 
         return true;
     }

@@ -1,20 +1,43 @@
 SEVALIA {versiune} — instalare pe cPanel, fără Terminal
 =======================================================
 
+IMPORTANT: NU dezarhivați arhiva pe calculator. Încărcați fișierul ZIP așa cum este, direct în cPanel.
+
+Ce conține arhiva (e normal să vedeți mai multe directoare):
+
+  public_html/install.php        instalatorul (singurul fișier care ajunge în zona publică)
+  sevalia/releases/{versiune}/   codul aplicației: app, config, database, vendor ... (multe directoare)
+  CITESTE-MA-INSTALARE.txt       acest fișier
+
+După dezarhivare, în cPanel trebuie să arate EXACT așa:
+
+  /home/<cont>/                  ← aici se încarcă și se dezarhivează arhiva
+  ├── public_html/               (directorul existent al domeniului)
+  │   └── install.php            (nou)
+  ├── sevalia/                   (nou, LÂNGĂ public_html, nu în interiorul lui)
+  │   └── releases/{versiune}/
+  └── CITESTE-MA-INSTALARE.txt
+
+Pași:
+
 1. cPanel → MySQL Database Wizard: creați o bază nouă (ex. cont_sevalia), un utilizator cu parolă
    și bifați ALL PRIVILEGES. Notați numele bazei, utilizatorul și parola.
 2. cPanel → MultiPHP Manager: domeniul pe PHP 8.3 (sau mai nou).
    cPanel → SSL/TLS Status: AutoSSL activ (https).
-3. cPanel → File Manager → directorul principal al contului (/home/<cont>, cel care conține public_html)
-   → Upload: încărcați această arhivă → clic dreapta pe arhivă → Extract → în /home/<cont>.
-   Apar: directorul „sevalia” (lângă public_html) și fișierul public_html/install.php.
+3. cPanel → File Manager. Dacă se deschide direct în public_html, apăsați „Up One Level” până ajungeți în
+   directorul contului (/home/<cont> — cel în care VEDEȚI directorul public_html).
+   → Upload: încărcați arhiva ZIP aici → clic dreapta pe arhivă → Extract → confirmați /home/<cont>.
 4. Deschideți în browser:  https://<domeniul-dumneavoastră>/install.php
    Codul cerut de instalator se află în File Manager: sevalia/shared/install/cod-instalare.txt
+   (dacă arhiva a fost dezarhivată în locul greșit, instalatorul vă spune exact cum se corectează).
 5. Urmați pașii din browser. La final:
    - notați CHEIA DE RECUPERARE (afișată o singură dată);
    - adăugați în cPanel → Cron Jobs linia afișată de instalator (Once Per Minute);
    - descărcați și păstrați offline sevalia/shared/.env și sevalia/shared/keys/.
-6. Ștergeți arhiva încărcată (instalatorul se dezactivează singur).
+6. Ștergeți arhiva ZIP încărcată (instalatorul se dezactivează singur).
+
+Domeniu suplimentar (addon) care nu folosește public_html: mutați install.php în directorul domeniului
+și puneți directorul „sevalia” lângă acel director.
 
 Actualizările viitoare se instalează din panou: Panou → Administrare → Actualizări → încărcați pachetul ZIP primit.
 Pentru pachete mari: cPanel → MultiPHP INI Editor → upload_max_filesize = 256M, post_max_size = 256M.

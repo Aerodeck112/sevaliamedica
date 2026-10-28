@@ -369,7 +369,19 @@ document.querySelectorAll('.s_popup .modal[data-display="afterDelay"]').forEach(
     });
     modal.addEventListener('click', (e) => e.target === modal && hide());
     document.addEventListener('keydown', (e) => e.key === 'Escape' && modal.classList.contains('show') && hide());
-    setTimeout(show, Number(modal.dataset.showAfter || 3000));
+    // Anunțul nu apare peste bannerul de cookie: întârzierea pornește abia după ce vizitatorul a ales.
+    const delay = Number(modal.dataset.showAfter || 3000);
+    const banner = document.getElementById('sv-cookie');
+    if (banner && !banner.hidden) {
+        const observer = new MutationObserver(() => {
+            if (!banner.hidden) return;
+            observer.disconnect();
+            setTimeout(show, delay);
+        });
+        observer.observe(banner, { attributes: true, attributeFilter: ['hidden'] });
+    } else {
+        setTimeout(show, delay);
+    }
 });
 
 // ---------- Fundal video (o_background_video): se încarcă după pagină, ca să nu întârzie afișarea ----------

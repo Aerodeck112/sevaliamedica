@@ -1,5 +1,9 @@
-# SEVALIA-MANAGED — fișier administrat de actualizări (ștergeți acest rând dacă îl personalizați manual,
-# iar actualizările nu îl vor mai suprascrie).
+# SEVALIA-MANAGED — fișier administrat de instalare și de actualizări. Se păstrează la fiecare actualizare:
+# blocurile scrise de cPanel (versiunea PHP, setări php.ini) și regulile puse între cele două linii de mai jos.
+
+# BEGIN reguli proprii
+# (reguli proprii ale clinicii, ex. redirecționări; rulează înaintea regulilor SEVALIA)
+# END reguli proprii
 
 Options -Indexes -MultiViews
 DirectoryIndex index.php

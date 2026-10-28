@@ -28,6 +28,13 @@ $app = Application::configure(basePath: dirname(__DIR__))
         // După o actualizare: permisiunile modulelor noi (o dată pe versiune, fără a reface acordările retrase).
         $schedule->call(fn () => app(\App\Core\Security\PermissionUpgrade::class)->runIfVersionChanged())
             ->everyMinute()->name('permisiuni-dupa-actualizare')->withoutOverlapping(5);
+        // public_html/.htaccess trebuie să conțină regulile SEVALIA (altfel paginile dau 404): verificare și reparare.
+        $schedule->call(function (): void {
+            $public = config('updates.public_path');
+            if ($public && is_file($template = base_path('deploy/public_html/.htaccess'))) {
+                \App\Core\Support\Htaccess::write($public, (string) file_get_contents($template));
+            }
+        })->everyFiveMinutes()->name('htaccess-sevalia')->withoutOverlapping(5);
     })
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->web(append: [SecurityHeaders::class]);

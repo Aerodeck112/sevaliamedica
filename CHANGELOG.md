@@ -3,6 +3,20 @@
 Formatul: o secțiune `## [versiune] — dată` pentru fiecare release. Textul secțiunii este inclus în pachetul de
 actualizare și afișat administratorului înainte de instalare.
 
+## [0.9.2] — 2026-10-28
+
+- Corectură importantă pentru hostingurile cPanel: dacă `public_html/.htaccess` exista deja (cPanel îl creează pentru
+  versiunea PHP), instalarea 0.9.1 îl păstra fără regulile SEVALIA și toate paginile, în afară de prima, dădeau 404.
+  Acum fișierul se îmbină la instalare, la fiecare actualizare și printr-o verificare automată la 5 minute: regulile
+  SEVALIA se scriu, blocurile cPanel (versiunea PHP, setări php.ini) și regulile proprii se păstrează, iar fișierul
+  vechi se salvează alături.
+- Pentru instalările 0.9.1 existente: `repara-htaccess.php` (se încarcă în public_html, se deschide o dată, se șterge
+  singur).
+- Fereastra de anunț a siteului apare abia după alegerea privind cookie-urile (nu se mai suprapun), iar în banner
+  niciun buton nu mai pare preselectat.
+- Instalatorul se oprește, fără să creeze fișiere, dacă arhiva a fost dezarhivată în public_html sau dacă lipsește
+  directorul „sevalia”, și explică remedierea; instrucțiuni de instalare mai clare.
+
 ## [0.9.1] — 2026-10-27
 
 - Tablete la recepție: consimțăminte semnate pe ecran cu cod de 6 cifre și recenzii 1–5 stele după servicii

@@ -95,7 +95,8 @@ export function initConsent() {
         saveBtn.hidden = !withPrefs;
         customizeBtn.setAttribute('aria-expanded', withPrefs ? 'true' : 'false');
         banner.hidden = false;
-        banner.querySelector('button')?.focus({ preventScroll: true });
+        // Focus doar când vizitatorul a cerut setările; la prima afișare niciun buton nu pare preselectat.
+        if (withPrefs) banner.querySelector('button')?.focus({ preventScroll: true });
     };
     const decide = (choice) => {
         writeChoice(name, choice);

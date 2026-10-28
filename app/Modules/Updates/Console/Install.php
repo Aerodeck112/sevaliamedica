@@ -3,6 +3,7 @@
 namespace App\Modules\Updates\Console;
 
 use App\Core\Audit\Audit;
+use App\Core\Support\Htaccess;
 use App\Modules\Backup\Crypto\BackupKey;
 use App\Modules\Updates\Recovery\RecoveryKey;
 use App\Modules\Updates\Support\DeploymentLayout;
@@ -134,7 +135,7 @@ class Install extends Command
         }
     }
 
-    /** Copiază public/ (fără index.php/.htaccess) și deploy/public_html/* în public_html. */
+    /** Copiază public/ (fără index.php/.htaccess) și deploy/public_html/* în public_html; .htaccess se îmbină. */
     private function publishPublic(string $release, string $public): int
     {
         $count = 0;
@@ -159,11 +160,14 @@ class Install extends Command
                 }
             }
         }
-        foreach (['index.php', '.htaccess', 'recovery.php'] as $f) {
-            $src = $release.'/deploy/public_html/'.$f;
-            if (is_file($src) && ($f !== '.htaccess' || ! is_file($public.'/.htaccess') || str_contains((string) file_get_contents($public.'/.htaccess'), 'SEVALIA-MANAGED'))) {
+        foreach (['index.php', 'recovery.php'] as $f) {
+            if (is_file($src = $release.'/deploy/public_html/'.$f)) {
                 $copy($src, $public.'/'.$f);
             }
+        }
+        // .htaccess: regulile SEVALIA + blocurile cPanel existente (versiunea PHP etc.); fișierul vechi se păstrează.
+        if (is_file($src = $release.'/deploy/public_html/.htaccess') && Htaccess::write($public, (string) file_get_contents($src))) {
+            $count++;
         }
 
         return $count;
