@@ -395,6 +395,10 @@
 
 /* ---------- Bara de contact rapid pe telefoane ---------- */
 .sv-ctabar { display: none; }
+
+/* Meniul mobil deschis: bara de jos și butonul asistentului nu acoperă ultimele elemente ale meniului. */
+body.sv-menu-open .sv-ctabar,
+body.sv-menu-open .sv-assist { display: none !important; }
 @media (max-width: 991.98px) {
     .sv-ctabar {
         position: fixed; inset: auto 0 0 0; z-index: 1050;

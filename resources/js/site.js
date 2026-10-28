@@ -23,6 +23,9 @@ function toggleDropdown(toggle, force) {
     const menu = owner?.querySelector(':scope > .dropdown-menu, :scope > .o_mega_menu');
     if (!menu) return;
     const open = force ?? !menu.classList.contains('show');
+    // Ca în Bootstrap: în bara de meniu, poziția vine din CSS (sus 100%, stânga 0), nu din locul butonului; altfel
+    // meniurile extinse (lățime 100%) pornesc de sub buton și ies din ecran în dreapta.
+    if (open && toggle.closest('.navbar')) menu.setAttribute('data-bs-popper', 'static');
     closeDropdowns(open ? owner : null);
     menu.classList.toggle('show', open);
     toggle.classList.toggle('show', open);
@@ -64,6 +67,7 @@ function closeOffcanvas() {
     backdrop?.remove();
     backdrop = null;
     document.body.style.overflow = '';
+    document.body.classList.remove('sv-menu-open');
 }
 
 document.addEventListener('click', (event) => {
@@ -78,8 +82,11 @@ document.addEventListener('click', (event) => {
         backdrop = document.createElement('div');
         backdrop.className = 'offcanvas-backdrop fade show';
         backdrop.addEventListener('click', closeOffcanvas);
-        document.body.appendChild(backdrop);
+        // Fundalul stă lângă panou, în același context de suprapunere: antetul (z-index propriu, în #wrapwrap) ar
+        // ține altfel panoul sub un fundal adăugat în <body>, iar atingerile ar ajunge doar pe fundal.
+        panel.before(backdrop);
         document.body.style.overflow = 'hidden';
+        document.body.classList.add('sv-menu-open');
         panel.querySelector('button, a')?.focus();
         return;
     }

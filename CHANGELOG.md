@@ -3,6 +3,18 @@
 Formatul: o secțiune `## [versiune] — dată` pentru fiecare release. Textul secțiunii este inclus în pachetul de
 actualizare și afișat administratorului înainte de instalare.
 
+## [0.9.5] — 2026-10-28
+
+Se poate instala direct peste 0.9.1 – 0.9.4.
+
+- Meniul de pe desktop: listele extinse („Specialitate medicală”, „Servicii”, „Terapii premium”, „Ghid pacient”) se
+  deschid pe toată lățimea, sub bara de meniu, și nu mai ies din ecran în dreapta (verificat la 992–1440 px).
+- Meniul de pe telefon: după deschidere, elementele se pot atinge din nou (fundalul gri stătea peste meniu și primea
+  toate atingerile); bara „Sună acum / Programare online” și butonul asistentului se ascund cât timp meniul e deschis.
+- După o actualizare, paginile siteului păstrate în cache se generează din nou, cu stilurile versiunii noi (înainte
+  rămâneau până la 12 ore cele vechi, așa că unele corecturi nu se vedeau imediat). Așa apar și corecturile din
+  0.9.3 pentru telefon: de exemplu, fotografiile medicilor de pe „Echipa noastră” nu mai sunt întinse.
+
 ## [0.9.4] — 2026-10-28
 
 Se poate instala direct peste 0.9.1, 0.9.2 sau 0.9.3 (conține toate corecturile din 0.9.2 și 0.9.3).

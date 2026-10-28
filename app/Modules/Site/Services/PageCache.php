@@ -14,7 +14,9 @@ final class PageCache
 
     public static function key(string $path): string
     {
-        return 'site.page.'.self::version().'.'.sha1($path);
+        // Versiunea aplicației face parte din cheie: după o actualizare, paginile se generează din nou, cu stilurile
+        // și scripturile noi (altfel rămâneau până la 12 ore cele vechi).
+        return 'site.page.'.config('sevalia.version').'.'.self::version().'.'.sha1($path);
     }
 
     public static function version(): int
