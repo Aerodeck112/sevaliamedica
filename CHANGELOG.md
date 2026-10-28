@@ -3,6 +3,22 @@
 Formatul: o secțiune `## [versiune] — dată` pentru fiecare release. Textul secțiunii este inclus în pachetul de
 actualizare și afișat administratorului înainte de instalare.
 
+## [0.9.4] — 2026-10-28
+
+Se poate instala direct peste 0.9.1, 0.9.2 sau 0.9.3 (conține toate corecturile din 0.9.2 și 0.9.3).
+
+- Corectură importantă pentru actualizări pe cPanel: la pasul „Verificări de funcționare”, actualizatorul pornea un
+  proces PHP separat; pe hostingurile LiteSpeed/PHP-FPM acela nu este PHP CLI și se putea bloca, iar siteul rămânea
+  în mentenanță (eroare 503). Acum noul cod se verifică direct, în prima cerere servită de el (bază de date,
+  migrări, stocare); procesul separat se folosește doar din linia de comandă, cu limită de timp.
+- O eroare fatală în timpul unui pas (ex. timpul maxim de execuție al hostingului) nu mai lasă actualizarea „în curs”:
+  pasul se marchează eșuat și se aplică regulile obișnuite (dacă baza de date nu a fost modificată, codul revine
+  automat la versiunea anterioară și siteul iese din mentenanță).
+- Actualizare blocată (fila închisă, proces oprit de hosting): după 5 minute fără progres pagina nu mai reîncearcă
+  singură și oferă „Continuă” sau „Oprește actualizarea blocată”.
+- Pentru instalările rămase blocate în 0.9.2: `repara-actualizare.php` (se încarcă în public_html, se deschide o dată
+  cu cheia de recuperare, finalizează sau anulează actualizarea blocată și se șterge singur).
+
 ## [0.9.3] — 2026-10-28
 
 Se poate instala direct peste 0.9.1 sau 0.9.2 (conține și corecturile din 0.9.2).

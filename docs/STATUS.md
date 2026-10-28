@@ -52,7 +52,10 @@ locală) · **testat staging** (pe hostingul clinicii) · **verificat cu servici
 | Backup verificat obligatoriu înainte de instalare | da | da | nu | — | — |
 | Revenire automată a codului (eșec înainte de migrări, health check eșuat) | da | da | nu | — | — |
 | Migrare eșuată: BD neatinsă automat, opțiuni explicite, restaurare exactă din backup | da | da (test + simulare cu pachet real 0.2.1) | nu | — | — |
-| Health check al noului cod în proces separat (`sevalia:health`) | da | da (simulare: proc_open real) | nu | — | proc_open pe hosting de verificat |
+| Health check al noului cod: în cererea web servită de noul cod (în proces); din CLI în proces separat (`sevalia:health`, limită 30 s) | da | da (teste: verificare amânată, cod nou neservit → revenire) | parțial: pe sevalia.ro, 0.9.2 a rămas blocată la vechea verificare în proces separat (LiteSpeed) | — | confirmarea pe hosting la instalarea 0.9.4 |
+| Eroare fatală într-un pas (timp maxim de execuție) → pas eșuat + regulile obișnuite de revenire | da | da (test) | nu | — | — |
+| Actualizare blocată (fără progres 5 min): fără reîncercare automată, „Oprește actualizarea blocată” | da | da (teste) | nu | — | — |
+| `repara-actualizare.php` (deblocare unică pentru ≤ 0.9.3, cu cheia de recuperare: finalizare verificată sau revenire fără migrări) | da | da (simulare: finalizare, revenire, cheie greșită, autoștergere) | nu | — | rularea pe sevalia.ro |
 | Actualizare peste o versiune cu date existente (date CMS/tarife păstrate) | da | da (test + simulare 0.1.0 → 0.2.0) | nu | — | — |
 | Front controller `public_html/index.php` fără symlinkuri, `.htaccess` | da | da (simulare cu serverul PHP încorporat) | nu | — | comportamentul Apache/LiteSpeed real |
 | Lansator stabil `<deploy>/artisan` pentru cron | da | da (simulare) | nu | — | — |

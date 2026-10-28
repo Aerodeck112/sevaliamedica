@@ -62,6 +62,12 @@ return [
     // Health check HTTP după activare (opțional; pe unele hostinguri cererile loopback sunt blocate).
     'health_url' => env('SEVALIA_HEALTH_URL'),
 
+    // Timp maxim pentru verificarea noului cod rulată din CLI într-un proces separat (secunde).
+    'health_timeout' => 30,
+
+    // După câte minute fără progres o actualizare „în curs” este considerată blocată (se poate opri din panou).
+    'stall_minutes' => 5,
+
     'backup' => [
         // Câte backupuri reușite se păstrează, pe tip.
         'retain' => [

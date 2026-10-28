@@ -44,7 +44,7 @@ class EnvironmentReport
         foreach (['proc_open', 'exec', 'shell_exec', 'symlink'] as $fn) {
             $off = in_array($fn, $disabled, true) || ! function_exists($fn);
             $add('Funcții', $fn, $off ? 'dezactivată' : 'disponibilă', $off ? 'warn' : 'ok',
-                $fn === 'proc_open' ? 'folosită pentru verificarea noului cod după actualizare (opțională)' : 'nu este necesară');
+                $fn === 'proc_open' ? 'folosită doar de actualizările rulate din linia de comandă (opțională)' : 'nu este necesară');
         }
         $add('Funcții', 'opcache', function_exists('opcache_get_status') && @opcache_get_status(false) ? 'activ' : 'inactiv', 'ok');
 

@@ -67,6 +67,7 @@ class UpdateController extends Controller
             'next' => $this->runner->nextStep($run),
             'restoring' => ($run->steps['restore_db']['status'] ?? null) === 'running',
             'maintenance' => app()->isDownForMaintenance(),
+            'stalled' => $this->runner->isStalled($run),
         ]);
     }
 
@@ -86,6 +87,9 @@ class UpdateController extends Controller
     public function advance(string $uuid): RedirectResponse
     {
         $run = UpdateRun::where('uuid', $uuid)->firstOrFail();
+        // Pasul nu se oprește la jumătate dacă fila se închide; timpul de lucru e limitat oricum de bugetul pasului.
+        ignore_user_abort(true);
+        @set_time_limit(max(120, (int) ini_get('max_execution_time')));
         try {
             $this->runner->advance($run);
         } catch (Throwable $e) {
@@ -118,6 +122,7 @@ class UpdateController extends Controller
         Audit::log('updates.recovery_action', $run, ['actiune' => $data['action']]);
         try {
             match ($data['action']) {
+                'abandon' => $this->runner->abandon($run),
                 'retry' => $this->runner->retry($run),
                 'restore_db' => $this->runner->restoreDatabase($run),
                 'rollback_code' => $this->runner->rollbackCode($run),

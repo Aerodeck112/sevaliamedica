@@ -4,6 +4,7 @@ namespace Tests\Feature\Updates;
 
 use App\Modules\Updates\Models\UpdateRun;
 use App\Modules\Updates\Support\DiskSpace;
+use App\Modules\Updates\Support\HealthChecker;
 use App\Modules\Updates\Updater\UpdateRunner;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
@@ -250,5 +251,96 @@ class UpdateFlowTest extends TestCase
         config(['updates.deploy_path' => null]);
         $run = $this->runner()->prepare($this->buildPackage('0.2.0'));
         $this->assertSame('fail', collect($run->preflight)->firstWhere('key', 'layout')['status']);
+    }
+
+    /** Verificarea noului cod amânată (cererea web servită încă de codul vechi) se reia la apelul următor. */
+    public function test_pending_health_check_continues_on_next_request(): void
+    {
+        $this->sequenceHealth([true, true]);
+        $run = $this->runner()->runToEnd($this->runner()->start($this->runner()->prepare($this->buildPackage('0.2.0'))));
+
+        $this->assertSame('completed', $run->status, (string) $run->error);
+        $this->assertSame(2, $run->step('health')['data']['waits']);
+        $this->assertSame('0.2.0', $this->pointer()['release']);
+    }
+
+    public function test_health_check_never_served_by_new_code_reverts(): void
+    {
+        $this->sequenceHealth(array_fill(0, 10, true));
+        $run = $this->runner()->runToEnd($this->runner()->start($this->runner()->prepare($this->buildPackage('0.2.0'))));
+
+        $this->assertSame('rolled_back', $run->status, (string) $run->error);
+        $this->assertSame('0.1.0', $this->pointer()['release']);
+        $this->assertFalse(app()->isDownForMaintenance());
+    }
+
+    public function test_stalled_update_can_be_stopped_and_leaves_maintenance(): void
+    {
+        $runner = $this->runner();
+        $run = $runner->start($runner->prepare($this->buildPackage('0.2.0')));
+        while (! $run->stepDone('verify_backup')) {
+            $run = $runner->advance($run);
+        }
+        $this->assertTrue(app()->isDownForMaintenance());
+        $this->assertSame([], $runner->recoveryOptions($run));
+
+        UpdateRun::whereKey($run->id)->toBase()->update(['updated_at' => now()->subMinutes(12)]);
+        $run->refresh();
+        $this->assertTrue($runner->isStalled($run));
+        $this->assertArrayHasKey('abandon', $runner->recoveryOptions($run));
+
+        $run = $runner->abandon($run);
+        $this->assertSame('rolled_back', $run->status, (string) $run->error);
+        $this->assertNull($run->active_slot);
+        $this->assertSame('failed', $run->step('copy_release')['status']);
+        $this->assertSame('0.1.0', $this->pointer()['release']);
+        $this->assertFalse(app()->isDownForMaintenance());
+        $this->assertDirectoryDoesNotExist($this->deployRoot.'/releases/0.2.0');
+    }
+
+    public function test_running_update_is_not_stopped_while_it_progresses(): void
+    {
+        $runner = $this->runner();
+        $run = $runner->advance($runner->start($runner->prepare($this->buildPackage('0.2.0'))));
+        $this->assertFalse($runner->isStalled($run));
+        $this->expectException(RuntimeException::class);
+        $runner->abandon($run);
+    }
+
+    public function test_fatal_error_after_activation_reverts_code(): void
+    {
+        $runner = $this->runner();
+        $run = $runner->start($runner->prepare($this->buildPackage('0.2.0')));
+        while (! $run->stepDone('activate')) {
+            $run = $runner->advance($run);
+        }
+        $this->assertSame('0.2.0', $this->pointer()['release']);
+
+        // Ce face gardianul de oprire când procesul moare în pasul „health” (ex. timp maxim de execuție depășit).
+        $runner->failAfterFatal($run, 'health', 'Maximum execution time of 30 seconds exceeded');
+        $run->refresh();
+
+        $this->assertSame('rolled_back', $run->status, (string) $run->error);
+        $this->assertStringContainsString('Eroare fatală PHP', $run->error);
+        $this->assertSame('0.1.0', $this->pointer()['release']);
+        $this->assertFalse(app()->isDownForMaintenance());
+    }
+
+    /** @param list<bool> $pending câte apeluri întorc „se verifică la cererea următoare” */
+    private function sequenceHealth(array $pending): void
+    {
+        $this->app->instance(HealthChecker::class, new class($pending) implements HealthChecker
+        {
+            public function __construct(private array $pending) {}
+
+            public function check(string $releasePath, string $expectedVersion): array
+            {
+                if (array_shift($this->pending)) {
+                    return [['check' => 'pornirea noului cod', 'ok' => false, 'pending' => true, 'detail' => 'amânat']];
+                }
+
+                return [['check' => 'pornirea noului cod', 'ok' => true, 'detail' => '']];
+            }
+        });
     }
 }

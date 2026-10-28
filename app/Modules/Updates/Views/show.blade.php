@@ -28,8 +28,12 @@
         <div class="stack">
             @if ($run->status === 'running' || $restoring)
                 <x-panou.panel title="{{ $restoring ? 'Restaurarea bazei de date' : 'Instalare în curs' }}">
-                    <p>Pasul curent: <strong>{{ $restoring ? 'restaurare din backup' : (UpdateRun::STEPS[$next] ?? '—') }}</strong>. Pagina continuă automat; dacă se oprește (ex. conexiune întreruptă), apăsați butonul — pașii se reiau de unde au rămas.</p>
-                    <form method="post" action="{{ $restoring ? route('panou.updates.restore.continue', $run->uuid) : route('panou.updates.advance', $run->uuid) }}" data-module="autosubmit" data-delay="700">
+                    @if ($stalled && ! $restoring)
+                        <p>Pasul curent: <strong>{{ UpdateRun::STEPS[$next] ?? '—' }}</strong>. Actualizarea nu a mai avansat de la {{ $run->updated_at->timezone(config('app.timezone'))->format('H:i') }} (fila a fost închisă sau hostingul a oprit procesul). Apăsați <strong>Continuă</strong>; dacă nici așa nu avansează, folosiți „Oprește actualizarea blocată” de mai jos.</p>
+                    @else
+                        <p>Pasul curent: <strong>{{ $restoring ? 'restaurare din backup' : (UpdateRun::STEPS[$next] ?? '—') }}</strong>. Pagina continuă automat; dacă se oprește (ex. conexiune întreruptă), apăsați butonul — pașii se reiau de unde au rămas.</p>
+                    @endif
+                    <form method="post" action="{{ $restoring ? route('panou.updates.restore.continue', $run->uuid) : route('panou.updates.advance', $run->uuid) }}" @unless ($stalled && ! $restoring) data-module="autosubmit" data-delay="700" @endunless>
                         @csrf
                         <button class="btn btn--primary" type="submit"><x-panou.icon name="refresh" />Continuă</button>
                     </form>

@@ -161,6 +161,17 @@ class UpdateRunner
             $state['status'] = 'running';
             $this->saveStep($run, $step, $state);
 
+            // O eroare fatală (ex. timpul maxim de execuție al hostingului) nu ajunge în catch: fără acest gardian,
+            // pasul ar rămâne „în curs” la nesfârșit, cu aplicația în mentenanță.
+            $guard = new \stdClass;
+            $guard->armed = true;
+            register_shutdown_function(function () use ($guard, $run, $step) {
+                $error = error_get_last();
+                if ($guard->armed && $error && in_array($error['type'], [E_ERROR, E_CORE_ERROR, E_COMPILE_ERROR, E_PARSE, E_USER_ERROR], true)) {
+                    $this->failAfterFatal($run, $step, $error['message']);
+                }
+            });
+
             try {
                 $data = $state['data'] ?? [];
                 $done = $this->{'step'.Str::studly($step)}($run, $data, $deadline);
@@ -178,6 +189,8 @@ class UpdateRunner
                 $state['finished_at'] = gmdate('c');
                 $this->saveStep($run, $step, $state);
                 $this->handleFailure($run, $step, $e);
+            } finally {
+                $guard->armed = false;
             }
 
             if ($run->status === 'running' && $this->nextStep($run) === null) {
@@ -461,6 +474,21 @@ class UpdateRunner
     {
         $results = $this->health->check($this->layout->releasesPath($run->to_version), $run->to_version);
         $data['results'] = $results;
+        // Cererea curentă rulează încă din codul vechi: verificarea se face la cererea următoare (de câteva ori, apoi
+        // se consideră eșuată, fiindcă înseamnă că noul cod nu este servit).
+        $pending = array_filter($results, fn ($r) => ! empty($r['pending']));
+        if ($pending && count(array_filter($results, fn ($r) => ! $r['ok'] && empty($r['pending']))) === 0) {
+            $data['waits'] = ($data['waits'] ?? 0) + 1;
+            if ($data['waits'] <= 3) {
+                return false;
+            }
+            foreach ($results as $i => $r) {
+                if (! empty($r['pending'])) {
+                    $results[$i]['detail'] = 'aplicația nu rulează din versiunea nouă după activare (current.json necitit?)';
+                }
+            }
+            $data['results'] = $results;
+        }
         $failed = array_filter($results, fn ($r) => ! $r['ok']);
         if ($failed) {
             throw new RuntimeException('Verificările de funcționare au eșuat: '.implode('; ', array_map(fn ($r) => $r['check'].' ('.$r['detail'].')', $failed)));
@@ -543,13 +571,74 @@ class UpdateRunner
         Audit::log('updates.failed', $run, ['pas' => $step, 'eroare' => mb_substr($e->getMessage(), 0, 300)]);
     }
 
+    /** Pasul a fost întrerupt de o eroare fatală PHP (apelat la oprirea procesului). */
+    public function failAfterFatal(UpdateRun $run, string $step, string $message): void
+    {
+        try {
+            $run->refresh();
+            if ($run->status !== 'running') {
+                return;
+            }
+            $state = $run->step($step);
+            $state['status'] = 'failed';
+            $state['error'] = mb_substr('Eroare fatală PHP: '.$message, 0, 1500);
+            $state['finished_at'] = gmdate('c');
+            $this->saveStep($run, $step, $state);
+            $this->handleFailure($run, $step, new RuntimeException('Eroare fatală PHP la pasul „'.(UpdateRun::STEPS[$step] ?? $step).'”: '.mb_substr($message, 0, 500)));
+        } catch (Throwable) {
+            // Procesul se oprește oricum; actualizarea rămâne „în curs” și poate fi oprită din panou (abandon()).
+        }
+    }
+
+    /** Actualizare „în curs” care nu a mai avansat de câteva minute (fila închisă, proces oprit de hosting). */
+    public function isStalled(UpdateRun $run): bool
+    {
+        return $run->status === 'running' && $run->updated_at !== null
+            && $run->updated_at->lt(now()->subMinutes((int) config('updates.stall_minutes', 5)));
+    }
+
     /**
-     * Opțiunile reale de recuperare pentru o actualizare eșuată.
+     * Oprește o actualizare blocată: pasul curent se marchează eșuat și se aplică aceleași reguli ca la orice eșec
+     * (dacă baza nu a fost modificată, codul revine la versiunea anterioară și aplicația iese din mentenanță).
+     */
+    public function abandon(UpdateRun $run): UpdateRun
+    {
+        $lock = $this->acquireLock();
+        try {
+            $run->refresh();
+            if (! $this->isStalled($run)) {
+                throw new RuntimeException('Actualizarea nu este blocată: continuați-o cu butonul „Continuă”.');
+            }
+            $step = $this->nextStep($run) ?? 'cleanup';
+            $since = $run->updated_at->timezone(config('app.timezone'))->format('d.m.Y H:i');
+            $state = $run->step($step);
+            $state['status'] = 'failed';
+            $state['error'] = "Oprit manual: pasul nu a mai avansat din {$since}.";
+            $state['finished_at'] = gmdate('c');
+            $this->saveStep($run, $step, $state);
+            $this->handleFailure($run, $step, new RuntimeException('Actualizarea a fost oprită manual: pasul „'.(UpdateRun::STEPS[$step] ?? $step)."” nu a mai avansat din {$since}."));
+            Audit::log('updates.abandoned', $run, ['pas' => $step]);
+
+            return $run;
+        } finally {
+            $this->releaseLock($lock);
+        }
+    }
+
+    /**
+     * Opțiunile reale de recuperare pentru o actualizare eșuată sau blocată.
      *
      * @return array<string, array{label: string, detail: string, danger: bool}>
      */
     public function recoveryOptions(UpdateRun $run): array
     {
+        if ($this->isStalled($run)) {
+            return ['abandon' => [
+                'label' => 'Oprește actualizarea blocată',
+                'detail' => 'Folosiți doar dacă „Continuă” nu mai avansează. Pasul curent se marchează eșuat; dacă baza de date nu a fost modificată, codul revine automat la versiunea anterioară și siteul iese din mentenanță.',
+                'danger' => false,
+            ]];
+        }
         if ($run->status !== 'failed') {
             return [];
         }

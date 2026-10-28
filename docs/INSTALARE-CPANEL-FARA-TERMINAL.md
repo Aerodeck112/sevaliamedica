@@ -56,4 +56,5 @@ cPanel → **MultiPHP INI Editor** → `upload_max_filesize` și `post_max_size`
 | „Lipsește directorul sevalia” / „Pachetul nu a fost găsit” | Arhiva a fost dezarhivată în alt director; `sevalia/` trebuie să fie lângă `public_html/`. |
 | Eroare la conectarea bazei | Verificați că utilizatorul e **adăugat la bază** cu ALL PRIVILEGES (pasul 1). Numele au prefixul contului (`cont_`). |
 | Importul se oprește | Apăsați „Reia importul”: continuă de unde a rămas. |
+| Eroare 503 („Service Unavailable”) după o actualizare | Actualizarea nu s-a încheiat și siteul a rămas în mentenanță. Panou → Actualizări → deschideți actualizarea: „Continuă” sau „Oprește actualizarea blocată”. Pentru 0.9.2–0.9.3 rămase blocate la „Verificări de funcționare”: încărcați `repara-actualizare.php` în `public_html`, deschideți `https://<domeniu>/repara-actualizare.php`, cheia de recuperare → „Finalizează actualizarea”. |
 | Pagina albă / eroare 500 după instalare | `https://<domeniu>/recovery.php` cu cheia de recuperare; jurnalul: `sevalia/shared/storage/logs/`. |

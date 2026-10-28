@@ -131,4 +131,35 @@ class UpdatePanelTest extends TestCase
         $this->assertIsArray($json);
         $this->assertArrayHasKey('checks', $json);
     }
+
+    /** Procesul care rulează deja din versiunea verificată o verifică pe loc, fără să pornească alt PHP. */
+    public function test_release_health_checks_running_code_in_process(): void
+    {
+        $results = app(\App\Modules\Updates\Support\ReleaseHealthChecker::class)
+            ->check(base_path(), trim((string) file_get_contents(base_path('VERSION'))));
+        $boot = collect($results)->firstWhere('check', 'pornirea noului cod');
+
+        $this->assertNotNull($boot, json_encode($results, JSON_UNESCAPED_UNICODE));
+        $this->assertTrue($boot['ok'], $boot['detail']);
+        $this->assertEmpty($boot['pending'] ?? null);
+    }
+
+    public function test_stalled_update_page_does_not_resubmit_automatically(): void
+    {
+        $this->actingAsRole(Roles::ADMIN_TEHNIC);
+        $run = app(\App\Modules\Updates\Updater\UpdateRunner::class)->prepare($this->buildPackage('0.2.0'));
+        app(\App\Modules\Updates\Updater\UpdateRunner::class)->start($run);
+
+        $this->get(route('panou.updates.show', $run->uuid))->assertOk()->assertSee('data-module="autosubmit"', false);
+
+        UpdateRun::whereKey($run->id)->toBase()->update(['updated_at' => now()->subMinutes(20)]);
+        $this->get(route('panou.updates.show', $run->uuid))->assertOk()
+            ->assertDontSee('data-module="autosubmit"', false)
+            ->assertSee('Oprește actualizarea blocată');
+
+        $this->withRecentReauth()->post(route('panou.updates.recover', $run->uuid), ['action' => 'abandon'])->assertRedirect()->assertSessionHasNoErrors();
+        // Oprită înainte de orice modificare: eșuată, fără blocarea altor actualizări.
+        $this->assertSame('failed', $run->refresh()->status);
+        $this->assertNull($run->active_slot);
+    }
 }
