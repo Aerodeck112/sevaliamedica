@@ -1,7 +1,8 @@
 # Observații de conținut — pentru revizuirea clinicii
 
 Textele au fost importate **exact** cum apar pe site. Lista de mai jos semnalează formulări care ar merita
-revizuite. Nimic de aici nu a fost modificat; decizia aparține clinicii. Lista se completează pe măsură ce
+revizuite. La 2026-11-02 clinica a cerut corectarea lor: greșelile din secțiunea „Greșeli de exprimare / ortografie”
+sunt corectate în 0.9.7 (`App\Modules\Cms\Services\SiteFixes`), cu excepția celor marcate „deschis”. Lista se completează pe măsură ce
 paginile sunt verificate în CMS.
 
 ## Greșeli de exprimare / ortografie
@@ -49,4 +50,9 @@ paginile sunt verificate în CMS.
   Târgu Mureș; adresa exactă din Band nu există în arhivă (vezi `docs/INTREBARI.md`, secțiunea G), harta indică
   localitatea.
 - 2026-10-28: selectorul de limbă (română / English) a fost eliminat complet din antet și din meniul mobil.
+- 2026-11-02 (0.9.7, audit): H1 pe toate paginile, titluri pentru Google, corecturile de mai sus, „La [Clinică]” →
+  „La Sevalia” (Pediatrie), marcaje „[u1]” eliminate (Politica de confidențialitate, Termeni), pagini noi
+  `/neurologie`, `/dry-needling`, `/locatii`, meniul „Locații”, iconițe în buline, „Powered by Vitim”.
+- Deschis: afirmațiile din secțiunea „Afirmații care merită verificate” (decontări, „peste 1.000 de pacienți”,
+  „efecte dovedite”) și programul de vineri din pagina de confirmare — rămân neschimbate până la confirmarea clinicii.
 

@@ -25,10 +25,10 @@ class FooterChangesTest extends TestCase
         $this->assertStringContainsString('Copyright Sevalia Medica 2026', $html);
         $this->assertStringNotContainsString('2023', $html);
         $this->assertSame(3, substr_count($html, 'class="s_map '));
-        $this->assertStringContainsString('data-map-address="Band, județul Mureș"', $html);
+        $this->assertStringContainsString('data-map-address="Strada Păcii 19, 547065 Band"', $html);
         $this->assertStringContainsString('MEDICINĂ DE FAMILIE | BAND, JUD. MUREȘ', $html);
         // Harta nouă vine după a doua hartă, în aceeași coloană, care crește ca să o cuprindă.
-        $this->assertGreaterThan(strpos($html, 'Heliade'), strpos($html, 'Band, județul'));
+        $this->assertGreaterThan(strpos($html, 'Heliade'), strpos($html, 'Strada Păcii 19'));
         $this->assertStringContainsString('g-height-18" style="z-index: 3; grid-area: 1 / 8 / 19 / 13;"', $html);
         $this->assertStringEndsWith('</div></div></div></section>', $html);
         $this->assertSame($html, FooterChanges::apply($html), 'a doua aplicare nu mai schimbă nimic');
@@ -59,5 +59,17 @@ class FooterChangesTest extends TestCase
     public function test_without_footer_nothing_happens(): void
     {
         $this->assertFalse(FooterChanges::publish(app(PageService::class)));
+    }
+
+    /** Harta inserată în 0.9.6 cu localitatea primește adresa confirmată. */
+    public function test_provisional_band_map_gets_the_confirmed_address(): void
+    {
+        $old = '<section class="s_map pt56 pb128" data-map-address="Band, județul Mureș"><iframe src="https://maps.google.com/maps?q='.rawurlencode('Band, județul Mureș').'&amp;t=m&amp;z=13&amp;ie=UTF8"></iframe></section>';
+        $html = FooterChanges::apply('<p>© Copyright Sevalia Medica 2026.</p><section class="s_map x" data-map-address="a"></section>'.$old);
+
+        $this->assertStringContainsString('data-map-address="Strada Păcii 19, 547065 Band"', $html);
+        $this->assertStringContainsString('q='.rawurlencode('Strada Păcii 19, 547065 Band'), $html);
+        $this->assertStringNotContainsString('Band, județul Mureș', $html);
+        $this->assertSame(1, substr_count($html, 'Păcii 19, 547065 Band"'), 'nu se adaugă o a doua hartă');
     }
 }

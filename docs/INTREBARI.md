@@ -77,7 +77,11 @@ flux manual de transmitere. Nicio regulă contractuală nu este activă până l
 
 ## G. Subsol și locații (adăugat 2026-10-28)
 
-1. Adresa exactă a cabinetului de medicină de familie din Band (stradă, număr). Arhiva siteului vechi spune doar
-   „sediul nostru din Band” și telefonul +40 742 281 438; harta din subsol arată deocamdată localitatea
-   („Band, județul Mureș”). Adresa se poate schimba și din panou: Site → Pagini → Subsol.
+1. ~~Adresa din Band~~ — confirmată 2026-11-02: Strada Păcii 19, 547065 Band, +40 742 281 438.
 2. Programul cabinetului din Band, ca să fie adăugat ca locație în Administrare → Locații (pentru programări).
+3. Adresa cabinetului Maurer: în Locații (preluată de pe pagina de contact) apare „str. Ion Heliade Rădulescu B26
+   (lângă grădiniță)”, iar harta din subsolul siteului vechi caută „str. Ion Heliade Radulescu, nr. 86”. Care este
+   corectă?
+4. Pagina nouă `/dry-needling` are doar descrierea de pe pagina Servicii; doriți un text mai amplu (indicații,
+   cum decurge ședința), scris sau validat de terapeut?
+

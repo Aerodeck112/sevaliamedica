@@ -187,18 +187,26 @@ class CmsEditorTest extends TestCase
 
     public function test_broken_internal_links_are_flagged(): void
     {
+        // Linkurile rupte ale siteului vechi (ex. /neurologie) au fost reparate la auditul din 2026-11: unul nou.
+        $page = Page::where('path', '/servicii')->firstOrFail();
+        $service = app(PageService::class);
+        $blocks = $page->publishedVersion->blocks;
+        $blocks[0]['html'] .= '<p><a href="/cardiologie-adulti">Cardiologie</a></p>';
+        $service->publish($page->fresh(), $service->saveVersion($page, $blocks, (array) $page->publishedVersion->seo, [], null, null), null);
+        \App\Modules\Cms\Models\MenuItem::create(['menu' => 'header', 'label' => 'Test', 'url' => '/pagina-lipsa', 'kind' => 'link', 'is_visible' => true, 'new_tab' => false, 'sort' => 99]);
+
         $this->actingAsRole(Roles::EDITOR_SITE);
-        $this->get(route('panou.cms.pages.index'))->assertOk()->assertSee('/neurologie')->assertSee('Linkuri interne către pagini inexistente');
+        $this->get(route('panou.cms.pages.index'))->assertOk()->assertSee('/cardiologie-adulti')->assertSee('Linkuri interne către pagini inexistente');
         $this->get(route('panou.cms.menus.index'))->assertOk()->assertSee('link către pagină inexistentă');
     }
 
     public function test_create_page_and_reserved_paths(): void
     {
         $this->actingAsRole(Roles::EDITOR_SITE);
-        $this->post(route('panou.cms.pages.store'), ['title' => 'Neurologie', 'path' => '/neurologie'])->assertRedirect();
-        $page = Page::where('path', '/neurologie')->firstOrFail();
+        $this->post(route('panou.cms.pages.store'), ['title' => 'Cardiologie', 'path' => '/cardiologie-adulti'])->assertRedirect();
+        $page = Page::where('path', '/cardiologie-adulti')->firstOrFail();
         $this->assertSame('draft', $page->status);
-        $this->get('/neurologie')->assertNotFound();
+        $this->get('/cardiologie-adulti')->assertNotFound();
 
         $this->post(route('panou.cms.pages.store'), ['title' => 'X', 'path' => '/panou/x'])->assertSessionHasErrors('path');
         $this->post(route('panou.cms.pages.store'), ['title' => 'X', 'path' => '/kinetoterapie'])->assertSessionHasErrors('path');

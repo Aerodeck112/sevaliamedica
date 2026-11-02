@@ -26,7 +26,7 @@ class SiteView
         $settings = (array) ($version->settings ?? []);
         // Schițele anatomice se adaugă peste conținut; JSON-LD și descrierea se calculează din conținutul original.
         $content = $rendered['main'];
-        $rendered['main'] = A11y::fix($this->anatomy->decorate($rendered['main'], $page->path));
+        $rendered['main'] = A11y::fix(SiteIcons::fix($this->anatomy->decorate($rendered['main'], $page->path)));
         if ($page->path === '/') {
             $rendered['main'] = $this->anatomy->withBodyMap($rendered['main']);
         }

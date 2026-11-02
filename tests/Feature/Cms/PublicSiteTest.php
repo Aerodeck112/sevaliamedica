@@ -48,7 +48,7 @@ class PublicSiteTest extends TestCase
     public function test_missing_page_shows_site_404(): void
     {
         $this->importSite();
-        $this->get('/neurologie')->assertNotFound()->assertSee('Nu am putut găsi pagina pe care o căutați!');
+        $this->get('/pagina-care-nu-exista')->assertNotFound()->assertSee('Nu am putut găsi pagina pe care o căutați!');
     }
 
     public function test_page_has_seo_basics_and_conditional_requests(): void

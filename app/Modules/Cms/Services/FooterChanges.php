@@ -13,16 +13,23 @@ use App\Modules\Cms\Models\Page;
  * instalări existente (migrare) și după importul arhivei la o instalare nouă. Sunt idempotente; după aplicare,
  * subsolul se editează normal din panou.
  *
- * Adresa exactă din Band nu apare în arhiva siteului vechi: harta indică localitatea („Band, județul Mureș”) până
- * când clinica o confirmă (docs/INTREBARI.md).
+ * Adresa din Band a fost confirmată de clinică la 2026-11-02 (Strada Păcii 19); harta inserată înainte cu localitatea
+ * („Band, județul Mureș”) se actualizează la adresa exactă.
  */
 final class FooterChanges
 {
-    public const BAND_ADDRESS = 'Band, județul Mureș';
+    public const BAND_ADDRESS = 'Strada Păcii 19, 547065 Band';
+
+    /** Adresa provizorie folosită în 0.9.6, până la confirmarea clinicii. */
+    private const BAND_ADDRESS_OLD = 'Band, județul Mureș';
 
     public static function apply(string $html): string
     {
         $html = preg_replace('~(Copyright\s+Sevalia\s+Medica\s+)2023~u', '${1}2026', $html) ?? $html;
+        $html = str_replace(
+            ['data-map-address="'.self::BAND_ADDRESS_OLD.'"', 'q='.rawurlencode(self::BAND_ADDRESS_OLD).'&amp;t=m&amp;z=13'],
+            ['data-map-address="'.self::BAND_ADDRESS.'"', 'q='.rawurlencode(self::BAND_ADDRESS).'&amp;t=m&amp;z=16'],
+            $html);
 
         if (! str_contains($html, 'data-map-address="'.self::BAND_ADDRESS.'"')) {
             // După ultima hartă din subsol (Pediatrie | Neurologie | Psihiatrie): sfârșitul secțiunii ei.
@@ -44,7 +51,7 @@ final class FooterChanges
     /** Aplică modificările pe subsolul publicat. Întoarce true dacă s-a publicat o versiune nouă. */
     public static function publish(PageService $pages): bool
     {
-        $footer = Page::where('path', Page::FOOTER_PATH)->first();
+        $footer = Page::where('path', Page::FOOTER_PATH)->with(['publishedVersion', 'currentVersion'])->first();
         $version = $footer?->publishedVersion ?? $footer?->currentVersion;
         if (! $footer || ! $version) {
             return false;
@@ -75,9 +82,9 @@ final class FooterChanges
         $q = rawurlencode(self::BAND_ADDRESS);
 
         return '<p><br></p><p><span class="o_small-fs"><strong><font style="color: rgb(0, 159, 174);">MEDICINĂ DE FAMILIE | BAND, JUD. MUREȘ</font></strong></span></p>'
-            .'<section class="s_map pt56 pb128" data-map-type="m" data-snippet="s_map" data-map-address="'.self::BAND_ADDRESS.'" data-name="Hartă" data-map-zoom="13">'
+            .'<section class="s_map pt56 pb128" data-map-type="m" data-snippet="s_map" data-map-address="'.self::BAND_ADDRESS.'" data-name="Hartă" data-map-zoom="16">'
             .'<div class="map_container o_not_editable">'
-            .'<iframe class="s_map_embedded o_not_editable" src="https://maps.google.com/maps?q='.$q.'&amp;t=m&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" aria-label="Hartă" loading="lazy" title="Hartă – medicina de familie Band"></iframe>'
+            .'<iframe class="s_map_embedded o_not_editable" src="https://maps.google.com/maps?q='.$q.'&amp;t=m&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed" width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" aria-label="Hartă" loading="lazy" title="Hartă – medicina de familie Band"></iframe>'
             .'<div class="s_map_color_filter"></div></div></section>';
     }
 }

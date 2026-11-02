@@ -469,3 +469,82 @@ body.sv-menu-open .sv-assist { display: none !important; }
     #wrap .row > *, #wrap .o_grid_mode > * { min-width: 0; }
     #wrap table { max-width: 100%; }
 }
+
+/* Iconițe pentru buline (SiteIcons): glifele Font Awesome 4.7 ale siteului original, în afara celor deja folosite. */
+.fa-bolt::before { content: "\f0e7"; }
+.fa-cloud::before { content: "\f0c2"; }
+.fa-child::before { content: "\f1ae"; }
+.fa-bath::before { content: "\f2cd"; }
+.fa-shower::before { content: "\f2cc"; }
+.fa-thumb-tack::before { content: "\f08d"; }
+.fa-magnet::before { content: "\f076"; }
+.fa-thermometer-half::before { content: "\f2c9"; }
+.fa-tint::before { content: "\f043"; }
+.fa-wifi::before { content: "\f1eb"; }
+.fa-crosshairs::before { content: "\f05b"; }
+.fa-hand-paper-o::before { content: "\f256"; }
+.fa-medkit::before { content: "\f0fa"; }
+.fa-plus-circle::before { content: "\f055"; }
+.fa-shield::before { content: "\f132"; }
+.fa-refresh::before { content: "\f021"; }
+.fa-heartbeat::before { content: "\f21e"; }
+.fa-hand-rock-o::before { content: "\f255"; }
+.fa-male::before { content: "\f183"; }
+.fa-align-justify::before { content: "\f039"; }
+.fa-sun-o::before { content: "\f185"; }
+.fa-fire::before { content: "\f06d"; }
+.fa-user::before { content: "\f007"; }
+.fa-wheelchair::before { content: "\f193"; }
+.fa-sitemap::before { content: "\f0e8"; }
+.fa-stethoscope::before { content: "\f0f1"; }
+.fa-cutlery::before { content: "\f0f5"; }
+.fa-comments::before { content: "\f086"; }
+.fa-file-text-o::before { content: "\f0f6"; }
+.fa-list-alt::before { content: "\f022"; }
+.fa-check-square-o::before { content: "\f046"; }
+.fa-leaf::before { content: "\f06c"; }
+
+/* Semnătura de la baza paginii. */
+.sv-powered {
+    padding: 0.6rem 1rem 0.9rem;
+    text-align: center;
+    font-size: 0.8125rem;
+    color: #5b6b6c;
+}
+
+.sv-powered a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+
+/* Meniul de pe ecrane de laptop mici și tablete în modul peisaj (992–1399 px): cele 8 elemente încap pe lățime;
+   la nevoie, meniul trece pe al doilea rând, nu iese din ecran. */
+@media (min-width: 992px) and (max-width: 1399.98px) {
+    header .navbar-expand-lg .flex-fill {
+        min-width: 0;
+    }
+
+    /* Stilul original fixează meniul pe un rând (.navbar .top_menu { flex-wrap: nowrap !important }). */
+    header .navbar-expand-lg #top_menu.top_menu {
+        flex-wrap: wrap !important;
+        row-gap: 0;
+    }
+
+    header .navbar-expand-lg #top_menu > li > .nav-link {
+        padding-inline: 0.45rem;
+        font-size: 0.875rem;
+    }
+
+    header .navbar-expand-lg .navbar-brand.logo {
+        margin-right: 1rem !important;
+    }
+}
+
+/* 1200–1399 px: încape pe un rând, cu un corp de literă puțin mai mic. */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    header .navbar-expand-lg #top_menu > li > .nav-link {
+        padding-inline: 0.3rem;
+        font-size: 0.8125rem;
+    }
+}

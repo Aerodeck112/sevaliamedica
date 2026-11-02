@@ -3,6 +3,32 @@
 Formatul: o secțiune `## [versiune] — dată` pentru fiecare release. Textul secțiunii este inclus în pachetul de
 actualizare și afișat administratorului înainte de instalare.
 
+## [0.9.7] — 2026-11-02
+
+Se poate instala direct peste 0.9.1 – 0.9.6. Auditul complet al siteului, cerut de clinică.
+
+- Locații: meniu nou „Locații” (Târgu Mureș – Unirii, Târgu Mureș – Maurer, Band) și pagina `/locatii` cu adrese,
+  telefoane, specialități și program; locația Band (Strada Păcii 19, 547065 Band, +40 742 281 438) apare în
+  Administrare → Locații, în datele structurate pentru Google și pe harta din subsol (adresa exactă).
+- Linkuri rupte (verificat automat pe toate cele 63 de pagini): `/neurologie` (din meniu și din pagina principală,
+  rupt și pe siteul vechi) are acum pagină proprie, construită din textele clinicii (cabinetul Maurer, dr. Orban
+  Emese); `/dry-needling` (din pagina Servicii) are pagină proprie.
+- Titluri H1: fiecare pagină are exact un H1 cu text (8 pagini aveau H1 gol, inclusiv hero-ul de pe Pediatrie și
+  Psihiatrie, care apărea fără titlu); paginile de servicii au H1 descriptiv, cu localitatea („Electroterapie în
+  Târgu Mureș”), afișat la fel ca înainte; corectat „ULTRASONONTERAPIE”.
+- Titluri pentru Google consecvente, cu diacritice (ex. „Contact Us” → „Contact și programări – Sevalia Târgu Mureș”).
+- Corecturi de text: „Electroterapia este o componentă a fizioterapiei care…”, „Băi galvanice”, „Duș subacval”,
+  „Târgu Mureș”, „fortificarea”, „te va contacta”, „Data nașterii”, „La [Clinică]” → „La Sevalia” (Pediatrie),
+  marcajele „[u1]” din Politica de confidențialitate și Termeni, imaginea goală din articolul despre vitamina D.
+- Bulinele din grilele de servicii și afecțiuni au iconițe potrivite (fulger, magnet, cadă, inimă, stetoscop…), în
+  locul aceleiași săgeți.
+- Butoanele „Programează o consultație” nu mai deschid o filă nouă.
+- Formularul de contact: textul acordului se poate atinge pentru bifare (verificat: validări, trimitere, solicitarea
+  ajunge în CRM la „Solicitări”).
+- Meniul pe laptopuri mici (992–1199 px) trece pe două rânduri în loc să iasă din ecran; meniul la trecerea
+  mouse-ului urmărește mai bine coborârea spre subcategorii.
+- „Powered by Vitim” la baza paginii.
+
 ## [0.9.6] — 2026-10-28
 
 Se poate instala direct peste 0.9.1 – 0.9.5.

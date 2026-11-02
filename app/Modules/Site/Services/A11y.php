@@ -6,7 +6,8 @@ namespace App\Modules\Site\Services;
  * Corecturi de accesibilitate la randare, fără schimbări vizibile față de siteul original:
  *  - nume accesibile pentru linkurile-pictogramă din subsol (rețele sociale, „Acasă”);
  *  - acordeoanele Odoo declară role="tablist"/"tab"/"tabpanel", deși sunt butoane de extindere: titlurile
- *    devin role="button", iar rolurile de tab se elimină.
+ *    devin role="button", iar rolurile de tab se elimină;
+ *  - linkurile interne (ex. „Programează o consultație” → /contactus) nu se mai deschid într-o filă nouă.
  * Conținutul din CMS rămâne neschimbat; corectura se aplică doar HTML-ului trimis vizitatorului.
  */
 final class A11y
@@ -28,6 +29,8 @@ final class A11y
         $html = preg_replace('/(<a\b[^>]*\bdata-bs-toggle="collapse"[^>]*?)\brole="tab"/i', '$1role="button"', $html);
         $html = preg_replace('/(<div\b[^>]*\bclass="[^"]*\bcollapse\b[^"]*"[^>]*?)\s+role="tabpanel"/i', '$1', $html);
         $html = preg_replace('/<div\b([^>]*?)\s+role="tabpanel"([^>]*\bclass="[^"]*\bcollapse\b)/i', '<div$1$2', $html);
+        $html = preg_replace_callback('/<a\b(?=[^>]*\bhref="\/(?!\/))[^>]*>/i',
+            fn ($m) => preg_replace('/\s+(?:target="_blank"|rel="noopener(?: noreferrer)?")/i', '', $m[0]), $html);
 
         return $html;
     }

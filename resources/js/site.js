@@ -62,14 +62,16 @@ document.addEventListener('keydown', (event) => {
 const HOVER_CLOSE_MS = 400;
 const HOVER_SWITCH_MS = 180;
 let pointer = null;
-let downAt = 0;
+const trail = [];
 document.addEventListener('mousemove', (e) => {
-    if (pointer && e.clientY > pointer[1]) downAt = performance.now();
     pointer = [e.clientX, e.clientY];
+    const now = performance.now();
+    trail.push([now, e.clientY]);
+    while (trail.length && now - trail[0][0] > 350) trail.shift();
 }, { passive: true });
-// Mouse-ul coboară (spre meniul deschis): nu se comută și nu se închide nimic pe drum, chiar dacă trece peste un
-// buton vecin.
-const movingDown = () => performance.now() - downAt < 250;
+// Mouse-ul coboară (spre meniul deschis), chiar și foarte încet sau aproape pe orizontală: nu se comută și nu se
+// închide nimic pe drum, chiar dacă trece peste un buton vecin.
+const movingDown = () => pointer !== null && trail.some(([t, y]) => performance.now() - t < 350 && y < pointer[1]);
 document.querySelectorAll('header.o_hoverable_dropdown .navbar-expand-lg .dropdown').forEach((item) => {
     const toggle = item.querySelector('[data-bs-toggle="dropdown"]');
     if (!toggle) return;

@@ -112,6 +112,8 @@ class SiteImporter
         }
         $this->linkStaffPhotos();
         $this->seedRedirects();
+        // Auditul din 2026-11 (H1, corecturi, titluri, pagini lipsă, locații, meniu) — și la o instalare nouă.
+        $this->report['audit_2026_11'] = \App\Modules\Cms\Services\SiteFixes::run(app(\App\Modules\Cms\Services\PageService::class));
         if (($logo = $this->mediaFor('/web/image/website/1/logo/sevalia.ro?unique=b2c6804')) && ! app(\App\Core\Settings\Settings::class)->get('site.logo_media_id')) {
             app(\App\Core\Settings\Settings::class)->set('site.logo_media_id', $logo->id);
         }

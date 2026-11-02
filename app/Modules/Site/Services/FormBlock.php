@@ -131,6 +131,24 @@ class FormBlock
                     }
                 }
             }
+            if ($key === 'consent') {
+                // Textul acordului (cu linkurile spre politici) devine eticheta bifei: se bifează și la atingerea
+                // textului, nu doar a pătrățelului; eticheta ascunsă „Custom Text” din Odoo nu mai e anunțată.
+                $box = $xp->query('.//input[@type="checkbox"]', $field)->item(0);
+                $desc = $xp->query('.//div[contains(@class,"s_website_form_field_description")]', $field)->item(0);
+                if ($box instanceof DOMElement && $desc instanceof DOMElement && $box->getAttribute('id') !== '') {
+                    $label = $doc->createElement('label');
+                    $label->setAttribute('for', $box->getAttribute('id'));
+                    $label->setAttribute('class', $desc->getAttribute('class').' form-check-label');
+                    while ($desc->firstChild) {
+                        $label->appendChild($desc->firstChild);
+                    }
+                    $desc->parentNode->replaceChild($label, $desc);
+                    foreach (iterator_to_array($xp->query('.//label[contains(@class,"s_website_form_label")]', $field)) as $hidden) {
+                        $hidden->parentNode->removeChild($hidden);
+                    }
+                }
+            }
             if ($this->errors?->has($key === 'phone_sms' ? 'phone' : $key)) {
                 $msg = $doc->createElement('div');
                 $msg->setAttribute('class', 'invalid-feedback d-block');

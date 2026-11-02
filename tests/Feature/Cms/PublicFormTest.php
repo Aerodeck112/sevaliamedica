@@ -45,12 +45,13 @@ class PublicFormTest extends TestCase
         $this->assertStringContainsString('name="'.FormToken::FIELD.'"', $html);
         $this->assertStringContainsString('name="name"', $html);
         $this->assertStringContainsString('Care e nevoia ta?', $html);
-        $this->assertStringNotContainsString('Data nasterii', $html);
+        $this->assertStringNotContainsString('Data nașterii', $html);
         $this->assertStringNotContainsString('email_to', $html);
         $this->assertStringContainsString('class="s_website_form_send btn btn-secondary btn-lg"', $html);
 
         app(Settings::class)->set('site.contact_birthdate', true);
-        $this->get('/contactus')->assertSee('Data nasterii');
+        // Eticheta corectată la auditul din 2026-11 (era „Data nasterii”).
+        $this->get('/contactus')->assertSee('Data nașterii');
     }
 
     public function test_valid_submission_becomes_a_crm_request_without_promising_a_slot(): void

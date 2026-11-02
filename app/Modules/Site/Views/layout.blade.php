@@ -52,6 +52,7 @@
         <div id="footer" class="oe_structure oe_structure_solo">
             {!! $footerHtml !!}
         </div>
+        <p class="sv-powered">Powered by <a href="https://www.vitim.ro" rel="noopener">Vitim</a></p>
     </footer>
 </div>
 @if (! empty($ctaBar))
