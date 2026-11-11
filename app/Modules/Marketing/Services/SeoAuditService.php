@@ -103,7 +103,9 @@ class SeoAuditService
         }
         try {
             $html = $this->view->page($page, $page->publishedVersion, Request::create($page->path))->render();
-            $result = $this->analyzer->analyze($html, $page->path, $base, $page->kind === Page::KIND_ARTICLE ? 'article' : 'page');
+            // Paginile marcate „informative” (contact, locații, condiții) nu au cerința de text minim a paginilor de serviciu.
+            $kind = $page->kind === Page::KIND_ARTICLE ? 'article' : (($page->publishedVersion->seo['page_role'] ?? null) === 'info' ? 'info' : 'page');
+            $result = $this->analyzer->analyze($html, $page->path, $base, $kind);
             if (empty($page->publishedVersion->seo['description']) && ($result['metrics']['description'] ?? '') !== '') {
                 $result['issues'][] = ['code' => 'desc_auto', 'severity' => 'info', 'message' => PageAnalyzer::RULES['desc_auto'][2]];
             }

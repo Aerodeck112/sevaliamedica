@@ -69,22 +69,30 @@ class PageAnalyzer
 
         $titleLen = mb_strlen($title);
         $descLen = mb_strlen($description);
-        if ($title === '') {
+        // O pagină exclusă din indexare (ex. confirmarea după formular) nu apare în Google: titlul, descrierea și H1
+        // nu se mai evaluează pentru căutare.
+        $noindex = str_contains($robots, 'noindex');
+        if ($noindex) {
+            // nimic
+        } elseif ($title === '') {
             $add('title_missing');
         } elseif ($titleLen < 30 || $titleLen > 65) {
             $add('title_length', $titleLen);
         }
-        if ($description === '') {
+        if ($noindex) {
+            // nimic
+        } elseif ($description === '') {
             $add('desc_missing');
         } elseif ($descLen < 70 || $descLen > 160) {
             $add('desc_length', $descLen);
         }
-        if (count(array_filter($h1)) === 0) {
+        if ($noindex) {
+            // nimic
+        } elseif (count(array_filter($h1)) === 0) {
             $add('h1_missing');
         } elseif (count($h1) > 1) {
             $add('h1_multiple', count($h1));
         }
-        $noindex = str_contains($robots, 'noindex');
         if ($noindex) {
             $add('noindex');
         } elseif ($canonical === '') {

@@ -1,0 +1,9 @@
+{
+  "baseUrl": "http://127.0.0.1:8000",
+  "outDir": "docs/capturi/etapa-corector-seo",
+  "shots": [
+    { "name": "01-audit-seo-buton-corector", "path": "/panou/marketing/audit-seo", "role": "manager" },
+    { "name": "02-corector-seo", "path": "/panou/marketing/audit-seo/corector", "role": "manager" },
+    { "name": "03-corector-seo-mobil", "path": "/panou/marketing/audit-seo/corector", "role": "manager", "viewport": "mobil" }
+  ]
+}

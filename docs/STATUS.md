@@ -91,6 +91,7 @@ Modul „kiosk” al tabletei (fixarea aplicației/browserului pe ecran) se conf
 | Funcționalitate | Implementat | Testat local | Testat staging | Verificat cu serviciul extern | Blocat de acces/date |
 |---|---|---|---|---|---|
 | Audit SEO automat al tuturor paginilor publicate (noaptea, pe loturi din cron; manual din panou) | ✅ | ✅ (teste + rulare reală pe 62 de pagini: scor 95) | ❌ | — | — |
+| Corector SEO: propuneri pentru titluri, descrieri, noindex pe confirmări, pagini informative; aplicare cu istoric și re-audit; sarcini pentru ce cere conținut | ✅ | ✅ (teste + aplicare pe copia siteului: 97 → 100, 3 erori → 0; 5 pagini de servicii cer text) | ❌ | — | text de la clinică pentru /dry-needling, /neurologie, /recuperare-medicala-mures, /medicina-de-familie-band-mures, /ghid-intrebari-medicina-interna |
 | Verificări: titlu, descriere, H1, canonical, limbă, alt, linkuri rupte, trimiteri la siteul vechi, JSON-LD, text puțin, duplicate | ✅ | ✅ | ❌ | — | — |
 | Cuvinte cheie urmărite (22 implicite, cerute de clinică) cu potrivire în titlu/H1/descriere/text | ✅ | ✅ | ❌ | — | — |
 | Istoric și evoluția scorului, widget pe ecranul principal | ✅ | ✅ | ❌ | — | — |

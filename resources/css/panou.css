@@ -1166,3 +1166,42 @@ body.auth {
 .seo-issues__error { color: var(--danger); }
 .seo-issues__info { color: var(--ink-3); }
 .code-copy { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .85rem; background: var(--muted-soft); padding: .35rem .5rem; border-radius: var(--radius-s); word-break: break-all; }
+
+/* Corectorul SEO pe telefon: fiecare rând devine un card (bifă, pagină, valoarea actuală, propunerea). */
+@media (max-width: 860px) {
+    .seo-fix thead {
+        display: none;
+    }
+
+    .seo-fix,
+    .seo-fix tbody,
+    .seo-fix tr,
+    .seo-fix td {
+        display: block;
+        width: 100%;
+    }
+
+    .seo-fix tr {
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .seo-fix td {
+        padding: 0.2rem 0;
+        border: 0;
+        max-width: none !important;
+        min-width: 0 !important;
+    }
+
+    .seo-fix td:first-child:has(input[type="checkbox"]) {
+        float: left;
+        width: auto;
+        margin-right: 0.6rem;
+    }
+
+    .seo-fix td:has(> .input),
+    .seo-fix td:has(> textarea) {
+        clear: both;
+    }
+}
+

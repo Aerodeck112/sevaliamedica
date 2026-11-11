@@ -11,6 +11,9 @@
     <x-panou.page-head title="Audit SEO automat"
         sub="Pilotul automat verifică în fiecare noapte toate paginile publicate: titluri, descrieri, H1, texte alternative, linkuri rupte, date structurate, trimiteri la siteul vechi și cuvintele cheie urmărite. Puteți porni oricând o verificare.">
         <x-slot:actions>
+            @can('cms.seo')
+                <a class="btn" href="{{ route('panou.marketing.seo.fix') }}"><x-panou.icon name="check" /> Corector SEO</a>
+            @endcan
             <form method="post" action="{{ route('panou.marketing.seo.start') }}">@csrf
                 <button class="btn btn--primary" type="submit"><x-panou.icon name="refresh" /> Verifică acum</button>
             </form>

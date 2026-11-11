@@ -15,6 +15,26 @@ Meniul **Marketing** din panou (permisiunile „marketing.seo” și „marketin
 - Butonul **Editează** deschide pagina în CMS. Titlul și descrierea pentru Google se schimbă din Pagină → SEO
   (textul vizibil al paginii rămâne neatins).
 
+## Corector SEO (rezolvarea erorilor)
+
+Marketing → Audit SEO → **Corector SEO** (cere drepturile „SEO” și „publicare” din CMS: manager, editor site).
+
+1. Corectorul ia problemele din ultimul audit și, unde rezolvarea e sigură, propune valoarea nouă:
+   - **titlu în Google** prea lung sau prea scurt (recomandat 30–65 de caractere): se scoate sufixul „| sevalia.ro”,
+     se taie la ultimul separator („–”, „|”, „:”) sau se completează cu „| SEVALIA Târgu Mureș”;
+   - **descriere în Google** lipsă sau peste 160 de caractere: se compune din frazele existente pe pagină
+     (70–160 de caractere), fără afirmații noi;
+   - **pagina de confirmare** după formular: exclusă din Google (noindex) — nu are ce căuta în rezultate;
+   - **pagini informative** (contact, locații, tarife, condiții): nu li se mai cere textul minim al paginilor de
+     serviciu.
+2. Fiecare propunere se poate modifica direct în căsuță (contorul arată caracterele) sau debifa.
+3. **Aplică corecturile bifate**: fiecare pagină primește o versiune nouă publicată (versiunea veche rămâne în
+   Site → Pagini → Istoric), iar auditul pornește imediat, ca scorul să se actualizeze.
+4. **De făcut manual**: ce nu se poate rezolva fără clinică — text prea puțin pe paginile de servicii (minim 250 de
+   cuvinte, scrise sau validate de specialist), codul Google Search Console și linkul Google Business.
+
+O pagină cu o ciornă nepublicată nu se corectează automat (ca să nu se piardă ciorna): se corectează din editor.
+
 ## Cuvinte cheie
 
 Lista expresiilor pentru care vreți să apară Sevalia (22 implicite, cerute de clinică), fiecare cu pagina care îi

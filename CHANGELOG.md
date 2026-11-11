@@ -3,6 +3,18 @@
 Formatul: o secțiune `## [versiune] — dată` pentru fiecare release. Textul secțiunii este inclus în pachetul de
 actualizare și afișat administratorului înainte de instalare.
 
+## [0.9.8] — 2026-11-11
+
+Se poate instala direct peste 0.9.1 – 0.9.7.
+
+- **Corector SEO** (Marketing → Audit SEO → Corector SEO): pentru erorile și avertismentele din audit propune
+  valorile noi — titluri în 30–65 de caractere, descrieri în 70–160 compuse din frazele existente pe pagină,
+  excluderea din Google a paginii de confirmare după formular, marcarea paginilor informative (contact, locații,
+  tarife) —, editabile înainte de aplicare. Un clic publică versiunile noi (cu istoric) și recalculează scorul.
+  Ce cere conținut sau date ale clinicii (text pe paginile de servicii, Search Console, Google Business) apare ca
+  listă de sarcini cu link direct. Pe siteul actual: scor 97 → 100, 3 erori → 0.
+- Auditul nu mai penalizează titlul, descrierea și H1 ale paginilor excluse din Google (noindex).
+
 ## [0.9.7] — 2026-11-02
 
 Se poate instala direct peste 0.9.1 – 0.9.6. Auditul complet al siteului, cerut de clinică.
