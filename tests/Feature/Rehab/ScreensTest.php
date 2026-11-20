@@ -16,6 +16,13 @@ use Tests\TestCase;
 /** Ecranele dosarului medical și ale recuperării se randează cu datele demonstrative, pe roluri. */
 class ScreensTest extends TestCase
 {
+    protected function setUp(): void
+    {
+        parent::setUp();
+        // Ecranele medicale și de recuperare sunt etapele 2 și 4 ale panoului (Administrare → Funcții panou).
+        app(\App\Core\Modules\PanelStages::class)->set([2, 3, 4, 5]);
+    }
+
     private function login(string $email): User
     {
         $user = User::where('email', $email)->firstOrFail();

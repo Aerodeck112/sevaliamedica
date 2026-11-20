@@ -37,6 +37,10 @@ class FormSubmissionIntake implements AppointmentIntake
             'source_url' => mb_substr($request->sourceUrl, 0, 255),
         ]);
         Audit::log('site.form.received', $submission, ['formular' => $submission->form]);
+        // Clinica primește și e-mail (aceleași adrese ca pentru solicitările din CRM).
+        app(\App\Core\Mail\RequestAlert::class)->send($reference, 'în așteptarea recepției (preluarea online din CRM este oprită; solicitarea e în Mesaje din site)', [
+            'Nume' => $request->name, 'Telefon' => $request->phone, 'E-mail' => $request->email, 'Contact preferat' => $request->preferredContact,
+        ], ! empty($request->message), \Illuminate\Support\Facades\Route::has('panou.cms.submissions.show') ? route('panou.cms.submissions.show', $submission) : null);
 
         return new IntakeResult(true, false, 'Solicitarea a fost înregistrată. Vă vom contacta pentru stabilirea programării.', $reference);
     }

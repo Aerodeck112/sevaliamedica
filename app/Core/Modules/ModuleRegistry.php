@@ -56,7 +56,12 @@ class ModuleRegistry
     public function widgetsFor(\App\Models\User $user): array
     {
         $widgets = [];
+        $stages = app(PanelStages::class);
         foreach ($this->modules as $module) {
+            // Modulele unei etape oprite (Administrare → Funcții panou) nu au carduri pe ecranul principal.
+            if (! $stages->moduleVisible($module->key())) {
+                continue;
+            }
             foreach ($module->dashboardWidgets() as $widget) {
                 if ($widget->visibleTo($user)) {
                     $widgets[] = $widget;
@@ -76,8 +81,12 @@ class ModuleRegistry
     public function navigationFor(?Authenticatable $user): array
     {
         $groups = [];
+        $stages = app(PanelStages::class);
         foreach ($this->modules as $module) {
             foreach ($module->navigation() as $item) {
+                if (! $stages->routeVisible($item->route)) {
+                    continue;
+                }
                 // O intrare a cărei rută nu există (modul incomplet) nu trebuie să blocheze întregul panou.
                 if (! \Illuminate\Support\Facades\Route::has($item->route)) {
                     continue;

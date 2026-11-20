@@ -107,6 +107,7 @@ class ModuleServiceProvider extends BaseProvider
     {
         parent::boot();
         Gate::policy(Appointment::class, AppointmentPolicy::class);
+        \Illuminate\Support\Facades\Event::listen(\App\Modules\Scheduling\Events\AppointmentRequestReceived::class, \App\Modules\Scheduling\Listeners\SendRequestAlert::class);
 
         $this->app->make(CareAccess::class)->addEvidence(new AppointmentCareEvidence);
 

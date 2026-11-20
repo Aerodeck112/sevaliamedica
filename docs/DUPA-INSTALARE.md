@@ -24,3 +24,14 @@ Ordinea recomandată. Toate se fac din browser, din panoul `https://<domeniu>/pa
     online și o întrebare la asistent.
 
 Actualizările viitoare: Administrare → Actualizări → încărcați ZIP-ul primit (backupul se face automat înainte).
+
+## Panoul pe etape și e-mailul pentru solicitări (de la 0.9.9)
+
+- La început, panoul arată doar etapa 1: Calendar, Solicitări, Personal, Program de lucru, Catalog servicii,
+  Specialități, Locații și Reguli programări (plus Utilizatori, Actualizări și Backupuri pentru administrator).
+  Celelalte funcții se activează pe rând din Administrare → **Funcții panou**.
+- Fiecare solicitare de programare de pe site pleacă și prin e-mail (implicit la office@vitim.ro). Adresele se
+  schimbă din Administrare → Reguli programări → „E-mail pentru solicitări”. Dacă e-mailurile nu ajung: verificați
+  că în cPanel există contul de e-mail al domeniului și că serverul are SMTP sau sendmail; ultima eroare de trimitere
+  apare pe aceeași pagină.
+

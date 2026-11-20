@@ -14,6 +14,11 @@
                             @if (! empty($d['hint']))<p class="field__hint field--full" style="margin-top:-.6rem">{{ $d['hint'] }}</p>@endif
                         @elseif ($d['type'] === 'select')
                             <x-panou.field :name="$d['field']" type="select" :label="$label" :value="$values[$d['key']]" :options="$d['options']" :placeholder="false" :hint="$d['hint'] ?? null" />
+                        @elseif (! empty($d['optional']))
+                            <x-panou.field :name="$d['field']" :type="$d['type']" :label="$label" :value="$values[$d['key']]" :hint="$d['hint'] ?? null" full />
+                            @if ($d['key'] === \App\Core\Mail\RequestAlert::SETTING && ($lastError = app(\App\Core\Settings\Settings::class)->get(\App\Core\Mail\RequestAlert::LAST_ERROR)))
+                                <p class="field__error field--full">Ultimul e-mail nu a putut fi trimis: {{ $lastError }}. Verificați setările de e-mail ale serverului (SMTP).</p>
+                            @endif
                         @else
                             <x-panou.field :name="$d['field']" :type="$d['type']" :label="$label" :value="$values[$d['key']]" required :hint="$d['hint'] ?? null" />
                         @endif

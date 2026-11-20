@@ -30,6 +30,15 @@ class SchedulingSettings
             'scheduling.online.enabled' => ['group' => 'Solicitări de pe site', 'label' => 'Acceptă solicitări de programare de pe site', 'type' => 'checkbox', 'default' => true, 'rules' => ['boolean']],
             'scheduling.online.auto_confirm' => ['group' => 'Solicitări de pe site', 'label' => 'Permite confirmarea automată (doar pentru serviciile marcate și intervale libere)', 'type' => 'checkbox',
                 'hint' => 'Dezactivat: toate solicitările așteaptă recepția, iar pacientul primește doar confirmarea înregistrării.', 'default' => false, 'rules' => ['boolean']],
+            \App\Core\Mail\RequestAlert::SETTING => ['group' => 'Solicitări de pe site', 'label' => 'E-mail pentru solicitări (una sau mai multe adrese, separate prin virgulă)', 'type' => 'text', 'optional' => true,
+                'hint' => 'Fiecare solicitare de programare de pe site pleacă și pe aceste adrese: nume, telefon, ce a ales pacientul și linkul spre panou. Mesajul pacientului rămâne doar în panou. Gol = fără e-mail.',
+                'default' => \App\Core\Mail\RequestAlert::DEFAULT, 'rules' => ['nullable', 'string', 'max:500', function ($attr, $value, $fail) {
+                    foreach (array_filter(array_map('trim', preg_split('/[,;\s]+/', (string) $value) ?: [])) as $email) {
+                        if (! filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                            $fail("Adresa „{$email}” nu este validă.");
+                        }
+                    }
+                }]],
             'scheduling.online.min_advance_hours' => ['group' => 'Solicitări de pe site', 'label' => 'Avans minim pentru un interval ales online', 'unit' => 'ore', 'type' => 'number', 'default' => 24, 'rules' => ['required', 'integer', 'min:0', 'max:720']],
             'scheduling.online.max_advance_days' => ['group' => 'Solicitări de pe site', 'label' => 'Cât de departe în viitor se poate alege un interval online', 'unit' => 'zile', 'type' => 'number', 'default' => 60, 'rules' => ['required', 'integer', 'min:1', 'max:365']],
             'scheduling.online.hold_minutes' => ['group' => 'Solicitări de pe site', 'label' => 'Ținerea intervalului cerut până la răspunsul recepției', 'unit' => 'minute (0 = nu se ține)', 'type' => 'number', 'default' => 0, 'rules' => ['required', 'integer', 'min:0', 'max:2880']],

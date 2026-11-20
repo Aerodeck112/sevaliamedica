@@ -145,3 +145,11 @@ telefon are derulare orizontală proprie când sunt multe coloane de personal (i
 
 Confirmate de clinică la 2026-10-25 (PHP 8.3+, SSH/Terminal, Composer, cron); **de verificat la instalare** cu
 `php artisan sevalia:install --check`. Valorile reale se notează aici după prima rulare.
+
+## Panoul pe etape și e-mailul pentru solicitări (0.9.9)
+
+| Funcționalitate | Implementat | Testat local | Testat staging | Verificat cu serviciul extern | Blocat de acces/date |
+|---|---|---|---|---|---|
+| E-mail către clinică la fiecare solicitare (CRM și „Mesaje din site”), fără mesajul liber și data nașterii; adrese configurabile | ✅ | ✅ (teste: conținut, destinatari, gol = oprit, fallback) | ❌ | ❌ | livrarea reală depinde de SMTP/sendmail pe hosting |
+| Funcții panou pe etape (meniu și carduri ascunse; etapa 1 mereu activă; audit la schimbare) | ✅ | ✅ (teste + capturi `docs/capturi/etapa-panou-simplu`) | ❌ | — | — |
+

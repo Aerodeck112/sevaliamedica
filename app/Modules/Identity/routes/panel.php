@@ -3,6 +3,7 @@
 use App\Modules\Identity\Http\Controllers\AuditController;
 use App\Modules\Identity\Http\Controllers\AuthController;
 use App\Modules\Identity\Http\Controllers\MfaController;
+use App\Modules\Identity\Http\Controllers\PanelFeaturesController;
 use App\Modules\Identity\Http\Controllers\ProfileController;
 use App\Modules\Identity\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -35,3 +36,9 @@ Route::middleware('permission:users.manage')->group(function () {
 });
 
 Route::get('audit', [AuditController::class, 'index'])->middleware('permission:audit.view')->name('audit.index');
+
+// Funcțiile panoului pe etape (Administrare → Funcții panou).
+Route::middleware('permission:settings.manage')->group(function () {
+    Route::get('functii-panou', [PanelFeaturesController::class, 'edit'])->name('features.edit');
+    Route::put('functii-panou', [PanelFeaturesController::class, 'update'])->name('features.update');
+});

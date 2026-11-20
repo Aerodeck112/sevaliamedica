@@ -3,6 +3,22 @@
 Formatul: o secțiune `## [versiune] — dată` pentru fiecare release. Textul secțiunii este inclus în pachetul de
 actualizare și afișat administratorului înainte de instalare.
 
+## [0.9.9] — 2026-11-20
+
+Se poate instala direct peste 0.9.1 – 0.9.8.
+
+- **E-mail la fiecare solicitare de programare** de pe site (formularul de contact, programarea online, inclusiv
+  cele confirmate automat și cele păstrate în „Mesaje din site”) către **office@vitim.ro**. Adresele se schimbă din
+  Administrare → Reguli programări → „E-mail pentru solicitări” (mai multe, separate prin virgulă; gol = fără
+  e-mail). E-mailul conține numele, telefonul, e-mailul, contactul preferat, specialitatea/medicul/serviciul ales și
+  linkul spre panou; mesajul liber al pacientului (poate conține informații medicale) și data nașterii rămân doar
+  în panou. Trimiterea folosește SMTP-ul configurat la instalare sau, dacă lipsește, programul de e-mail al
+  serverului cPanel; o eroare de trimitere apare pe pagina Reguli programări.
+- **Panoul pe etape** (Administrare → Funcții panou): implicit doar etapa 1 — echipa, serviciile, programările și
+  solicitările. Celelalte (pacienți și comunicare; site și marketing; medical și recuperare; rapoarte și control)
+  se activează când clinica e pregătită. O etapă oprită ascunde doar meniul și cardurile de pe ecranul principal;
+  datele, drepturile și linkurile dintre pagini rămân.
+
 ## [0.9.8] — 2026-11-11
 
 Se poate instala direct peste 0.9.1 – 0.9.7.
