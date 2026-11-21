@@ -2,6 +2,7 @@
 
 use App\Modules\Identity\Http\Controllers\AuditController;
 use App\Modules\Identity\Http\Controllers\AuthController;
+use App\Modules\Identity\Http\Controllers\MailCheckController;
 use App\Modules\Identity\Http\Controllers\MfaController;
 use App\Modules\Identity\Http\Controllers\PanelFeaturesController;
 use App\Modules\Identity\Http\Controllers\ProfileController;
@@ -41,4 +42,7 @@ Route::get('audit', [AuditController::class, 'index'])->middleware('permission:a
 Route::middleware('permission:settings.manage')->group(function () {
     Route::get('functii-panou', [PanelFeaturesController::class, 'edit'])->name('features.edit');
     Route::put('functii-panou', [PanelFeaturesController::class, 'update'])->name('features.update');
+    Route::get('verificare-email', [MailCheckController::class, 'show'])->name('mail-check');
+    Route::put('verificare-email/server', [MailCheckController::class, 'saveSmtp'])->middleware('reauth')->name('mail-check.smtp');
+    Route::post('verificare-email/test', [MailCheckController::class, 'test'])->middleware('throttle:10,1')->name('mail-check.test');
 });

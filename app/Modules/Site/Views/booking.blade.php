@@ -136,8 +136,8 @@
                                     <span>Sunt de acord cu prelucrarea datelor pentru programare, conform <a href="/politica-de-confidentialitate" target="_blank" rel="noopener">politicii de confidențialitate</a>.</span>
                                 </label>
                                 @if ($err->has('consent'))<p class="sv-booking__error">{{ $err->first('consent') }}</p>@endif
-                                <button type="submit" class="btn btn-primary sv-booking__submit">Trimite programarea</button>
-                                <p class="sv-booking__hint">Veți vedea imediat dacă intervalul este confirmat sau dacă vă contactează recepția pentru confirmare.</p>
+                                <button type="submit" class="btn btn-primary sv-booking__submit">Trimite solicitarea</button>
+                                <p class="sv-booking__hint">Aceasta este o solicitare: recepția vă contactează pentru confirmarea programării.</p>
                             </form>
                         </li>
                     @endif

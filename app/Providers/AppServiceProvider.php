@@ -23,5 +23,10 @@ class AppServiceProvider extends ServiceProvider
 
         // În dezvoltare și teste semnalăm accesul leneș la relații și atributele inexistente.
         Model::shouldBeStrict(! $this->app->isProduction());
+
+        // Serverul de e-mail configurat din panou (Administrare → Verificare e-mail) are prioritate față de .env.
+        if (! $this->app->runningUnitTests()) {
+            $this->app->make(\App\Core\Mail\MailSettings::class)->apply();
+        }
     }
 }

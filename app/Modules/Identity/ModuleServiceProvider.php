@@ -40,6 +40,7 @@ class ModuleServiceProvider extends BaseProvider
             new NavItem('Utilizatori', 'panou.users.index', 'users.manage', 'Administrare', 'users', 10),
             new NavItem('Jurnal de audit', 'panou.audit.index', 'audit.view', 'Administrare', 'shield', 20),
             new NavItem('Funcții panou', 'panou.features.edit', 'settings.manage', 'Administrare', 'layers', 11),
+            new NavItem('Verificare e-mail', 'panou.mail-check', 'settings.manage', 'Administrare', 'send', 12),
         ];
     }
 }

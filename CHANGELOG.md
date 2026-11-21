@@ -3,6 +3,17 @@
 Formatul: o secțiune `## [versiune] — dată` pentru fiecare release. Textul secțiunii este inclus în pachetul de
 actualizare și afișat administratorului înainte de instalare.
 
+## [0.9.10] — 2026-11-21
+
+Se poate instala direct peste 0.9.1 – 0.9.9.
+
+- **Verificare e-mail** (Administrare → Verificare e-mail): arată dacă e-mailurile pleacă și, dacă nu, de ce
+  (mod aplicație, lipsa serverului de e-mail), adresele care primesc solicitările, ultimele 30 de trimiteri cu
+  rezultatul și eroarea exactă, și un buton „Trimite testul”. Serverul de e-mail (SMTP: server, port, criptare,
+  utilizator, parolă, expeditor) se poate configura direct din panou, fără Terminal; parola se păstrează criptată.
+- **Programările de pe site rămân solicitări**: confirmarea automată este oprită (toate se confirmă de recepție);
+  pe pagina de programare butonul devine „Trimite solicitarea”.
+
 ## [0.9.9] — 2026-11-20
 
 Se poate instala direct peste 0.9.1 – 0.9.8.

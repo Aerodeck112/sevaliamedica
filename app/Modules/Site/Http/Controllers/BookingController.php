@@ -97,7 +97,7 @@ class BookingController extends Controller
         }
         // Trimis prea repede după afișare: nu pretindem o programare reușită, cerem retrimiterea.
         if ($problem === 'prea_rapid') {
-            return $this->back($request, ['form' => 'Vă rugăm să verificați datele și să apăsați din nou „Trimite programarea”.']);
+            return $this->back($request, ['form' => 'Vă rugăm să verificați datele și să apăsați din nou „Trimite solicitarea”.']);
         }
         $ipHash = hash_hmac('sha256', (string) $request->ip(), (string) config('app.key'));
         $limiter = 'site-booking:'.$ipHash;

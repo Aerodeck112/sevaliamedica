@@ -2,10 +2,36 @@
   "baseUrl": "http://127.0.0.1:8000",
   "outDir": "docs/capturi/etapa-panou-simplu",
   "shots": [
-    { "name": "01-acasa-manager", "path": "/panou", "role": "manager" },
-    { "name": "02-acasa-receptie", "path": "/panou", "role": "receptie" },
-    { "name": "03-functii-panou", "path": "/panou/functii-panou", "role": "administrator-tehnic" },
-    { "name": "04-reguli-programari-email", "path": "/panou/reguli-programari", "role": "manager" },
-    { "name": "05-acasa-manager-mobil", "path": "/panou", "role": "manager", "viewport": "mobil" }
+    {
+      "name": "01-acasa-manager",
+      "path": "/panou",
+      "role": "manager"
+    },
+    {
+      "name": "02-acasa-receptie",
+      "path": "/panou",
+      "role": "receptie"
+    },
+    {
+      "name": "03-functii-panou",
+      "path": "/panou/functii-panou",
+      "role": "administrator-tehnic"
+    },
+    {
+      "name": "04-reguli-programari-email",
+      "path": "/panou/reguli-programari",
+      "role": "manager"
+    },
+    {
+      "name": "05-acasa-manager-mobil",
+      "path": "/panou",
+      "role": "manager",
+      "viewport": "mobil"
+    },
+    {
+      "name": "06-verificare-email",
+      "path": "/panou/verificare-email",
+      "role": "administrator-tehnic"
+    }
   ]
 }

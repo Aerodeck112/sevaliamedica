@@ -17,7 +17,7 @@ final class PanelStages
     public const SETTING = 'panel.stages';
 
     /** Mereu vizibile (dacă utilizatorul are dreptul): acasă și administrarea tehnică. */
-    public const ALWAYS = ['panou.dashboard', 'panou.users.index', 'panou.updates.index', 'panou.backups.index', 'panou.features.edit'];
+    public const ALWAYS = ['panou.dashboard', 'panou.users.index', 'panou.updates.index', 'panou.backups.index', 'panou.features.edit', 'panou.mail-check'];
 
     /** @return array<int, array{label: string, detail: string, routes: list<string>, modules: list<string>}> */
     public static function stages(): array

@@ -27,6 +27,9 @@ final class RequestAlert
 
     public const LAST_ERROR = 'scheduling.online.alert_last_error';
 
+    /** Ultimele încercări de trimitere (fără date personale), afișate în Administrare → Verificare e-mail. */
+    public const LOG = 'mail.alert_log';
+
     public function __construct(private readonly Settings $settings) {}
 
     /** @return list<string> */
@@ -70,14 +73,38 @@ final class RequestAlert
                     $m->to($to)->subject($subject)->from($this->fromAddress(), 'SEVALIA – site');
                 });
                 $this->settings->set(self::LAST_ERROR, null);
+                $this->record($reference, true, null);
             } catch (Throwable $e) {
                 // Fără date personale în jurnal: doar codul solicitării și tipul erorii.
                 Log::warning('E-mailul pentru solicitarea de programare nu a putut fi trimis', ['cod' => $reference, 'eroare' => class_basename($e)]);
                 $this->settings->set(self::LAST_ERROR, now()->format('d.m.Y H:i').' — '.mb_substr($e->getMessage(), 0, 200));
+                $this->record($reference, false, mb_substr($e->getMessage(), 0, 300));
             }
         };
         // Pacientul nu așteaptă după serverul de e-mail: trimiterea are loc după ce pagina de confirmare a plecat.
         app()->runningInConsole() ? $deliver() : app()->terminating($deliver);
+    }
+
+    /** Notează încercarea (cod, mailer, rezultat), ultimele 30. */
+    public function record(string $reference, bool $ok, ?string $error): void
+    {
+        $log = (array) $this->settings->get(self::LOG, []);
+        array_unshift($log, ['at' => now()->format('d.m.Y H:i:s'), 'cod' => $reference, 'mailer' => $this->mailer(),
+            'destinatari' => count($this->recipients()), 'ok' => $ok, 'eroare' => $error]);
+        $this->settings->set(self::LOG, array_slice($log, 0, 30));
+    }
+
+    /** De ce nu pleacă e-mailurile reale (null = pleacă). */
+    public function blockedReason(): ?string
+    {
+        if (! (config('sevalia.stage') === 'production' || (bool) config('notifications.real_sending_outside_production'))) {
+            return 'Aplicația nu rulează în modul producție (SEVALIA_STAGE='.config('sevalia.stage').'): e-mailurile se scriu doar în jurnal.';
+        }
+        if ($this->mailer() === 'log') {
+            return 'Nu există un server de e-mail: completați SMTP mai jos (datele contului de e-mail din cPanel).';
+        }
+
+        return null;
     }
 
     public function mailer(): string
